@@ -15,6 +15,10 @@ from t5_adaptation.common import ROOT, load_config, rng_state, restore_rng
 from t5_adaptation.corruption import (SpanCollator, corrupt_source, random_spans_mask,
                                       sample_positions)
 from t5_adaptation.objectives import AdaptationObjective, make_sigreg
+from t5_adaptation import checkpoint
+from t5_adaptation.export import export_encoder, verify_reload
+from t5_adaptation.calibrate import PopulationMoments
+from t5_adaptation.train import optimizer_for
 
 
 class ToyTokenizer:
@@ -101,6 +105,12 @@ def test_boundaries_alignment_and_no_truncation():
     row = corrupt_source(fragmented, tokenizer, np.random.RandomState(0))
     assert row["noise_tokens"] == round((fragmented != 1).sum() * 0.15)
     np.testing.assert_array_equal(reconstruct(row["corrupt"], row["labels"]), fragmented)
+    specials = np.array([*range(3, 90), 0, 1, 2, 100, 150, 199, *range(3, 90)])
+    special_row = corrupt_source(specials, tokenizer, np.random.RandomState(99))
+    assert all(specials[i] not in tokenizer.all_special_ids for i, _ in special_row["pairs"])
+    assert all(np.count_nonzero(special_row["corrupt"] == s) >= np.count_nonzero(specials == s)
+               for s in (0, 1, 2, 100, 150, 199))
+    assert not any(token in (0, 2) for token in special_row["labels"])
 
 
 def test_rng_independence_and_samples():
@@ -216,3 +226,62 @@ def test_nominal_budget():
     assert cfg["updates"] == 38147
     assert cfg["source_examples"] == 19531264
     assert cfg["source_examples"] * 512 == 10000007168
+
+
+@pytest.mark.parametrize("arm", ["C", "D"])
+def test_resume_identity_rng_cursor_and_export(tmp_path, arm):
+    torch.set_num_threads(1)
+    torch.manual_seed(101)
+    model = AdaptationObjective(tiny_model(arm, dropout=0.2), arm, 0.03, 0.8)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda step: 1 / (step + 1))
+    batch = SpanCollator(ToyTokenizer(), samples_per_rank=16)(fixture_examples())
+    model(batch)["loss"].backward()
+    optimizer.step()
+    scheduler.step()
+    identity = {"arm": arm, "objective": "fixture", "data_hash": "same"}
+    counters = {"updates": 1, "source_examples": 4, "nominal_positions": 2048}
+    checkpoint.save(tmp_path / "state.pt", model, optimizer, scheduler, identity, counters)
+    def update():
+        optimizer.zero_grad(set_to_none=True)
+        loss = model(batch)["loss"]
+        loss.backward()
+        optimizer.step()
+        scheduler.step()
+        return loss.detach(), {k: v.clone() for k, v in model.state_dict().items()}
+    expected_loss, expected_state = update()
+    restored = checkpoint.load(tmp_path / "state.pt", model, optimizer, scheduler, identity)
+    assert restored == counters
+    actual_loss, actual_state = update()
+    torch.testing.assert_close(actual_loss, expected_loss, rtol=0, atol=0)
+    for k in actual_state:
+        torch.testing.assert_close(actual_state[k], expected_state[k], rtol=0, atol=0)
+    with pytest.raises(ValueError, match="Refusing"):
+        checkpoint.load(tmp_path / "state.pt", model, optimizer, scheduler, identity | {"arm": "wrong"})
+    class SaveTokenizer:
+        def save_pretrained(self, path):
+            pass
+    export_encoder(model, SaveTokenizer(), tmp_path / "export")
+    verification = verify_reload(model, tmp_path / "export", batch["clean"], batch["clean_mask"], torch.device("cpu"))
+    assert verification["max_absolute_error"] == 0
+
+
+def test_streaming_population_moments():
+    data = torch.randn(175, 512, dtype=torch.float64) * 0.2 + 0.03
+    moments = PopulationMoments()
+    for batch in data.split(16):
+        moments.update(batch)
+    result = moments.result()
+    assert result["coordinate_count"] == data.numel()
+    assert result["mean"] == pytest.approx(data.mean().item(), abs=1e-14)
+    assert result["std"] == pytest.approx(data.std(unbiased=False).item(), abs=1e-14)
+
+
+def test_t5_bias_and_normalization_have_no_weight_decay():
+    model = tiny_model("C")
+    cfg = load_config(ROOT / "src/configs/t5_adaptation/arm_c.yml")
+    opt = optimizer_for(model, cfg)
+    groups = {id(p): group["weight_decay"] for group in opt.param_groups for p in group["params"]}
+    assert groups[id(model.encoder.block[0].layer[0].SelfAttention.relative_attention_bias.weight)] == 0
+    assert groups[id(model.encoder.final_layer_norm.weight)] == 0
+    assert groups[id(model.shared.weight)] == 0.01

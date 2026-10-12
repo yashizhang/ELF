@@ -6,10 +6,12 @@ if [[ "$MODE" == gpu ]]; then
   ENV_PATH=.venv-gpu
   TORCH_BUILD=2.5.1+cu124
   TORCH_INDEX=https://download.pytorch.org/whl/cu124
+  DEPENDENCY_LOCK=requirements-adaptation-gpu.lock
 elif [[ "$MODE" == cpu ]]; then
   ENV_PATH=.venv
   TORCH_BUILD=2.5.1+cpu
   TORCH_INDEX=https://download.pytorch.org/whl/cpu
+  DEPENDENCY_LOCK=requirements-adaptation.lock
 else
   echo 'usage: setup_adaptation_env.sh [gpu|cpu]' >&2
   exit 2
@@ -22,7 +24,7 @@ fi
   --exclude-newer 2026-10-13 --index "$TORCH_INDEX" --index-strategy unsafe-best-match \
   "torch==$TORCH_BUILD" 'sympy==1.13.1'
 "$UV" --no-config pip install --python "$ENV_PATH/bin/python" \
-  --exclude-newer 2026-10-13 -r requirements-adaptation.lock
+  --exclude-newer 2026-10-13 -r "$DEPENDENCY_LOCK"
 "$UV" --no-config pip install --python "$ENV_PATH/bin/python" --no-deps \
   -e ./third_party/transformers -e ./third_party/lejepa
 "$UV" pip check --python "$ENV_PATH/bin/python"

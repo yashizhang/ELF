@@ -1,0 +1,63 @@
+{
+  "B": "intentionally omitted",
+  "arm_status": {
+    "C": "not_submitted",
+    "D": "not_submitted"
+  },
+  "complete": false,
+  "rows": [
+    {
+      "arm": "A",
+      "configuration": "primary",
+      "entropy_mean": 5.15,
+      "entropy_se": 0.002,
+      "gamma": 1.5,
+      "gen_ppl_mean": 24.08,
+      "gen_ppl_se": 0.16,
+      "measured_here": false,
+      "origin": "published_external",
+      "self_cond_cfg": 3.0,
+      "source": "https://arxiv.org/html/2605.10938v2#A5.T9",
+      "status": "published",
+      "steps": 32,
+      "table": "Appendix E.4, Table 9",
+      "uncertainty": "reported standard error over evaluation seeds 0\u20135, n=6"
+    },
+    {
+      "arm": "C",
+      "configuration": "primary",
+      "entropy_mean": null,
+      "gen_ppl_mean": null,
+      "measured_here": false,
+      "origin": "measured_this_project",
+      "status": "incomplete"
+    },
+    {
+      "arm": "C",
+      "configuration": "secondary",
+      "entropy_mean": null,
+      "gen_ppl_mean": null,
+      "measured_here": false,
+      "origin": "measured_this_project",
+      "status": "incomplete"
+    },
+    {
+      "arm": "D",
+      "configuration": "primary",
+      "entropy_mean": null,
+      "gen_ppl_mean": null,
+      "measured_here": false,
+      "origin": "measured_this_project",
+      "status": "incomplete"
+    },
+    {
+      "arm": "D",
+      "configuration": "secondary",
+      "entropy_mean": null,
+      "gen_ppl_mean": null,
+      "measured_here": false,
+      "origin": "measured_this_project",
+      "status": "incomplete"
+    }
+  ]
+}

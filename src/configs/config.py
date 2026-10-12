@@ -128,6 +128,12 @@ class Config:
     seed: int = 0
     num_workers: int = 8
 
+    # Opt-in reproducibility controls for the C/D experiment.
+    experiment_manifest: str = None
+    full_epochs: bool = False
+    save_every_steps: int = 0
+    training_smoke_sample: bool = False
+
 
 def load_config_from_yaml(path: str) -> Config:
     """Load a YAML config and override defaults in Config."""

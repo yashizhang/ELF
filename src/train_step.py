@@ -252,6 +252,14 @@ def train_step(
     # decoder_prob * mean_CE + (1 - decoder_prob) * mean_L2.
     total_sum = (ce_per_token * ce_mask).sum() + (l2_per_token * l2_mask).sum()
     loss = total_sum / torch.clamp(loss_mask_f.sum(), min=1.0)
+    if getattr(config, "experiment_manifest", None):
+        # Stop invalid runs before any optimizer mutation.
+        import torch.distributed as dist
+        finite = torch.isfinite(loss).to(torch.int32)
+        if dist.is_initialized():
+            dist.all_reduce(finite, op=dist.ReduceOp.MIN)
+        if not finite.item():
+            raise FloatingPointError("Non-finite ELF loss; prior recovery checkpoint preserved")
 
     # Per-branch metrics: mean per-token within each branch.
     ce_loss_val = ((ce_per_token * ce_mask).sum()
@@ -268,7 +276,8 @@ def train_step(
         (loss / accum_steps).backward()
 
     if is_optimizer_step:
-        torch.nn.utils.clip_grad_norm_(_trainable_params(model), max_norm=1.0)
+        torch.nn.utils.clip_grad_norm_(_trainable_params(model), max_norm=1.0,
+                                       error_if_nonfinite=bool(getattr(config, "experiment_manifest", None)))
         state.optimizer.step()
         if state.lr_scheduler is not None:
             state.lr_scheduler.step()

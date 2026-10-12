@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import random
 import subprocess
+import shutil
 import time
 
 import numpy as np
@@ -135,9 +136,25 @@ def preparation_lock(path):
 def runtime_info():
     import importlib.metadata
     packages = {d.metadata["Name"]: d.version for d in importlib.metadata.distributions()}
+    if (ROOT / "release.json").exists():
+        commit = read_json(ROOT / "release.json")["commit"]
+    elif shutil.which("git"):
+        commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    else:
+        head = (ROOT / ".git/HEAD").read_text().strip()
+        if head.startswith("ref: "):
+            ref = head[5:]
+            ref_file = ROOT / ".git" / ref
+            if ref_file.exists():
+                commit = ref_file.read_text().strip()
+            else:
+                commit = next(line.split()[0] for line in (ROOT / ".git/packed-refs").read_text().splitlines()
+                              if line.endswith(" " + ref))
+        else:
+            commit = head
     info = {"time": time.time(), "packages": packages, "torch": torch.__version__,
-            "cuda": torch.version.cuda, "git_commit": subprocess.check_output(
-                ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}
+            "cuda": torch.version.cuda, "git_commit": commit,
+            "project_python_sha256": {str(p.relative_to(ROOT)): file_hash(p) for p in (ROOT / "src").rglob("*.py")}}
     if torch.cuda.is_available():
         info["gpus"] = [torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())]
         info["gpu_memory"] = [torch.cuda.get_device_properties(i).total_memory

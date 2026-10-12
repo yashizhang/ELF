@@ -124,7 +124,7 @@ def main():
 
     # ELF model
     log_for_0(f"Creating {config.model} model...")
-    vocab_size = tokenizer.vocab_size
+    vocab_size = len(tokenizer)
     model = ELF_models[config.model](
         text_encoder_dim=encoder_config.d_model, max_length=config.max_length,
         attn_drop=config.attn_dropout, proj_drop=config.proj_dropout,

@@ -1,0 +1,6 @@
+arm,origin,configuration,gen_ppl_mean,gen_ppl_se,entropy_mean,entropy_se,uncertainty,source,table,steps,gamma,self_cond_cfg,status,measured_here
+A,published_external,primary,24.08,0.16,5.15,0.002,"reported standard error over evaluation seeds 0–5, n=6",https://arxiv.org/html/2605.10938v2#A5.T9,"Appendix E.4, Table 9",32,1.5,3.0,published,False
+C,measured_this_project,primary,,,,,,,,,,,incomplete,False
+C,measured_this_project,secondary,,,,,,,,,,,incomplete,False
+D,measured_this_project,primary,,,,,,,,,,,incomplete,False
+D,measured_this_project,secondary,,,,,,,,,,,incomplete,False

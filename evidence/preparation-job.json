@@ -1,0 +1,20 @@
+{
+  "account": "snow.research.er",
+  "created": "2026-10-12T23:30:03.195922Z",
+  "id": "28b2739a-13f8-48cf-b4f9-e2239b524332",
+  "image": "docker.io/pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf7bfbc24249141b15ff622755",
+  "name": "elf_cd_prepare_20261012",
+  "resources": {
+    "cpu": 32,
+    "cpuModel": "",
+    "gpu": 0,
+    "gpuCudaVersion": 0,
+    "gpuMem": 0,
+    "gpuModel": "",
+    "gpuTensorCores": false,
+    "inference": false,
+    "mem": 128,
+    "replicas": 0
+  },
+  "submitted_state": "QUEUING"
+}

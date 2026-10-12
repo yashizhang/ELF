@@ -3,11 +3,38 @@ from typing import Dict, Optional
 
 import numpy as np
 import torch
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Sampler
 from torch.utils.data.distributed import DistributedSampler
 
 from utils.encoder_utils import build_self_attn_cond_masks
 from utils.logging_utils import log_for_0
+
+
+class FullEpochSampler(Sampler):
+    """One deterministic shuffled epoch, padded to whole global batches.
+
+    Includes every dataset row each epoch. The prefix duplicates used to fill
+    the last global batch are explicitly counted in the experiment manifest.
+    """
+    def __init__(self, dataset, batch_size, rank, world_size, seed=42):
+        self.size, self.batch_size, self.rank = len(dataset), batch_size, rank
+        self.world_size, self.seed, self.epoch = world_size, seed, 0
+        global_batch = batch_size * world_size
+        self.total_size = ((self.size + global_batch - 1) // global_batch) * global_batch
+
+    def set_epoch(self, epoch):
+        self.epoch = epoch
+
+    def __iter__(self):
+        generator = torch.Generator().manual_seed(self.seed + self.epoch)
+        indices = torch.randperm(self.size, generator=generator).tolist()
+        if not indices:
+            raise ValueError("Empty ELF training dataset")
+        indices += (indices * ((self.total_size - self.size + self.size - 1) // self.size))[:self.total_size - self.size]
+        return iter(indices[self.rank:self.total_size:self.world_size])
+
+    def __len__(self):
+        return self.total_size // self.world_size
 
 
 def _process_count() -> int:
@@ -81,6 +108,8 @@ def get_dataloader(
     pad_token_id: int = 0,
     max_input_seq_length: Optional[int] = None,
     distributed: bool = True,
+    full_epochs: bool = False,
+    seed: int = 42,
 ):
     """Create a DataLoader."""
 
@@ -120,6 +149,12 @@ def get_dataloader(
         drop_last=drop_last, persistent_workers=num_workers > 0,
         pin_memory=True,
     )
+    if full_epochs:
+        common["generator"] = torch.Generator().manual_seed(seed)
+    if full_epochs:
+        sampler = FullEpochSampler(dataset, batch_size, _process_index() if distributed else 0,
+                                   _process_count() if distributed else 1, seed)
+        return DataLoader(dataset, sampler=sampler, **common)
     if distributed:
         sampler = DistributedSampler(
             dataset, num_replicas=_process_count(), rank=_process_index(),

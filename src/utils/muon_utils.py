@@ -128,8 +128,8 @@ def muon_with_aux_adam(model: nn.Module, lr: float):
                                 p = params[base_i + dist.get_rank()]
                                 self._muon_step_one(p, group)
                             dist.all_gather(
-                                params_pad[base_i:base_i + ws],
-                                params_pad[base_i + dist.get_rank()],
+                                [p.detach() for p in params_pad[base_i:base_i + ws]],
+                                params_pad[base_i + dist.get_rank()].detach(),
                             )
                     else:
                         for p in params:

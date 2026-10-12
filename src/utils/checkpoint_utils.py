@@ -48,6 +48,31 @@ def _split_hf_path(path: str, min_parts: int) -> Optional[Tuple[str, str]]:
 
 def save_checkpoint(state, output_dir: str, step: int, hf_repo_id: str = None):
     """Save model checkpoint locally as a single `checkpoint_<step>` file."""
+    rank_rngs = None
+    rank_optimizer_files = None
+    if state.experiment_identity is not None:
+        import torch.distributed as dist
+        from t5_adaptation.common import rng_state, file_hash
+        # Upstream distributed Muon shards optimizer momentum across ranks.
+        # Rank zero's optimizer state alone cannot resume the other shards.
+        os.makedirs(output_dir, exist_ok=True)
+        optimizer_name = f"optimizer_{step}_rank{_process_index()}.pt"
+        optimizer_path = os.path.join(output_dir, optimizer_name)
+        with open(optimizer_path + ".tmp", "wb") as f:
+            torch.save(state.optimizer.state_dict(), f)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(optimizer_path + ".tmp", optimizer_path)
+        local_rng = rng_state()
+        local_rng["dropout_generator"] = state.dropout_generator.get_state()
+        local_rng["optimizer_file"] = optimizer_name
+        local_rng["optimizer_sha256"] = file_hash(optimizer_path)
+        rank_rngs = [None] * (dist.get_world_size() if dist.is_initialized() else 1)
+        if dist.is_initialized():
+            dist.all_gather_object(rank_rngs, local_rng)
+        else:
+            rank_rngs[0] = local_rng
+        rank_optimizer_files = [r["optimizer_file"] for r in rank_rngs]
     if _process_index() != 0:
         return
     ckpt_dir = _local_path(output_dir)
@@ -65,14 +90,22 @@ def save_checkpoint(state, output_dir: str, step: int, hf_repo_id: str = None):
         "opt_state": state.optimizer.state_dict(),
         "lr_scheduler": state.lr_scheduler.state_dict() if state.lr_scheduler is not None else None,
         "step": int(state.step),
-        "epoch": int(state.epoch),
+        "epoch": float(state.epoch),
         "dropout_rng": (state.dropout_generator.get_state()
                         if state.dropout_generator is not None else None),
         "grad_accum_buffers": grad_accum_buffers,
+        "experiment_identity": state.experiment_identity,
+        "rank_rngs": rank_rngs,
+        "rank_optimizer_files": rank_optimizer_files,
     }
     out_path = os.path.join(ckpt_dir, f"checkpoint_{step}")
     log_for_0(f"Saving checkpoint to {out_path}")
-    torch.save(payload, out_path)
+    temporary = out_path + ".tmp"
+    with open(temporary, "wb") as f:
+        torch.save(payload, f)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(temporary, out_path)
     log_for_0(f"Checkpoint written to {out_path}")
     upload_output_dir_to_hf(output_dir, hf_repo_id, reason="checkpoint")
 
@@ -89,7 +122,7 @@ def find_all_checkpoints(ckpt_dir: str, prefix: str = "checkpoint_"):
     if not os.path.isdir(ckpt_dir):
         return []
     names = sorted(
-        [f for f in os.listdir(ckpt_dir) if f.startswith(prefix)],
+        [f for f in os.listdir(ckpt_dir) if f.startswith(prefix) and _checkpoint_step(f) >= 0],
         key=_checkpoint_step,
     )
     return [os.path.join(ckpt_dir, name) for name in names]
@@ -124,7 +157,7 @@ def _restore_checkpoint(checkpoint_path: str) -> Any:
         if latest is not None and os.path.isfile(latest):
             resolved = latest
     if os.path.isfile(resolved):
-        return torch.load(resolved, map_location="cpu")
+        return torch.load(resolved, map_location="cpu", weights_only=False)
     return None
 
 
@@ -185,12 +218,36 @@ def load_checkpoint(checkpoint_path: str, state) -> Tuple[Any, int]:
     state.ema_params1 = {
         n: t.to(device_map.get(n, fallback_device)) for n, t in ema_src.items()
     }
-    state.optimizer.load_state_dict(ckpt["opt_state"])
+    if state.experiment_identity is not None:
+        if ckpt.get("experiment_identity") != state.experiment_identity:
+            raise ValueError("ELF checkpoint provenance differs from the requested arm/encoder/data")
+        from t5_adaptation.common import file_hash
+        local_saved = ckpt["rank_rngs"][_process_index()]
+        shard_path = os.path.join(os.path.dirname(local_path), local_saved["optimizer_file"])
+        if os.path.isdir(local_path):
+            shard_path = os.path.join(local_path, local_saved["optimizer_file"])
+        if file_hash(shard_path) != local_saved["optimizer_sha256"]:
+            raise ValueError("ELF optimizer shard is corrupt")
+        state.optimizer.load_state_dict(torch.load(shard_path, map_location="cpu", weights_only=False))
+    else:
+        state.optimizer.load_state_dict(ckpt["opt_state"])
     if state.lr_scheduler is not None and ckpt.get("lr_scheduler") is not None:
         state.lr_scheduler.load_state_dict(ckpt["lr_scheduler"])
     state.step = int(ckpt["step"])
-    state.epoch = int(ckpt["epoch"])
-    if ckpt.get("dropout_rng") is not None and state.dropout_generator is not None:
+    state.epoch = float(ckpt["epoch"])
+    if state.experiment_identity is not None:
+        if ckpt.get("experiment_identity") != state.experiment_identity:
+            raise ValueError("ELF checkpoint provenance differs from the requested arm/encoder/data")
+        import torch.distributed as dist
+        from t5_adaptation.common import restore_rng
+        states = ckpt["rank_rngs"]
+        world = dist.get_world_size() if dist.is_initialized() else 1
+        if len(states) != world:
+            raise ValueError("ELF checkpoint world size mismatch")
+        local_rng = states[_process_index()]
+        restore_rng(local_rng)
+        state.dropout_generator.set_state(local_rng["dropout_generator"])
+    if state.experiment_identity is None and ckpt.get("dropout_rng") is not None and state.dropout_generator is not None:
         try:
             state.dropout_generator.set_state(ckpt["dropout_rng"])
         except Exception:

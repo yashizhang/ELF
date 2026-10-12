@@ -1,0 +1,4 @@
+job_id,run_id,arm_or_stage,account,state,state_info,gpus,gpu_model_filter,cpu,ram_gb,node,wall_seconds,allocated_gpu_hours,provisional,exit_code
+28b2739a-13f8-48cf-b4f9-e2239b524332,0d69dfc6-2201-4d42-86de-4e695f168cb3,shared_preparation,snow.research.er,RUNNING,,0,,32,128,dgx-09,1388.496828,0.0,True,
+094ba25a-e0b9-4146-af9a-e9db38e7922b,7da52098-fae3-43f9-821e-3568ec750456,preflight,snow.research.er,SUCCEEDED,,8,H100,64,512,dgx-14,102.0,0.22666666666666666,False,0
+b785266e-f925-4738-99cd-05450e005838,24979d70-d0dc-4f77-93a7-9a24b18d6401,preflight,snow.research.er,FAILED,Job main process exited with 1,8,H100,64,512,dgx-14,75.0,0.16666666666666666,False,1

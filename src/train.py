@@ -6,6 +6,8 @@ import logging
 import os
 import sys
 import time
+import math
+import signal
 
 import yaml
 
@@ -145,6 +147,11 @@ def run_training(config, *, force_cpu: bool = False):
     log_for_0(f"Encoder d_model: {encoder_config.d_model}")
 
     log_for_0(f"Creating {config.model} model...")
+    experiment_identity, frozen_encoder_hash = None, None
+    if config.experiment_manifest:
+        from t5_adaptation.elf_integration import validate_inputs
+        experiment_identity, frozen_encoder_hash = validate_inputs(config, encoder, train_dataset)
+        torch.manual_seed(config.seed)
     # Use the full tokenizer length for CE heads; tokenizer.vocab_size can exclude
     # added special tokens that still appear in tokenized Qwen targets.
     try:
@@ -162,6 +169,9 @@ def run_training(config, *, force_cpu: bool = False):
         bottleneck_dim=config.bottleneck_dim,
         gradient_checkpointing=bool(getattr(config, "gradient_checkpointing", True)),
     ).to(device)
+    if experiment_identity is not None:
+        from t5_adaptation.elf_integration import record_initial
+        record_initial(config, model, frozen_encoder_hash, experiment_identity)
 
     total_params = sum(p.numel() for p in model.parameters())
     log_for_0(f"ELF parameters: {total_params:,}")
@@ -187,7 +197,8 @@ def run_training(config, *, force_cpu: bool = False):
     else:
         raise ValueError("Either global_batch_size or batch_size must be specified")
 
-    steps_per_epoch = len(train_dataset) // total_batch_size
+    steps_per_epoch = (math.ceil(len(train_dataset) / total_batch_size) if config.full_epochs
+                       else len(train_dataset) // total_batch_size)
     num_train_steps = steps_per_epoch * config.epochs
     if config.warmup_steps >= 0:
         num_warmup_steps = config.warmup_steps
@@ -229,6 +240,7 @@ def run_training(config, *, force_cpu: bool = False):
         model=model, optimizer=optimizer, lr_scheduler=lr_scheduler,
         ema_params1=TrainState.init_ema(model),
         step=0, epoch=0, dropout_generator=g,
+        experiment_identity=experiment_identity,
     )
 
     # Auto-resume: if no explicit resume path, check output_dir for existing checkpoints
@@ -250,6 +262,8 @@ def run_training(config, *, force_cpu: bool = False):
             start_epoch = int(state.epoch)
             log_for_0(f"Resumed from step {resume_step} (epoch {resume_epoch_fractional:.2f})")
         except Exception as e:
+            if experiment_identity is not None:
+                raise RuntimeError("Refusing to silently start ELF over after a resume error") from e
             log_for_0(f"Error loading checkpoint: {e}")
             log_for_0("Continuing training from scratch")
 
@@ -289,6 +303,7 @@ def run_training(config, *, force_cpu: bool = False):
         max_seq_length=config.max_length, pad_token_id=pad_token_id,
         max_input_seq_length=config.max_input_length,
         distributed=(world > 1),
+        full_epochs=config.full_epochs, seed=config.seed,
     )
 
     log_for_0("\n" + "=" * 60)
@@ -323,6 +338,14 @@ def run_training(config, *, force_cpu: bool = False):
     # Track last save point for fractional save_freq; use fractional epoch from
     # checkpoint to avoid re-saving immediately after resume.
     last_save_epoch = resume_epoch_fractional if resume_step > 0 else float(start_epoch)
+
+    stop_requested = [False]
+    if experiment_identity is not None:
+        def request_checkpoint(signum, frame):
+            stop_requested[0] = True
+        for signum in (signal.SIGTERM, signal.SIGUSR1, signal.SIGINT):
+            signal.signal(signum, request_checkpoint)
+    invocation_start = time.monotonic()
 
     for epoch in range(start_epoch, config.epochs):
         log_for_0(f"\nEpoch {epoch + 1}/{config.epochs}")
@@ -365,8 +388,15 @@ def run_training(config, *, force_cpu: bool = False):
                 log_for_0("First training step (torch.compile + execution) completed...")
 
             global_step += 1
+            state.epoch = epoch + (step_in_epoch + 1) / steps_per_epoch
             train_metrics.append(metrics)
             epoch_pbar.update(1)
+            if experiment_identity is not None:
+                from t5_adaptation.elf_integration import assert_frozen, smoke_generation
+                assert_frozen(encoder)
+                if global_step == 1 and config.training_smoke_sample:
+                    smoke_generation(state, encoder, tokenizer, config, g)
+                    assert_frozen(encoder, frozen_encoder_hash)
 
             if global_step % config.log_freq == 0:
                 stacked = torch.stack([
@@ -393,6 +423,16 @@ def run_training(config, *, force_cpu: bool = False):
                 epoch_pbar.set_postfix(**postfix_dict)
 
                 if rank == 0:
+                    if experiment_identity is not None:
+                        from t5_adaptation.common import append_json, atomic_json
+                        entry = {"state": "running", "step": global_step, "epoch": state.epoch,
+                                 "loss": avg_loss, "ce": avg_ce, "l2": avg_l2,
+                                 "steps_per_second": steps_per_sec,
+                                 "eta_seconds": (num_train_steps - global_step) / max(steps_per_sec, 1e-9),
+                                 "invocation_wall_seconds": time.monotonic() - invocation_start,
+                                 "max_memory_bytes": torch.cuda.max_memory_allocated() if device.type == "cuda" else 0}
+                        append_json(os.path.join(config.output_dir, "train.jsonl"), entry)
+                        atomic_json(os.path.join(config.output_dir, "status.json"), entry)
                     tqdm.write(
                         f"INFO - engine - Step {global_step}: loss={avg_loss:.4f}, "
                         f"l2={avg_l2:.4f}, ce={avg_ce:.4f}, "
@@ -414,6 +454,16 @@ def run_training(config, *, force_cpu: bool = False):
                 last_log_time = now
 
             # Intra-epoch checkpoint saving (fractional save_freq, e.g., 0.1 epoch)
+            if experiment_identity is not None:
+                flag = torch.tensor(int(stop_requested[0]), device=device)
+                if dist.is_initialized():
+                    dist.all_reduce(flag, op=dist.ReduceOp.MAX)
+                if flag.item() or (config.save_every_steps and global_step % config.save_every_steps == 0):
+                    save_checkpoint(state, config.output_dir, global_step, hf_repo_id=config.hf_repo_id)
+                if flag.item():
+                    if dist.is_initialized():
+                        dist.barrier()
+                    raise SystemExit(75)
             if 0 < config.save_freq < 1:
                 progress = epoch + (global_step - epoch * steps_per_epoch) / steps_per_epoch
                 if progress - last_save_epoch >= config.save_freq:
@@ -443,6 +493,17 @@ def run_training(config, *, force_cpu: bool = False):
     log_for_0("=" * 60)
     save_checkpoint(state, config.output_dir, global_step, hf_repo_id=config.hf_repo_id)
     log_for_0(f"Final checkpoint saved to {config.output_dir}")
+    if experiment_identity is not None:
+        from t5_adaptation.elf_integration import assert_frozen
+        from t5_adaptation.common import atomic_json
+        assert_frozen(encoder, frozen_encoder_hash)
+        if rank == 0:
+            atomic_json(os.path.join(config.output_dir, "completed.json"), {
+                "identity": experiment_identity, "epochs": config.epochs, "updates": global_step,
+                "dataset_examples": len(train_dataset), "steps_per_epoch": steps_per_epoch,
+                "examples_per_epoch_including_padding": steps_per_epoch * total_batch_size,
+                "padding_repeats_per_epoch": steps_per_epoch * total_batch_size - len(train_dataset),
+                "encoder_unchanged": True, "final_checkpoint": f"checkpoint_{global_step}"})
     if config.use_wandb and rank == 0 and wandb is not None:
         wandb.finish()
 

@@ -31,11 +31,13 @@ class TrainState:
     step: int = 0
     epoch: int = 0
     dropout_generator: Optional[torch.Generator] = None
+    experiment_identity: Optional[Dict] = None
     def replace(self, **kwargs) -> "TrainState":
         new = TrainState(
             model=self.model, optimizer=self.optimizer, lr_scheduler=self.lr_scheduler,
             ema_params1=self.ema_params1, step=self.step, epoch=self.epoch,
             dropout_generator=self.dropout_generator,
+            experiment_identity=self.experiment_identity,
         )
         for k, v in kwargs.items():
             setattr(new, k, v)
