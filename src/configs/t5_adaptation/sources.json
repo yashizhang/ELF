@@ -1,0 +1,9 @@
+{
+  "elf": {"url": "https://github.com/lillian039/ELF", "commit": "b29d8833609e9ab7f67cd9da39435ac5cea04837"},
+  "transformers": {"url": "https://github.com/huggingface/transformers", "tag": "v4.44.2", "commit": "174890280b340b89c5bfa092f6b4fb0e2dc2d7fc"},
+  "lejepa": {"url": "https://github.com/galilai-group/lejepa", "commit": "c293d291ca87cd4fddee9d3fffe4e914c7272052"},
+  "t5": {"id": "google-t5/t5-small", "revision": "df1b051c49625cf57a3d0d8d3863ed4d13564fe4"},
+  "c4": {"id": "allenai/c4", "revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2", "config": "en"},
+  "owt": {"id": "embedded-language-flows/openwebtext-t5", "revision": "0a8443e847ee6206e4737a6b9a93218347eabc08"},
+  "evaluator": {"id": "openai-community/gpt2-large", "revision": "32b71b12589c2f8d625668d2335a01cac3249519"}
+}

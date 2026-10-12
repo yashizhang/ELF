@@ -1,0 +1,33 @@
+source_length: 568
+nominal_length: 512
+nominal_budget: 10000000000
+global_batch_size: 512
+world_size: 8
+local_batch_size: 64
+grad_accum_steps: 1
+seed: 42
+corruption_seed: 1729
+sampling_seed: 2718
+projection_seed: 31415
+noise_density: 0.15
+mean_noise_span_length: 3.0
+sigreg_lambda: 0.05
+sigreg_samples_per_rank: 256
+sigreg_slices: 256
+sigreg_t_max: 3.0
+sigreg_n_points: 17
+sigreg_integration: trapezoid
+learning_rate: 0.0001
+min_learning_rate: 0.00001
+warmup_steps: 500
+betas: [0.9, 0.999]
+epsilon: 0.00000001
+weight_decay: 0.01
+max_grad_norm: 1.0
+activation_checkpointing: false
+calibration_sequences: 4096
+save_every: 500
+log_every: 25
+gradient_diagnostic_every: 1000
+diagnostic_positions: [1000000000, 3000000000, 10000000000]
+num_workers: 8

@@ -1,0 +1,3 @@
+arm: D
+objective: aligned_pairwise_mse_plus_per_view_sigreg
+base_config: src/configs/t5_adaptation/common.yml

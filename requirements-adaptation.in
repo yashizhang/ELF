@@ -1,0 +1,20 @@
+# torch is installed separately: 2.5.1+cu124 on H100; 2.5.1+cpu for local checks.
+numpy==1.26.4
+PyYAML==6.0.2
+tqdm==4.67.1
+einops==0.8.1
+datasets==2.21.0
+huggingface-hub==0.26.5
+tokenizers==0.19.1
+sentencepiece==0.2.0
+safetensors==0.4.5
+protobuf==4.25.5
+sacrebleu==2.4.3
+rouge-score==0.1.2
+wandb==0.18.7
+muon-optimizer==0.1.0
+loguru==0.7.3
+pytest==8.3.4
+scipy==1.14.1
+-e ./third_party/transformers
+-e ./third_party/lejepa

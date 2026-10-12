@@ -1,0 +1,20 @@
+# Discovered from EAI CLI and an existing eight-H100 ER job on 2026-10-12.
+scheduler: eai
+account: snow.research.er
+account_id: 680f25fb-65bc-41ba-b672-e7f33399d9a6
+image: docker.io/pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf7bfbc24249141b15ff622755
+data: snow.home.yashi_zhang:/home/toolkit:rw
+repo: /home/toolkit/ELF
+storage: /home/toolkit/ELF/artifacts
+gpu_model: H100
+gpus_per_arm: 8
+cpu_per_arm: 64
+mem_gb_per_arm: 512
+preparation_cpu: 32
+preparation_mem_gb: 128
+calibration_cpu: 16
+calibration_mem_gb: 128
+mode: restartable
+max_run_time: 0
+discovery_evidence_job: ad186228-8693-4b66-a733-3c93eb22615e
+notes: EAI uses GPU filters and restartable scheduling, with no Slurm partition or QoS.

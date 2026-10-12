@@ -1,0 +1,3 @@
+arm: C
+objective: span_ce_plus_clean_sigreg
+base_config: src/configs/t5_adaptation/common.yml
