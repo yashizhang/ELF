@@ -1,0 +1,39 @@
+{
+  "audited_at_utc": "2026-10-13T03:51:57.607889+00:00",
+  "common_data_hash": "76d5b9225f0e26da70191cbae80063872d2151fb757278aafe8fecbeab0f37b3",
+  "common_normalization_hash": "b094ff4d76affa91f330c2a0542230a82f68ac910700664beb560698ff8457cc",
+  "initial_encoder_state_hash": "a14e4e54385af36ea1cf4dd2a98dd7ae361805724af8a0e6f1fee65dc7e9576c",
+  "matched_config_except_arm_and_objective": true,
+  "per_arm": {
+    "C": {
+      "checkpoint_sha256": "ebe3b3b2602b8fa937f40e432109ee4688775c15e5d5b63abed16e223c8afa29",
+      "decoder_target_tokens": 2230695230,
+      "identity_sha256": "4049d6f8dbb61d64fe13a847e80201e7924ba5ceabd34b4b727cf157cf20a355",
+      "trainer_gpu_hours": 19.18644793015387,
+      "trainer_wall_seconds": 8633.90156729985
+    },
+    "D": {
+      "checkpoint_sha256": "5d44c1263f4737ddfb4ef51d0dce3eeed4efdb1d39899e96723a4aa5e58ec4f3",
+      "decoder_target_tokens": 0,
+      "identity_sha256": "6239191978cf4b65c340b2e71fa06a72ae321d6c50768fdd521f3f31706083d2",
+      "trainer_gpu_hours": 15.122900026357836,
+      "trainer_wall_seconds": 6805.305010668933
+    }
+  },
+  "same_pinned_original_model_data_sources_and_implementation": true,
+  "scope": "Both fixed-budget adaptation runs only; final ELF generation remains outstanding. Trainer wall/GPU times are nested within scheduler allocation and are not additional compute.",
+  "shared_counters": {
+    "corruption_target_tokens": 2230695230,
+    "diagnostic_encoder_sequence_passes": 48128,
+    "eligible_tokens": 11059253934,
+    "encoder_nonpadding_positions": 21121153136,
+    "encoder_sequence_passes": 39062528,
+    "noise_spans": 552869335,
+    "noise_tokens": 1658294631,
+    "nominal_positions": 10000007168,
+    "source_examples": 19531264,
+    "source_tokens": 11093757952,
+    "updates": 38147
+  },
+  "status": "both_final_adaptation_budgets_and_matching_counters_verified"
+}

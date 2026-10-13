@@ -1,0 +1,107 @@
+{
+  "adapted_readout_metrics": {
+    "clean": {
+      "scored_tokens": 16384,
+      "token_accuracy": 0.80499267578125,
+      "token_ce": 1.8608718011528254
+    },
+    "noise_0.1": {
+      "scored_tokens": 16384,
+      "token_accuracy": 0.8046875,
+      "token_ce": 1.8621905203908682
+    }
+  },
+  "architecture_unchanged": {
+    "d_ff": 2048,
+    "d_kv": 64,
+    "d_model": 512,
+    "dropout_rate": 0.1,
+    "feed_forward_proj": "relu",
+    "layer_norm_epsilon": 1e-06,
+    "num_heads": 8,
+    "num_layers": 6,
+    "vocab_size": 32128
+  },
+  "arm": "C",
+  "audited_at_utc": "2026-10-13T03:54:53.730718+00:00",
+  "checkpoint_sha256": "ebe3b3b2602b8fa937f40e432109ee4688775c15e5d5b63abed16e223c8afa29",
+  "elf_effective_global_batch": 512,
+  "elf_observed_status": {
+    "ce": 10.37386703491211,
+    "epoch": 0.005258176464402145,
+    "eta_seconds": 151180.44397780896,
+    "invocation_wall_seconds": 159.15443946886808,
+    "l2": 1.7915370464324951,
+    "loss": 3.484900712966919,
+    "max_memory_bytes": 62140432384,
+    "state": "running",
+    "step": 100,
+    "steps_per_second": 0.6283220071370019
+  },
+  "elf_required_updates": 95090,
+  "encoder_export_hash": "75762f6f8f15e7e05002b297af83cf4d49d0ec9d8742c71701f428f105b06ae6",
+  "encoder_state_hash": "f93fa8c8c4f2147adb8f34142bfb39f08dd9e844e9bef7dd34c0e0fd0bc5997d",
+  "export_weights_exactly_match_final_checkpoint": true,
+  "fresh_elf_initialization": {
+    "elf_parameters": 104579940,
+    "encoder_state_hash": "f93fa8c8c4f2147adb8f34142bfb39f08dd9e844e9bef7dd34c0e0fd0bc5997d",
+    "fresh_initialization": true,
+    "initial_elf_state_hash": "7ef18e4d2f653a4ac286726855b0ead1e86002e01ac18747169b04b2cd068357",
+    "seed": 42
+  },
+  "initial_smoke_samples": {
+    "file": "/home/toolkit/ELF/artifacts/C/elf/initial_smoke/sde-steps2-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_0_1.jsonl",
+    "rows": 8,
+    "sha256": "d3565d24add2a26e9623a157283a4b7ba0f8167da2d4dbaa6eb77f76a0517083"
+  },
+  "original_encoder_state_hash": "a14e4e54385af36ea1cf4dd2a98dd7ae361805724af8a0e6f1fee65dc7e9576c",
+  "original_readout_metrics": {
+    "clean": {
+      "scored_tokens": 16384,
+      "token_accuracy": 0.7952880859375,
+      "token_ce": 2.0647381246089935
+    },
+    "noise_0.1": {
+      "scored_tokens": 16384,
+      "token_accuracy": 0.79595947265625,
+      "token_ce": 2.066250851377845
+    }
+  },
+  "owt_normalization": {
+    "content_hash": "a9cf1c7f9f76bac4b51a5fc6c403dca28ee6661add6ec32a7f7aafd2c0aed48c",
+    "coordinate_count": 2004721664,
+    "estimator": "FP64 streaming Chan merge, population variance M2/N",
+    "identity": {
+      "data_hash": "172a5687c47edc730b0eaf29ba527c9ed9f55580dabebbde2eff19e80868c61e",
+      "encoder_hash": "75762f6f8f15e7e05002b297af83cf4d49d0ec9d8742c71701f428f105b06ae6",
+      "kind": "owt",
+      "length": 1024,
+      "mask": "all original non-padding positions, including EOS; same as ELF validity mask",
+      "use_bf16": true
+    },
+    "ids_half_open": [
+      0,
+      4096
+    ],
+    "mean": -0.0012828207528431412,
+    "model_state_hash": "f93fa8c8c4f2147adb8f34142bfb39f08dd9e844e9bef7dd34c0e0fd0bc5997d",
+    "std": 0.17384837979065573,
+    "token_count": 3915472
+  },
+  "readout_initial_hash_shared": "6ea88bde80e49e847e266f22bc5ee90f1316ce093d5a0acdfc47ba3d18700c83",
+  "readout_updates_each": 500,
+  "reload_check": {
+    "atol": 1e-06,
+    "max_absolute_error": 0.0,
+    "precision": "fp32",
+    "rtol": 1e-05,
+    "shape": [
+      2,
+      569,
+      512
+    ]
+  },
+  "scope": "Final encoder handoff and initial ELF execution; five full ELF epochs and final generation/evaluation remain required.",
+  "status": "encoder_handoff_and_fresh_elf_start_verified",
+  "tokenizer_vocabulary_and_special_ids_unchanged": true
+}

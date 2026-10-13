@@ -214,31 +214,49 @@ verified both retained checkpoints at update 11,445 (3,000,238,080 nominal
 positions), matching data/corruption counters, and finite diagnostics at both
 lengths. These fixed milestones did not select the encoder used by ELF.
 
-D completed adaptation at update **38,147** (10,000,007,168 nominal positions,
-19,531,264 source examples, 11,093,757,952 source positions). The
-[final checkpoint audit](evidence/final-adaptation-D.json) verified its digest,
-finite FP32 model and optimizer tensors, final learning rate, projection
-counter, and all eight RNG states. The
-[encoder handoff audit](evidence/encoder-handoff-D.json) verified that the
-export exactly matches that checkpoint, reloads through ELF with zero measured
-FP32 output error, and preserves the original architecture and tokenizer IDs.
-Its separate OWT normalization is mean **-0.0009771881921668139**, standard
-deviation **0.17378080905341894**, measured on the specified 4,096 rows.
+Both arms completed adaptation at update **38,147** (10,000,007,168 nominal
+positions, 19,531,264 source examples, 11,093,757,952 source positions each).
+The final [C](evidence/final-adaptation-C.json) and
+[D](evidence/final-adaptation-D.json) checkpoint audits verified their digests,
+finite FP32 model and optimizer tensors, final learning rates, projection
+counters, and all eight RNG states. The
+[paired audit](evidence/final-adaptation-paired.json) verified identical initial
+encoder hashes, data/source/calibration identities, and final source,
+corruption, and encoder-pass counters. C additionally processed 2,230,695,230
+decoder target tokens; D used none.
 
-The matched 500-update token readouts scored clean-token accuracy **0.795288**
-for the original encoder and **0.884460** for D; noisy-token accuracy was
-**0.795959** and **0.884460**, respectively. These are decodability diagnostics,
-not generation-quality results. Full probe records and normalization identities
-are retained in `evidence/readout-{original,D}.json` and
-`evidence/normalization_owt_D.json`.
+Both [C](evidence/encoder-handoff-C.json) and
+[D](evidence/encoder-handoff-D.json) encoder handoff audits verified that the
+export exactly matches its final checkpoint, reloads through ELF with zero
+measured FP32 output error, and preserves the original architecture and
+tokenizer IDs. Separate OWT normalization used the same specified 4,096 rows:
 
-D then initialized a fresh ELF-B, generated its eight-sample smoke batch, and
-began the required five-epoch run. The
+| Arm | OWT latent mean | OWT latent standard deviation |
+| --- | --- | --- |
+| C | -0.0012828207528431412 | 0.17384837979065573 |
+| D | -0.0009771881921668139 | 0.17378080905341894 |
+
+The matched 500-update token readouts are complete:
+
+| Frozen encoder | Clean token accuracy | Noisy token accuracy |
+| --- | --- | --- |
+| Original | 0.795288 | 0.795959 |
+| C | 0.804993 | 0.804688 |
+| D | 0.884460 | 0.884460 |
+
+These are decodability diagnostics, not generation-quality results. Full probe
+records and normalization identities are retained in
+`evidence/readout-{original,C,D}.json` and `evidence/normalization_owt_{C,D}.json`.
+
+Both arms then initialized fresh ELF-B models with the identical initial hash
+`7ef18e4d2f653a4ac286726855b0ead1e86002e01ac18747169b04b2cd068357`,
+generated their eight-sample smoke batches, and began the required five-epoch
+runs with finite logged losses. D's
 [first ELF recovery checkpoint audit](evidence/elf-D-checkpoint-500.json)
 verified finite model/EMA states, matching experiment identity, eight hashed
-optimizer shards, and eight RNG records at update 500. D's five-epoch training
-and final generation evaluation remain incomplete; refresh `RESULTS.md` for
-the latest observed progress. C was still completing adaptation at this audit.
+optimizer shards, and eight RNG records at update 500. Both five-epoch ELF
+runs and final generation evaluations remain incomplete; refresh `RESULTS.md`
+for the latest observed progress.
 
 The lightweight status recorder queries the job IDs in the submission manifest
 under `snow.research.er` every 45 seconds:
