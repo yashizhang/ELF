@@ -288,14 +288,16 @@ continuation. Their epoch and data-exposure counters match: each represents
 padding repeats under the verified sampler. These records have the same
 metadata and progress scope as the epoch-two records above.
 
-D subsequently saved its fourth full-epoch checkpoint at update 76,072 and
-continued into epoch five. Its [progress record](evidence/elf-D-epoch-4-progress.json)
-verifies saved epoch 4.0, matching experiment identity and scheduler counter,
-eight referenced optimizer files, the epoch-completion log, and finite
-continuation. The counters represent 38,948,736 source-row visits and
-38,948,864 example positions including 128 padding repeats under the verified
-sampler. This record has the same metadata and progress scope as the preceding
-milestone records.
+Both arms subsequently saved their fourth full-epoch checkpoints at update
+76,072 and continued into epoch five. Their
+[C](evidence/elf-C-epoch-4-progress.json) and
+[D](evidence/elf-D-epoch-4-progress.json) progress records verify saved epoch
+4.0, matching experiment identities and scheduler counters, eight referenced
+optimizer files per arm, the epoch-completion logs, and finite continuation.
+Their epoch and data-exposure counters match: each represents 38,948,736
+source-row visits and 38,948,864 example positions including 128 padding
+repeats under the verified sampler. These records have the same metadata and
+progress scope as the preceding milestone records.
 
 Audit an available full-epoch checkpoint in the CPU environment with:
 
