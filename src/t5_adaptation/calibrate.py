@@ -39,7 +39,7 @@ class PopulationMoments:
 
 
 @torch.no_grad()
-def calibrate(model, sequences, special_ids, device, *, ordinary_only, use_bf16, batch_size=16):
+def calibrate(model, sequences, special_ids, device, *, ordinary_only, use_bf16, batch_size=16, pad_to_length=None):
     model.eval()
     for p in model.parameters():
         p.requires_grad_(False)
@@ -47,7 +47,9 @@ def calibrate(model, sequences, special_ids, device, *, ordinary_only, use_bf16,
     token_count = 0
     for start in range(0, len(sequences), batch_size):
         batch = sequences[start:start + batch_size]
-        width = max(map(len, batch))
+        width = pad_to_length if pad_to_length is not None else max(map(len, batch))
+        if any(len(seq) > width for seq in batch):
+            raise ValueError("Calibration sequence exceeds the declared padded length")
         ids = torch.zeros((len(batch), width), dtype=torch.long, device=device)
         valid = torch.zeros_like(ids, dtype=torch.bool)
         for i, seq in enumerate(batch):
@@ -113,7 +115,8 @@ def main():
             raise ValueError("Existing normalization has different provenance")
         return
     stats = calibrate(model, sequences, tokenizer.all_special_ids, device,
-                      ordinary_only=args.kind == "c4", use_bf16=identity["use_bf16"])
+                      ordinary_only=args.kind == "c4", use_bf16=identity["use_bf16"],
+                      pad_to_length=identity["length"])
     result = stats | {"identity": identity, "model_state_hash": state_hash(model.state_dict())}
     result["content_hash"] = object_hash(result)
     atomic_json(output, result)

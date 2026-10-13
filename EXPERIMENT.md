@@ -15,6 +15,18 @@ are pinned in `requirements-adaptation-gpu.lock` and
 `requirements-adaptation.lock` (CPU). Setup does not modify a shared conda
 environment.
 
+The dataset reader uses **Datasets 4.0.0**, **PyArrow 17.0.0**, and
+**NumPy 1.26.4**. The downloaded OWT release uses the
+[Datasets `List` feature](https://huggingface.co/docs/datasets/v4.0.0/package_reference/main_classes#datasets.List),
+which the initial 2.21.0 reader could not deserialize. The initial PyArrow 26
+wheel also failed its NumPy runtime check. PyArrow 17's
+[documented dependencies](https://arrow.apache.org/docs/17.0/python/install.html#dependencies)
+permit the required NumPy 1.x environment. Both installed environments now
+match their corrected locks, and the actual OWT/ELF loader passes, including
+multiple worker processes and validity masks. The failed reader attempts are
+retained in `artifacts/shared/owt-preparation*.log`; they ran within the existing
+CPU allocation and never changed the downloaded token files.
+
 The runtime image lacks a system C++ compiler. `compiler-linux-64.lock`
 pins a shared conda-forge GCC/G++ 11.4.0 toolchain with glibc 2.17 sysroot;
 the GPU setup installs it under `artifacts/compiler`. EAI launch configs set
@@ -76,6 +88,15 @@ scalar mean/std remain fixed for both arms. ELF later computes a separate
 per-encoder BF16 OWT normalization on the same original OWT rows 0–4095,
 at length 1024, using the upstream validity-mask convention, including EOS.
 Exported encoders always return raw T5 states.
+
+OWT contains **9,737,184 examples** and **9,316,215,849 stored tokens**;
+a complete scan found lengths 2–1024 and token IDs 1–31999, all within the
+unchanged tokenizer. Each full ELF epoch has 19,018 updates and 32 prefix
+duplicates to fill its last global batch: five epochs require **95,090 updates**.
+See `evidence/owt-data-manifest.json` and `evidence/owt-loader-check.json`.
+All OWT calibration batches pad to exactly 1024 positions, even when the
+longest sequence in a batch is shorter; additional padding is excluded from
+the population moments, while original EOS positions remain included.
 
 The single DDP-wrapped project module implements:
 

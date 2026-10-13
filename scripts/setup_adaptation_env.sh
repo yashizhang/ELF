@@ -31,4 +31,4 @@ fi
 if [[ "$MODE" == gpu && ! -x artifacts/compiler/bin/x86_64-conda-linux-gnu-c++ ]]; then
   micromamba create -y -p "$PWD/artifacts/compiler" --file compiler-linux-64.lock
 fi
-"$ENV_PATH/bin/python" -c 'import sys, torch, transformers; print(sys.version); print(torch.__version__, torch.version.cuda, transformers.__version__)'
+"$ENV_PATH/bin/python" -c 'import sys, torch, transformers, numpy, pyarrow, datasets; from datasets import List; print(sys.version); print(torch.__version__, torch.version.cuda, transformers.__version__); print("Arrow/dataset reader:", numpy.__version__, pyarrow.__version__, datasets.__version__)'

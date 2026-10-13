@@ -17,7 +17,7 @@ from t5_adaptation.corruption import (SpanCollator, corrupt_source, random_spans
 from t5_adaptation.objectives import AdaptationObjective, make_sigreg
 from t5_adaptation import checkpoint
 from t5_adaptation.export import export_encoder, verify_reload
-from t5_adaptation.calibrate import PopulationMoments
+from t5_adaptation.calibrate import PopulationMoments, calibrate
 from t5_adaptation.train import optimizer_for
 
 
@@ -275,6 +275,26 @@ def test_streaming_population_moments():
     assert result["coordinate_count"] == data.numel()
     assert result["mean"] == pytest.approx(data.mean().item(), abs=1e-14)
     assert result["std"] == pytest.approx(data.std(unbiased=False).item(), abs=1e-14)
+
+
+def test_calibration_uses_fixed_width_and_valid_positions_including_eos():
+    from types import SimpleNamespace
+    class Encoder(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.widths = []
+
+        def forward(self, input_ids, attention_mask):
+            self.widths.append(input_ids.shape[1])
+            return SimpleNamespace(last_hidden_state=input_ids[..., None].expand(-1, -1, 4).float())
+
+    model = Encoder()
+    result = calibrate(model, [[2, 4, 1], [3, 1]], [0, 1, 2], torch.device("cpu"),
+                       ordinary_only=False, use_bf16=False, batch_size=1, pad_to_length=8)
+    assert model.widths == [8, 8]
+    assert result["token_count"] == 5 and result["coordinate_count"] == 20
+    assert result["mean"] == pytest.approx(2.2)
+    assert result["std"] == pytest.approx(1.36 ** 0.5)
 
 
 def test_t5_bias_and_normalization_have_no_weight_decay():

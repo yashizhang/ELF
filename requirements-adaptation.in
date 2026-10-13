@@ -3,7 +3,8 @@ numpy==1.26.4
 PyYAML==6.0.2
 tqdm==4.67.1
 einops==0.8.1
-datasets==2.21.0
+datasets==4.0.0
+pyarrow==17.0.0
 huggingface-hub==0.26.5
 tokenizers==0.19.1
 sentencepiece==0.2.0
