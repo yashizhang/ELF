@@ -1,0 +1,126 @@
+{
+  "arms": [
+    {
+      "account": "snow.research.er",
+      "arm": "C",
+      "checkpoint_saved_updates_at_audit": 2000,
+      "checkpoint_sha256_at_audit": "39871c0b6083b047cb1530bf8ffa5fa16014f5fc8c43f56f95952a97442f142a",
+      "checks": {
+        "checkpoint_metadata_and_digest": true,
+        "common_data_and_normalization": true,
+        "finite_initial_diagnostics_at_569_and_1024": true,
+        "finite_model_parameters": true,
+        "fixed_budget_and_lambda": true,
+        "source_hashes": true
+      },
+      "gpu_memory_bytes": [
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584
+      ],
+      "gpus": [
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3"
+      ],
+      "initial_encoder_state_hash": "a14e4e54385af36ea1cf4dd2a98dd7ae361805724af8a0e6f1fee65dc7e9576c",
+      "job_id": "c185b27b-f543-4065-8b3c-d8fa3f419fc5",
+      "node": "dgx-14",
+      "rank_rng_count": 8,
+      "reader_packages": {
+        "datasets": "4.0.0",
+        "numpy": "1.26.4",
+        "pyarrow": "17.0.0"
+      },
+      "release": "/home/toolkit/ELF/artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "resources": {
+        "cpu": 64,
+        "cpuModel": "",
+        "gpu": 8,
+        "gpuCudaVersion": 0,
+        "gpuMem": 0,
+        "gpuModel": "H100",
+        "gpuTensorCores": false,
+        "inference": false,
+        "mem": 512,
+        "replicas": 0
+      },
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "state_at_audit": "RUNNING",
+      "verified_checkpoint": "/home/toolkit/ELF/artifacts/C/adaptation/latest.pt"
+    },
+    {
+      "account": "snow.research.er",
+      "arm": "D",
+      "checkpoint_saved_updates_at_audit": 2500,
+      "checkpoint_sha256_at_audit": "2c62625a05bd0df67b1b67e46aee5a1881e9aeca28f5a1e9c6feb6aef211f1b3",
+      "checks": {
+        "checkpoint_metadata_and_digest": true,
+        "common_data_and_normalization": true,
+        "finite_initial_diagnostics_at_569_and_1024": true,
+        "finite_model_parameters": true,
+        "fixed_budget_and_lambda": true,
+        "source_hashes": true
+      },
+      "gpu_memory_bytes": [
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584,
+        84929347584
+      ],
+      "gpus": [
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3",
+        "NVIDIA H100 80GB HBM3"
+      ],
+      "initial_encoder_state_hash": "a14e4e54385af36ea1cf4dd2a98dd7ae361805724af8a0e6f1fee65dc7e9576c",
+      "job_id": "591cc3b5-32f9-4aef-8c17-2dfd0841fa7a",
+      "node": "dgx-09",
+      "rank_rng_count": 8,
+      "reader_packages": {
+        "datasets": "4.0.0",
+        "numpy": "1.26.4",
+        "pyarrow": "17.0.0"
+      },
+      "release": "/home/toolkit/ELF/artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "resources": {
+        "cpu": 64,
+        "cpuModel": "",
+        "gpu": 8,
+        "gpuCudaVersion": 0,
+        "gpuMem": 0,
+        "gpuModel": "H100",
+        "gpuTensorCores": false,
+        "inference": false,
+        "mem": 512,
+        "replicas": 0
+      },
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "state_at_audit": "RUNNING",
+      "verified_checkpoint": "/home/toolkit/ELF/artifacts/D/adaptation/latest.pt"
+    }
+  ],
+  "audited_at_utc": "2026-10-13T01:33:59.768068+00:00",
+  "data_hash": "76d5b9225f0e26da70191cbae80063872d2151fb757278aafe8fecbeab0f37b3",
+  "normalization_hash": "b094ff4d76affa91f330c2a0542230a82f68ac910700664beb560698ff8457cc",
+  "scope": "Live launch, provenance, initial diagnostics, and one committed recovery checkpoint per arm; full adaptation, ELF training, and generation evaluation remain incomplete."
+}

@@ -180,6 +180,35 @@ Do not start duplicate controllers. The controller records its observations
 in `artifacts/preparation-controller.json`; its process and scheduler job
 must still be checked when deciding whether work is live.
 
+Shared preparation completed successfully, and the controller submitted both
+full pipelines on 2026-10-13 at 01:24 UTC under `snow.research.er`:
+
+| Arm | Scheduler job | Initial node | Resources |
+| --- | --- | --- | --- |
+| C | `c185b27b-f543-4065-8b3c-d8fa3f419fc5` | `dgx-14` | 8 H100, 64 CPU, 512 GB RAM |
+| D | `591cc3b5-32f9-4aef-8c17-2dfd0841fa7a` | `dgx-09` | 8 H100, 64 CPU, 512 GB RAM |
+
+Both execute immutable source release
+`1591a0a1719e3e7422439cf366f8229b63fcafd4`. The initial live audit in
+[`evidence/full-pipeline-launch.json`](evidence/full-pipeline-launch.json)
+verified eight physical H100s per arm, identical original encoder hashes,
+shared data/calibration identity, finite initial diagnostics, and readable
+recovery checkpoints with matching SHA-256 hashes and all eight RNG states.
+The audited checkpoints were C update 2,000 and D update 2,500; these are
+historical launch checks, not final experiment results. The complete C4
+[training](evidence/c4-train-manifest.json) and
+[validation](evidence/c4-validation-manifest.json) manifests retain exact
+source shards, packing boundaries, document counts, and content hashes.
+Refresh the report below for later progress; report-only commits do not
+change the source release used by running jobs.
+
+Both arms subsequently saved their first milestone at update 3,815
+(1,000,079,360 nominal positions). The
+[`first-billion-positions.json`](evidence/first-billion-positions.json) audit
+records verified checkpoint hashes, identical data/corruption counters, and
+finite held-out diagnostics at both sequence lengths. These diagnostics are
+intermediate measurements; final ELF generation remains the primary outcome.
+
 Each pipeline stage retains an independent start/end record in
 `stage_attempts/`. A restart cannot erase an unfinished attempt's start record.
 Reports use the scheduler run's end time for an attempt terminated before it

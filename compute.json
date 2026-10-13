@@ -1,25 +1,25 @@
 {
   "accounting": "Scheduler allocation totals include idle/overhead time. Stage subtotals describe the same allocations and must not be added again.",
-  "allocated_gpu_hours": 0.41777777777777775,
+  "allocated_gpu_hours": 4.654539415555556,
   "scheduler_runs": [
     {
       "account": "snow.research.er",
       "allocated_gpu_hours": 0.0,
       "arm_or_stage": "shared_preparation",
       "cpu": 32,
-      "ended_at": null,
-      "exit_code": null,
+      "ended_at": 1791854639.0,
+      "exit_code": 0,
       "gpu_model_filter": "",
       "gpus": 0,
       "job_id": "28b2739a-13f8-48cf-b4f9-e2239b524332",
       "node": "dgx-09",
-      "provisional": true,
+      "provisional": false,
       "ram_gb": 128,
       "run_id": "0d69dfc6-2201-4d42-86de-4e695f168cb3",
       "started_at": 1791847814.0,
-      "state": "RUNNING",
+      "state": "SUCCEEDED",
       "state_info": "",
-      "wall_seconds": 3988.778965
+      "wall_seconds": 6825.0
     },
     {
       "account": "snow.research.er",
@@ -77,7 +77,74 @@
       "state": "SUCCEEDED",
       "state_info": "",
       "wall_seconds": 88.0
+    },
+    {
+      "account": "snow.research.er",
+      "allocated_gpu_hours": 2.1302560333333336,
+      "arm_or_stage": "C",
+      "cpu": 64,
+      "ended_at": null,
+      "exit_code": null,
+      "gpu_model_filter": "H100",
+      "gpus": 8,
+      "job_id": "c185b27b-f543-4065-8b3c-d8fa3f419fc5",
+      "node": "dgx-14",
+      "provisional": true,
+      "ram_gb": 512,
+      "run_id": "aa17b8e4-9da4-44d0-8dbb-ebf8fcae6266",
+      "started_at": 1791854687.0,
+      "state": "RUNNING",
+      "state_info": "",
+      "wall_seconds": 958.615215
+    },
+    {
+      "account": "snow.research.er",
+      "allocated_gpu_hours": 2.106505604444444,
+      "arm_or_stage": "D",
+      "cpu": 64,
+      "ended_at": null,
+      "exit_code": null,
+      "gpu_model_filter": "H100",
+      "gpus": 8,
+      "job_id": "591cc3b5-32f9-4aef-8c17-2dfd0841fa7a",
+      "node": "dgx-09",
+      "provisional": true,
+      "ram_gb": 512,
+      "run_id": "79ac92a2-6060-4ce7-b7f2-ac69d29eb075",
+      "started_at": 1791854698.0,
+      "state": "RUNNING",
+      "state_info": "",
+      "wall_seconds": 947.927522
     }
   ],
-  "stage_attempts": []
+  "stage_attempts": [
+    {
+      "allocated_gpu_hours": 2.0816269482506646,
+      "allocated_gpus": 8,
+      "arm": "C",
+      "ended": null,
+      "exit_code": null,
+      "provisional": true,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "adaptation",
+      "started": 1791854709.222836,
+      "state": "running",
+      "timing_source": "stage_process",
+      "wall_seconds": 936.7321267127991
+    },
+    {
+      "allocated_gpu_hours": 2.0595295270284018,
+      "allocated_gpus": 8,
+      "arm": "D",
+      "ended": null,
+      "exit_code": null,
+      "provisional": true,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "adaptation",
+      "started": 1791854719.167588,
+      "state": "running",
+      "timing_source": "stage_process",
+      "wall_seconds": 926.7882871627808
+    }
+  ]
 }

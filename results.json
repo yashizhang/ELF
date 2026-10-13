@@ -1,8 +1,12 @@
 {
   "B": "intentionally omitted",
   "arm_status": {
-    "C": "not_submitted",
-    "D": "not_submitted"
+    "C": {
+      "adaptation": "running"
+    },
+    "D": {
+      "adaptation": "running"
+    }
   },
   "complete": false,
   "recorded_completion_checks": {

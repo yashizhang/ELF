@@ -1,1 +1,3 @@
-
+arm,stage,state,started,ended,allocated_gpus,wall_seconds,allocated_gpu_hours,exit_code,source_commit,provisional,timing_source
+C,adaptation,running,1791854709.222836,,8,936.7321267127991,2.0816269482506646,,1591a0a1719e3e7422439cf366f8229b63fcafd4,True,stage_process
+D,adaptation,running,1791854719.167588,,8,926.7882871627808,2.0595295270284018,,1591a0a1719e3e7422439cf366f8229b63fcafd4,True,stage_process
