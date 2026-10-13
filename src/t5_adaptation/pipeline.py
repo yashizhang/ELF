@@ -7,6 +7,7 @@ import signal
 import subprocess
 import sys
 import time
+import uuid
 
 import torch
 import yaml
@@ -48,9 +49,15 @@ def run_stage(name, command, arm_root, verify, allocated_gpus=8):
         verify()
         return
     started = time.time()
+    attempt_path = arm_root / "stage_attempts" / f"{name}-{uuid.uuid4().hex}.json"
     record = {"stage": name, "state": "running", "started": started, "command": command,
               "allocated_gpus": allocated_gpus, "source_commit": runtime_info()["git_commit"]}
-    atomic_json(status_path, record)
+    def persist():
+        # Keep the start record even if the process is killed before it can
+        # append an end event, or a scheduler restart replaces stage status.
+        atomic_json(attempt_path, record)
+        atomic_json(status_path, record)
+    persist()
     child = None
     interrupted = [False]
     def terminate(signum, frame):
@@ -65,19 +72,22 @@ def run_stage(name, command, arm_root, verify, allocated_gpus=8):
         code = child.wait()
     ended = time.time()
     record.update(ended=ended, wall_seconds=ended - started, gpu_hours=(ended - started) * allocated_gpus / 3600,
-                  exit_code=code, state="preempted" if interrupted[0] or code == 75 else "failed" if code else "completed")
+                  exit_code=code, interrupted=interrupted[0],
+                  state="completed" if code == 0 else "preempted" if interrupted[0] or code == 75 else "failed")
     if code == 0:
         try:
             verify()
         except Exception as exc:
             record.update(state="failed", verification_error=str(exc))
-            atomic_json(status_path, record)
+            persist()
             append_json(arm_root / "compute.jsonl", record)
             raise
-    atomic_json(status_path, record)
+    persist()
     append_json(arm_root / "compute.jsonl", record)
+    if interrupted[0] or code == 75:
+        raise SystemExit(75)
     if code:
-        raise SystemExit(75 if record["state"] == "preempted" else 1)
+        raise SystemExit(1)
 
 
 def require_json(path, field=None, value=None):

@@ -5,6 +5,23 @@
     "D": "not_submitted"
   },
   "complete": false,
+  "recorded_completion_checks": {
+    "C": {
+      "five_full_elf_epochs": false,
+      "fixed_adaptation_budget": false,
+      "fresh_frozen_elf": false,
+      "pipeline_finished": false,
+      "six_final_evaluations": false
+    },
+    "D": {
+      "five_full_elf_epochs": false,
+      "fixed_adaptation_budget": false,
+      "fresh_frozen_elf": false,
+      "pipeline_finished": false,
+      "six_final_evaluations": false
+    },
+    "same_fresh_elf_initialization": false
+  },
   "rows": [
     {
       "arm": "A",

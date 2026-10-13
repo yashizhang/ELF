@@ -10,6 +10,19 @@ from .data import PackedC4
 from .objectives import dropout_disabled
 
 
+def covariance_spectrum(z):
+    centered = z - z.mean(0)
+    eigen = torch.linalg.eigvalsh(centered.T @ centered / len(z)).clamp_min(0)
+    total = eigen.sum()
+    if total.item() == 0:
+        # A constant representation is a valid negative diagnostic result.
+        # Avoid 0/0 probabilities that would abort a finite training run.
+        return eigen, 0.0
+    probabilities = eigen / total
+    effective_rank = (-(probabilities * probabilities.clamp_min(1e-30).log()).sum()).exp().item()
+    return eigen, effective_rank
+
+
 @torch.no_grad()
 def diagnose(objective, shared, tokenizer, cfg, device):
     rng = rng_state()
@@ -42,10 +55,7 @@ def diagnose(objective, shared, tokenizer, cfg, device):
             if rank() == 0:
                 raw = torch.cat(pieces).double().cpu()
                 z = (raw - objective.mu0.item()) / objective.s0.item()
-                centered = z - z.mean(0)
-                eigen = torch.linalg.eigvalsh(centered.T @ centered / len(z)).clamp_min(0)
-                probabilities = eigen / eigen.sum()
-                effective_rank = (-(probabilities * probabilities.clamp_min(1e-30).log()).sum()).exp().item()
+                eigen, effective_rank = covariance_spectrum(z)
                 results[str(source_length + 1)] = {
                     "task_name": "span_ce" if objective.arm == "C" else "aligned_consistency",
                     "task_loss": output["task_global"].item(), "clean_sigreg": clean_sigreg,

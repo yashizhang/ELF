@@ -1,0 +1,16 @@
+Disposable CPU fixtures exercised t5_adaptation.pipeline.run_stage and t5_adaptation.report.summarize_stage_compute.
+Exit code: 0 for each fixture.
+
+Verified:
+- The stage start record exists before output verification.
+- Successful stages preserve their attempt record and are reused without re-executing the child.
+- A nonzero child exit is recorded and propagated as a pipeline failure.
+- An unfinished stage attempt is assigned its matching scheduler run's end time, labeled scheduler_run_end.
+- SIGTERM followed by a successful child exit preserves the verified completed stage and exits the pipeline with resumable code 75.
+- The report renders current incomplete artifacts without inventing C/D measurements.
+
+Diagnostic numerical fixtures:
+- Constant features: finite covariance spectrum and effective rank 0.
+- One varying coordinate: effective rank 1.
+
+These are software checks, not experimental training or evaluation measurements.

@@ -2,9 +2,9 @@
 
 Experiment status: incomplete — training/evaluation requirements remain.
 
-| Arm | Source | Configuration | GenPPL | Mean sample entropy | Status |
+| Arm | Source | Configuration | GenPPL ± SE | Mean sample entropy ± SE | Status |
 | --- | --- | --- | --- | --- | --- |
-| A | published_external | primary | 24.0800 | 5.1500 | published |
+| A | published_external | primary | 24.0800 ± 0.1600 | 5.1500 ± 0.0020 | published |
 | C | measured_this_project | primary | — | — | incomplete |
 | C | measured_this_project | secondary | — | — | incomplete |
 | D | measured_this_project | primary | — | — | incomplete |
@@ -20,8 +20,15 @@ C versus A: unavailable until required C/D measurements finish.
 D versus A: unavailable until required C/D measurements finish.
 C versus D: unavailable until required C/D measurements finish.
 
-The matched 500-update token-readout diagnostics are not all complete yet; see `diagnostics.json`. Primary held-out representation diagnostics run at initialization, 1B, 3B, and 10B nominal positions.
+| Arm | Saved nominal positions | Saved T5 updates | Completed ELF epochs | Completed ELF updates |
+| --- | --- | --- | --- | --- |
+| C | — | — | — | — |
+| D | — | — | — | — |
 
-Compute includes preparation, failed attempts, and pilots. Running-job totals are provisional. See `compute.csv`, `compute.json`, and per-arm stage manifests for measured allocation time; queued time is excluded.
+`training.json/csv` distinguish saved checkpoints from observed progress and retain actual source/target counts, encoder passes, corruption rate/span length, OWT normalization, initialization hashes, and full-epoch padding repeats.
+
+The matched 500-update token-readout diagnostics are not all complete yet; see `diagnostics.json`. Held-out representation summaries and covariance spectra appear in `diagnostics.json`; `diagnostics.csv` provides the scalar milestones at both 569 and 1024 positions. C's span CE and D's consistency are different objectives and are not comparable language-model losses.
+
+Measured scheduler allocation so far: **0.418 GPU hours**, including preparation, failed attempts, and pilots. Running-job totals are provisional; queued time is excluded. `compute.csv/json` provide allocation totals and `stage_compute.csv` separates adaptation, ELF, calibration, and evaluation attempts. Stage totals are part of the allocation total and must not be added a second time.
 
 Current arm state: C `not_submitted`; D `not_submitted`.

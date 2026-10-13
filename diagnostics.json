@@ -1,11 +1,14 @@
 {
-  "C": {
-    "status": "not_run_yet"
+  "readout": {
+    "C": {
+      "status": "not_run_yet"
+    },
+    "D": {
+      "status": "not_run_yet"
+    },
+    "original": {
+      "status": "not_run_yet"
+    }
   },
-  "D": {
-    "status": "not_run_yet"
-  },
-  "original": {
-    "status": "not_run_yet"
-  }
+  "representations": []
 }

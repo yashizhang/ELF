@@ -159,6 +159,13 @@ Do not start duplicate controllers. The controller records its observations
 in `artifacts/preparation-controller.json`; its process and scheduler job
 must still be checked when deciding whether work is live.
 
+Each pipeline stage retains an independent start/end record in
+`stage_attempts/`. A restart cannot erase an unfinished attempt's start record.
+Reports use the scheduler run's end time for an attempt terminated before it
+could write its own end record, and label that timing source explicitly.
+If a stage finishes successfully while a termination signal is being handled,
+its verified output is retained and the pipeline exits before the next stage.
+
 The submitter checks the explicit ER account, eight H100s, completed shared
 data and GPU checks. It archives the committed project into an immutable
 release directory and records job IDs, config/spec and release. Each arm
@@ -210,10 +217,23 @@ PYTHONPATH=src .venv/bin/python -m t5_adaptation.report
 ```
 
 This refreshes `RESULTS.md`, `results.json/csv`, `compute.json/csv`, and
-`diagnostics.json` from actual artifacts and scheduler state. A remains
+`diagnostics.json/csv` from actual artifacts and scheduler state.
+`training.json/csv` retain saved and observed update counts, token accounting,
+normalization, initialization hashes, logged throughput and rank-zero peak
+memory. `evaluation.csv` records per-seed scores and explicit scored/empty
+counts. `stage_compute.csv` provides stage subtotals within scheduler allocation
+totals; these two views must not be added together. The reporting completion
+flag requires both pipeline completion records, the fixed adaptation budgets,
+five ELF epochs, matching fresh initialization hashes, and six evaluations per
+arm. Final acceptance still includes the requirement-by-requirement audit in
+`GOAL.md`.
+
+A remains
 `published_external`; C/D become measurements only when their saved final
 evaluations exist. B is omitted. A negative result still completes the
 experiment; script completion, a queued job, or the pilot alone does not.
+Constant held-out representations receive effective rank zero, so a poor
+but finite diagnostic does not itself trigger a training failure.
 
 ## File changes
 

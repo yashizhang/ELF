@@ -1,4 +1,5 @@
 {
+  "accounting": "Scheduler allocation totals include idle/overhead time. Stage subtotals describe the same allocations and must not be added again.",
   "allocated_gpu_hours": 0.41777777777777775,
   "scheduler_runs": [
     {
@@ -6,6 +7,7 @@
       "allocated_gpu_hours": 0.0,
       "arm_or_stage": "shared_preparation",
       "cpu": 32,
+      "ended_at": null,
       "exit_code": null,
       "gpu_model_filter": "",
       "gpus": 0,
@@ -14,15 +16,17 @@
       "provisional": true,
       "ram_gb": 128,
       "run_id": "0d69dfc6-2201-4d42-86de-4e695f168cb3",
+      "started_at": 1791847814.0,
       "state": "RUNNING",
       "state_info": "",
-      "wall_seconds": 2661.655866
+      "wall_seconds": 3988.778965
     },
     {
       "account": "snow.research.er",
       "allocated_gpu_hours": 0.22666666666666666,
       "arm_or_stage": "preflight",
       "cpu": 64,
+      "ended_at": 1791848610.0,
       "exit_code": 0,
       "gpu_model_filter": "H100",
       "gpus": 8,
@@ -31,6 +35,7 @@
       "provisional": false,
       "ram_gb": 512,
       "run_id": "7da52098-fae3-43f9-821e-3568ec750456",
+      "started_at": 1791848508.0,
       "state": "SUCCEEDED",
       "state_info": "",
       "wall_seconds": 102.0
@@ -40,6 +45,7 @@
       "allocated_gpu_hours": 0.16666666666666666,
       "arm_or_stage": "preflight",
       "cpu": 64,
+      "ended_at": 1791848423.0,
       "exit_code": 1,
       "gpu_model_filter": "H100",
       "gpus": 8,
@@ -48,6 +54,7 @@
       "provisional": false,
       "ram_gb": 512,
       "run_id": "24979d70-d0dc-4f77-93a7-9a24b18d6401",
+      "started_at": 1791848348.0,
       "state": "FAILED",
       "state_info": "Job main process exited with 1",
       "wall_seconds": 75.0
@@ -57,6 +64,7 @@
       "allocated_gpu_hours": 0.024444444444444446,
       "arm_or_stage": "compile_check",
       "cpu": 16,
+      "ended_at": 1791850096.0,
       "exit_code": 0,
       "gpu_model_filter": "H100",
       "gpus": 1,
@@ -65,9 +73,11 @@
       "provisional": false,
       "ram_gb": 128,
       "run_id": "eb80329d-5f58-40b5-8a3e-b56b9d76d552",
+      "started_at": 1791850008.0,
       "state": "SUCCEEDED",
       "state_info": "",
       "wall_seconds": 88.0
     }
-  ]
+  ],
+  "stage_attempts": []
 }
