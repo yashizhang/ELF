@@ -29,6 +29,6 @@ C versus D: unavailable until required C/D measurements finish.
 
 The matched 500-update frozen-encoder readout diagnostic is complete for original/C/D; see `diagnostics.json`. Held-out representation summaries and covariance spectra appear in `diagnostics.json`; `diagnostics.csv` provides the scalar milestones at both 569 and 1024 positions. C's span CE and D's consistency are different objectives and are not comparable language-model losses.
 
-Measured scheduler allocation so far: **313.636 GPU hours**, including preparation, failed attempts, and pilots. Running-job totals are provisional; queued time is excluded. `compute.csv/json` provide allocation totals and `stage_compute.csv` separates adaptation, ELF, calibration, and evaluation attempts. Stage totals are part of the allocation total and must not be added a second time.
+Measured scheduler allocation so far: **325.443 GPU hours**, including preparation, failed attempts, and pilots. Running-job totals are provisional; queued time is excluded. `compute.csv/json` provide allocation totals and `stage_compute.csv` separates adaptation, ELF, calibration, and evaluation attempts. Stage totals are part of the allocation total and must not be added a second time.
 
 Current arm state: C `{'adaptation': 'completed', 'elf': 'running', 'export': 'completed', 'owt_normalization': 'completed', 'readout': 'completed'}`; D `{'adaptation': 'completed', 'elf': 'running', 'export': 'completed', 'original_readout': 'completed', 'owt_normalization': 'completed', 'readout': 'completed'}`.

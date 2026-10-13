@@ -1,0 +1,98 @@
+{
+  "arm": "D",
+  "checked_at_utc": "2026-10-13T21:43:21.182913+00:00",
+  "checkpoint": "artifacts/D/elf/checkpoint_76072",
+  "checkpoint_bytes": 889413424,
+  "checkpoint_epoch": 4.0,
+  "checkpoint_sha256": "5c6e2b4fd7b223a332f96b3ff123e8530481326ee6e7d9ca06eda1b533e98331",
+  "checkpoint_step": 76072,
+  "data_exposure_evidence": "Exposure is inferred from checkpoint counters and the separately verified full-epoch sampler, not a per-example runtime trace.",
+  "dataset_examples": 9737184,
+  "epoch_boundary_log": "INFO - __main__ - Saved checkpoint at epoch 4 (step 76072)",
+  "epoch_five_progress_log": "Epoch 5:   1%|          | 196/19018 [03:02<4:02:33,  1.29it/s, ce=0.1944, l2=1.0877, loss=0.9085, lr=2.00e-03, sps=1.1, step=76200]",
+  "example_positions_in_completed_epochs": 38948864,
+  "experiment_identity_sha256": "a21c5de2e2541baf729062db58352c7ea7ddcc56e1f2e5d3bd477f1d94837974",
+  "full_training_complete": false,
+  "global_batch_size": 512,
+  "grad_accum_steps": 1,
+  "learning_rates": [
+    0.002
+  ],
+  "padding_repeats_in_completed_epochs": 128,
+  "post_checkpoint_status": {
+    "ce": 0.19439800083637238,
+    "epoch": 4.006730465874435,
+    "eta_seconds": 16724.092851638794,
+    "invocation_wall_seconds": 66039.44444213435,
+    "l2": 1.0877143144607544,
+    "loss": 0.9085366725921631,
+    "max_memory_bytes": 62168318464,
+    "state": "running",
+    "step": 76200,
+    "steps_per_second": 1.1295081991935347
+  },
+  "rank_rng_records": 8,
+  "raw_progress_artifact": "artifacts/elf-D-epoch-4-progress.json",
+  "raw_progress_sha256": "8ef2e6643613b8e3666b9fd39c55d80a7f635b9b1b3002f922bc8796b8c18d82",
+  "referenced_optimizer_files": [
+    {
+      "bytes": 52484782,
+      "file": "optimizer_76072_rank0_685340f7513e452d982ce6765445d3b8.pt",
+      "rank": 0
+    },
+    {
+      "bytes": 51174062,
+      "file": "optimizer_76072_rank1_2869e6068e364b4cb70466be642a4a54.pt",
+      "rank": 1
+    },
+    {
+      "bytes": 50125168,
+      "file": "optimizer_76072_rank2_e3c653e11e1346caa754b0a7f7bf6646.pt",
+      "rank": 2
+    },
+    {
+      "bytes": 49338736,
+      "file": "optimizer_76072_rank3_68901a2693984c179ec20efacac3deac.pt",
+      "rank": 3
+    },
+    {
+      "bytes": 39901552,
+      "file": "optimizer_76072_rank4_e4e2c8694a434154a2911794f8eac937.pt",
+      "rank": 4
+    },
+    {
+      "bytes": 39508336,
+      "file": "optimizer_76072_rank5_b9ae13f5d0884084b975456c6db8483f.pt",
+      "rank": 5
+    },
+    {
+      "bytes": 104855920,
+      "file": "optimizer_76072_rank6_f8439e5ed2b9448a94267d5689f516e6.pt",
+      "rank": 6
+    },
+    {
+      "bytes": 41212272,
+      "file": "optimizer_76072_rank7_914a2ccb2dcd45039a92bad3f5beec04.pt",
+      "rank": 7
+    }
+  ],
+  "required_epochs": 5,
+  "required_updates": 95090,
+  "scheduler_last_epoch": 76072,
+  "scheduler_observation": {
+    "account": "snow.research.er",
+    "cpu": 64,
+    "gpus": 8,
+    "job_id": "591cc3b5-32f9-4aef-8c17-2dfd0841fa7a",
+    "node": "dgx-09",
+    "ram_gb": 512,
+    "recorded_at_utc": "2026-10-13T21:43:23.036667+00:00",
+    "run_id": "79ac92a2-6060-4ce7-b7f2-ac69d29eb075",
+    "started_at": 1791854698,
+    "state": "RUNNING"
+  },
+  "source_row_visits_in_completed_epochs": 38948736,
+  "tensor_and_optimizer_shard_content_audit": "Not performed for this progress record.",
+  "updates_per_epoch": 19018,
+  "verification_scope": "Saved checkpoint identity and counters, referenced optimizer-file presence, epoch completion log, and finite continuation status."
+}
