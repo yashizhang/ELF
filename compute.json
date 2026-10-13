@@ -1,6 +1,6 @@
 {
   "accounting": "Scheduler allocation totals include idle/overhead time. Stage subtotals describe the same allocations and must not be added again.",
-  "allocated_gpu_hours": 216.22415868444443,
+  "allocated_gpu_hours": 226.01207119333333,
   "scheduler_runs": [
     {
       "account": "snow.research.er",
@@ -80,7 +80,7 @@
     },
     {
       "account": "snow.research.er",
-      "allocated_gpu_hours": 107.91504760444444,
+      "allocated_gpu_hours": 112.80897921555555,
       "arm_or_stage": "C",
       "cpu": 64,
       "ended_at": null,
@@ -95,11 +95,11 @@
       "started_at": 1791854687.0,
       "state": "RUNNING",
       "state_info": "",
-      "wall_seconds": 48561.771422
+      "wall_seconds": 50764.040647
     },
     {
       "account": "snow.research.er",
-      "allocated_gpu_hours": 107.89133330222222,
+      "allocated_gpu_hours": 112.78531419999999,
       "arm_or_stage": "D",
       "cpu": 64,
       "ended_at": null,
@@ -114,7 +114,7 @@
       "started_at": 1791854698.0,
       "state": "RUNNING",
       "state_info": "",
-      "wall_seconds": 48551.099986
+      "wall_seconds": 50753.39139
     }
   ],
   "stage_attempts": [
@@ -175,7 +175,7 @@
       "wall_seconds": 22.679199695587158
     },
     {
-      "allocated_gpu_hours": 88.41802030033536,
+      "allocated_gpu_hours": 93.31197896904416,
       "allocated_gpus": 8,
       "arm": "C",
       "ended": null,
@@ -186,7 +186,7 @@
       "started": 1791863461.0827444,
       "state": "running",
       "timing_source": "stage_process",
-      "wall_seconds": 39788.10913515091
+      "wall_seconds": 41990.39053606987
     },
     {
       "allocated_gpu_hours": 15.238999694188436,
@@ -259,7 +259,7 @@
       "wall_seconds": 19.72878408432007
     },
     {
-      "allocated_gpu_hours": 92.43194754017723,
+      "allocated_gpu_hours": 97.3259052795834,
       "allocated_gpus": 8,
       "arm": "D",
       "ended": null,
@@ -270,7 +270,7 @@
       "started": 1791861654.8187637,
       "state": "running",
       "timing_source": "stage_process",
-      "wall_seconds": 41594.37639307976
+      "wall_seconds": 43796.65737581253
     }
   ]
 }
