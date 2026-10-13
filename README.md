@@ -2,6 +2,10 @@
 
 PyTorch version of [ELF: Embedded Language Flows](https://arxiv.org/abs/2605.10938).
 
+The T5-small SIGReg C/D experiment is documented in [EXPERIMENT.md](EXPERIMENT.md),
+with the agreed scope in [GOAL.md](GOAL.md) and current measured status in
+[RESULTS.md](RESULTS.md).
+
 ## Installation
 
 Create a conda environment named `elf` and install the dependencies:

@@ -6,6 +6,8 @@ image: docker.io/pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf
 data: snow.home.yashi_zhang:/home/toolkit:rw
 repo: /home/toolkit/ELF
 storage: /home/toolkit/ELF/artifacts
+cc: /home/toolkit/ELF/artifacts/compiler/bin/x86_64-conda-linux-gnu-cc
+cxx: /home/toolkit/ELF/artifacts/compiler/bin/x86_64-conda-linux-gnu-c++
 gpu_model: H100
 gpus_per_arm: 8
 cpu_per_arm: 64

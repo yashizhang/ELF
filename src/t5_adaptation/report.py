@@ -19,12 +19,13 @@ PUBLISHED_A = {
 
 
 def summarize_jobs(artifacts):
-    paths = [artifacts / "shared/preparation-job.json", *sorted((artifacts / "preflight").rglob("job.json"))]
+    paths = [artifacts / "shared/preparation-job.json", *sorted((artifacts / "preflight").rglob("job.json")),
+             *sorted((artifacts / "compile-check").rglob("job.json"))]
     job_ids = {}
     for path in paths:
         if path.exists():
             job = read_json(path)
-            job_ids[job["id"]] = "shared_preparation" if "shared" in path.parts else "preflight"
+            job_ids[job["id"]] = "shared_preparation" if "shared" in path.parts else "compile_check" if "compile-check" in path.parts else "preflight"
     submission = artifacts / "submission.json"
     if submission.exists():
         for arm, record in read_json(submission)["arms"].items():
@@ -90,7 +91,7 @@ def main():
     for name, table in (("results.csv", rows), ("compute.csv", compute)):
         columns = list(dict.fromkeys(k for row in table for k in row))
         with (output / name).open("w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=columns)
+            writer = csv.DictWriter(f, fieldnames=columns, lineterminator="\n")
             writer.writeheader()
             writer.writerows(table)
     text = ["# C/D experiment results", "", "Experiment status: " + ("complete" if all(status[a] == "completed" for a in ("C", "D")) else "incomplete — training/evaluation requirements remain") + ".", "",

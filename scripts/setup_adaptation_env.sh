@@ -28,4 +28,7 @@ fi
 "$UV" --no-config pip install --python "$ENV_PATH/bin/python" --no-deps \
   -e ./third_party/transformers -e ./third_party/lejepa
 "$UV" pip check --python "$ENV_PATH/bin/python"
+if [[ "$MODE" == gpu && ! -x artifacts/compiler/bin/x86_64-conda-linux-gnu-c++ ]]; then
+  micromamba create -y -p "$PWD/artifacts/compiler" --file compiler-linux-64.lock
+fi
 "$ENV_PATH/bin/python" -c 'import sys, torch, transformers; print(sys.version); print(torch.__version__, torch.version.cuda, transformers.__version__)'

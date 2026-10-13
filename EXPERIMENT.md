@@ -15,6 +15,16 @@ are pinned in `requirements-adaptation-gpu.lock` and
 `requirements-adaptation.lock` (CPU). Setup does not modify a shared conda
 environment.
 
+The runtime image lacks a system C++ compiler. `compiler-linux-64.lock`
+pins a shared conda-forge GCC/G++ 11.4.0 toolchain with glibc 2.17 sysroot;
+the GPU setup installs it under `artifacts/compiler`. EAI launch configs set
+`CC` and `CXX` explicitly so the upstream ELF `torch.compile` path works in
+the Ubuntu 22.04 container without root package installation. A separate
+one-H100 check uses 16 CPUs / 128 GB RAM and verifies compiled ELF updates,
+freezing, memory at local batch 64 / length 1024, and a small generated batch.
+It passed with 63.14 GB peak allocated memory and activation checkpointing off.
+Its fixture uses original T5/C4 and is excluded from experimental OWT results.
+
 ```bash
 git switch t5-sigreg-cd
 git submodule update --init --recursive
@@ -135,6 +145,19 @@ export PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD/src"
 .venv/bin/python -m t5_adaptation.submit \
   --pilot artifacts/preflight/attempt2/report.json --status
 ```
+
+The live preparation controller can perform submission once the authoritative
+preparation job succeeds:
+
+```bash
+.venv/bin/python -u -m t5_adaptation.await_preparation \
+  --preparation-job 28b2739a-13f8-48cf-b4f9-e2239b524332 \
+  --pilot artifacts/preflight/attempt2/report.json
+```
+
+Do not start duplicate controllers. The controller records its observations
+in `artifacts/preparation-controller.json`; its process and scheduler job
+must still be checked when deciding whether work is live.
 
 The submitter checks the explicit ER account, eight H100s, completed shared
 data and GPU checks. It archives the committed project into an immutable

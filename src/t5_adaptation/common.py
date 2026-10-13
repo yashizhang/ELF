@@ -155,6 +155,11 @@ def runtime_info():
     info = {"time": time.time(), "packages": packages, "torch": torch.__version__,
             "cuda": torch.version.cuda, "git_commit": commit,
             "project_python_sha256": {str(p.relative_to(ROOT)): file_hash(p) for p in (ROOT / "src").rglob("*.py")}}
+    info["execution_environment"] = {key: os.environ[key] for key in
+                                     ("CC", "CXX", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "TORCHINDUCTOR_CACHE_DIR", "TRITON_CACHE_DIR")
+                                     if key in os.environ}
+    if os.environ.get("CXX"):
+        info["compiler_version"] = subprocess.check_output([os.environ["CXX"], "--version"], text=True).splitlines()[0]
     if torch.cuda.is_available():
         info["gpus"] = [torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())]
         info["gpu_memory"] = [torch.cuda.get_device_properties(i).total_memory

@@ -1,5 +1,5 @@
 {
-  "allocated_gpu_hours": 0.3933333333333333,
+  "allocated_gpu_hours": 0.41777777777777775,
   "scheduler_runs": [
     {
       "account": "snow.research.er",
@@ -16,7 +16,7 @@
       "run_id": "0d69dfc6-2201-4d42-86de-4e695f168cb3",
       "state": "RUNNING",
       "state_info": "",
-      "wall_seconds": 1388.496828
+      "wall_seconds": 2661.655866
     },
     {
       "account": "snow.research.er",
@@ -51,6 +51,23 @@
       "state": "FAILED",
       "state_info": "Job main process exited with 1",
       "wall_seconds": 75.0
+    },
+    {
+      "account": "snow.research.er",
+      "allocated_gpu_hours": 0.024444444444444446,
+      "arm_or_stage": "compile_check",
+      "cpu": 16,
+      "exit_code": 0,
+      "gpu_model_filter": "H100",
+      "gpus": 1,
+      "job_id": "5f43960c-f5a7-41d0-89a7-63599df097bf",
+      "node": "dgx-11",
+      "provisional": false,
+      "ram_gb": 128,
+      "run_id": "eb80329d-5f58-40b5-8a3e-b56b9d76d552",
+      "state": "SUCCEEDED",
+      "state_info": "",
+      "wall_seconds": 88.0
     }
   ]
 }

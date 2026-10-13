@@ -53,6 +53,8 @@ def ready(shared, pilot):
     report = read_json(pilot)
     if report["status"] != "passed" or set(report["arms"]) != {"C", "D"}:
         raise ValueError("Both eight-H100 objective pilots must pass before full submission")
+    if read_json(shared.parent / "compile-check/report.json")["status"] != "passed":
+        raise ValueError("The compiled ELF runtime check must pass before full submission")
 
 
 def main():
@@ -111,6 +113,9 @@ def main():
                        "--max-run-time", "0", "--data", cluster["data"], "--workdir", str(release),
                        "--env", f"PYTHONPATH={release / 'src'}", "--env", "PYTHONDONTWRITEBYTECODE=1",
                        "--env", "OMP_NUM_THREADS=4", "--env", "MKL_NUM_THREADS=4",
+                       "--env", f"CC={cluster['cc']}", "--env", f"CXX={cluster['cxx']}",
+                       "--env", f"TORCHINDUCTOR_CACHE_DIR={Path(record['output']) / 'inductor'}",
+                       "--env", f"TRITON_CACHE_DIR={Path(record['output']) / 'triton'}",
                        "--env", "TOKENIZERS_PARALLELISM=false"]
             entry = [python, "-u", "-m", "t5_adaptation.pipeline", "--arm", arm,
                      "--shared", str(artifacts / "shared"), "--output", record["output"]]
