@@ -1,0 +1,65 @@
+{
+  "arm": "D",
+  "audited_at_utc": "2026-10-13T03:34:07.504289+00:00",
+  "checkpoint": "/home/toolkit/ELF/artifacts/D/elf/checkpoint_500",
+  "ema_state_hash": "16d865b25204cf20b9e80ffc6f456da2208d614f08569f53a50f1e2064845ba7",
+  "epoch": 0.026290882322010725,
+  "experiment_identity_matches": true,
+  "initial_elf_state_hash": "7ef18e4d2f653a4ac286726855b0ead1e86002e01ac18747169b04b2cd068357",
+  "model_and_ema_finite": true,
+  "model_state_hash": "0a18b58de56cf88ed6a89c823d87a746a2841f61ae25b723f992ffd1136e8741",
+  "optimizer_shards": [
+    {
+      "bytes": 52484526,
+      "file": "optimizer_500_rank0_61727f5a5fc44252aee59d41980896e5.pt",
+      "rank": 0,
+      "sha256": "ffcebc68aeba3b605be2f85d9dc175ce07060ac528220972a6340d1563c8084b"
+    },
+    {
+      "bytes": 51173806,
+      "file": "optimizer_500_rank1_ce98fbb1141544f08131b440689198a7.pt",
+      "rank": 1,
+      "sha256": "d153e243fcb0d0c833d9166d09bf729f30d5b8ab17e27627a1c8fb99025d0e4e"
+    },
+    {
+      "bytes": 50124912,
+      "file": "optimizer_500_rank2_f7138937f4304a2684bed5a0c373f1a0.pt",
+      "rank": 2,
+      "sha256": "a9d489383d2512845ba45e6c2e1cce6366f7e1562822321fe985f6c80c81f167"
+    },
+    {
+      "bytes": 49338480,
+      "file": "optimizer_500_rank3_7e2ee784751343189947c9bf4f53343b.pt",
+      "rank": 3,
+      "sha256": "868ebcae09f062c0939601eca4912224100fa85afa4de5d3dd4b7f7de403886e"
+    },
+    {
+      "bytes": 39901296,
+      "file": "optimizer_500_rank4_cd6a2b7b5c9f4671b1e5d6020c2d5f0d.pt",
+      "rank": 4,
+      "sha256": "5c76bba03e7bc863df22a41fb7da26767bf07ab18be8fa56d25732968769ca0e"
+    },
+    {
+      "bytes": 39508080,
+      "file": "optimizer_500_rank5_9995c0d9fad442e19767f42525d9a4be.pt",
+      "rank": 5,
+      "sha256": "2e0866ce9496192354dc37544b74c397e92ef6cb08ba6a9e1b91c66122f238bf"
+    },
+    {
+      "bytes": 104855664,
+      "file": "optimizer_500_rank6_7fed63c5284f4ce1b36e718ae95dc496.pt",
+      "rank": 6,
+      "sha256": "81b2dcea1dff6d6aa4601241efb68eafd86fdf5315be5133e5cf0c23aec1e646"
+    },
+    {
+      "bytes": 41212016,
+      "file": "optimizer_500_rank7_4b858c2f2aa64835a4b8966ef3d89a83.pt",
+      "rank": 7,
+      "sha256": "16a9d30b40cc429e37e13ff1ffc04c2706e17ef0b545cc5cb2d8a7c295f2f369"
+    }
+  ],
+  "rank_rng_count": 8,
+  "scope": "First committed full-run ELF recovery checkpoint; five-epoch completion and final evaluation remain outstanding.",
+  "sha256": "f71cf4e0b94911ca5a123658b73f49f89ff2fee0cc7600a45fd6bd220a4f43ae",
+  "step": 500
+}

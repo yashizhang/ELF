@@ -1,0 +1,151 @@
+{
+  "content_hash": "45355982ce6b57cbce17b7c934ce604649ab99389f678afaf95ee8f1576c89f5",
+  "files": {
+    "config.json": "e9cbb19e40f8d69b95ec1e96345ff134dfe46b5d6b0d0d58cb2d43370703864c",
+    "model.safetensors": "892dc88573befd07f41861fadad0efaa06c9885238bc8a73e124f4e94938fac0",
+    "special_tokens_map.json": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2",
+    "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+    "tokenizer.json": "71c33c3bf57bf2e19b4f8ac686ad8d182a79f7cd1a4921889437c453420223f1",
+    "tokenizer_config.json": "e0aff0b1de9071e30d9a60a199303b6abe916a64a19932bd1c46992279b41a1f"
+  },
+  "original_state_hash": "a14e4e54385af36ea1cf4dd2a98dd7ae361805724af8a0e6f1fee65dc7e9576c",
+  "provenance": {
+    "counters": {
+      "corruption_target_tokens": 2230695230,
+      "decoder_target_tokens": 0,
+      "diagnostic_encoder_sequence_passes": 48128,
+      "eligible_tokens": 11059253934,
+      "encoder_nonpadding_positions": 21121153136,
+      "encoder_sequence_passes": 39062528,
+      "gpu_hours": 15.122900026357836,
+      "noise_spans": 552869335,
+      "noise_tokens": 1658294631,
+      "nominal_positions": 10000007168,
+      "source_examples": 19531264,
+      "source_tokens": 11093757952,
+      "updates": 38147,
+      "wall_seconds": 6805.305010668933
+    },
+    "identity": {
+      "arm": "D",
+      "config": {
+        "activation_checkpointing": false,
+        "arm": "D",
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "calibration_sequences": 4096,
+        "corruption_seed": 1729,
+        "diagnostic_positions": [
+          1000000000,
+          3000000000,
+          10000000000
+        ],
+        "epsilon": 1e-08,
+        "global_batch_size": 512,
+        "grad_accum_steps": 1,
+        "gradient_diagnostic_every": 1000,
+        "learning_rate": 0.0001,
+        "local_batch_size": 64,
+        "log_every": 25,
+        "max_grad_norm": 1.0,
+        "mean_noise_span_length": 3.0,
+        "min_learning_rate": 1e-05,
+        "noise_density": 0.15,
+        "nominal_budget": 10000000000,
+        "nominal_length": 512,
+        "num_workers": 8,
+        "objective": "aligned_pairwise_mse_plus_per_view_sigreg",
+        "projection_seed": 31415,
+        "sampling_seed": 2718,
+        "save_every": 500,
+        "seed": 42,
+        "sigreg_integration": "trapezoid",
+        "sigreg_lambda": 0.05,
+        "sigreg_n_points": 17,
+        "sigreg_samples_per_rank": 256,
+        "sigreg_slices": 256,
+        "sigreg_t_max": 3.0,
+        "source_examples": 19531264,
+        "source_length": 568,
+        "updates": 38147,
+        "warmup_steps": 500,
+        "weight_decay": 0.01,
+        "world_size": 8
+      },
+      "data_hash": "76d5b9225f0e26da70191cbae80063872d2151fb757278aafe8fecbeab0f37b3",
+      "implementation": {
+        "__init__.py": "1bb0ddeb6c3cbe2d772980cc3fb69c3df7bb61f9645dc8357083a6938b7e93c6",
+        "await_preparation.py": "0d5ded0973d3d8ac0ed7845d879a10510b06e630eb9b06b1ea5b92b13e849141",
+        "calibrate.py": "acf8dc93d6a40e9e0e3b11f41d0a783d68a91e59c0d4de7b5a7706c3071a1ea2",
+        "checkpoint.py": "997f6681cc2739ffa7b8d105f25a72d7245d5f6aca7751099c00ee46b4a22cf6",
+        "common.py": "0a01af4e3690f28292896a476d8d533bd2ff6117dcf1dfefe77059e17440a147",
+        "compile_check.py": "a8a66958e1283936a5f5d7fa056cec43e6b389587ff8c5ead67d8189a39eb2d1",
+        "corruption.py": "50b20b781b480d253b5c888f4f21bef871ef79f235b792b40a42d6bcd716213b",
+        "data.py": "4826373cffb3230d58725849c887dd0e00fe5b370127f9026344f077546a85eb",
+        "diagnostics.py": "243ceb092daa4bf84c9a2e14f5b6eeef35762eecadcfa9691b040e4b6c8cc384",
+        "elf_integration.py": "2fb4bde383c03ae777eee42c85b37b40d9afb39c1852786abd3b39a94fd2708f",
+        "evaluate.py": "2b2791a698ebf546b436d8c98dfd3ef6b1bbacffda4f35f25179bf97c3f1a78a",
+        "export.py": "801013950b9b4acb36eed95ff8c224a1f096a653bad6b2dcd273629c80c9fd7a",
+        "objectives.py": "33d9db3e21763ad4b0227aad42143f285b52b86dfae4b547646d1705dad9eb92",
+        "pipeline.py": "03040f9a625a5af6a4b74b99d61c060f4ddb8f74c7eff13ffbc0e2bb43b5321d",
+        "preflight.py": "12ae0962f0d623f6a224c3baab0c8cceb439d08d3c9b5c6409b0f20c39736979",
+        "prepare.py": "ec71d3319322ddd8b3eea9e9d7626d3f6ad71ec863cdd2b70b226fec6ab64075",
+        "probe.py": "81ef7fa4f53ea9d00ea2d909ce2e4e146678740c23c75dd649539cfe5fa26026",
+        "report.py": "5d67507329e77a2939527779b8a939daee7fff2d8ba84c106aee6de4c67b5c4e",
+        "submit.py": "ebefb38b2011251bed39571476107def8b0a0578ca87a270a0a5e0605ea7b7e0",
+        "train.py": "fc44dad23abd25121ef3e5a08693bade6a3552cd2fc6e1b598d51bada0902b12"
+      },
+      "normalization_hash": "b094ff4d76affa91f330c2a0542230a82f68ac910700664beb560698ff8457cc",
+      "original_model_hash": "e1e5ae888c1df67d21a00b2e03729203ff49696c203012c080a7905f7a233581",
+      "smoke": false,
+      "sources": {
+        "c4": {
+          "config": "en",
+          "id": "allenai/c4",
+          "revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2"
+        },
+        "elf": {
+          "commit": "b29d8833609e9ab7f67cd9da39435ac5cea04837",
+          "url": "https://github.com/lillian039/ELF"
+        },
+        "evaluator": {
+          "id": "openai-community/gpt2-large",
+          "revision": "32b71b12589c2f8d625668d2335a01cac3249519"
+        },
+        "lejepa": {
+          "commit": "c293d291ca87cd4fddee9d3fffe4e914c7272052",
+          "url": "https://github.com/galilai-group/lejepa"
+        },
+        "owt": {
+          "id": "embedded-language-flows/openwebtext-t5",
+          "revision": "0a8443e847ee6206e4737a6b9a93218347eabc08"
+        },
+        "t5": {
+          "id": "google-t5/t5-small",
+          "revision": "df1b051c49625cf57a3d0d8d3863ed4d13564fe4"
+        },
+        "transformers": {
+          "commit": "174890280b340b89c5bfa092f6b4fb0e2dc2d7fc",
+          "tag": "v4.44.2",
+          "url": "https://github.com/huggingface/transformers"
+        }
+      }
+    },
+    "raw_outputs": true,
+    "source_checkpoint_sha256": "5d44c1263f4737ddfb4ef51d0dce3eeed4efdb1d39899e96723a4aa5e58ec4f3"
+  },
+  "reload_check": {
+    "atol": 1e-06,
+    "max_absolute_error": 0.0,
+    "precision": "fp32",
+    "rtol": 1e-05,
+    "shape": [
+      2,
+      569,
+      512
+    ]
+  },
+  "state_hash": "ad572b1888e08ba55fb4ab5eb48ff1cff60d8594153897c936e887a7dadfa36a"
+}

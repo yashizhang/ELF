@@ -1,6 +1,6 @@
 {
   "accounting": "Scheduler allocation totals include idle/overhead time. Stage subtotals describe the same allocations and must not be added again.",
-  "allocated_gpu_hours": 12.481072786666665,
+  "allocated_gpu_hours": 36.37913917555556,
   "scheduler_runs": [
     {
       "account": "snow.research.er",
@@ -80,7 +80,7 @@
     },
     {
       "account": "snow.research.er",
-      "allocated_gpu_hours": 6.04352752,
+      "allocated_gpu_hours": 17.99254292,
       "arm_or_stage": "C",
       "cpu": 64,
       "ended_at": null,
@@ -95,11 +95,11 @@
       "started_at": 1791854687.0,
       "state": "RUNNING",
       "state_info": "",
-      "wall_seconds": 2719.587384
+      "wall_seconds": 8096.644314
     },
     {
       "account": "snow.research.er",
-      "allocated_gpu_hours": 6.019767488888889,
+      "allocated_gpu_hours": 17.968818477777777,
       "arm_or_stage": "D",
       "cpu": 64,
       "ended_at": null,
@@ -114,12 +114,12 @@
       "started_at": 1791854698.0,
       "state": "RUNNING",
       "state_info": "",
-      "wall_seconds": 2708.89537
+      "wall_seconds": 8085.968315
     }
   ],
   "stage_attempts": [
     {
-      "allocated_gpu_hours": 5.994918569458855,
+      "allocated_gpu_hours": 17.944062645700242,
       "allocated_gpus": 8,
       "arm": "C",
       "ended": null,
@@ -130,21 +130,91 @@
       "started": 1791854709.222836,
       "state": "running",
       "timing_source": "stage_process",
-      "wall_seconds": 2697.713356256485
+      "wall_seconds": 8074.828190565109
     },
     {
-      "allocated_gpu_hours": 5.972821445994907,
+      "allocated_gpu_hours": 15.238999694188436,
+      "allocated_gpus": 8,
+      "arm": "D",
+      "ended": 1791861576.7174504,
+      "exit_code": 0,
+      "provisional": false,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "adaptation",
+      "started": 1791854719.167588,
+      "state": "completed",
+      "timing_source": "stage_process",
+      "wall_seconds": 6857.549862384796
+    },
+    {
+      "allocated_gpu_hours": 0.03960574573940701,
+      "allocated_gpus": 8,
+      "arm": "D",
+      "ended": 1791861594.5665126,
+      "exit_code": 0,
+      "provisional": false,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "export",
+      "started": 1791861576.743927,
+      "state": "completed",
+      "timing_source": "stage_process",
+      "wall_seconds": 17.822585582733154
+    },
+    {
+      "allocated_gpu_hours": 0.0454836008283827,
+      "allocated_gpus": 8,
+      "arm": "D",
+      "ended": 1791861615.0559833,
+      "exit_code": 0,
+      "provisional": false,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "owt_normalization",
+      "started": 1791861594.588363,
+      "state": "completed",
+      "timing_source": "stage_process",
+      "wall_seconds": 20.467620372772217
+    },
+    {
+      "allocated_gpu_hours": 0.04432134681277805,
+      "allocated_gpus": 8,
+      "arm": "D",
+      "ended": 1791861635.026554,
+      "exit_code": 0,
+      "provisional": false,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "original_readout",
+      "started": 1791861615.081948,
+      "state": "completed",
+      "timing_source": "stage_process",
+      "wall_seconds": 19.944606065750122
+    },
+    {
+      "allocated_gpu_hours": 0.04384174240960015,
+      "allocated_gpus": 8,
+      "arm": "D",
+      "ended": 1791861654.7777045,
+      "exit_code": 0,
+      "provisional": false,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "readout",
+      "started": 1791861635.0489204,
+      "state": "completed",
+      "timing_source": "stage_process",
+      "wall_seconds": 19.72878408432007
+    },
+    {
+      "allocated_gpu_hours": 2.509429414007399,
       "allocated_gpus": 8,
       "arm": "D",
       "ended": null,
       "exit_code": null,
       "provisional": true,
       "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
-      "stage": "adaptation",
-      "started": 1791854719.167588,
+      "stage": "elf",
+      "started": 1791861654.8187637,
       "state": "running",
       "timing_source": "stage_process",
-      "wall_seconds": 2687.769650697708
+      "wall_seconds": 1129.2432363033295
     }
   ]
 }

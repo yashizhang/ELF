@@ -1,0 +1,71 @@
+{
+  "all_floating_model_and_optimizer_tensors_finite": true,
+  "arm": "D",
+  "audited_at_utc": "2026-10-13T03:21:49.024979+00:00",
+  "checkpoint": "/home/toolkit/ELF/artifacts/D/adaptation/milestone-038147.pt",
+  "checkpoint_sha256": "5d44c1263f4737ddfb4ef51d0dce3eeed4efdb1d39899e96723a4aa5e58ec4f3",
+  "counters": {
+    "corruption_target_tokens": 2230695230,
+    "decoder_target_tokens": 0,
+    "diagnostic_encoder_sequence_passes": 48128,
+    "eligible_tokens": 11059253934,
+    "encoder_nonpadding_positions": 21121153136,
+    "encoder_sequence_passes": 39062528,
+    "gpu_hours": 15.122900026357836,
+    "noise_spans": 552869335,
+    "noise_tokens": 1658294631,
+    "nominal_positions": 10000007168,
+    "source_examples": 19531264,
+    "source_tokens": 11093757952,
+    "updates": 38147,
+    "wall_seconds": 6805.305010668933
+  },
+  "data_hash": "76d5b9225f0e26da70191cbae80063872d2151fb757278aafe8fecbeab0f37b3",
+  "final_diagnostics": {
+    "1024": {
+      "clean_sigreg": 1.7062411308288574,
+      "effective_rank": 378.5845436832921,
+      "finite_fraction": 1.0,
+      "normalized_mean": -6.910982067466422e-05,
+      "normalized_variance": 0.9995992460470642,
+      "raw_mean": -0.0009096499099133328,
+      "raw_variance": 0.029974990381474186,
+      "sample_count": 2048,
+      "statistics_scope": "four ordinary token samples per held-out source sequence",
+      "task_loss": 0.020786749199032784,
+      "task_name": "aligned_consistency"
+    },
+    "569": {
+      "clean_sigreg": 1.5865846872329712,
+      "effective_rank": 380.2711686740771,
+      "finite_fraction": 1.0,
+      "normalized_mean": 0.0006084222717857296,
+      "normalized_variance": 1.0113338192478405,
+      "raw_mean": -0.0007923233228991713,
+      "raw_variance": 0.03032687511949829,
+      "sample_count": 2048,
+      "statistics_scope": "four ordinary token samples per held-out source sequence",
+      "task_loss": 0.018009182065725327,
+      "task_name": "aligned_consistency"
+    }
+  },
+  "final_learning_rates": [
+    1e-05,
+    1e-05
+  ],
+  "identity_sha256": "6239191978cf4b65c340b2e71fa06a72ae321d6c50768fdd521f3f31706083d2",
+  "model_parameter_dtypes": [
+    "torch.float32"
+  ],
+  "normalization_hash": "b094ff4d76affa91f330c2a0542230a82f68ac910700664beb560698ff8457cc",
+  "optimizer_parameter_states": 51,
+  "optimizer_step_max": 38147,
+  "optimizer_step_min": 38147,
+  "rank_rng_count": 8,
+  "scheduler_last_epoch": 38147,
+  "scope": "Final fixed-budget adaptation checkpoint; encoder handoff, five ELF epochs, generation, and final evaluation require separate evidence.",
+  "sigreg_projection_counters": {
+    "regularizer.global_step": 69562
+  },
+  "status": "adaptation_checkpoint_verified"
+}

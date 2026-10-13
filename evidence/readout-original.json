@@ -1,0 +1,47 @@
+{
+  "identity": {
+    "batch_size": 8,
+    "data_order_seed": 123,
+    "encoder_hash": "e1e5ae888c1df67d21a00b2e03729203ff49696c203012c080a7905f7a233581",
+    "evaluation_conditions": [
+      "clean normalized latents",
+      "normalized latents plus N(0, 0.1^2 I)"
+    ],
+    "id_intervals": "half-open",
+    "lr": 0.001,
+    "noise_seed": 56789,
+    "normalization": "b094ff4d76affa91f330c2a0542230a82f68ac910700664beb560698ff8457cc",
+    "optimizer": "AdamW",
+    "ordinary_tokens_per_sequence": 32,
+    "readout_seed": 12345,
+    "train_condition": "clean normalized latents",
+    "train_data": "76d5b9225f0e26da70191cbae80063872d2151fb757278aafe8fecbeab0f37b3",
+    "train_ids": [
+      0,
+      3072
+    ],
+    "updates": 500,
+    "validation_data": "8fdedcb967795295356d437baba2282ebdea6d9b1dd29d884a674d4afa3a3e68",
+    "validation_ids": [
+      0,
+      512
+    ],
+    "weight_decay": 0.0
+  },
+  "initial_readout_hash": "6ea88bde80e49e847e266f22bc5ee90f1316ce093d5a0acdfc47ba3d18700c83",
+  "interpretation": "practical token decodability probe, not generation quality or an encoder-training arm",
+  "metrics": {
+    "clean": {
+      "scored_tokens": 16384,
+      "token_accuracy": 0.7952880859375,
+      "token_ce": 2.0647381246089935
+    },
+    "noise_0.1": {
+      "scored_tokens": 16384,
+      "token_accuracy": 0.79595947265625,
+      "token_ce": 2.066250851377845
+    }
+  },
+  "status": "completed",
+  "wall_seconds": 11.440325275063515
+}

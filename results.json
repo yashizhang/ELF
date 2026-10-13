@@ -5,7 +5,12 @@
       "adaptation": "running"
     },
     "D": {
-      "adaptation": "running"
+      "adaptation": "completed",
+      "elf": "running",
+      "export": "completed",
+      "original_readout": "completed",
+      "owt_normalization": "completed",
+      "readout": "completed"
     }
   },
   "complete": false,
@@ -19,7 +24,7 @@
     },
     "D": {
       "five_full_elf_epochs": false,
-      "fixed_adaptation_budget": false,
+      "fixed_adaptation_budget": true,
       "fresh_frozen_elf": false,
       "pipeline_finished": false,
       "six_final_evaluations": false
