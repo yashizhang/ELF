@@ -209,6 +209,12 @@ records verified checkpoint hashes, identical data/corruption counters, and
 finite held-out diagnostics at both sequence lengths. These diagnostics are
 intermediate measurements; final ELF generation remains the primary outcome.
 
+The subsequent [3B milestone audit](evidence/three-billion-positions.json)
+verified both retained checkpoints at update 11,445 (3,000,238,080 nominal
+positions), matching data/corruption counters, and finite diagnostics at both
+lengths. The committed report includes the initial, 1B, and 3B measurements;
+both runs continue toward the fixed 10B adaptation budget.
+
 Each pipeline stage retains an independent start/end record in
 `stage_attempts/`. A restart cannot erase an unfinished attempt's start record.
 Reports use the scheduler run's end time for an attempt terminated before it

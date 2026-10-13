@@ -1,0 +1,113 @@
+{
+  "arms": [
+    {
+      "arm": "C",
+      "checkpoint_sha256": "64438de9de247834eb34888a31b19165829755978d99de2e42e7c7449b7255ff",
+      "counters": {
+        "corruption_target_tokens": 669265169,
+        "decoder_target_tokens": 669265169,
+        "diagnostic_encoder_sequence_passes": 18432,
+        "eligible_tokens": 3318022512,
+        "encoder_nonpadding_positions": 6336849611,
+        "encoder_sequence_passes": 11719680,
+        "gpu_hours": 5.762995950393378,
+        "noise_spans": 165878510,
+        "noise_tokens": 497526819,
+        "nominal_positions": 3000238080,
+        "source_examples": 5859840,
+        "source_tokens": 3328389120,
+        "updates": 11445,
+        "wall_seconds": 2593.3481767643243
+      },
+      "diagnostics": {
+        "1024": {
+          "clean_sigreg": 2.136906147003174,
+          "effective_rank": 381.6199049544766,
+          "finite_fraction": 1.0,
+          "normalized_mean": 0.0009489555828167328,
+          "normalized_variance": 1.0173628824471908,
+          "raw_mean": -0.000733353996438469,
+          "raw_variance": 0.03050766868464382,
+          "sample_count": 2048,
+          "statistics_scope": "four ordinary token samples per held-out source sequence",
+          "task_loss": 5.221499919891357,
+          "task_name": "span_ce"
+        },
+        "569": {
+          "clean_sigreg": 1.573594331741333,
+          "effective_rank": 382.6202579563599,
+          "finite_fraction": 1.0,
+          "normalized_mean": 0.0003645151085435661,
+          "normalized_variance": 1.0082931277134075,
+          "raw_mean": -0.0008345601340110846,
+          "raw_variance": 0.030235693878757602,
+          "sample_count": 2048,
+          "statistics_scope": "four ordinary token samples per held-out source sequence",
+          "task_loss": 2.2154130935668945,
+          "task_name": "span_ce"
+        }
+      }
+    },
+    {
+      "arm": "D",
+      "checkpoint_sha256": "a8d68ed6a1c08aad13b3514ab955978d171b81e49fe7afda6cfccef70310a75a",
+      "counters": {
+        "corruption_target_tokens": 669265169,
+        "decoder_target_tokens": 0,
+        "diagnostic_encoder_sequence_passes": 18432,
+        "eligible_tokens": 3318022512,
+        "encoder_nonpadding_positions": 6336849611,
+        "encoder_sequence_passes": 11719680,
+        "gpu_hours": 4.53985829613275,
+        "noise_spans": 165878510,
+        "noise_tokens": 497526819,
+        "nominal_positions": 3000238080,
+        "source_examples": 5859840,
+        "source_tokens": 3328389120,
+        "updates": 11445,
+        "wall_seconds": 2042.9362326338887
+      },
+      "diagnostics": {
+        "1024": {
+          "clean_sigreg": 1.8708899021148682,
+          "effective_rank": 356.6015776689743,
+          "finite_fraction": 1.0,
+          "normalized_mean": 0.00019357480736130575,
+          "normalized_variance": 0.999091943966048,
+          "raw_mean": -0.0008641614508255494,
+          "raw_variance": 0.029959777910017076,
+          "sample_count": 2048,
+          "statistics_scope": "four ordinary token samples per held-out source sequence",
+          "task_loss": 0.02760285511612892,
+          "task_name": "aligned_consistency"
+        },
+        "569": {
+          "clean_sigreg": 2.0032100677490234,
+          "effective_rank": 358.91982348395965,
+          "finite_fraction": 1.0,
+          "normalized_mean": 0.00011241366276133557,
+          "normalized_variance": 1.0092214445230974,
+          "raw_mean": -0.000878215929130035,
+          "raw_variance": 0.030263531322164396,
+          "sample_count": 2048,
+          "statistics_scope": "four ordinary token samples per held-out source sequence",
+          "task_loss": 0.021996138617396355,
+          "task_name": "aligned_consistency"
+        }
+      }
+    }
+  ],
+  "audited_at_utc": "2026-10-13T02:09:28.439552+00:00",
+  "matching_data_and_corruption_counters": [
+    "source_examples",
+    "source_tokens",
+    "nominal_positions",
+    "corruption_target_tokens",
+    "noise_tokens",
+    "eligible_tokens",
+    "noise_spans",
+    "encoder_sequence_passes",
+    "encoder_nonpadding_positions"
+  ],
+  "status": "Both 3B checkpoints and finite diagnostics verified; full-budget adaptation, ELF training, and generation evaluation still required."
+}

@@ -1,6 +1,6 @@
 {
   "accounting": "Scheduler allocation totals include idle/overhead time. Stage subtotals describe the same allocations and must not be added again.",
-  "allocated_gpu_hours": 4.654539415555556,
+  "allocated_gpu_hours": 12.481072786666665,
   "scheduler_runs": [
     {
       "account": "snow.research.er",
@@ -80,7 +80,7 @@
     },
     {
       "account": "snow.research.er",
-      "allocated_gpu_hours": 2.1302560333333336,
+      "allocated_gpu_hours": 6.04352752,
       "arm_or_stage": "C",
       "cpu": 64,
       "ended_at": null,
@@ -95,11 +95,11 @@
       "started_at": 1791854687.0,
       "state": "RUNNING",
       "state_info": "",
-      "wall_seconds": 958.615215
+      "wall_seconds": 2719.587384
     },
     {
       "account": "snow.research.er",
-      "allocated_gpu_hours": 2.106505604444444,
+      "allocated_gpu_hours": 6.019767488888889,
       "arm_or_stage": "D",
       "cpu": 64,
       "ended_at": null,
@@ -114,12 +114,12 @@
       "started_at": 1791854698.0,
       "state": "RUNNING",
       "state_info": "",
-      "wall_seconds": 947.927522
+      "wall_seconds": 2708.89537
     }
   ],
   "stage_attempts": [
     {
-      "allocated_gpu_hours": 2.0816269482506646,
+      "allocated_gpu_hours": 5.994918569458855,
       "allocated_gpus": 8,
       "arm": "C",
       "ended": null,
@@ -130,10 +130,10 @@
       "started": 1791854709.222836,
       "state": "running",
       "timing_source": "stage_process",
-      "wall_seconds": 936.7321267127991
+      "wall_seconds": 2697.713356256485
     },
     {
-      "allocated_gpu_hours": 2.0595295270284018,
+      "allocated_gpu_hours": 5.972821445994907,
       "allocated_gpus": 8,
       "arm": "D",
       "ended": null,
@@ -144,7 +144,7 @@
       "started": 1791854719.167588,
       "state": "running",
       "timing_source": "stage_process",
-      "wall_seconds": 926.7882871627808
+      "wall_seconds": 2687.769650697708
     }
   ]
 }
