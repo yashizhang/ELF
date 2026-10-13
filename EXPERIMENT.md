@@ -278,6 +278,15 @@ continuation. Their epoch and data-exposure counters match. These progress
 records cover checkpoint metadata, file presence, and observed continuation;
 their scope is recorded explicitly.
 
+D subsequently saved its third full-epoch checkpoint at update 57,054 and
+continued into epoch four. Its [progress record](evidence/elf-D-epoch-3-progress.json)
+verifies saved epoch 3.0, matching experiment identity and scheduler counter,
+eight referenced optimizer files, the epoch-completion log, and finite
+continuation. The counters represent 29,211,552 source-row visits and
+29,211,648 example positions including 96 padding repeats under the verified
+sampler. This record has the same metadata and progress scope as the epoch-two
+records above.
+
 Audit an available full-epoch checkpoint in the CPU environment with:
 
 ```bash
