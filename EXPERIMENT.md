@@ -260,13 +260,14 @@ finiteness, all optimizer step counters, and the complete per-rank parameter
 assignment. Both five-epoch ELF runs and final generation evaluations remain
 incomplete; refresh `RESULTS.md` for the latest observed progress.
 
-D subsequently completed its first full OWT epoch at update 19,018. Its
-[epoch checkpoint audit](evidence/elf-D-epoch-1.json) verified epoch 1.0,
-finite model/EMA weights, all eight optimizer-shard hashes, complete per-rank
-parameter assignments, optimizer and scheduler counters at 19,018, and the
-configured learning rate of 0.002. Model and EMA hashes both advanced from
-the audited step-500 checkpoint. The retained log/status observation confirms
-that D continued training into epoch two.
+Both arms subsequently completed their first full OWT epoch at update 19,018.
+The epoch checkpoint audits for [C](evidence/elf-C-epoch-1.json) and
+[D](evidence/elf-D-epoch-1.json) verified epoch 1.0, finite model/EMA weights,
+all eight optimizer-shard hashes, complete per-rank parameter assignments,
+optimizer and scheduler counters at 19,018, and the configured learning rate
+of 0.002. Their data-exposure counters match. Model and EMA hashes in each arm
+advanced from its audited step-500 checkpoint. The retained log/status
+observations confirm that both arms continued training into epoch two.
 
 Audit an available full-epoch checkpoint in the CPU environment with:
 
