@@ -9,7 +9,7 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 
 from utils.data_utils import FullEpochSampler
 from utils.checkpoint_utils import save_checkpoint, load_checkpoint, find_latest_checkpoint
-from utils.train_utils import TrainState
+from utils.train_utils import TrainState, prefetch_to_device
 from utils.muon_utils import muon_with_aux_adam
 
 
@@ -52,6 +52,41 @@ def test_elf_checkpoint_roundtrip_and_arm_rejection(tmp_path):
         load_checkpoint(str(tmp_path / "checkpoint_10"), make_state({"arm": "D"}))
     (tmp_path / "checkpoint_999.tmp").touch()
     assert Path(find_latest_checkpoint(str(tmp_path))).name == "checkpoint_10"
+
+
+def test_failed_checkpoint_rewrite_preserves_committed_optimizer_shards(tmp_path, monkeypatch):
+    state = make_state({"arm": "C", "encoder_hash": "encoder_c"})
+    state.step, state.epoch = 10, 1.0
+    state.model(torch.randn(2, 4)).sum().backward()
+    state.optimizer.step()
+    save_checkpoint(state, str(tmp_path), 10)
+    expected = {key: value.clone() for key, value in state.model.state_dict().items()}
+    state.optimizer.zero_grad(set_to_none=True)
+    state.model(torch.randn(2, 4)).sum().backward()
+    state.optimizer.step()
+
+    real_save = torch.save
+    def fail_main_save(value, file, *args, **kwargs):
+        if str(file.name).endswith("checkpoint_10.tmp"):
+            raise OSError("simulated interrupted main checkpoint write")
+        return real_save(value, file, *args, **kwargs)
+    monkeypatch.setattr(torch, "save", fail_main_save)
+    with pytest.raises(OSError, match="interrupted"):
+        save_checkpoint(state, str(tmp_path), 10)
+    load_checkpoint(str(tmp_path / "checkpoint_10"), state)
+    for key, value in state.model.state_dict().items():
+        torch.testing.assert_close(value, expected[key], rtol=0, atol=0)
+
+
+def test_prefetch_propagates_data_worker_failure():
+    def broken_source():
+        yield {"batch": 1}
+        raise RuntimeError("data worker failed")
+    batches = prefetch_to_device(broken_source(), size=1)
+    assert next(batches) == {"batch": 1}
+    with pytest.raises(RuntimeError, match="data worker failed"):
+        next(batches)
+    assert list(prefetch_to_device(iter([1, 2, 3]), size=1)) == [1, 2, 3]
 
 
 def _muon_resume_worker(rank, init, output):

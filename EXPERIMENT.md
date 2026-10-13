@@ -179,7 +179,10 @@ SIGReg counter, fixed calibration, source/config identity and exact data
 cursor. Milestones near 1B/3B/10B are retained. SIGTERM/SIGUSR1 checkpoints at
 an update boundary. ELF checkpoints retain every rank's Muon momentum and
 RNG, atomic main files, EMA, epoch/data position and encoder provenance;
-failed resume is fatal. Training sample generation after the first ELF update
+each write uses new optimizer-shard filenames so an interrupted rewrite
+cannot invalidate the previous committed checkpoint. Failed resume is fatal.
+The asynchronous ELF prefetcher propagates loader exceptions to the trainer.
+Training sample generation after the first ELF update
 checks the generation path and restores RNGs. It does not select checkpoints.
 
 ELF processes all OWT rows in each of five shuffled epochs. The last batch is
@@ -221,7 +224,8 @@ scripts in `scripts/`, and focused checks in `tests/`.
 Existing ELF changes are limited to provenance/freezing/initialization
 checks and one smoke sample in `src/train.py`; full-epoch sampler support in
 `data_utils.py`; atomic per-rank optimizer/RNG checkpointing in
-`checkpoint_utils.py` and `train_utils.py`; finite-value gates in
+`checkpoint_utils.py` and `train_utils.py`; propagation of background loader
+failures in `train_utils.py`; finite-value gates in
 `train_step.py`; detached optimizer communication buffers in `muon_utils.py`;
 opt-in config fields; and matching the training tokenizer vocabulary size in
 `eval.py`. No ELF architecture or T5 blocks were rewritten.

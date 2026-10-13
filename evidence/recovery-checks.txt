@@ -1,0 +1,9 @@
+Command: PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv/bin/python -m pytest tests/test_elf_reproducibility.py -q
+Result: 5 passed in 7.90s (exit code 0)
+
+Checks:
+- Every dataset row is included in full epochs with exact global batches.
+- ELF checkpoint restores RNG and fractional epoch, rejects another arm, and ignores temporary files.
+- An interrupted repeated save preserves the previously committed optimizer shards and checkpoint.
+- Background data-loader failures reach the trainer instead of leaving it waiting on an empty queue.
+- Two distributed Muon ranks resume with their own optimizer state and reproduce the next update exactly.

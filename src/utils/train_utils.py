@@ -51,16 +51,23 @@ class TrainState:
 def prefetch_to_device(iterator, size: int = 2):
     """Prefetch batches asynchronously via a background thread."""
     q = queue.Queue(maxsize=size)
+    end = object()
 
     def enqueue():
-        for item in iterator:
-            q.put(item)
-        q.put(None)
+        try:
+            for item in iterator:
+                q.put((True, item))
+        except Exception as exc:
+            q.put((False, exc))
+        else:
+            q.put((True, end))
 
     threading.Thread(target=enqueue, daemon=True).start()
     while True:
-        item = q.get()
-        if item is None:
+        success, item = q.get()
+        if not success:
+            raise item
+        if item is end:
             break
         yield item
 

@@ -1,6 +1,7 @@
 import logging
 import os
 import re
+import uuid
 from typing import Any, Optional, Tuple
 
 import torch
@@ -56,7 +57,9 @@ def save_checkpoint(state, output_dir: str, step: int, hf_repo_id: str = None):
         # Upstream distributed Muon shards optimizer momentum across ranks.
         # Rank zero's optimizer state alone cannot resume the other shards.
         os.makedirs(output_dir, exist_ok=True)
-        optimizer_name = f"optimizer_{step}_rank{_process_index()}.pt"
+        # Repeated saves at an epoch/final boundary must leave the optimizer
+        # shards referenced by the previous atomic main checkpoint untouched.
+        optimizer_name = f"optimizer_{step}_rank{_process_index()}_{uuid.uuid4().hex}.pt"
         optimizer_path = os.path.join(output_dir, optimizer_name)
         with open(optimizer_path + ".tmp", "wb") as f:
             torch.save(state.optimizer.state_dict(), f)
