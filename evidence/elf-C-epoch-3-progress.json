@@ -1,0 +1,119 @@
+{
+  "arm": "C",
+  "checked_at_utc": "2026-10-13T17:51:25.330214+00:00",
+  "checkpoint": "artifacts/C/elf/checkpoint_57054",
+  "checkpoint_bytes": 889413168,
+  "checkpoint_epoch": 3.0,
+  "checkpoint_sha256": "0c2a850c235ed8f82b77f6dda86eff7fec55ab37e2dbf411a7bd3179ba4f46c1",
+  "checkpoint_step": 57054,
+  "data_exposure_evidence": "Exposure is inferred from checkpoint counters and the separately verified full-epoch sampler, not a per-example runtime trace.",
+  "dataset_examples": 9737184,
+  "epoch_boundary_log": "INFO - __main__ - Saved checkpoint at epoch 3 (step 57054)",
+  "epoch_four_progress_log": "Epoch 4:   1%|          | 223/19018 [03:29<4:51:23,  1.08it/s, ce=0.2576, l2=1.3666, loss=1.1468, lr=2.00e-03, sps=1.1, step=57200]",
+  "example_positions_in_completed_epochs": 29211648,
+  "experiment_identity_sha256": "703b1a7f03187c00dd21e69b54fa3187a41d10c34f17ca2e34c7270e720b3735",
+  "full_training_complete": false,
+  "global_batch_size": 512,
+  "grad_accum_steps": 1,
+  "learning_rates": [
+    0.002
+  ],
+  "padding_repeats_in_completed_epochs": 96,
+  "paired_counter_check": {
+    "matched": true,
+    "matched_fields": [
+      "checkpoint_step",
+      "checkpoint_epoch",
+      "scheduler_last_epoch",
+      "learning_rates",
+      "rank_rng_records",
+      "required_epochs",
+      "required_updates",
+      "dataset_examples",
+      "updates_per_epoch",
+      "global_batch_size",
+      "grad_accum_steps",
+      "source_row_visits_in_completed_epochs",
+      "example_positions_in_completed_epochs",
+      "padding_repeats_in_completed_epochs"
+    ],
+    "other_record": "evidence/elf-D-epoch-3-progress.json",
+    "other_record_sha256": "4cff77d9c0439444707018ffb328eb36be615109de123bc54e1ddb4925766bd0"
+  },
+  "post_checkpoint_status": {
+    "ce": 0.2575764060020447,
+    "epoch": 3.0076769376380272,
+    "eta_seconds": 34968.80790874958,
+    "invocation_wall_seconds": 50304.93607735075,
+    "l2": 1.3666355609893799,
+    "loss": 1.1468244791030884,
+    "max_memory_bytes": 62168318464,
+    "state": "running",
+    "step": 57200,
+    "steps_per_second": 1.0835370796417543
+  },
+  "rank_rng_records": 8,
+  "raw_progress_artifact": "artifacts/elf-C-epoch-3-progress.json",
+  "raw_progress_sha256": "09135949799ab221a4fa0c9328b6eee0faa723b3dfa3240cfba1adb51dbd69f3",
+  "referenced_optimizer_files": [
+    {
+      "bytes": 52484526,
+      "file": "optimizer_57054_rank0_354a9570cd664ffd8e9cf46dabd2e81b.pt",
+      "rank": 0
+    },
+    {
+      "bytes": 51173806,
+      "file": "optimizer_57054_rank1_bfb4914dfacd43ffaa48327081a0ccdd.pt",
+      "rank": 1
+    },
+    {
+      "bytes": 50124912,
+      "file": "optimizer_57054_rank2_df7860f6473642e89a220c130931ce81.pt",
+      "rank": 2
+    },
+    {
+      "bytes": 49338480,
+      "file": "optimizer_57054_rank3_35c1775503e447bfad737d1acf8019c7.pt",
+      "rank": 3
+    },
+    {
+      "bytes": 39901296,
+      "file": "optimizer_57054_rank4_92f706a0c8214a5c9662aa5e2e41e1e9.pt",
+      "rank": 4
+    },
+    {
+      "bytes": 39508080,
+      "file": "optimizer_57054_rank5_81684e579e02484ead770bd4320d33d9.pt",
+      "rank": 5
+    },
+    {
+      "bytes": 104855664,
+      "file": "optimizer_57054_rank6_f6088b8d2d9e414fb299d199faafb240.pt",
+      "rank": 6
+    },
+    {
+      "bytes": 41212016,
+      "file": "optimizer_57054_rank7_e91a0360570244b39904ff07bf436854.pt",
+      "rank": 7
+    }
+  ],
+  "required_epochs": 5,
+  "required_updates": 95090,
+  "scheduler_last_epoch": 57054,
+  "scheduler_observation": {
+    "account": "snow.research.er",
+    "cpu": 64,
+    "gpus": 8,
+    "job_id": "c185b27b-f543-4065-8b3c-d8fa3f419fc5",
+    "node": "dgx-14",
+    "ram_gb": 512,
+    "recorded_at_utc": "2026-10-13T17:51:27.083822+00:00",
+    "run_id": "aa17b8e4-9da4-44d0-8dbb-ebf8fcae6266",
+    "started_at": 1791854687,
+    "state": "RUNNING"
+  },
+  "source_row_visits_in_completed_epochs": 29211552,
+  "tensor_and_optimizer_shard_content_audit": "Not performed for this progress record.",
+  "updates_per_epoch": 19018,
+  "verification_scope": "Saved checkpoint identity and counters, referenced optimizer-file presence, epoch completion log, and finite continuation status."
+}
