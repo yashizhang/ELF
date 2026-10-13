@@ -260,6 +260,27 @@ finiteness, all optimizer step counters, and the complete per-rank parameter
 assignment. Both five-epoch ELF runs and final generation evaluations remain
 incomplete; refresh `RESULTS.md` for the latest observed progress.
 
+D subsequently completed its first full OWT epoch at update 19,018. Its
+[epoch checkpoint audit](evidence/elf-D-epoch-1.json) verified epoch 1.0,
+finite model/EMA weights, all eight optimizer-shard hashes, complete per-rank
+parameter assignments, optimizer and scheduler counters at 19,018, and the
+configured learning rate of 0.002. Model and EMA hashes both advanced from
+the audited step-500 checkpoint. The retained log/status observation confirms
+that D continued training into epoch two.
+
+Audit an available full-epoch checkpoint in the CPU environment with:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python scripts/audit_elf_epoch.py \
+  --arm D --epoch 1 --output artifacts/elf-D-epoch-1-reaudit.json
+```
+
+Use `--arm C` for C and `--epoch 1` through `--epoch 5` for the corresponding
+saved epoch. Choose an unused output path; the auditor preserves earlier audit
+files. It checks the saved model, EMA, optimizer and RNG records without
+loading a GPU model. Dataset exposure is inferred from the saved step and the
+separately verified full-epoch sampler; it is not a per-example runtime trace.
+
 The lightweight status recorder queries the job IDs in the submission manifest
 under `snow.research.er` every 45 seconds:
 
