@@ -251,12 +251,14 @@ records and normalization identities are retained in
 Both arms then initialized fresh ELF-B models with the identical initial hash
 `7ef18e4d2f653a4ac286726855b0ead1e86002e01ac18747169b04b2cd068357`,
 generated their eight-sample smoke batches, and began the required five-epoch
-runs with finite logged losses. D's
-[first ELF recovery checkpoint audit](evidence/elf-D-checkpoint-500.json)
-verified finite model/EMA states, matching experiment identity, eight hashed
-optimizer shards, and eight RNG records at update 500. Both five-epoch ELF
-runs and final generation evaluations remain incomplete; refresh `RESULTS.md`
-for the latest observed progress.
+runs with finite logged losses. The first ELF recovery checkpoint audits for
+[C](evidence/elf-C-checkpoint-500.json) and
+[D](evidence/elf-D-checkpoint-500.json) verified finite model/EMA states,
+matching experiment identities, eight hashed optimizer shards, and eight RNG
+records at update 500. C's audit also checked every saved optimizer tensor for
+finiteness, all optimizer step counters, and the complete per-rank parameter
+assignment. Both five-epoch ELF runs and final generation evaluations remain
+incomplete; refresh `RESULTS.md` for the latest observed progress.
 
 The lightweight status recorder queries the job IDs in the submission manifest
 under `snow.research.er` every 45 seconds:

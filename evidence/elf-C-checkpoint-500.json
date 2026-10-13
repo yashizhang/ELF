@@ -1,0 +1,106 @@
+{
+  "all_optimizer_parameters_have_saved_state": true,
+  "arm": "C",
+  "audited_at_utc": "2026-10-13T04:00:35.540026+00:00",
+  "checkpoint": "/home/toolkit/ELF/artifacts/C/elf/checkpoint_500",
+  "ema_state_hash": "4ae474b01984b2b99535b862baa874ca4939818285d36db08ed1584b1867a7a5",
+  "epoch": 0.026290882322010725,
+  "experiment_identity_matches": true,
+  "initial_elf_state_hash": "7ef18e4d2f653a4ac286726855b0ead1e86002e01ac18747169b04b2cd068357",
+  "model_and_ema_finite": true,
+  "model_state_hash": "7fbbb8c488b27ea319bbd8480bcf69fd16911d17dfc7c9172fee3b3c53cc7d26",
+  "optimizer_shards": [
+    {
+      "all_optimizer_tensors_finite": true,
+      "bytes": 52484526,
+      "file": "optimizer_500_rank0_22eec13e1be449319f07232de9bc8928.pt",
+      "optimizer_states": 117,
+      "optimizer_step_max": 500,
+      "optimizer_step_min": 500,
+      "rank": 0,
+      "rank_sharding_matches_parameter_groups": true,
+      "sha256": "a9b7ec0637a894c2618395bf660943dbf763ba0d2dc474ae7f099e22bd77b749"
+    },
+    {
+      "all_optimizer_tensors_finite": true,
+      "bytes": 51173806,
+      "file": "optimizer_500_rank1_e293bf3a6b5248479740e5e8686f5c93.pt",
+      "optimizer_states": 117,
+      "optimizer_step_max": 500,
+      "optimizer_step_min": 500,
+      "rank": 1,
+      "rank_sharding_matches_parameter_groups": true,
+      "sha256": "b0ad111c291e62d7383b30dbd38a8ce690c32d425c4fa435194d838556cda086"
+    },
+    {
+      "all_optimizer_tensors_finite": true,
+      "bytes": 50124912,
+      "file": "optimizer_500_rank2_f2b72773dd7b4ed68eb7c85cddf0e522.pt",
+      "optimizer_states": 116,
+      "optimizer_step_max": 500,
+      "optimizer_step_min": 500,
+      "rank": 2,
+      "rank_sharding_matches_parameter_groups": true,
+      "sha256": "c83174232cb7eff7170754525d74e5d8ac4c9e75b01bb04360bb4ebc18f7c232"
+    },
+    {
+      "all_optimizer_tensors_finite": true,
+      "bytes": 49338480,
+      "file": "optimizer_500_rank3_cf88a233f70f400bbfe474b35f363f3c.pt",
+      "optimizer_states": 116,
+      "optimizer_step_max": 500,
+      "optimizer_step_min": 500,
+      "rank": 3,
+      "rank_sharding_matches_parameter_groups": true,
+      "sha256": "4a9e9c0fa882f621a61f35c26bc88a96e0c4d0e6176712773232fb60b53d8db2"
+    },
+    {
+      "all_optimizer_tensors_finite": true,
+      "bytes": 39901296,
+      "file": "optimizer_500_rank4_3f5b4185eb324bee8edfdb4ff3f37621.pt",
+      "optimizer_states": 116,
+      "optimizer_step_max": 500,
+      "optimizer_step_min": 500,
+      "rank": 4,
+      "rank_sharding_matches_parameter_groups": true,
+      "sha256": "5f90a6e48008db404eca9ede4e0fe124744aba2d9c6c33a1a4268bdc839b1896"
+    },
+    {
+      "all_optimizer_tensors_finite": true,
+      "bytes": 39508080,
+      "file": "optimizer_500_rank5_7d8a0ba646fd4517bf1b1c61f3e3224d.pt",
+      "optimizer_states": 116,
+      "optimizer_step_max": 500,
+      "optimizer_step_min": 500,
+      "rank": 5,
+      "rank_sharding_matches_parameter_groups": true,
+      "sha256": "1039e8d4c509f19829334770563817ba76bf5a4e5a7a1ab754f7a8ed518c1b94"
+    },
+    {
+      "all_optimizer_tensors_finite": true,
+      "bytes": 104855664,
+      "file": "optimizer_500_rank6_09d8eb627ff8436ca379bda00cf4b3e1.pt",
+      "optimizer_states": 116,
+      "optimizer_step_max": 500,
+      "optimizer_step_min": 500,
+      "rank": 6,
+      "rank_sharding_matches_parameter_groups": true,
+      "sha256": "5ccb5f75804182fe03cb21188ed5bd7237946d6b1bc2579627849091dff5be70"
+    },
+    {
+      "all_optimizer_tensors_finite": true,
+      "bytes": 41212016,
+      "file": "optimizer_500_rank7_178f373bff3e4d989bd10a2f84a08b58.pt",
+      "optimizer_states": 116,
+      "optimizer_step_max": 500,
+      "optimizer_step_min": 500,
+      "rank": 7,
+      "rank_sharding_matches_parameter_groups": true,
+      "sha256": "b59b56dbddb7b6c0742112b7c3cfea59307fd70d5222f72db6c7cdb051f2759e"
+    }
+  ],
+  "rank_rng_count": 8,
+  "scope": "First committed full-run ELF recovery checkpoint; five-epoch completion and final evaluation remain outstanding.",
+  "sha256": "959264d2cd868713569af8e1fa7d37e1f5727ac229dea3ed58e3fac5fe1ab164",
+  "step": 500
+}
