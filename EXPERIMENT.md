@@ -269,12 +269,14 @@ of 0.002. Their data-exposure counters match. Model and EMA hashes in each arm
 advanced from its audited step-500 checkpoint. The retained log/status
 observations confirm that both arms continued training into epoch two.
 
-Arm D subsequently saved its second full-epoch checkpoint at update 38,036
-and continued into epoch three. Its [milestone record](evidence/elf-D-epoch-2-progress.json)
-verifies the saved epoch/counters and experiment identity, the presence of all
-eight referenced optimizer files, the epoch-completion log, and finite
-continuation at update 38,400. This progress record covers checkpoint metadata,
-file presence, and observed continuation; its scope is recorded explicitly.
+Both arms subsequently saved their second full-epoch checkpoints at update
+38,036 and continued into epoch three. The milestone records for
+[C](evidence/elf-C-epoch-2-progress.json) and [D](evidence/elf-D-epoch-2-progress.json)
+verify the saved epoch/counters and experiment identities, the presence of all
+eight referenced optimizer files per arm, the epoch-completion logs, and finite
+continuation. Their epoch and data-exposure counters match. These progress
+records cover checkpoint metadata, file presence, and observed continuation;
+their scope is recorded explicitly.
 
 Audit an available full-epoch checkpoint in the CPU environment with:
 
