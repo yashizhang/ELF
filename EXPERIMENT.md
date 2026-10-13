@@ -215,6 +215,25 @@ positions), matching data/corruption counters, and finite diagnostics at both
 lengths. The committed report includes the initial, 1B, and 3B measurements;
 both runs continue toward the fixed 10B adaptation budget.
 
+The lightweight status recorder queries the job IDs in the submission manifest
+under `snow.research.er` every 45 seconds:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/monitor_cd.py
+```
+
+Use `--once` for one observation before starting a persistent recorder. An
+exclusive lock prevents duplicate recorders for the same artifacts directory.
+`artifacts/monitor.json` holds the latest scheduler states, run history, stage
+states, and saved/observed progress; `monitor-history.jsonl` retains observations.
+The recorder follows updated job IDs after an authorized replacement and keeps
+observing the other arm if one job fails. Scheduler query errors are recorded
+as observation errors and retried against the same job IDs. It reads scheduler
+state and writes observation files; job submission remains the submitter's job.
+Check the recorded host/PID or query the scheduler directly before treating an
+old observation as live. Scheduler success still requires the final scientific
+acceptance audit described below.
+
 Each pipeline stage retains an independent start/end record in
 `stage_attempts/`. A restart cannot erase an unfinished attempt's start record.
 Reports use the scheduler run's end time for an attempt terminated before it
