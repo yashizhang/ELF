@@ -384,6 +384,28 @@ logit-normal schedule, length 1024). The pinned local GPT-2 Large snapshot is
 scored through `utils.metrics_utils.Metrics`. Raw JSONL, hashes, per-seed
 metrics, empty/scored counts, lengths and qualitative samples are retained.
 
+After an arm's pipeline completes, audit its final checkpoint and generation
+artifacts in the CPU environment:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python scripts/audit_elf_epoch.py \
+  --arm D --epoch 5
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python scripts/audit_final_generation.py \
+  --arm D
+```
+
+Use `--arm C` for C. Both commands preserve existing audit files; specify an
+unused `--output` path for a new audit, and pass `--elf-audit` to the generation
+auditor if the checkpoint audit used a nondefault path. The generation auditor
+requires completed stages and checks the final checkpoint provenance, immutable
+execution source, exact sampling settings, all 6,000 saved samples, snapshot
+hashes, tokenization, exclusions, and inference-seed mean/std/SEM. It independently
+reconstructs per-sample entropy and token-weighted aggregate perplexity from
+saved per-sample PPL values using the repository's EOS/padding weights. It does
+not rerun GPT-2 forward passes. Empty or unscorable outputs remain visible and
+can be valid negative results. These audits support the full `GOAL.md`
+acceptance review; their scope alone does not prove whole-experiment completion.
+
 ```bash
 PYTHONPATH=src .venv/bin/python -m t5_adaptation.report
 ```

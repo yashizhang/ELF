@@ -1,0 +1,46 @@
+{
+  "recorded_at_utc": "2026-10-13T22:41:27.249678+00:00",
+  "auditor_sha256": "f8b7ce7374613409933acd57421cf22b4e6513705f8f4cda85f2b465f1f14461",
+  "tests_sha256": "04bb035732313412834a54022ccbee2eb4ca5a377b449c6124e1af90170b6e1a",
+  "scope": "Validation of the final-generation auditor using CPU fixtures and incomplete live-pipeline guards; final generation audits have not run.",
+  "auditor": "scripts/audit_final_generation.py",
+  "tests": "tests/test_generation_audit.py",
+  "unit_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=src .venv/bin/python -m pytest tests/test_generation_audit.py -q",
+    "exit_code": 0,
+    "output": "......                                                                   [100%]\n6 passed in 6.23s\n"
+  },
+  "completion_guards": [
+    {
+      "arm": "C",
+      "command": [
+        "/home/toolkit/ELF/.venv/bin/python",
+        "scripts/audit_final_generation.py",
+        "--arm",
+        "C"
+      ],
+      "exit_code": 1,
+      "expected_rejection": "Arm C has not completed its pipeline yet",
+      "audit_file_created": false,
+      "execution_source_files_checked": 37,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "all_execution_source_hashes_match": true
+    },
+    {
+      "arm": "D",
+      "command": [
+        "/home/toolkit/ELF/.venv/bin/python",
+        "scripts/audit_final_generation.py",
+        "--arm",
+        "D"
+      ],
+      "exit_code": 1,
+      "expected_rejection": "Arm D has not completed its pipeline yet",
+      "audit_file_created": false,
+      "execution_source_files_checked": 37,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "all_execution_source_hashes_match": true
+    }
+  ],
+  "limits": "End-to-end artifact auditing remains pending until final generation and scoring complete."
+}
