@@ -1,0 +1,84 @@
+{
+  "arms": [
+    {
+      "account": "snow.research.er",
+      "arm": "C",
+      "command": [
+        "eai",
+        "job",
+        "get",
+        "c185b27b-f543-4065-8b3c-d8fa3f419fc5",
+        "--account",
+        "snow.research.er",
+        "--format",
+        "json"
+      ],
+      "id": "c185b27b-f543-4065-8b3c-d8fa3f419fc5",
+      "name": "elf_cd_c_10b_20261012",
+      "resources": {
+        "cpu": 64,
+        "cpuModel": "",
+        "gpu": 8,
+        "gpuCudaVersion": 0,
+        "gpuMem": 0,
+        "gpuModel": "H100",
+        "gpuTensorCores": false,
+        "inference": false,
+        "mem": 512,
+        "replicas": 0
+      },
+      "runs": [
+        {
+          "endedOn": "2026-10-14T03:08:29Z",
+          "exitCode": 0,
+          "id": "aa17b8e4-9da4-44d0-8dbb-ebf8fcae6266",
+          "nodeName": "dgx-14",
+          "startedOn": "2026-10-13T01:24:47Z",
+          "state": "SUCCEEDED"
+        }
+      ],
+      "state": "SUCCEEDED"
+    },
+    {
+      "account": "snow.research.er",
+      "arm": "D",
+      "command": [
+        "eai",
+        "job",
+        "get",
+        "591cc3b5-32f9-4aef-8c17-2dfd0841fa7a",
+        "--account",
+        "snow.research.er",
+        "--format",
+        "json"
+      ],
+      "id": "591cc3b5-32f9-4aef-8c17-2dfd0841fa7a",
+      "name": "elf_cd_d_10b_20261012",
+      "resources": {
+        "cpu": 64,
+        "cpuModel": "",
+        "gpu": 8,
+        "gpuCudaVersion": 0,
+        "gpuMem": 0,
+        "gpuModel": "H100",
+        "gpuTensorCores": false,
+        "inference": false,
+        "mem": 512,
+        "replicas": 0
+      },
+      "runs": [
+        {
+          "endedOn": "2026-10-14T02:21:14Z",
+          "exitCode": 0,
+          "id": "79ac92a2-6060-4ce7-b7f2-ac69d29eb075",
+          "nodeName": "dgx-09",
+          "startedOn": "2026-10-13T01:24:58Z",
+          "state": "SUCCEEDED"
+        }
+      ],
+      "state": "SUCCEEDED"
+    }
+  ],
+  "observed_at_utc": "2026-10-14T23:13:53.248225+00:00",
+  "scope": "Read-only terminal scheduler observations; no new jobs, retries, or node requests. Environment variables are intentionally excluded."
+}

@@ -1,0 +1,34 @@
+{
+  "configuration": {
+    "gamma": 1.5,
+    "sampling_method": "sde",
+    "self_cond_cfg": 3,
+    "steps": 32
+  },
+  "evaluation_runs": 6,
+  "evaluation_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "gen_ppl": {
+    "mean": 24.08,
+    "standard_error": 0.16
+  },
+  "location": "Appendix E.4, Table 9; SDE settings also described in E.2",
+  "mean_sample_unigram_entropy": {
+    "mean": 5.15,
+    "standard_error": 0.002
+  },
+  "measured_this_project": false,
+  "note": "Only the preregistered primary A row is used. No new baseline training or inference was run.",
+  "origin": "published_external",
+  "source": "https://arxiv.org/html/2605.10938v2#A5.T9",
+  "title": "ELF: Embedded Language Flows",
+  "verified_at_utc": "2026-10-14T23:21:46.821875+00:00",
+  "version": "arXiv:2605.10938v2",
+  "version_date": "2026-06-26"
+}

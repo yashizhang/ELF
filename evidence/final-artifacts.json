@@ -1,0 +1,1331 @@
+{
+  "arms": {
+    "C": {
+      "adaptation_checkpoint_sha256": "ebe3b3b2602b8fa937f40e432109ee4688775c15e5d5b63abed16e223c8afa29",
+      "elf_checkpoint_sha256": "91fb472aff63d0759314e56bd5be51227d14ce6a50da18f30fb23ec278f0182b",
+      "elf_epochs": 5,
+      "elf_updates": 95090,
+      "ema_state_hash": "d871cc4d8b867013fe65a7019490282a742a4a7ee7a423b44cdfa1a6c6f266f5",
+      "encoder_hash": "75762f6f8f15e7e05002b297af83cf4d49d0ec9d8742c71701f428f105b06ae6",
+      "execution_source_files_verified": 37,
+      "generated_samples": 6000,
+      "retained_elf_checkpoint_count": 195
+    },
+    "D": {
+      "adaptation_checkpoint_sha256": "5d44c1263f4737ddfb4ef51d0dce3eeed4efdb1d39899e96723a4aa5e58ec4f3",
+      "elf_checkpoint_sha256": "6e5b5eb79ca5f58159786bdf2abeea3c34ddd9767f3fc8d12e1871d6783a7b80",
+      "elf_epochs": 5,
+      "elf_updates": 95090,
+      "ema_state_hash": "9ff670c779402f47a8e65aabcc3ac27277b7eab741aebc1fb8cd995704e7fc90",
+      "encoder_hash": "45355982ce6b57cbce17b7c934ce604649ab99389f678afaf95ee8f1576c89f5",
+      "execution_source_files_verified": 37,
+      "generated_samples": 6000,
+      "retained_elf_checkpoint_count": 195
+    }
+  },
+  "recorded_at_utc": "2026-10-14T23:23:53.280439+00:00",
+  "retention": "Selected final products listed below were freshly hashed. All prior recovery checkpoints remain in place. Git does not contain the large artifact payloads; use the designated experiment storage.",
+  "root": "/home/toolkit/ELF",
+  "shared_data_files": {
+    "artifacts/shared/c4/train/documents.jsonl": {
+      "bytes": 5169235817,
+      "sha256": "62a8e5117f6fa175632f5f7a46d1950a45f0aa0dc301c61044b193643f2dcef5",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/c4/train/tokens.u16": {
+      "bytes": 22187515904,
+      "sha256": "cd96614b22ea332d8b5cc6eedfcdbe4eb76a35ead555f0f146738bee512a3107",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/c4/validation/documents.jsonl": {
+      "bytes": 1929662,
+      "sha256": "0c3536a8dc3fcb6faeb401a0b68f2a24c933ea38e8f1f88c153a884db2591efb",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/c4/validation/tokens.u16": {
+      "bytes": 8380416,
+      "sha256": "cca60fac6abb394e7629315929f4689f47b05d42f115b524f18b2e4af0dcdeeb",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00000-of-00075.arrow": {
+      "bytes": 498477032,
+      "sha256": "e4a9ad6a4e8174bc266bc24c560fbd5ad878ae0891ddffe561ccb7c779a3ea21",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00001-of-00075.arrow": {
+      "bytes": 498414608,
+      "sha256": "d1bf38624b59cc03702d756ad4ee3ce446a5dfc3ac7262c89ccacd50eeaa0af1",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00002-of-00075.arrow": {
+      "bytes": 498284432,
+      "sha256": "ba3e17be1632462f20ef2934faa141b31f31221a2a58d1b600824e04d1a70624",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00003-of-00075.arrow": {
+      "bytes": 498502504,
+      "sha256": "584833f7daf9f353d60ba5451f0d1fd61213a835319931919f42aa3cd02b2ad4",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00004-of-00075.arrow": {
+      "bytes": 498737144,
+      "sha256": "50cd4fef7b3a85274840153d8a6bd771bef561624e15c215def3229fb5fcbb18",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00005-of-00075.arrow": {
+      "bytes": 498350800,
+      "sha256": "e798a15f94f85ccaed25e5cf1cce26a0fdb687acd38bb22b5701a4c4ae45c9a9",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00006-of-00075.arrow": {
+      "bytes": 497965656,
+      "sha256": "05045ae00ce900c584039dcfda6ef9e70e0c33ed9a9dddf62bfed7e02ba9fbdb",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00007-of-00075.arrow": {
+      "bytes": 498557496,
+      "sha256": "af7be8f8068a3f0c1565c1c2ea183f37ee10e697e65a57d72f26e8f450480f7e",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00008-of-00075.arrow": {
+      "bytes": 498572656,
+      "sha256": "b4ae8c46199e59d8ed0a0b4ec0aefea63bff79817ab7956ce07805dec3efb983",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00009-of-00075.arrow": {
+      "bytes": 498471632,
+      "sha256": "c895dded83790041cadf268001efb95d14fb5cab5a17608d7eea34e8c1f1921a",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00010-of-00075.arrow": {
+      "bytes": 498462120,
+      "sha256": "5a18a5256c2cc8507db7661012aaa28c324b615767120ac86cc7b5d43f5bacbc",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00011-of-00075.arrow": {
+      "bytes": 498315152,
+      "sha256": "750fdeb9fc3614c18f1cefdeecec4ff7e00fd9b147caec81da3d0db8d265f04b",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00012-of-00075.arrow": {
+      "bytes": 498678096,
+      "sha256": "ffcf0fa650a70d0200f2d8514b66b5bd272ff1f13b799b5eaf01dd6ff156c03b",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00013-of-00075.arrow": {
+      "bytes": 498156088,
+      "sha256": "49fc9057d7fa0a0cff1c0f0c7e84181f1cd3806d15aded5222d64ef251c7fbb9",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00014-of-00075.arrow": {
+      "bytes": 498318264,
+      "sha256": "54f19cbdb81624943995607a65440123b9c1f2d67285288fb7aa18bd91b85c84",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00015-of-00075.arrow": {
+      "bytes": 498811968,
+      "sha256": "68944565fdad4b1b9e5fcedeffc50f372e14ae0ef0d62767ed3382f31647bde7",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00016-of-00075.arrow": {
+      "bytes": 498368288,
+      "sha256": "6b803b4d0878645f163eb22d6c03070d17ed6a771d0e3902ef738d84d7ca2afd",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00017-of-00075.arrow": {
+      "bytes": 498624272,
+      "sha256": "92a08077f056a14cbfc3d1c1da2b3d0547b5904cf6a2555bec82e38ab66074f8",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00018-of-00075.arrow": {
+      "bytes": 498627424,
+      "sha256": "a13129509c832fdb36640facb2faca530323ba628e88c409037081fda1fe6d95",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00019-of-00075.arrow": {
+      "bytes": 498350760,
+      "sha256": "e54edbf850e896d72fec5c33a53f84a01b6f847e061da9673f7a8b2bb9d58e75",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00020-of-00075.arrow": {
+      "bytes": 498638952,
+      "sha256": "50bcd8d8b7fe87dbc40a852943be8a75038a8075075e4ecb7fac7b772e6e6ad4",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00021-of-00075.arrow": {
+      "bytes": 498136136,
+      "sha256": "e663c154d940a5de09ae99f4fdf331e54cc1db756a8ebcafafaf5e288395948f",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00022-of-00075.arrow": {
+      "bytes": 498402384,
+      "sha256": "563b0eaaed6be52d1300b5782c35dc601f8eb48fb72b230f89889106ded3d61c",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00023-of-00075.arrow": {
+      "bytes": 498595736,
+      "sha256": "8e19ebe47596915d02cb924ece4abb89156e447c4511d845ec862f353cfdc75c",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00024-of-00075.arrow": {
+      "bytes": 498640736,
+      "sha256": "5ba1732dfc091298c5bc352211ab159e60373aea28e58533dadf7b2ce1abfb9e",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00025-of-00075.arrow": {
+      "bytes": 498345512,
+      "sha256": "904f9eba2b73b305a8c5a24be3229f4db312dc17b7989c8988ed6140ccbec0b9",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00026-of-00075.arrow": {
+      "bytes": 498271528,
+      "sha256": "363c46ba5409d423d3c64cc8dcf689a5d116e740cef7c5afb0bf9875afabb62c",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00027-of-00075.arrow": {
+      "bytes": 498689744,
+      "sha256": "026d730e492cdb22a3d28189f86235bd9265ce2b69003c3f6bc455b586f9a285",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00028-of-00075.arrow": {
+      "bytes": 498399064,
+      "sha256": "3f56537f37cee28e0192dc1ea3420cab5b4f879b0a38e8df1d3a35d3b0453612",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00029-of-00075.arrow": {
+      "bytes": 498520608,
+      "sha256": "f4eca2f7217683a16a0997b8fb1456af183adb78f9248646e719aac268b3c76b",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00030-of-00075.arrow": {
+      "bytes": 498631504,
+      "sha256": "e1abfaa20d32e803ec5fdef7574711598ccbaf99d2ed86dc2f4f5546d3489868",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00031-of-00075.arrow": {
+      "bytes": 498194040,
+      "sha256": "778d3ec6be4d53971f95d2755f243c9d983254219cd65f18e88e92f77b48b7d0",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00032-of-00075.arrow": {
+      "bytes": 498222816,
+      "sha256": "6763d8fac8040a57043a6ed918389fbd5d8448dc07e03184095365d2165084d2",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00033-of-00075.arrow": {
+      "bytes": 498451320,
+      "sha256": "1082e7802f060439724beeb82354768c8821c1074d2e915710de8089987028b6",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00034-of-00075.arrow": {
+      "bytes": 498250136,
+      "sha256": "c392819b466e547afe292fe803c5b49585a05af4e35707a5881608f33afece1a",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00035-of-00075.arrow": {
+      "bytes": 498548448,
+      "sha256": "47e53009792cdad3960d8865b32ab7657619a5ea2930a8bea989571c54663826",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00036-of-00075.arrow": {
+      "bytes": 498523248,
+      "sha256": "5b285e92403291e4660784ab87a06b4c96409960f42c29388f44e8fe27e829b9",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00037-of-00075.arrow": {
+      "bytes": 498430952,
+      "sha256": "e930c18d846e6d7d150e284f6a857483d4f65a912fe587ee6f83701bc1322cf4",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00038-of-00075.arrow": {
+      "bytes": 498426728,
+      "sha256": "cdb10d99c0aac36cffbf227fb752a9368708a1ea117c9f31bb5a7caedba90246",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00039-of-00075.arrow": {
+      "bytes": 498655872,
+      "sha256": "afcec61483f5fcdd7c654218da32eb250e9c01ad6f6fc665051b80a2e12566db",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00040-of-00075.arrow": {
+      "bytes": 498617720,
+      "sha256": "7f9efd58f94df74108005d331b0acdfcdaec073e3ad70495f5c6722078a9de33",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00041-of-00075.arrow": {
+      "bytes": 498504856,
+      "sha256": "fdc2cf321c6978846806cfa37c2f3e9c9a415bbd4d4111896b83d93031283f86",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00042-of-00075.arrow": {
+      "bytes": 498080248,
+      "sha256": "aa15b18d6535babd78375806e9c7dbbf0dc56f5642302a528e1186f3f3baf0bc",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00043-of-00075.arrow": {
+      "bytes": 498352688,
+      "sha256": "fa61d17a2b02417dfff4def7bcbb15690f53ed82d229b6430550fbf30fcd2f39",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00044-of-00075.arrow": {
+      "bytes": 498468328,
+      "sha256": "9dc57732ea94affcb07aa110bdde2f660490487ee4f996b028a4a57f62dd5a50",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00045-of-00075.arrow": {
+      "bytes": 498492672,
+      "sha256": "8bdc0e80f9073a2c659859ab8e90a5fa97b72885c13878dd9850536b7d9fbd52",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00046-of-00075.arrow": {
+      "bytes": 498113296,
+      "sha256": "2d06a8baff52c4f8d29dffa5e1b4a03825c6b06f9e12a608b0c81969f46286f1",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00047-of-00075.arrow": {
+      "bytes": 498380208,
+      "sha256": "1e8f71d07db28ec8f77833d81efb42d62399e3763e13a85c04c4bd1e807bac64",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00048-of-00075.arrow": {
+      "bytes": 498370064,
+      "sha256": "d389676f8f6190921992c5920b8125ce2692ebcd6ef4c4d890cde90d953909a1",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00049-of-00075.arrow": {
+      "bytes": 498400200,
+      "sha256": "9cc0c4ca53c106c854803af2eac93d6296750589fdbb37e3a1637a314ca39ce0",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00050-of-00075.arrow": {
+      "bytes": 498438024,
+      "sha256": "03dbe9d888f42476b3913a87f8d28caf29ff73efeb4aee8b3d83b93ca8893282",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00051-of-00075.arrow": {
+      "bytes": 498461944,
+      "sha256": "c400145e896eae96bb1d760dfd066746bc844ba20d9ddd9432d4043af7ca93e7",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00052-of-00075.arrow": {
+      "bytes": 498357792,
+      "sha256": "379de2e0066d7007f4ca9892684457f12abef7b24822f49c868a85d9335f01dc",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00053-of-00075.arrow": {
+      "bytes": 498541536,
+      "sha256": "776bb476bc16ec955341e85d998c2be7443f3a089ee8962f64ca00b7acd3e887",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00054-of-00075.arrow": {
+      "bytes": 498673992,
+      "sha256": "0a82e3c69e2df95047754665ac75e417ce9fd1f2905034633a0da6f810fd7db1",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00055-of-00075.arrow": {
+      "bytes": 498355056,
+      "sha256": "d76f688646e641834cbceea8094c246f87df6d38b35c6662c56ba07393a2ca32",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00056-of-00075.arrow": {
+      "bytes": 498638680,
+      "sha256": "b96f6292b487345fe19485d9210809835c6a3f60e4115973779ad1652fca1593",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00057-of-00075.arrow": {
+      "bytes": 498334440,
+      "sha256": "ac9c832ef675fa5cd2aa67244048c50b9b644ad451e8787f407a977bd0793745",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00058-of-00075.arrow": {
+      "bytes": 498335496,
+      "sha256": "ddd28f16cfbf18b8c594046b1770533b159d2f21ddb5273917ce335c169115e4",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00059-of-00075.arrow": {
+      "bytes": 498489280,
+      "sha256": "99b71d39a9052cb82fcaad91f6ca39529d828e129226cdff872dbaa7cf006066",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00060-of-00075.arrow": {
+      "bytes": 498594872,
+      "sha256": "1744da82dd41542defa2fc68333fd125becfb50fbda163c43807c9200cec509c",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00061-of-00075.arrow": {
+      "bytes": 498244496,
+      "sha256": "4c1df065aba3433d9da8701701f210adc3e2612b928c4cd08280f51d013c50e0",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00062-of-00075.arrow": {
+      "bytes": 498615880,
+      "sha256": "04285a522a624c44b7737ce1e1fa67e000952afbba9ed7ac119cbb452ffb03d1",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00063-of-00075.arrow": {
+      "bytes": 498086232,
+      "sha256": "b25d3756ce0a4ed21de24a0a96daa16779465c394d7b3722a0662560c1c025e3",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00064-of-00075.arrow": {
+      "bytes": 498749896,
+      "sha256": "d0e7fee3d81376850600238691c8df3662b842aaeace8b09b3e3d54276276a01",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00065-of-00075.arrow": {
+      "bytes": 498702384,
+      "sha256": "fc6776329e285b7bdc8acfa914f8d52a8c5df58f0aff3b444ba13270eeaeb7e6",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00066-of-00075.arrow": {
+      "bytes": 498571456,
+      "sha256": "9c206004da2e133959c5345d9044b67701791850e650f0d87e8bd20ca7b7ab0f",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00067-of-00075.arrow": {
+      "bytes": 498400032,
+      "sha256": "ba5954c137e0f7cfe130c9684b7fe1dcc59ab15a689772a38a6df17c05d23761",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00068-of-00075.arrow": {
+      "bytes": 498674416,
+      "sha256": "2aaa25565209f04daf71eee8d4f07871574955f7eada3d3a5d214169448290ef",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00069-of-00075.arrow": {
+      "bytes": 498618048,
+      "sha256": "367d14184fb9cd2c275bb1b0ab07e2ad261234fbad87c10269371db044c01654",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00070-of-00075.arrow": {
+      "bytes": 498658328,
+      "sha256": "8177f2cd12182b515acd27076d2ef607a10f954ae0e7dac94af8fccba1c776bc",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00071-of-00075.arrow": {
+      "bytes": 498449768,
+      "sha256": "88418589f9db7e3c9a1ce245f90e2fde55717ec86acf1e28fc4f357151c299a1",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00072-of-00075.arrow": {
+      "bytes": 498584424,
+      "sha256": "39932c0e7ae02225913102288c7ae11ca04d0318445663865282b48a729fce01",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00073-of-00075.arrow": {
+      "bytes": 498730560,
+      "sha256": "5672c756cee4ebd3d676604c8d02e0de9273b4d6acc442c64a12d95557eae4d3",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/data-00074-of-00075.arrow": {
+      "bytes": 498073104,
+      "sha256": "c134831930654f26f50fc5266e9868430be7d79820c2074be48b6434810f4c9d",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/dataset_info.json": {
+      "bytes": 1992,
+      "sha256": "6fe15d1460be57b527643042f8f57457bb77a03c172a8b6ad5ce1604b53c7922",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    },
+    "artifacts/shared/owt/state.json": {
+      "bytes": 4616,
+      "sha256": "0547f3b245ad76d2451b177376d4269b5f98edd31cbc4ce56b5d49b37655e9f7",
+      "verification": "Preparation manifest hash retained; current file presence/size checked, full bytes not reread in this final audit."
+    }
+  },
+  "storage_root": "/home/toolkit/ELF/artifacts",
+  "verified_files": {
+    "artifacts/C/adaptation.log": {
+      "bytes": 1261131,
+      "sha256": "746507de0763fd78f9010dcf12dee30ac42b26d8ed0cc80a78e151bf3a2acafa"
+    },
+    "artifacts/C/adaptation/diagnostics-000000.json": {
+      "bytes": 27885,
+      "sha256": "e93b0f322fb1a58561399e6a0812ace31344dbcb3d9c1c78210e6397e714e09e"
+    },
+    "artifacts/C/adaptation/diagnostics-003815.json": {
+      "bytes": 27740,
+      "sha256": "25acf0bccabc0993a8836eb8ec841b61e7c4b1b9b7ccbd0d03ae1db259dcb0da"
+    },
+    "artifacts/C/adaptation/diagnostics-011445.json": {
+      "bytes": 27695,
+      "sha256": "9dca6e4ee3ddc88afab0aa6ca3bb72d20337c92a3224663afcdad004a7b1e7a3"
+    },
+    "artifacts/C/adaptation/diagnostics-038147.json": {
+      "bytes": 27654,
+      "sha256": "98d559417aedf519644ec7839674ab317a47d47b6e2f94d2e6c0cb04cfd32405"
+    },
+    "artifacts/C/adaptation/identity.json": {
+      "bytes": 4195,
+      "sha256": "0bd698d2f13b3013b97d09b7afea9ad4bd46568354b823bf68a947b6207e3c87"
+    },
+    "artifacts/C/adaptation/initial_encoder.json": {
+      "bytes": 197,
+      "sha256": "437299b5b85c8328ac69e1ce25ceb3dec960cb0db7eb40700b8e82dc99e5720e"
+    },
+    "artifacts/C/adaptation/latest.json": {
+      "bytes": 5065,
+      "sha256": "8a14f5d3321d2ff2b705cbc92c4f6b51201f5c5680ec0f3887202d3430592401"
+    },
+    "artifacts/C/adaptation/milestone-003815.json": {
+      "bytes": 5056,
+      "sha256": "f36bb5f4de7530102d3f2aefbe0fad5cc24fd4b4980b2dbb11ab9d5314688215"
+    },
+    "artifacts/C/adaptation/milestone-003815.pt": {
+      "bytes": 726383230,
+      "sha256": "160f2d9181c23ef0665724f61bf77c56862a5bc5af41ada14db37504a84732b7"
+    },
+    "artifacts/C/adaptation/milestone-011445.json": {
+      "bytes": 5060,
+      "sha256": "21f88957e04d9cb23623d933aca32e290a89cb16267099c4acfafd92bb42f5dd"
+    },
+    "artifacts/C/adaptation/milestone-011445.pt": {
+      "bytes": 726383230,
+      "sha256": "64438de9de247834eb34888a31b19165829755978d99de2e42e7c7449b7255ff"
+    },
+    "artifacts/C/adaptation/milestone-038147.json": {
+      "bytes": 5065,
+      "sha256": "8a14f5d3321d2ff2b705cbc92c4f6b51201f5c5680ec0f3887202d3430592401"
+    },
+    "artifacts/C/adaptation/milestone-038147.pt": {
+      "bytes": 726383230,
+      "sha256": "ebe3b3b2602b8fa937f40e432109ee4688775c15e5d5b63abed16e223c8afa29"
+    },
+    "artifacts/C/adaptation/runtime.json": {
+      "bytes": 33525,
+      "sha256": "62b6f87861e25da698b0404f527d213d885964029a5ffe34dcc499e20c021c74"
+    },
+    "artifacts/C/adaptation/status.json": {
+      "bytes": 522,
+      "sha256": "e7e87d44fb490a1d78c508b0366e02e87c745fd2098179ebbe2aefc25e755b59"
+    },
+    "artifacts/C/adaptation/train.jsonl": {
+      "bytes": 1261131,
+      "sha256": "a1979d7026b70973e87a45d21a1b7effefeefcccaaa0458721370906ccaa7dc0"
+    },
+    "artifacts/C/completed.json": {
+      "bytes": 197,
+      "sha256": "c41faf84f1996c0c050360b084d4729604673d84f33a668a4cd407693241b146"
+    },
+    "artifacts/C/compute.jsonl": {
+      "bytes": 4170,
+      "sha256": "26b7a4c6327de8a58164f30d5826b8db18e47c780583d9822ed9cd1670fda4be"
+    },
+    "artifacts/C/elf.log": {
+      "bytes": 7544184,
+      "sha256": "aa3d85d1c0c05eae45e74b23284333b4cabc732a9aa6eaf210636063a6bfb443"
+    },
+    "artifacts/C/elf.yml": {
+      "bytes": 1220,
+      "sha256": "b77386984af1a0ffaf5627019c738be4c13d5a468c79885c8e7d4a7a0a1cc7c6"
+    },
+    "artifacts/C/elf/checkpoint_95090": {
+      "bytes": 889413424,
+      "sha256": "91fb472aff63d0759314e56bd5be51227d14ce6a50da18f30fb23ec278f0182b"
+    },
+    "artifacts/C/elf/completed.json": {
+      "bytes": 6553,
+      "sha256": "7a50d8629e548325edb4de1c53c861a3217632fdf1f773b9c0388a2e8dca4d52"
+    },
+    "artifacts/C/elf/config.yml": {
+      "bytes": 1549,
+      "sha256": "2e4549b46f67bae68bcf8ee82728c8d49afc0d4cc73794a37b930384b8052122"
+    },
+    "artifacts/C/elf/initial_smoke/sde-steps2-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_0_1.jsonl": {
+      "bytes": 98512,
+      "sha256": "d3565d24add2a26e9623a157283a4b7ba0f8167da2d4dbaa6eb77f76a0517083"
+    },
+    "artifacts/C/elf/initialization.json": {
+      "bytes": 6567,
+      "sha256": "572bf18049749fc3a54e260b466306dbbd795f3907eb200e4cea6d44b44dbd04"
+    },
+    "artifacts/C/elf/optimizer_95090_rank0_7df39286208c4cefbda1bb242227a6c5.pt": {
+      "bytes": 52484782,
+      "sha256": "ea19db2602a3927b6d3797ae7caeab61a846c952cca27a64d3653b59c3d43c15"
+    },
+    "artifacts/C/elf/optimizer_95090_rank1_3a62a1f3cecb4bdab0f7ddb726674dc1.pt": {
+      "bytes": 51174062,
+      "sha256": "971d547b5dc53116d4d482b7b43b699607543e8c2f4dbea2a576bffab7780cfa"
+    },
+    "artifacts/C/elf/optimizer_95090_rank2_ff16861d9da447bba167acc714e17bf7.pt": {
+      "bytes": 50125168,
+      "sha256": "65f4708749090641b8766fed132a0fc8d5b4efce379489e4fa886fd1d5a6ac28"
+    },
+    "artifacts/C/elf/optimizer_95090_rank3_eb4dd33a324644cf9e2afedf61995f79.pt": {
+      "bytes": 49338736,
+      "sha256": "e4a4429d8db400c339732acf2478e393eb3dabf317afac74573391b3f50fdb53"
+    },
+    "artifacts/C/elf/optimizer_95090_rank4_7d1dcf9e7c0b4803a47209c2976a4795.pt": {
+      "bytes": 39901552,
+      "sha256": "c65fb49a7759cc7b0dce41fa53118389218dbd2bd6c902661a5017024a929260"
+    },
+    "artifacts/C/elf/optimizer_95090_rank5_2ba75ca4eb634dfe8db3951609b6d1b4.pt": {
+      "bytes": 39508336,
+      "sha256": "2906552b17e0828b1c96d00a7a39afc1fed70f9afa6d91f8bd0be14b01c038bb"
+    },
+    "artifacts/C/elf/optimizer_95090_rank6_1745ded5d6bf4ca49337e677ead524ef.pt": {
+      "bytes": 104855920,
+      "sha256": "e0974679e4997a5286b65f9dd918f3e6740691b428c06dd9e041f007079bcb11"
+    },
+    "artifacts/C/elf/optimizer_95090_rank7_4fa2db35c8f743c99155c997cdfa72fa.pt": {
+      "bytes": 41212272,
+      "sha256": "26bafc080debab129caed3ba1503175ffaa2ced5ad483eaca75e718328a18f4a"
+    },
+    "artifacts/C/elf/status.json": {
+      "bytes": 320,
+      "sha256": "06686120a68fe28bae0f2b36016bffe42eb1af006f392d43438806f8b0d640e4"
+    },
+    "artifacts/C/elf/train.jsonl": {
+      "bytes": 282820,
+      "sha256": "38b3869fd4d18f1355d4efbb60291a51d668dc7823eab7c816cf64eb679ad2cd"
+    },
+    "artifacts/C/elf_identity.json": {
+      "bytes": 6000,
+      "sha256": "8488127f67409938f8aeebb3d52dac34527024d374bd5d89fdb46f116afab36c"
+    },
+    "artifacts/C/encoder/config.json": {
+      "bytes": 1519,
+      "sha256": "e9cbb19e40f8d69b95ec1e96345ff134dfe46b5d6b0d0d58cb2d43370703864c"
+    },
+    "artifacts/C/encoder/manifest.json": {
+      "bytes": 6365,
+      "sha256": "31e34efef2157d158da4885491a2c3294d5ca5389754342892c1fc5c54583a4d"
+    },
+    "artifacts/C/encoder/model.safetensors": {
+      "bytes": 141329200,
+      "sha256": "a15dc62e7a3e9ab896f8907578fe93fa18595459b53cfa064d1025affe2bd287"
+    },
+    "artifacts/C/encoder/special_tokens_map.json": {
+      "bytes": 2543,
+      "sha256": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2"
+    },
+    "artifacts/C/encoder/spiece.model": {
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    "artifacts/C/encoder/tokenizer.json": {
+      "bytes": 2422169,
+      "sha256": "71c33c3bf57bf2e19b4f8ac686ad8d182a79f7cd1a4921889437c453420223f1"
+    },
+    "artifacts/C/encoder/tokenizer_config.json": {
+      "bytes": 20746,
+      "sha256": "e0aff0b1de9071e30d9a60a199303b6abe916a64a19932bd1c46992279b41a1f"
+    },
+    "artifacts/C/evaluation.yml": {
+      "bytes": 1322,
+      "sha256": "167fe2138924ec10d8a83d19b0926f3decc59196a6b53f6211a054d06b7b2fe5"
+    },
+    "artifacts/C/export.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/C/generation.log": {
+      "bytes": 10877,
+      "sha256": "64cd6d4fc5f41c421a0a9158be8cef35bbaed188070e98127d6571f19be1a1f3"
+    },
+    "artifacts/C/metrics.log": {
+      "bytes": 9554,
+      "sha256": "bfe1d5a8620f4c520d548555e3807e4825891904c3335bc2a7edee5ed08d7143"
+    },
+    "artifacts/C/owt_normalization.json": {
+      "bytes": 48780,
+      "sha256": "68c7aa489b91ac80cfeaf6f54b869e68e1d4d74bf0e934e30190b0e7c1f17e74"
+    },
+    "artifacts/C/owt_normalization.log": {
+      "bytes": 357,
+      "sha256": "29a8ca6ab0643c4878c6414f9d629df10ad5146a865de923436a8e9a0b4daec1"
+    },
+    "artifacts/C/readout.json": {
+      "bytes": 1448,
+      "sha256": "41c073c5c2f4bd88670e4f83c57578c4ec3cc9ff17d5f15f6d5a613bd5f8d5a8"
+    },
+    "artifacts/C/readout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/C/results.json": {
+      "bytes": 489308,
+      "sha256": "e83a1f2242c8db40957414654742508a2bfa6595b363054068ff6f8536e73a20"
+    },
+    "artifacts/C/runtime.json": {
+      "bytes": 33526,
+      "sha256": "f0e7e90185db56f16e6d7b4245bdb36cb667f383677979116cb772fae183c402"
+    },
+    "artifacts/C/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4253302,
+      "sha256": "3506b88950c211e5ddc028d90eda169dc6e1d7f2f14d7a89ac3de030c730978d"
+    },
+    "artifacts/C/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 66644,
+      "sha256": "bdff781ae952e2f47bfde80d105dd8407aaec1fd851fda363bf8a9d7500f6b23"
+    },
+    "artifacts/C/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4032452,
+      "sha256": "da9499efabe2c709b100d6d413ac71099135a5f6eb28a89143fb84d174e96ce9"
+    },
+    "artifacts/C/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 63759,
+      "sha256": "d002d92f9f492063e3c2cc6c29c13964c371d2ade71604d1dd4800c5f5015a0a"
+    },
+    "artifacts/C/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4293859,
+      "sha256": "17c8cb1542a6404c2de43f600566cc71fff143b447fc52a835906b22945d789d"
+    },
+    "artifacts/C/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 65167,
+      "sha256": "ef570bfd0d89afd18a49bca533e47b8760427737e850202ca8aa68af3fcfde90"
+    },
+    "artifacts/C/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4025862,
+      "sha256": "5b079c4d52ddfeb1daf57cab9f577162320a11e8d300b5e10ef36f8ff9805a4d"
+    },
+    "artifacts/C/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 65508,
+      "sha256": "62eb68ee92149f8819dd4fab7642e5992eec9f14d32066ae5db88b604904056c"
+    },
+    "artifacts/C/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4325095,
+      "sha256": "c27417f627351f3a1c94e1b2eac46f8f888744d7533fee260b00ff1bac9f3237"
+    },
+    "artifacts/C/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 64248,
+      "sha256": "db001636991267c6efde2df471a72a1e42d66f59315fe77e6087eb8dfef20142"
+    },
+    "artifacts/C/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4053534,
+      "sha256": "ebe92704380c25b968748c34ef35f8a00e0e19b2106ebab147c61e07e2d0fcc4"
+    },
+    "artifacts/C/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 64525,
+      "sha256": "9ba81da5553ded1a50e4d6a6998168bd6090f938c5c4591ba658e0ea4be6e036"
+    },
+    "artifacts/C/stage-adaptation.json": {
+      "bytes": 777,
+      "sha256": "a1e14abae6f603da650de78d8bb7faf3633bc163951007ba71e1b03b1e2cebe9"
+    },
+    "artifacts/C/stage-elf.json": {
+      "bytes": 634,
+      "sha256": "70ece88b1d5eceecb2bf4e19c2e947ca4e34db0cfc8cc80c0d9be23a3ccae229"
+    },
+    "artifacts/C/stage-export.json": {
+      "bytes": 613,
+      "sha256": "b90c332191f32e3c1082e8508f04122087daffb286c103e75a775fea1bbf55b7"
+    },
+    "artifacts/C/stage-generation.json": {
+      "bytes": 761,
+      "sha256": "8c9a5ecbf51ac8fa98696d66c5171479ceb105707695742677c73ebbeddb04be"
+    },
+    "artifacts/C/stage-metrics.json": {
+      "bytes": 631,
+      "sha256": "7ca594c1ca26c8251987f76d7aa7b7cd9b5a99fc6c4f9245babd6ca7b5f10745"
+    },
+    "artifacts/C/stage-owt_normalization.json": {
+      "bytes": 651,
+      "sha256": "be7e841363c3b1df043fddaecb3a9344267fdf4da346bd44eeaa693ee5eaa7d9"
+    },
+    "artifacts/C/stage-readout.json": {
+      "bytes": 603,
+      "sha256": "4afe01cf671e0597465d6461b5e25c595b161d825f9bad48a835f529b42b4503"
+    },
+    "artifacts/C/stage_attempts/adaptation-edd48dd8d4b9477f975b76f010b8cf4d.json": {
+      "bytes": 777,
+      "sha256": "a1e14abae6f603da650de78d8bb7faf3633bc163951007ba71e1b03b1e2cebe9"
+    },
+    "artifacts/C/stage_attempts/elf-a3f62f489c2d4b20903a49661d4364a0.json": {
+      "bytes": 634,
+      "sha256": "70ece88b1d5eceecb2bf4e19c2e947ca4e34db0cfc8cc80c0d9be23a3ccae229"
+    },
+    "artifacts/C/stage_attempts/export-9b0eec5a52e4489b95dc9fc64199bb05.json": {
+      "bytes": 613,
+      "sha256": "b90c332191f32e3c1082e8508f04122087daffb286c103e75a775fea1bbf55b7"
+    },
+    "artifacts/C/stage_attempts/generation-457e29c0e2e04ba9b19d0a7f228afc35.json": {
+      "bytes": 761,
+      "sha256": "8c9a5ecbf51ac8fa98696d66c5171479ceb105707695742677c73ebbeddb04be"
+    },
+    "artifacts/C/stage_attempts/metrics-a6249c9cc30b4454be52ebb181351982.json": {
+      "bytes": 631,
+      "sha256": "7ca594c1ca26c8251987f76d7aa7b7cd9b5a99fc6c4f9245babd6ca7b5f10745"
+    },
+    "artifacts/C/stage_attempts/owt_normalization-ecf02b375665425eaead130a4a85a7ec.json": {
+      "bytes": 651,
+      "sha256": "be7e841363c3b1df043fddaecb3a9344267fdf4da346bd44eeaa693ee5eaa7d9"
+    },
+    "artifacts/C/stage_attempts/readout-465b0c721c444e479f4501f47ed11ea3.json": {
+      "bytes": 603,
+      "sha256": "4afe01cf671e0597465d6461b5e25c595b161d825f9bad48a835f529b42b4503"
+    },
+    "artifacts/D/adaptation.log": {
+      "bytes": 1253296,
+      "sha256": "3337f01c0813e4b5dcc16e0d748d09cd8dedc556d79225f1ecba4505b7239594"
+    },
+    "artifacts/D/adaptation/audit-3b.json": {
+      "bytes": 1782,
+      "sha256": "ef5db922dfe1929bd2430adc1f02717ed7121fe4960a03b2cf9ec68227b9b828"
+    },
+    "artifacts/D/adaptation/diagnostics-000000.json": {
+      "bytes": 27911,
+      "sha256": "ccaecdf95b1b825492f9fd5c8b4cb354f6c6aede6e5981506d6bec5313c0b680"
+    },
+    "artifacts/D/adaptation/diagnostics-003815.json": {
+      "bytes": 27859,
+      "sha256": "cbcff1a8276f245a13f563ded140ad2f6f135bc1fb67469e6270810e91c2cf09"
+    },
+    "artifacts/D/adaptation/diagnostics-011445.json": {
+      "bytes": 27859,
+      "sha256": "73ecdec41c97624aac695ba70bae307095500752f52ac1b1c080c3aac552726c"
+    },
+    "artifacts/D/adaptation/diagnostics-038147.json": {
+      "bytes": 27822,
+      "sha256": "614cd72853c6c9c6af05fdcc2fc5ccfb934cad6ba37911bfd0820cd29cc23bb8"
+    },
+    "artifacts/D/adaptation/identity.json": {
+      "bytes": 4211,
+      "sha256": "ac44864e6a142a299c8c6c5c4a7f6334ad5ace454790af13171ea8bef01c73fe"
+    },
+    "artifacts/D/adaptation/initial_encoder.json": {
+      "bytes": 197,
+      "sha256": "437299b5b85c8328ac69e1ce25ceb3dec960cb0db7eb40700b8e82dc99e5720e"
+    },
+    "artifacts/D/adaptation/latest.json": {
+      "bytes": 5074,
+      "sha256": "87f0583a4360ae88605bfc82ee1b230bb36b2aaf48b908dbbe0f7d7fe58fb3e4"
+    },
+    "artifacts/D/adaptation/milestone-003815.json": {
+      "bytes": 5064,
+      "sha256": "a4bc76354328a2178e00e37325a21ef5dcacdbfd61e1c06a69917f6ca9088df6"
+    },
+    "artifacts/D/adaptation/milestone-003815.pt": {
+      "bytes": 424167422,
+      "sha256": "7a36df4e3f58df7b1cc10e66bcb7597f041617bffc56ca41f1635040a81766f7"
+    },
+    "artifacts/D/adaptation/milestone-011445.json": {
+      "bytes": 5067,
+      "sha256": "7b55d4aa2e72688d66e4b5895308ce4ed15c4c3ffdb0a226200e540cf4478c87"
+    },
+    "artifacts/D/adaptation/milestone-011445.pt": {
+      "bytes": 424167422,
+      "sha256": "a8d68ed6a1c08aad13b3514ab955978d171b81e49fe7afda6cfccef70310a75a"
+    },
+    "artifacts/D/adaptation/milestone-038147.json": {
+      "bytes": 5074,
+      "sha256": "87f0583a4360ae88605bfc82ee1b230bb36b2aaf48b908dbbe0f7d7fe58fb3e4"
+    },
+    "artifacts/D/adaptation/milestone-038147.pt": {
+      "bytes": 424167422,
+      "sha256": "5d44c1263f4737ddfb4ef51d0dce3eeed4efdb1d39899e96723a4aa5e58ec4f3"
+    },
+    "artifacts/D/adaptation/runtime.json": {
+      "bytes": 33526,
+      "sha256": "715ccd169bfd77bd4856a2a1fd9caaef904934ee4a7b3a37f28eed809c78f7ba"
+    },
+    "artifacts/D/adaptation/status.json": {
+      "bytes": 515,
+      "sha256": "0e42cf20ac0612c8f22ae236c4e2619978198b80f837644c75342cb6a6e5142f"
+    },
+    "artifacts/D/adaptation/train.jsonl": {
+      "bytes": 1253296,
+      "sha256": "0870091180c684650269a8cb5f26cb38fd9a5da276bb8c07af83e2dfe074a25e"
+    },
+    "artifacts/D/completed.json": {
+      "bytes": 197,
+      "sha256": "0f22d06fdf23b32492ce649e2c7524ffb442736105e1b19091ca85232a280e3f"
+    },
+    "artifacts/D/compute.jsonl": {
+      "bytes": 4728,
+      "sha256": "32b2c0bc792aae5521e5c81d5f048abd105d9c82c87592a571833783163d677f"
+    },
+    "artifacts/D/elf-start-telemetry.json": {
+      "bytes": 1631,
+      "sha256": "9aabdb3a2c15ad75dff816ce179a80c8db5e2285a6049ae36eb1db678ed4f217"
+    },
+    "artifacts/D/elf.log": {
+      "bytes": 7542027,
+      "sha256": "df0c60a38292fac9b674144cbbdda1275e5daf8908dad69a27a92874cedbbaa7"
+    },
+    "artifacts/D/elf.yml": {
+      "bytes": 1220,
+      "sha256": "cf46c2096167a11cabb923df919be8dfb1789034ef9db611b72d6019c8f94747"
+    },
+    "artifacts/D/elf/checkpoint_95090": {
+      "bytes": 889413424,
+      "sha256": "6e5b5eb79ca5f58159786bdf2abeea3c34ddd9767f3fc8d12e1871d6783a7b80"
+    },
+    "artifacts/D/elf/completed.json": {
+      "bytes": 6562,
+      "sha256": "e1c0739f69b28f1160defe913199d2a406705e09cfda67a75ef258afc3149987"
+    },
+    "artifacts/D/elf/config.yml": {
+      "bytes": 1549,
+      "sha256": "a7cc4d4d17db22da357cb63d0fbe4da302cbc8be5113c6429ef466024ab9cb2b"
+    },
+    "artifacts/D/elf/initial_smoke/sde-steps2-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_0_1.jsonl": {
+      "bytes": 98512,
+      "sha256": "d3565d24add2a26e9623a157283a4b7ba0f8167da2d4dbaa6eb77f76a0517083"
+    },
+    "artifacts/D/elf/initialization.json": {
+      "bytes": 6576,
+      "sha256": "1b589baea859be4898933364ed73d85be1e74b692c28a1a89fa9962c56883b38"
+    },
+    "artifacts/D/elf/optimizer_95090_rank0_731848e0df994d40899cbe31d8c4b4ec.pt": {
+      "bytes": 52484782,
+      "sha256": "4b11a2466cffcd3ba6c07ea39f5329ed075776c2e077ddb3d28e2dbc7c3910d1"
+    },
+    "artifacts/D/elf/optimizer_95090_rank1_0cf9eee4f4e4439580b49c6a9002661d.pt": {
+      "bytes": 51174062,
+      "sha256": "66fdd024784f181c1bfb506f5de1b779edf596364aed720f8cd1e86466259990"
+    },
+    "artifacts/D/elf/optimizer_95090_rank2_afb972d2ad4f4621b13aa7fb099165f5.pt": {
+      "bytes": 50125168,
+      "sha256": "cbeb0f61d2b8921fd0a89d5d98f4a1dcea51f91cbffc8076a9217d2acea789f9"
+    },
+    "artifacts/D/elf/optimizer_95090_rank3_fb5241105c2d43699f7757e2f258658c.pt": {
+      "bytes": 49338736,
+      "sha256": "87f541e344e97d4e7be36595a0fbb456fc9747b0151432938018c4a066c2a74b"
+    },
+    "artifacts/D/elf/optimizer_95090_rank4_7d991e15d88f49be9848c8d7efced30a.pt": {
+      "bytes": 39901552,
+      "sha256": "65bac265fd0414fb82eab2a3c9e5dbfecd737b42fbce6886726504d8086bba72"
+    },
+    "artifacts/D/elf/optimizer_95090_rank5_a61e1970f0ee42ee884b7cd84a28e574.pt": {
+      "bytes": 39508336,
+      "sha256": "dae59e948e99b2e827990ece8fc1bef8e3b707cad92e7ee5c20dc387c95d3ea5"
+    },
+    "artifacts/D/elf/optimizer_95090_rank6_9ad66e86c9a94f6da652c5e257941a0c.pt": {
+      "bytes": 104855920,
+      "sha256": "ba10ea67d0f76928b1bf01100b8ba5e6fac723aff7df8f93d0f6827b1eae0f6c"
+    },
+    "artifacts/D/elf/optimizer_95090_rank7_42a6805979a14abf9fad65d2907ecbb6.pt": {
+      "bytes": 41212272,
+      "sha256": "28dd9a8842c51adb49c9997199768557839c92ae3b84381f15411e52d78ca284"
+    },
+    "artifacts/D/elf/status.json": {
+      "bytes": 317,
+      "sha256": "b63a263e1304858c0c8765dedc3b357a8bf831d6d950a4616f9b507f4f71c8ef"
+    },
+    "artifacts/D/elf/train.jsonl": {
+      "bytes": 283032,
+      "sha256": "4f947c96fb6eebc184dafa2b560a8dc43a9e7c219d1a7ae61e85d4dc987679c8"
+    },
+    "artifacts/D/elf_identity.json": {
+      "bytes": 6009,
+      "sha256": "964812b6e739a3a8f38c08e678032e176db282447be01e51d28469d01b83bb1b"
+    },
+    "artifacts/D/encoder/config.json": {
+      "bytes": 1519,
+      "sha256": "e9cbb19e40f8d69b95ec1e96345ff134dfe46b5d6b0d0d58cb2d43370703864c"
+    },
+    "artifacts/D/encoder/manifest.json": {
+      "bytes": 6374,
+      "sha256": "6b0f9f3d87bae9165b7924c7bc15718e533d603327a2b5d63188507b8b98990e"
+    },
+    "artifacts/D/encoder/model.safetensors": {
+      "bytes": 141329200,
+      "sha256": "892dc88573befd07f41861fadad0efaa06c9885238bc8a73e124f4e94938fac0"
+    },
+    "artifacts/D/encoder/special_tokens_map.json": {
+      "bytes": 2543,
+      "sha256": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2"
+    },
+    "artifacts/D/encoder/spiece.model": {
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    "artifacts/D/encoder/tokenizer.json": {
+      "bytes": 2422169,
+      "sha256": "71c33c3bf57bf2e19b4f8ac686ad8d182a79f7cd1a4921889437c453420223f1"
+    },
+    "artifacts/D/encoder/tokenizer_config.json": {
+      "bytes": 20746,
+      "sha256": "e0aff0b1de9071e30d9a60a199303b6abe916a64a19932bd1c46992279b41a1f"
+    },
+    "artifacts/D/evaluation.yml": {
+      "bytes": 1322,
+      "sha256": "f6405760021f952386df698ec420593a27413d4f2cfd06808abbc72e3bdc9eb2"
+    },
+    "artifacts/D/export.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/D/generation.log": {
+      "bytes": 10877,
+      "sha256": "ac541c87480e41f5e4f61caaaeb699c09ee05e09729e172843e2a02f51067fa8"
+    },
+    "artifacts/D/metrics.log": {
+      "bytes": 9554,
+      "sha256": "f6e38f2b60a2a3f0bfa8bc5947ad686d376e0a16c92e463d178cc4423186b693"
+    },
+    "artifacts/D/original_readout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/D/owt_normalization.json": {
+      "bytes": 48780,
+      "sha256": "682dc74f3411ee837d8172b39496209aeff58e9c9d506db6a8b5fdb29001d76d"
+    },
+    "artifacts/D/owt_normalization.log": {
+      "bytes": 357,
+      "sha256": "ca130ad77b6745353e48d19b7df00e1c5bd2230e6f807fcff57b0e5643ae538b"
+    },
+    "artifacts/D/readout.json": {
+      "bytes": 1455,
+      "sha256": "bcbcde4811f5f9a8da1cecd76ac5629855b186975bd9151d98b4fef2fb291f23"
+    },
+    "artifacts/D/readout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/D/results.json": {
+      "bytes": 493712,
+      "sha256": "500da68ecdbdc253227d03dbf0836ec031e15c4782aef9268716c499a7c70041"
+    },
+    "artifacts/D/runtime.json": {
+      "bytes": 33526,
+      "sha256": "e668e179119638477826870642791f70acd8009b2d31261de4bcedc2f12797ce"
+    },
+    "artifacts/D/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4209542,
+      "sha256": "07ff3cf9729ae7867c26f519a52cb2741e7b5f1a30488587ee24965083017592"
+    },
+    "artifacts/D/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 64704,
+      "sha256": "fab3e22a4fcb5a44f5ae8ba5151db73399c4d6e51f704dfa2d0f36a4680f1185"
+    },
+    "artifacts/D/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4289335,
+      "sha256": "0a7b2105f3e18b35da3eab24e30a4d7b8ef0fb98bdc657d952ecd7ece7e49764"
+    },
+    "artifacts/D/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 66164,
+      "sha256": "fcd2f2dd034e40b5867ff9495ae85f5be05604d7ef1d1ac88aed58d482b98acf"
+    },
+    "artifacts/D/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4246415,
+      "sha256": "0ab617a3e361bf3469a1caf2c6da62a1065b9c4011572649cf17aaf2c2cb0fa1"
+    },
+    "artifacts/D/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 65238,
+      "sha256": "93282336898d1356d0113cea5f4ae3d1b12440cb1a01c20e820656c19c977ca9"
+    },
+    "artifacts/D/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4257292,
+      "sha256": "842d8ec9a20da6ec0a25f785b39232d59a0f9bd26a939e57321fd2ff4deb2978"
+    },
+    "artifacts/D/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 64820,
+      "sha256": "4b6d800e39e2dd930f83e19622d9ddda887521499e50ddc5d552cc94a0c9d6ec"
+    },
+    "artifacts/D/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4215203,
+      "sha256": "272e725ad270d34d95a41e99ce0335cdeab47a65b0b2cf2f5f299509a2410c22"
+    },
+    "artifacts/D/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 65778,
+      "sha256": "c5dcaba7196511e7cc2ef59d84ffb1b4a984d1a2580e7b533cfb7566d8196c57"
+    },
+    "artifacts/D/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4287457,
+      "sha256": "b54e169f1d93e6f6deb5ee6fa67b186f446839fb01713e8566fb91d474ca8844"
+    },
+    "artifacts/D/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 67636,
+      "sha256": "7a1d5e21cb18d2eec4e336ae1374a8e56a582b662059a0aa76df714ea3797b41"
+    },
+    "artifacts/D/stage-adaptation.json": {
+      "bytes": 779,
+      "sha256": "52f578cc36d823d5ec80e2221b0a6c2c56ec2a98e505428c785fb455e0b0b912"
+    },
+    "artifacts/D/stage-elf.json": {
+      "bytes": 634,
+      "sha256": "2fa395aab61c281cc3ab58d0db9ba893d4be6912351603f7e7024ab1040b5776"
+    },
+    "artifacts/D/stage-export.json": {
+      "bytes": 613,
+      "sha256": "5e91e5672d49668adb8010046d94150a5e730ee05f573022acba03a0271e694c"
+    },
+    "artifacts/D/stage-generation.json": {
+      "bytes": 762,
+      "sha256": "5c2b67c1901162862ee4e2ff9bb95009c9cfdcc6db088d1969b8e801f4398f6f"
+    },
+    "artifacts/D/stage-metrics.json": {
+      "bytes": 630,
+      "sha256": "c3b0832e147239656201900aee59ff1e337607faefdd586e890b16c660cb63b6"
+    },
+    "artifacts/D/stage-original_readout.json": {
+      "bytes": 622,
+      "sha256": "641ff6b604781844d47002bcdb21ef5b0a583c51b5dc7781b0dba45ea86572ab"
+    },
+    "artifacts/D/stage-owt_normalization.json": {
+      "bytes": 650,
+      "sha256": "dcd9cd387b07e81667ee089c911e35b4acd3a6aa2ee5ce5b386ba9f6b8b6379c"
+    },
+    "artifacts/D/stage-readout.json": {
+      "bytes": 602,
+      "sha256": "2dc1adcc47cf01de28c234bb7371ffab0186f8bacc9b24e31619142f65ac599c"
+    },
+    "artifacts/D/stage_attempts/adaptation-ae4e15b94e8e42768b5e83146b424903.json": {
+      "bytes": 779,
+      "sha256": "52f578cc36d823d5ec80e2221b0a6c2c56ec2a98e505428c785fb455e0b0b912"
+    },
+    "artifacts/D/stage_attempts/elf-3e3733382a5c41949a41131e38b46a64.json": {
+      "bytes": 634,
+      "sha256": "2fa395aab61c281cc3ab58d0db9ba893d4be6912351603f7e7024ab1040b5776"
+    },
+    "artifacts/D/stage_attempts/export-4577814bb06c42bf91e94374f553b276.json": {
+      "bytes": 613,
+      "sha256": "5e91e5672d49668adb8010046d94150a5e730ee05f573022acba03a0271e694c"
+    },
+    "artifacts/D/stage_attempts/generation-3325ace68d854d89b07ef3a9f3ebbbae.json": {
+      "bytes": 762,
+      "sha256": "5c2b67c1901162862ee4e2ff9bb95009c9cfdcc6db088d1969b8e801f4398f6f"
+    },
+    "artifacts/D/stage_attempts/metrics-f50246be152242afa94be0110fb04985.json": {
+      "bytes": 630,
+      "sha256": "c3b0832e147239656201900aee59ff1e337607faefdd586e890b16c660cb63b6"
+    },
+    "artifacts/D/stage_attempts/original_readout-07d5b849e1e84fdbb00563b98c23b5ea.json": {
+      "bytes": 622,
+      "sha256": "641ff6b604781844d47002bcdb21ef5b0a583c51b5dc7781b0dba45ea86572ab"
+    },
+    "artifacts/D/stage_attempts/owt_normalization-637fdb635f9f499486427d648528d3a2.json": {
+      "bytes": 650,
+      "sha256": "dcd9cd387b07e81667ee089c911e35b4acd3a6aa2ee5ce5b386ba9f6b8b6379c"
+    },
+    "artifacts/D/stage_attempts/readout-ffa1a726284b49c9ba42429d6dae19db.json": {
+      "bytes": 602,
+      "sha256": "2dc1adcc47cf01de28c234bb7371ffab0186f8bacc9b24e31619142f65ac599c"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/configs/config.py": {
+      "bytes": 7819,
+      "sha256": "a7c94b89a0da04cee8980151a0b2a55c29e75090f81366f361b393be17b0cc2c"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/eval.py": {
+      "bytes": 8524,
+      "sha256": "59aa05187127927a519de703b4aa1745c7a33a3e555580f49e80d22ca45ef1c9"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/generation.py": {
+      "bytes": 19356,
+      "sha256": "e7da572e40c3d4e1bb1bb9d80d8a3936fc38fb5de1a3a5f14ba2e266a598c6f6"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/modules/layers.py": {
+      "bytes": 9693,
+      "sha256": "e19bf62ef5b0e0d6c3dd3f4cda8186471e5ed3ca61edc8a41c10e62b629bf8e9"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/modules/model.py": {
+      "bytes": 10214,
+      "sha256": "d82809ed0934a2d63e87919bdfb0dc3330fd43a0f2bccf1c986de60b3ff77f30"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/modules/t5_encoder.py": {
+      "bytes": 3134,
+      "sha256": "03bd8edc00d407da30504b1719e117a41cdb794cb2d0cd0808684bcec5778e02"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/__init__.py": {
+      "bytes": 84,
+      "sha256": "1bb0ddeb6c3cbe2d772980cc3fb69c3df7bb61f9645dc8357083a6938b7e93c6"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/await_preparation.py": {
+      "bytes": 2104,
+      "sha256": "0d5ded0973d3d8ac0ed7845d879a10510b06e630eb9b06b1ea5b92b13e849141"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/calibrate.py": {
+      "bytes": 6210,
+      "sha256": "acf8dc93d6a40e9e0e3b11f41d0a783d68a91e59c0d4de7b5a7706c3071a1ea2"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/checkpoint.py": {
+      "bytes": 1962,
+      "sha256": "997f6681cc2739ffa7b8d105f25a72d7245d5f6aca7751099c00ee46b4a22cf6"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/common.py": {
+      "bytes": 5828,
+      "sha256": "0a01af4e3690f28292896a476d8d533bd2ff6117dcf1dfefe77059e17440a147"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/compile_check.py": {
+      "bytes": 4437,
+      "sha256": "a8a66958e1283936a5f5d7fa056cec43e6b389587ff8c5ead67d8189a39eb2d1"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/corruption.py": {
+      "bytes": 7567,
+      "sha256": "50b20b781b480d253b5c888f4f21bef871ef79f235b792b40a42d6bcd716213b"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/data.py": {
+      "bytes": 1744,
+      "sha256": "4826373cffb3230d58725849c887dd0e00fe5b370127f9026344f077546a85eb"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/diagnostics.py": {
+      "bytes": 3683,
+      "sha256": "243ceb092daa4bf84c9a2e14f5b6eeef35762eecadcfa9691b040e4b6c8cc384"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/elf_integration.py": {
+      "bytes": 3462,
+      "sha256": "2fb4bde383c03ae777eee42c85b37b40d9afb39c1852786abd3b39a94fd2708f"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/evaluate.py": {
+      "bytes": 5606,
+      "sha256": "2b2791a698ebf546b436d8c98dfd3ef6b1bbacffda4f35f25179bf97c3f1a78a"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/export.py": {
+      "bytes": 4636,
+      "sha256": "801013950b9b4acb36eed95ff8c224a1f096a653bad6b2dcd273629c80c9fd7a"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/objectives.py": {
+      "bytes": 5071,
+      "sha256": "33d9db3e21763ad4b0227aad42143f285b52b86dfae4b547646d1705dad9eb92"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/pipeline.py": {
+      "bytes": 9608,
+      "sha256": "03040f9a625a5af6a4b74b99d61c060f4ddb8f74c7eff13ffbc0e2bb43b5321d"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/preflight.py": {
+      "bytes": 5375,
+      "sha256": "12ae0962f0d623f6a224c3baab0c8cceb439d08d3c9b5c6409b0f20c39736979"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/prepare.py": {
+      "bytes": 9793,
+      "sha256": "ec71d3319322ddd8b3eea9e9d7626d3f6ad71ec863cdd2b70b226fec6ab64075"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/probe.py": {
+      "bytes": 5218,
+      "sha256": "81ef7fa4f53ea9d00ea2d909ce2e4e146678740c23c75dd649539cfe5fa26026"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/report.py": {
+      "bytes": 22007,
+      "sha256": "5d67507329e77a2939527779b8a939daee7fff2d8ba84c106aee6de4c67b5c4e"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/submit.py": {
+      "bytes": 7886,
+      "sha256": "ebefb38b2011251bed39571476107def8b0a0578ca87a270a0a5e0605ea7b7e0"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/train.py": {
+      "bytes": 15421,
+      "sha256": "fc44dad23abd25121ef3e5a08693bade6a3552cd2fc6e1b598d51bada0902b12"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/train.py": {
+      "bytes": 24099,
+      "sha256": "2f13c9cbee81b0550028de5860f494a4bf5212e0619e878bebb026dbb5ffb6db"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/train_step.py": {
+      "bytes": 12846,
+      "sha256": "81dd28d30e95edfe8ae59e93ec427d7f13be6b463a26a33e695a0a7453e6fc9e"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/checkpoint_utils.py": {
+      "bytes": 11623,
+      "sha256": "1a0fde0c51b8766030ddf658afc48838368cd8cf9a374e8db61d0f05235d9788"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/data_utils.py": {
+      "bytes": 9185,
+      "sha256": "25dc73f035171890c1ed9162a48dccbd65fa5658927353bd71416cb70b9c4345"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/encoder_utils.py": {
+      "bytes": 989,
+      "sha256": "3f2d2ca7efe7e2269094187cb1e982468a3303c5c3e28b0fe6609d8919e327f2"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/generation_utils.py": {
+      "bytes": 5848,
+      "sha256": "1329ab5e8352cec3050c41933cdc755aaacb56005fd26205a403791e97efbfd2"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/logging_utils.py": {
+      "bytes": 658,
+      "sha256": "94427e79649907c86cb9d8c274b377ded97b30048e45805c4784f082d4ca16c4"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/metrics_utils.py": {
+      "bytes": 9311,
+      "sha256": "a933a15d1c0ec7ed4c141af76fe93fced1d2f2e68f8e9280c1710304380c2a31"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/muon_utils.py": {
+      "bytes": 7859,
+      "sha256": "c9fcd9d0e8499db701bde65f90310883516f0d30eaa9c41c975cee4ef4192f78"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/sampling_utils.py": {
+      "bytes": 10005,
+      "sha256": "bf54962af0b9bde8f8684bea38fd410881f75918179fbd5f0cef2f4b19d6d953"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/train_utils.py": {
+      "bytes": 5156,
+      "sha256": "bdadbb7c11b0b3bfb57078fb07076f4765049c5c7a234d4046789e6156014a3f"
+    },
+    "artifacts/shared/c4/train/manifest.json": {
+      "bytes": 19698,
+      "sha256": "57b51a1f21f84fe079660ffe6c4474f25907f9562fabeeab8917ff0bd3031940"
+    },
+    "artifacts/shared/c4/validation/manifest.json": {
+      "bytes": 2494,
+      "sha256": "c7c78766e257941e6f4ba0f207cdb49f872e25604cd22c3b7277458ef34c5df8"
+    },
+    "artifacts/shared/c4_normalization.json": {
+      "bytes": 49409,
+      "sha256": "230b966cbec44be9cd6a79a0c3d02a3b075f76eec0b75cdc4b271f7d87725c17"
+    },
+    "artifacts/shared/evaluator/config.json": {
+      "bytes": 666,
+      "sha256": "7fccdcfd6622055342a734c663ee0b61ff4fd697f42467595df0bf4448c8c170"
+    },
+    "artifacts/shared/evaluator/generation_config.json": {
+      "bytes": 124,
+      "sha256": "b90eadacf585a743a30ea51e8b5c88b8d282a2a34dc0c7e556d0987cdbd68805"
+    },
+    "artifacts/shared/evaluator/manifest.json": {
+      "bytes": 886,
+      "sha256": "5b193f7bc68094e4090ea9ac15797682a8492ad23292705fa6e2a4df1701b2cb"
+    },
+    "artifacts/shared/evaluator/merges.txt": {
+      "bytes": 456318,
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    },
+    "artifacts/shared/evaluator/model.safetensors": {
+      "bytes": 3247159078,
+      "sha256": "5f47f3e12f91cd33b662ce7e433b6150ad5512b5884a2cee961b50e9c3bbebce"
+    },
+    "artifacts/shared/evaluator/tokenizer.json": {
+      "bytes": 1355256,
+      "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+    },
+    "artifacts/shared/evaluator/tokenizer_config.json": {
+      "bytes": 26,
+      "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+    },
+    "artifacts/shared/evaluator/vocab.json": {
+      "bytes": 1042301,
+      "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+    },
+    "artifacts/shared/original_probe.json": {
+      "bytes": 1453,
+      "sha256": "4e1791e440c7e81a6d304aff9c83f72e3c33cf8e8c5464564721b5a086a0595d"
+    },
+    "artifacts/shared/owt_manifest.json": {
+      "bytes": 47936,
+      "sha256": "114d25c6ca5d2811e8406d3b427feca1cca7266d12af0d435aeb7de68e03a643"
+    },
+    "artifacts/shared/t5/config.json": {
+      "bytes": 1206,
+      "sha256": "530e25060e3a8d5f7b0fcf53bfea9f3601165161f3b1914676e98d97cf07bcf1"
+    },
+    "artifacts/shared/t5/generation_config.json": {
+      "bytes": 147,
+      "sha256": "f5a1c7e2be8092018d8835128987edf0111637dd98e90599cc80310fef75d95a"
+    },
+    "artifacts/shared/t5/manifest.json": {
+      "bytes": 793,
+      "sha256": "26229f61c0166fc05010e8787b40a51457a593065ab5c8aa0b1aa73dfa2dbd20"
+    },
+    "artifacts/shared/t5/model.safetensors": {
+      "bytes": 242043056,
+      "sha256": "bd944e5f1b3ad9b70dd9d00010a517059e19265671076b8b0a4a58d9491842bc"
+    },
+    "artifacts/shared/t5/spiece.model": {
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    "artifacts/shared/t5/tokenizer.json": {
+      "bytes": 1389353,
+      "sha256": "d2acde0d8d71dd30a711834b07781b9c89feaac33fd332f60507699282740066"
+    },
+    "artifacts/shared/t5/tokenizer_config.json": {
+      "bytes": 2324,
+      "sha256": "d1e7146101aa96282057f374aa9c3b260fba2109e5990edb1775d6efc70ffa3c"
+    },
+    "artifacts/submission.json": {
+      "bytes": 3494,
+      "sha256": "45b3b649f9fddf244e7aaed0b40d5ddf559826030385ca302b25f226dc809ae3"
+    }
+  }
+}

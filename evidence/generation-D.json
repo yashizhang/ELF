@@ -1,0 +1,369 @@
+{
+  "aggregate_statistics_verified": true,
+  "arm": "D",
+  "audited_at_utc": "2026-10-14T23:05:59.702854+00:00",
+  "auditor_sha256": "f8b7ce7374613409933acd57421cf22b4e6513705f8f4cda85f2b465f1f14461",
+  "checkpoint": "/home/toolkit/ELF/artifacts/D/elf/checkpoint_95090",
+  "checkpoint_audit": "/home/toolkit/ELF/artifacts/elf-D-epoch-5-audit.json",
+  "checkpoint_audit_sha256": "47afac1a2feb244b6e5a7716351ffb4fcaf90aef6fb087f295d5cec2796a9bec",
+  "checkpoint_sha256": "6e5b5eb79ca5f58159786bdf2abeea3c34ddd9767f3fc8d12e1871d6783a7b80",
+  "ema_state_hash": "9ff670c779402f47a8e65aabcc3ac27277b7eab741aebc1fb8cd995704e7fc90",
+  "encoder_hash": "45355982ce6b57cbce17b7c934ce604649ab99389f678afaf95ee8f1576c89f5",
+  "evaluation_config_sha256": "f6405760021f952386df698ec420593a27413d4f2cfd06808abbc72e3bdc9eb2",
+  "evaluator": {
+    "id": "openai-community/gpt2-large",
+    "revision": "32b71b12589c2f8d625668d2335a01cac3249519"
+  },
+  "evaluator_hash": "d3c0fc4a59cb655ba9175cfedee8c2f0f0ec6780e84a6ef35dae2823e51f5150",
+  "generated_total": 6000,
+  "inference_seeds": [
+    0,
+    1,
+    2
+  ],
+  "limits": [
+    "GPT-2 model forward passes are not rerun; PPL reconstruction uses the saved per-sample PPL values.",
+    "EMA selection is evidenced by the inspected generation source and audited final checkpoint, not an independent runtime tensor trace.",
+    "This artifact does not replace the complete GOAL.md acceptance audit."
+  ],
+  "per_seed": [
+    {
+      "configuration": "primary",
+      "empty_output_fraction": 0.0,
+      "empty_sample_ids": [],
+      "entropy_scored_count": 1000,
+      "generated_count": 1000,
+      "gpt2_lengths_after_truncation": {
+        "max": 1024,
+        "mean": 922.692,
+        "median": 976.0,
+        "min": 9
+      },
+      "gpt2_lengths_before_truncation": {
+        "max": 1216,
+        "mean": 927.05,
+        "median": 976.0,
+        "min": 9
+      },
+      "metrics_sha256": "fab3e22a4fcb5a44f5ae8ba5151db73399c4d6e51f704dfa2d0f36a4680f1185",
+      "nonempty_count": 1000,
+      "nonempty_samples_without_scored_tokens": [],
+      "ppl_scored_count": 1000,
+      "ppl_token_weight_total": 922537,
+      "reconstructed_gen_ppl": 7.7862968698266535,
+      "reconstructed_mean_sample_unigram_entropy": 3.2930397764066166,
+      "requested_count": 1000,
+      "samples_file": "/home/toolkit/ELF/artifacts/D/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl",
+      "samples_sha256": "07ff3cf9729ae7867c26f519a52cb2741e7b5f1a30488587ee24965083017592",
+      "seed": 0,
+      "t5_retokenized_lengths": {
+        "max": 1035,
+        "mean": 978.718,
+        "median": 1018.0,
+        "min": 34
+      }
+    },
+    {
+      "configuration": "secondary",
+      "empty_output_fraction": 0.0,
+      "empty_sample_ids": [],
+      "entropy_scored_count": 1000,
+      "generated_count": 1000,
+      "gpt2_lengths_after_truncation": {
+        "max": 1024,
+        "mean": 955.846,
+        "median": 974.5,
+        "min": 165
+      },
+      "gpt2_lengths_before_truncation": {
+        "max": 1221,
+        "mean": 962.316,
+        "median": 974.5,
+        "min": 165
+      },
+      "metrics_sha256": "fcd2f2dd034e40b5867ff9495ae85f5be05604d7ef1d1ac88aed58d482b98acf",
+      "nonempty_count": 1000,
+      "nonempty_samples_without_scored_tokens": [],
+      "ppl_scored_count": 1000,
+      "ppl_token_weight_total": 955684,
+      "reconstructed_gen_ppl": 8.161398948693037,
+      "reconstructed_mean_sample_unigram_entropy": 3.8859826617657918,
+      "requested_count": 1000,
+      "samples_file": "/home/toolkit/ELF/artifacts/D/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl",
+      "samples_sha256": "0a7b2105f3e18b35da3eab24e30a4d7b8ef0fb98bdc657d952ecd7ece7e49764",
+      "seed": 0,
+      "t5_retokenized_lengths": {
+        "max": 1044,
+        "mean": 1003.977,
+        "median": 1019.0,
+        "min": 204
+      }
+    },
+    {
+      "configuration": "primary",
+      "empty_output_fraction": 0.0,
+      "empty_sample_ids": [],
+      "entropy_scored_count": 1000,
+      "generated_count": 1000,
+      "gpt2_lengths_after_truncation": {
+        "max": 1024,
+        "mean": 925.433,
+        "median": 979.5,
+        "min": 9
+      },
+      "gpt2_lengths_before_truncation": {
+        "max": 1206,
+        "mean": 929.135,
+        "median": 979.5,
+        "min": 9
+      },
+      "metrics_sha256": "93282336898d1356d0113cea5f4ae3d1b12440cb1a01c20e820656c19c977ca9",
+      "nonempty_count": 1000,
+      "nonempty_samples_without_scored_tokens": [],
+      "ppl_scored_count": 1000,
+      "ppl_token_weight_total": 925288,
+      "reconstructed_gen_ppl": 7.490348419974883,
+      "reconstructed_mean_sample_unigram_entropy": 3.226311318796126,
+      "requested_count": 1000,
+      "samples_file": "/home/toolkit/ELF/artifacts/D/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl",
+      "samples_sha256": "0ab617a3e361bf3469a1caf2c6da62a1065b9c4011572649cf17aaf2c2cb0fa1",
+      "seed": 1,
+      "t5_retokenized_lengths": {
+        "max": 1028,
+        "mean": 976.05,
+        "median": 1019.0,
+        "min": 34
+      }
+    },
+    {
+      "configuration": "secondary",
+      "empty_output_fraction": 0.0,
+      "empty_sample_ids": [],
+      "entropy_scored_count": 1000,
+      "generated_count": 1000,
+      "gpt2_lengths_after_truncation": {
+        "max": 1024,
+        "mean": 956.972,
+        "median": 978.0,
+        "min": 181
+      },
+      "gpt2_lengths_before_truncation": {
+        "max": 1239,
+        "mean": 963.434,
+        "median": 978.0,
+        "min": 181
+      },
+      "metrics_sha256": "4b6d800e39e2dd930f83e19622d9ddda887521499e50ddc5d552cc94a0c9d6ec",
+      "nonempty_count": 1000,
+      "nonempty_samples_without_scored_tokens": [],
+      "ppl_scored_count": 1000,
+      "ppl_token_weight_total": 956793,
+      "reconstructed_gen_ppl": 7.551581447684448,
+      "reconstructed_mean_sample_unigram_entropy": 3.8396557476495543,
+      "requested_count": 1000,
+      "samples_file": "/home/toolkit/ELF/artifacts/D/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl",
+      "samples_sha256": "842d8ec9a20da6ec0a25f785b39232d59a0f9bd26a939e57321fd2ff4deb2978",
+      "seed": 1,
+      "t5_retokenized_lengths": {
+        "max": 1047,
+        "mean": 1002.63,
+        "median": 1020.0,
+        "min": 211
+      }
+    },
+    {
+      "configuration": "primary",
+      "empty_output_fraction": 0.0,
+      "empty_sample_ids": [],
+      "entropy_scored_count": 1000,
+      "generated_count": 1000,
+      "gpt2_lengths_after_truncation": {
+        "max": 1024,
+        "mean": 920.797,
+        "median": 976.0,
+        "min": 10
+      },
+      "gpt2_lengths_before_truncation": {
+        "max": 1173,
+        "mean": 924.802,
+        "median": 976.0,
+        "min": 10
+      },
+      "metrics_sha256": "c5dcaba7196511e7cc2ef59d84ffb1b4a984d1a2580e7b533cfb7566d8196c57",
+      "nonempty_count": 1000,
+      "nonempty_samples_without_scored_tokens": [],
+      "ppl_scored_count": 1000,
+      "ppl_token_weight_total": 920651,
+      "reconstructed_gen_ppl": 7.23948173267508,
+      "reconstructed_mean_sample_unigram_entropy": 3.227213783524102,
+      "requested_count": 1000,
+      "samples_file": "/home/toolkit/ELF/artifacts/D/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl",
+      "samples_sha256": "272e725ad270d34d95a41e99ce0335cdeab47a65b0b2cf2f5f299509a2410c22",
+      "seed": 2,
+      "t5_retokenized_lengths": {
+        "max": 1025,
+        "mean": 975.117,
+        "median": 1018.0,
+        "min": 35
+      }
+    },
+    {
+      "configuration": "secondary",
+      "empty_output_fraction": 0.0,
+      "empty_sample_ids": [],
+      "entropy_scored_count": 1000,
+      "generated_count": 1000,
+      "gpt2_lengths_after_truncation": {
+        "max": 1024,
+        "mean": 957.102,
+        "median": 977.0,
+        "min": 43
+      },
+      "gpt2_lengths_before_truncation": {
+        "max": 1220,
+        "mean": 964.822,
+        "median": 977.0,
+        "min": 43
+      },
+      "metrics_sha256": "7a1d5e21cb18d2eec4e336ae1374a8e56a582b662059a0aa76df714ea3797b41",
+      "nonempty_count": 1000,
+      "nonempty_samples_without_scored_tokens": [],
+      "ppl_scored_count": 1000,
+      "ppl_token_weight_total": 956924,
+      "reconstructed_gen_ppl": 7.195170770486347,
+      "reconstructed_mean_sample_unigram_entropy": 3.781945798486305,
+      "requested_count": 1000,
+      "samples_file": "/home/toolkit/ELF/artifacts/D/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl",
+      "samples_sha256": "b54e169f1d93e6f6deb5ee6fa67b186f446839fb01713e8566fb91d474ca8844",
+      "seed": 2,
+      "t5_retokenized_lengths": {
+        "max": 1041,
+        "mean": 1003.067,
+        "median": 1020.0,
+        "min": 59
+      }
+    }
+  ],
+  "requested_total": 6000,
+  "results_sha256": "500da68ecdbdc253227d03dbf0836ec031e15c4782aef9268716c499a7c70041",
+  "sampling_config_sha256": "7cc9ac0f8f368c11878107d0eb9c3e9cf2c4de775bdfdf4b1ad9f92353217831",
+  "scope": "Final generation command/configuration and checkpoint provenance, raw samples, tokenization/exclusions, reconstructed entropy/PPL aggregation, and inference-seed statistics.",
+  "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+  "source_hashes": {
+    "src/configs/config.py": "a7c94b89a0da04cee8980151a0b2a55c29e75090f81366f361b393be17b0cc2c",
+    "src/eval.py": "59aa05187127927a519de703b4aa1745c7a33a3e555580f49e80d22ca45ef1c9",
+    "src/generation.py": "e7da572e40c3d4e1bb1bb9d80d8a3936fc38fb5de1a3a5f14ba2e266a598c6f6",
+    "src/modules/layers.py": "e19bf62ef5b0e0d6c3dd3f4cda8186471e5ed3ca61edc8a41c10e62b629bf8e9",
+    "src/modules/model.py": "d82809ed0934a2d63e87919bdfb0dc3330fd43a0f2bccf1c986de60b3ff77f30",
+    "src/modules/t5_encoder.py": "03bd8edc00d407da30504b1719e117a41cdb794cb2d0cd0808684bcec5778e02",
+    "src/t5_adaptation/__init__.py": "1bb0ddeb6c3cbe2d772980cc3fb69c3df7bb61f9645dc8357083a6938b7e93c6",
+    "src/t5_adaptation/await_preparation.py": "0d5ded0973d3d8ac0ed7845d879a10510b06e630eb9b06b1ea5b92b13e849141",
+    "src/t5_adaptation/calibrate.py": "acf8dc93d6a40e9e0e3b11f41d0a783d68a91e59c0d4de7b5a7706c3071a1ea2",
+    "src/t5_adaptation/checkpoint.py": "997f6681cc2739ffa7b8d105f25a72d7245d5f6aca7751099c00ee46b4a22cf6",
+    "src/t5_adaptation/common.py": "0a01af4e3690f28292896a476d8d533bd2ff6117dcf1dfefe77059e17440a147",
+    "src/t5_adaptation/compile_check.py": "a8a66958e1283936a5f5d7fa056cec43e6b389587ff8c5ead67d8189a39eb2d1",
+    "src/t5_adaptation/corruption.py": "50b20b781b480d253b5c888f4f21bef871ef79f235b792b40a42d6bcd716213b",
+    "src/t5_adaptation/data.py": "4826373cffb3230d58725849c887dd0e00fe5b370127f9026344f077546a85eb",
+    "src/t5_adaptation/diagnostics.py": "243ceb092daa4bf84c9a2e14f5b6eeef35762eecadcfa9691b040e4b6c8cc384",
+    "src/t5_adaptation/elf_integration.py": "2fb4bde383c03ae777eee42c85b37b40d9afb39c1852786abd3b39a94fd2708f",
+    "src/t5_adaptation/evaluate.py": "2b2791a698ebf546b436d8c98dfd3ef6b1bbacffda4f35f25179bf97c3f1a78a",
+    "src/t5_adaptation/export.py": "801013950b9b4acb36eed95ff8c224a1f096a653bad6b2dcd273629c80c9fd7a",
+    "src/t5_adaptation/objectives.py": "33d9db3e21763ad4b0227aad42143f285b52b86dfae4b547646d1705dad9eb92",
+    "src/t5_adaptation/pipeline.py": "03040f9a625a5af6a4b74b99d61c060f4ddb8f74c7eff13ffbc0e2bb43b5321d",
+    "src/t5_adaptation/preflight.py": "12ae0962f0d623f6a224c3baab0c8cceb439d08d3c9b5c6409b0f20c39736979",
+    "src/t5_adaptation/prepare.py": "ec71d3319322ddd8b3eea9e9d7626d3f6ad71ec863cdd2b70b226fec6ab64075",
+    "src/t5_adaptation/probe.py": "81ef7fa4f53ea9d00ea2d909ce2e4e146678740c23c75dd649539cfe5fa26026",
+    "src/t5_adaptation/report.py": "5d67507329e77a2939527779b8a939daee7fff2d8ba84c106aee6de4c67b5c4e",
+    "src/t5_adaptation/submit.py": "ebefb38b2011251bed39571476107def8b0a0578ca87a270a0a5e0605ea7b7e0",
+    "src/t5_adaptation/train.py": "fc44dad23abd25121ef3e5a08693bade6a3552cd2fc6e1b598d51bada0902b12",
+    "src/train.py": "2f13c9cbee81b0550028de5860f494a4bf5212e0619e878bebb026dbb5ffb6db",
+    "src/train_step.py": "81dd28d30e95edfe8ae59e93ec427d7f13be6b463a26a33e695a0a7453e6fc9e",
+    "src/utils/checkpoint_utils.py": "1a0fde0c51b8766030ddf658afc48838368cd8cf9a374e8db61d0f05235d9788",
+    "src/utils/data_utils.py": "25dc73f035171890c1ed9162a48dccbd65fa5658927353bd71416cb70b9c4345",
+    "src/utils/encoder_utils.py": "3f2d2ca7efe7e2269094187cb1e982468a3303c5c3e28b0fe6609d8919e327f2",
+    "src/utils/generation_utils.py": "1329ab5e8352cec3050c41933cdc755aaacb56005fd26205a403791e97efbfd2",
+    "src/utils/logging_utils.py": "94427e79649907c86cb9d8c274b377ded97b30048e45805c4784f082d4ca16c4",
+    "src/utils/metrics_utils.py": "a933a15d1c0ec7ed4c141af76fe93fced1d2f2e68f8e9280c1710304380c2a31",
+    "src/utils/muon_utils.py": "c9fcd9d0e8499db701bde65f90310883516f0d30eaa9c41c975cee4ef4192f78",
+    "src/utils/sampling_utils.py": "bf54962af0b9bde8f8684bea38fd410881f75918179fbd5f0cef2f4b19d6d953",
+    "src/utils/train_utils.py": "bdadbb7c11b0b3bfb57078fb07076f4765049c5c7a234d4046789e6156014a3f"
+  },
+  "stage_records": {
+    "elf": {
+      "allocated_gpus": 8,
+      "command": [
+        "/home/toolkit/ELF/.venv-gpu/bin/python",
+        "-m",
+        "torch.distributed.run",
+        "--standalone",
+        "--nnodes=1",
+        "--nproc-per-node=8",
+        "/home/toolkit/ELF/artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/train.py",
+        "--config",
+        "/home/toolkit/ELF/artifacts/D/elf.yml"
+      ],
+      "ended": 1791944254.2329147,
+      "exit_code": 0,
+      "gpu_hours": 183.5542536687851,
+      "interrupted": false,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "elf",
+      "started": 1791861654.8187637,
+      "state": "completed",
+      "wall_seconds": 82599.4141509533
+    },
+    "generation": {
+      "allocated_gpus": 8,
+      "command": [
+        "/home/toolkit/ELF/.venv-gpu/bin/python",
+        "-m",
+        "torch.distributed.run",
+        "--standalone",
+        "--nnodes=1",
+        "--nproc-per-node=8",
+        "/home/toolkit/ELF/artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/eval.py",
+        "--config",
+        "/home/toolkit/ELF/artifacts/D/evaluation.yml",
+        "--checkpoint_path",
+        "/home/toolkit/ELF/artifacts/D/elf/checkpoint_95090",
+        "--seeds",
+        "0,1,2"
+      ],
+      "ended": 1791944375.1560266,
+      "exit_code": 0,
+      "gpu_hours": 0.26854972945319283,
+      "interrupted": false,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "generation",
+      "started": 1791944254.3086483,
+      "state": "completed",
+      "wall_seconds": 120.84737825393677
+    },
+    "metrics": {
+      "allocated_gpus": 8,
+      "command": [
+        "/home/toolkit/ELF/.venv-gpu/bin/python",
+        "-m",
+        "t5_adaptation.evaluate",
+        "--samples-root",
+        "/home/toolkit/ELF/artifacts/D/samples",
+        "--shared",
+        "/home/toolkit/ELF/artifacts/shared",
+        "--arm",
+        "D",
+        "--output",
+        "/home/toolkit/ELF/artifacts/D/results.json"
+      ],
+      "ended": 1791944469.8953204,
+      "exit_code": 0,
+      "gpu_hours": 0.2098891364203559,
+      "interrupted": false,
+      "source_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+      "stage": "metrics",
+      "started": 1791944375.445209,
+      "state": "completed",
+      "wall_seconds": 94.45011138916016
+    }
+  },
+  "training_seed_count": 1
+}

@@ -1,37 +1,24 @@
 {
   "B": "intentionally omitted",
   "arm_status": {
-    "C": {
-      "adaptation": "completed",
-      "elf": "running",
-      "export": "completed",
-      "owt_normalization": "completed",
-      "readout": "completed"
-    },
-    "D": {
-      "adaptation": "completed",
-      "elf": "running",
-      "export": "completed",
-      "original_readout": "completed",
-      "owt_normalization": "completed",
-      "readout": "completed"
-    }
+    "C": "completed",
+    "D": "completed"
   },
-  "complete": false,
+  "complete": true,
   "recorded_completion_checks": {
     "C": {
-      "five_full_elf_epochs": false,
+      "five_full_elf_epochs": true,
       "fixed_adaptation_budget": true,
-      "fresh_frozen_elf": false,
-      "pipeline_finished": false,
-      "six_final_evaluations": false
+      "fresh_frozen_elf": true,
+      "pipeline_finished": true,
+      "six_final_evaluations": true
     },
     "D": {
-      "five_full_elf_epochs": false,
+      "five_full_elf_epochs": true,
       "fixed_adaptation_budget": true,
-      "fresh_frozen_elf": false,
-      "pipeline_finished": false,
-      "six_final_evaluations": false
+      "fresh_frozen_elf": true,
+      "pipeline_finished": true,
+      "six_final_evaluations": true
     },
     "same_fresh_elf_initialization": true
   },
@@ -56,38 +43,86 @@
     {
       "arm": "C",
       "configuration": "primary",
-      "entropy_mean": null,
-      "gen_ppl_mean": null,
-      "measured_here": false,
+      "empty_fraction": 0.0010000000000000009,
+      "entropy_mean": 4.4050708004129895,
+      "entropy_scored_count": 2997,
+      "entropy_se": 0.010237731288572709,
+      "entropy_std": 0.017732270746045522,
+      "gen_ppl_mean": 13.376973103972556,
+      "gen_ppl_se": 0.3397161701628665,
+      "gen_ppl_std": 0.588405666874799,
+      "generated_count": 3000,
+      "measured_here": true,
+      "nonempty_count": 2997,
       "origin": "measured_this_project",
-      "status": "incomplete"
+      "ppl_scored_count": 2997,
+      "requested_count": 3000,
+      "source": "/home/toolkit/ELF/artifacts/C/results.json",
+      "status": "completed",
+      "uncertainty": "three inference seeds 0,1,2; one training seed"
     },
     {
       "arm": "C",
       "configuration": "secondary",
-      "entropy_mean": null,
-      "gen_ppl_mean": null,
-      "measured_here": false,
+      "empty_fraction": 0.0,
+      "entropy_mean": 4.364330263813337,
+      "entropy_scored_count": 3000,
+      "entropy_se": 0.013458224440177873,
+      "entropy_std": 0.023310328510053286,
+      "gen_ppl_mean": 10.524933360152033,
+      "gen_ppl_se": 0.20166402448613754,
+      "gen_ppl_std": 0.34929233646880437,
+      "generated_count": 3000,
+      "measured_here": true,
+      "nonempty_count": 3000,
       "origin": "measured_this_project",
-      "status": "incomplete"
+      "ppl_scored_count": 3000,
+      "requested_count": 3000,
+      "source": "/home/toolkit/ELF/artifacts/C/results.json",
+      "status": "completed",
+      "uncertainty": "three inference seeds 0,1,2; one training seed"
     },
     {
       "arm": "D",
       "configuration": "primary",
-      "entropy_mean": null,
-      "gen_ppl_mean": null,
-      "measured_here": false,
+      "empty_fraction": 0.0,
+      "entropy_mean": 3.2488549268941083,
+      "entropy_scored_count": 3000,
+      "entropy_se": 0.02209394635765477,
+      "entropy_std": 0.038267837631159395,
+      "gen_ppl_mean": 7.505375674158873,
+      "gen_ppl_se": 0.1580306534935086,
+      "gen_ppl_std": 0.273717121004069,
+      "generated_count": 3000,
+      "measured_here": true,
+      "nonempty_count": 3000,
       "origin": "measured_this_project",
-      "status": "incomplete"
+      "ppl_scored_count": 3000,
+      "requested_count": 3000,
+      "source": "/home/toolkit/ELF/artifacts/D/results.json",
+      "status": "completed",
+      "uncertainty": "three inference seeds 0,1,2; one training seed"
     },
     {
       "arm": "D",
       "configuration": "secondary",
-      "entropy_mean": null,
-      "gen_ppl_mean": null,
-      "measured_here": false,
+      "empty_fraction": 0.0,
+      "entropy_mean": 3.8358613629341125,
+      "entropy_scored_count": 3000,
+      "entropy_se": 0.030092717734525376,
+      "entropy_std": 0.05212211605402695,
+      "gen_ppl_mean": 7.636050388954611,
+      "gen_ppl_se": 0.2821054617335106,
+      "gen_ppl_std": 0.48862099281511795,
+      "generated_count": 3000,
+      "measured_here": true,
+      "nonempty_count": 3000,
       "origin": "measured_this_project",
-      "status": "incomplete"
+      "ppl_scored_count": 3000,
+      "requested_count": 3000,
+      "source": "/home/toolkit/ELF/artifacts/D/results.json",
+      "status": "completed",
+      "uncertainty": "three inference seeds 0,1,2; one training seed"
     }
   ]
 }

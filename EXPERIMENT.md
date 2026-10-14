@@ -2,8 +2,12 @@
 
 The full preregistered scope is in [GOAL.md](GOAL.md). This branch starts at
 official PyTorch ELF commit `b29d8833609e9ab7f67cd9da39435ac5cea04837`;
-the fork's `main` remains unchanged. `RESULTS.md` is a factual status/results
-report, not a declaration that queued work has completed.
+the experiment is delivered on `t5-sigreg-cd`. Before this goal began, the
+fork's `main` had already advanced to `398ac406be5e7a0c61fbfdc3d854faf86d46ad96`,
+an import of the same upstream tree preserving `5098bf2` as its parent.
+This experiment leaves that branch intact; see
+[repository evidence](evidence/final-repository-checks.json).
+[RESULTS.md](RESULTS.md) now reports both completed pipelines.
 
 ## Environment and source pins
 
@@ -257,8 +261,8 @@ runs with finite logged losses. The first ELF recovery checkpoint audits for
 matching experiment identities, eight hashed optimizer shards, and eight RNG
 records at update 500. C's audit also checked every saved optimizer tensor for
 finiteness, all optimizer step counters, and the complete per-rank parameter
-assignment. Both five-epoch ELF runs and final generation evaluations remain
-incomplete; refresh `RESULTS.md` for the latest observed progress.
+assignment. These are historical initialization checks; final completion
+evidence appears below.
 
 Both arms subsequently completed their first full OWT epoch at update 19,018.
 The epoch checkpoint audits for [C](evidence/elf-C-epoch-1.json) and
@@ -298,6 +302,21 @@ Their epoch and data-exposure counters match: each represents 38,948,736
 source-row visits and 38,948,864 example positions including 128 padding
 repeats under the verified sampler. These records have the same metadata and
 progress scope as the preceding milestone records.
+
+Both arms finished all five epochs at update **95,090**, then generated all
+6,000 requested texts per arm. Scoring included 5,997 nonempty C texts and all
+6,000 D texts; C's three empty outputs are disclosed in the report. The deep final checkpoint audits for
+[C](evidence/elf-C-epoch-5.json) and [D](evidence/elf-D-epoch-5.json) verify finite
+model/EMA and all eight optimizer shards, exact counters and identities, RNGs,
+and matching parameter assignments. Final generation audits for
+[C](evidence/generation-C.json) and [D](evidence/generation-D.json) verify the
+protocol, provenance, samples, exclusions, tokenization, and aggregate metrics.
+The original jobs succeeded with exit 0 at 2026-10-14 03:08:29 UTC (C) and
+02:21:14 UTC (D), with no replacement attempts; see
+[terminal scheduler evidence](evidence/final-scheduler.json).
+The periodic ELF `status.json` files stop at update 95,000 and still say
+`running`; their historical telemetry is superseded by the final checkpoint,
+completion records, stage exits, and scheduler observations.
 
 Audit an available full-epoch checkpoint in the CPU environment with:
 
@@ -347,11 +366,53 @@ existing live jobs by authoritative scheduler state and name. For a verified
 terminal unsuccessful job, use the same command with `--resume`; never infer
 job death from a stale file or polling timeout.
 
+The explicit recovery command is:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m t5_adaptation.submit \
+  --pilot artifacts/preflight/attempt2/report.json --resume
+```
+
+Both jobs are already complete, so recovery is not needed for this result.
+The submitter guards completed outputs and always supplies the ER account.
+
 Pipeline order is adaptation → final-only raw encoder export/reload check →
 OWT normalization → short frozen-encoder readout → fresh ELF-B → final EMA
 generation → metrics. The first arm to reach the diagnostic stage also runs
 the shared original-encoder readout; a nonblocking lock prevents duplicate
 work without making the other arm wait. Each readout is capped at 500 updates.
+
+For reproduction, these are the stage entry points for C (substitute D and
+`arm_d.yml` for D). Training and generation run inside an eight-H100 ER
+allocation obtained through the submission entry point above. The pipeline
+wraps these commands with its ordered completion and identity checks; the
+exact commands used by each completed stage are retained in `stage-*.json`.
+
+```bash
+export PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD/src"
+.venv-gpu/bin/python -m t5_adaptation.calibrate --shared artifacts/shared \
+  --kind c4 --output artifacts/shared/c4_normalization.json
+.venv-gpu/bin/python -m torch.distributed.run --standalone --nnodes=1 --nproc-per-node=8 \
+  -m t5_adaptation.train --config src/configs/t5_adaptation/arm_c.yml \
+  --shared artifacts/shared --output artifacts/C/adaptation
+.venv-gpu/bin/python -m t5_adaptation.export \
+  --checkpoint artifacts/C/adaptation/latest.pt --shared artifacts/shared \
+  --output artifacts/C/encoder
+.venv-gpu/bin/python -m t5_adaptation.calibrate --shared artifacts/shared \
+  --kind owt --encoder artifacts/C/encoder --output artifacts/C/owt_normalization.json
+.venv-gpu/bin/python -m torch.distributed.run --standalone --nnodes=1 --nproc-per-node=8 \
+  src/train.py --config artifacts/C/elf.yml
+.venv-gpu/bin/python -m torch.distributed.run --standalone --nnodes=1 --nproc-per-node=8 \
+  src/eval.py --config artifacts/C/evaluation.yml \
+  --checkpoint_path artifacts/C/elf/checkpoint_95090 --seeds 0,1,2
+.venv-gpu/bin/python -m t5_adaptation.evaluate --samples-root artifacts/C/samples \
+  --shared artifacts/shared --arm C --output artifacts/C/results.json
+```
+
+The pipeline creates `elf.yml` and `evaluation.yml` from the retained final
+encoder and normalization. The `latest.pt` identity must mark the fixed-budget
+final checkpoint before export is accepted. Running the adaptation command
+again restores its verified latest state, including the exact data cursor.
 
 Adaptation `latest.pt` contains model, optimizer, scheduler, per-rank RNGs,
 SIGReg counter, fixed calibration, source/config identity and exact data
@@ -407,11 +468,18 @@ can be valid negative results. These audits support the full `GOAL.md`
 acceptance review; their scope alone does not prove whole-experiment completion.
 
 ```bash
-PYTHONPATH=src .venv/bin/python -m t5_adaptation.report
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m t5_adaptation.report
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/finalize_cd_report.py
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python scripts/audit_cd_acceptance.py
 ```
 
-This refreshes `RESULTS.md`, `results.json/csv`, `compute.json/csv`, and
-`diagnostics.json/csv` from actual artifacts and scheduler state.
+The first command refreshes the base `RESULTS.md`, `results.json/csv`,
+`compute.json/csv`, and `diagnostics.json/csv` from actual artifacts and scheduler
+state. The second adds the final interpretation, pooled length summaries, and
+twelve fixed-ID qualitative samples without changing the frozen execution
+source. The third revalidates retained identities and artifacts and renders the
+reviewed requirement mapping in [ACCEPTANCE.md](ACCEPTANCE.md). It does not
+launch jobs or rerun model scoring. Its evidence limits are explicit.
 `training.json/csv` retain saved and observed update counts, token accounting,
 normalization, initialization hashes, logged throughput and rank-zero peak
 memory. `evaluation.csv` records per-seed scores and explicit scored/empty
@@ -420,7 +488,13 @@ totals; these two views must not be added together. The reporting completion
 flag requires both pipeline completion records, the fixed adaptation budgets,
 five ELF epochs, matching fresh initialization hashes, and six evaluations per
 arm. Final acceptance still includes the requirement-by-requirement audit in
-`GOAL.md`.
+`GOAL.md`. The final [artifact index](evidence/final-artifacts.json) gives paths,
+sizes, and hashes for selected checkpoints, final optimizer shards, encoders,
+logs, manifests, all raw sample files, and per-seed metrics. It separately labels
+large shared-data hashes retained from preparation rather than freshly reread.
+All earlier recovery checkpoints remain in the designated local storage; they
+were not pruned or uploaded. Cloning the Git branch alone does not download
+these large artifacts. Use `/home/toolkit/ELF/artifacts` on the experiment mount.
 
 A remains
 `published_external`; C/D become measurements only when their saved final
@@ -433,7 +507,8 @@ but finite diagnostic does not itself trigger a training failure.
 
 New project code lives in `src/t5_adaptation/`; new configs in
 `src/configs/t5_adaptation/`, cluster config in `cluster/`, setup/preparation
-scripts in `scripts/`, and focused checks in `tests/`.
+scripts in `scripts/`, and focused checks in `tests/`. The final report and
+acceptance scripts also live in `scripts/`; they do not modify training source.
 
 Existing ELF changes are limited to provenance/freezing/initialization
 checks and one smoke sample in `src/train.py`; full-epoch sampler support in

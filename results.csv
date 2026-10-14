@@ -1,6 +1,6 @@
-arm,origin,configuration,gen_ppl_mean,gen_ppl_se,entropy_mean,entropy_se,uncertainty,source,table,steps,gamma,self_cond_cfg,status,measured_here
-A,published_external,primary,24.08,0.16,5.15,0.002,"reported standard error over evaluation seeds 0–5, n=6",https://arxiv.org/html/2605.10938v2#A5.T9,"Appendix E.4, Table 9",32,1.5,3.0,published,False
-C,measured_this_project,primary,,,,,,,,,,,incomplete,False
-C,measured_this_project,secondary,,,,,,,,,,,incomplete,False
-D,measured_this_project,primary,,,,,,,,,,,incomplete,False
-D,measured_this_project,secondary,,,,,,,,,,,incomplete,False
+arm,origin,configuration,gen_ppl_mean,gen_ppl_se,entropy_mean,entropy_se,uncertainty,source,table,steps,gamma,self_cond_cfg,status,measured_here,gen_ppl_std,entropy_std,empty_fraction,requested_count,generated_count,nonempty_count,ppl_scored_count,entropy_scored_count
+A,published_external,primary,24.08,0.16,5.15,0.002,"reported standard error over evaluation seeds 0–5, n=6",https://arxiv.org/html/2605.10938v2#A5.T9,"Appendix E.4, Table 9",32,1.5,3.0,published,False,,,,,,,,
+C,measured_this_project,primary,13.376973103972556,0.3397161701628665,4.4050708004129895,0.010237731288572709,"three inference seeds 0,1,2; one training seed",/home/toolkit/ELF/artifacts/C/results.json,,,,,completed,True,0.588405666874799,0.017732270746045522,0.0010000000000000009,3000,3000,2997,2997,2997
+C,measured_this_project,secondary,10.524933360152033,0.20166402448613754,4.364330263813337,0.013458224440177873,"three inference seeds 0,1,2; one training seed",/home/toolkit/ELF/artifacts/C/results.json,,,,,completed,True,0.34929233646880437,0.023310328510053286,0.0,3000,3000,3000,3000,3000
+D,measured_this_project,primary,7.505375674158873,0.1580306534935086,3.2488549268941083,0.02209394635765477,"three inference seeds 0,1,2; one training seed",/home/toolkit/ELF/artifacts/D/results.json,,,,,completed,True,0.273717121004069,0.038267837631159395,0.0,3000,3000,3000,3000,3000
+D,measured_this_project,secondary,7.636050388954611,0.2821054617335106,3.8358613629341125,0.030092717734525376,"three inference seeds 0,1,2; one training seed",/home/toolkit/ELF/artifacts/D/results.json,,,,,completed,True,0.48862099281511795,0.05212211605402695,0.0,3000,3000,3000,3000,3000

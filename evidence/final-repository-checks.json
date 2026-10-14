@@ -1,0 +1,35 @@
+{
+  "base_commit": "b29d8833609e9ab7f67cd9da39435ac5cea04837",
+  "branch": "t5-sigreg-cd",
+  "goal_created_at_utc": "2026-10-12T23:20:49+00:00",
+  "main_at_closeout": "398ac406be5e7a0c61fbfdc3d854faf86d46ad96",
+  "main_note": "The main branch already had commit 398ac40 before this goal was created. Git records its commit and push at 2026-10-12 23:19 UTC; the active goal began at 23:20:49 UTC. It preserves 5098bf2 as its parent and imports the pinned upstream tree. This experiment branch did not reset or rewrite it.",
+  "original_fork_main": "5098bf28b5e9b52c329970a7e4e1cc28251c76e6",
+  "recorded_at_utc": "2026-10-14T23:16:50.407377+00:00",
+  "status_command": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m t5_adaptation.submit --pilot artifacts/preflight/attempt2/report.json --status",
+    "exit_code": 0,
+    "states": {
+      "C": "SUCCEEDED",
+      "D": "SUCCEEDED"
+    }
+  },
+  "test_coverage": {
+    "adaptation_and_elf": 19,
+    "generation_auditor": 6,
+    "note": "The initial suite passed 18 tests. The calibration correction passed 2 focused tests, one overlapping, yielding 19 distinct adaptation/ELF checks. Six generation-auditor tests passed later. Final collection confirms 25 current tests; collection is not a rerun.",
+    "passed_evidence": [
+      "evidence/focused-checks-current.txt",
+      "evidence/calibration-padding-checks.txt",
+      "evidence/recovery-checks.txt",
+      "evidence/generation-auditor-checks.json"
+    ],
+    "total_collected": 25
+  },
+  "test_source_sha256": {
+    "tests/conftest.py": "010788753235eeae39cd39829da653870d22afd3151511c1a24f3687774d9b74",
+    "tests/test_adaptation.py": "0da5b77f8f3428350007c2b282076dae02c323c8ec49cf31171e6d9a2c0fd918",
+    "tests/test_elf_reproducibility.py": "d89acbe6e8b9d7c5e15de5fbbe73db0daaf6c2732a50db32e21a59826f111028",
+    "tests/test_generation_audit.py": "04bb035732313412834a54022ccbee2eb4ca5a377b449c6124e1af90170b6e1a"
+  }
+}

@@ -1,0 +1,2059 @@
+{
+  "allocated_gpu_hours": 405.74666666666667,
+  "arms": {
+    "C": {
+      "adaptation_checkpoint_sha256": "ebe3b3b2602b8fa937f40e432109ee4688775c15e5d5b63abed16e223c8afa29",
+      "elf_checkpoint_sha256": "91fb472aff63d0759314e56bd5be51227d14ce6a50da18f30fb23ec278f0182b",
+      "elf_epochs": 5,
+      "elf_updates": 95090,
+      "ema_state_hash": "d871cc4d8b867013fe65a7019490282a742a4a7ee7a423b44cdfa1a6c6f266f5",
+      "encoder_hash": "75762f6f8f15e7e05002b297af83cf4d49d0ec9d8742c71701f428f105b06ae6",
+      "execution_source_files_verified": 37,
+      "generated_samples": 6000,
+      "retained_elf_checkpoint_count": 195
+    },
+    "D": {
+      "adaptation_checkpoint_sha256": "5d44c1263f4737ddfb4ef51d0dce3eeed4efdb1d39899e96723a4aa5e58ec4f3",
+      "elf_checkpoint_sha256": "6e5b5eb79ca5f58159786bdf2abeea3c34ddd9767f3fc8d12e1871d6783a7b80",
+      "elf_epochs": 5,
+      "elf_updates": 95090,
+      "ema_state_hash": "9ff670c779402f47a8e65aabcc3ac27277b7eab741aebc1fb8cd995704e7fc90",
+      "encoder_hash": "45355982ce6b57cbce17b7c934ce604649ab99389f678afaf95ee8f1576c89f5",
+      "execution_source_files_verified": 37,
+      "generated_samples": 6000,
+      "retained_elf_checkpoint_count": 195
+    }
+  },
+  "audited_at_utc": "2026-10-14T23:23:53.280439+00:00",
+  "current_verified_files": {
+    ".gitmodules": {
+      "bytes": 238,
+      "sha256": "c4ece15f000821c50acb42b6c870ec2755a8daa3b0144d09a03e3704f70dba83"
+    },
+    "EXPERIMENT.md": {
+      "bytes": 29473,
+      "sha256": "3c3cbd43890569f87169a11866036e6e1fb1ee3766f0189a8980ed07a234395a"
+    },
+    "GOAL.md": {
+      "bytes": 36375,
+      "sha256": "14d9d86308bd83ba4c2318ef13c702c3f22afde339019119940bf8eb108b81d6"
+    },
+    "RESULTS.md": {
+      "bytes": 6230,
+      "sha256": "e2e259974ec2c123edc39a0426b7bd5a8984814e1087782f3f235f58ca52ffe6"
+    },
+    "artifacts/C/adaptation.log": {
+      "bytes": 1261131,
+      "sha256": "746507de0763fd78f9010dcf12dee30ac42b26d8ed0cc80a78e151bf3a2acafa"
+    },
+    "artifacts/C/adaptation/diagnostics-000000.json": {
+      "bytes": 27885,
+      "sha256": "e93b0f322fb1a58561399e6a0812ace31344dbcb3d9c1c78210e6397e714e09e"
+    },
+    "artifacts/C/adaptation/diagnostics-003815.json": {
+      "bytes": 27740,
+      "sha256": "25acf0bccabc0993a8836eb8ec841b61e7c4b1b9b7ccbd0d03ae1db259dcb0da"
+    },
+    "artifacts/C/adaptation/diagnostics-011445.json": {
+      "bytes": 27695,
+      "sha256": "9dca6e4ee3ddc88afab0aa6ca3bb72d20337c92a3224663afcdad004a7b1e7a3"
+    },
+    "artifacts/C/adaptation/diagnostics-038147.json": {
+      "bytes": 27654,
+      "sha256": "98d559417aedf519644ec7839674ab317a47d47b6e2f94d2e6c0cb04cfd32405"
+    },
+    "artifacts/C/adaptation/identity.json": {
+      "bytes": 4195,
+      "sha256": "0bd698d2f13b3013b97d09b7afea9ad4bd46568354b823bf68a947b6207e3c87"
+    },
+    "artifacts/C/adaptation/initial_encoder.json": {
+      "bytes": 197,
+      "sha256": "437299b5b85c8328ac69e1ce25ceb3dec960cb0db7eb40700b8e82dc99e5720e"
+    },
+    "artifacts/C/adaptation/latest.json": {
+      "bytes": 5065,
+      "sha256": "8a14f5d3321d2ff2b705cbc92c4f6b51201f5c5680ec0f3887202d3430592401"
+    },
+    "artifacts/C/adaptation/milestone-003815.json": {
+      "bytes": 5056,
+      "sha256": "f36bb5f4de7530102d3f2aefbe0fad5cc24fd4b4980b2dbb11ab9d5314688215"
+    },
+    "artifacts/C/adaptation/milestone-003815.pt": {
+      "bytes": 726383230,
+      "sha256": "160f2d9181c23ef0665724f61bf77c56862a5bc5af41ada14db37504a84732b7"
+    },
+    "artifacts/C/adaptation/milestone-011445.json": {
+      "bytes": 5060,
+      "sha256": "21f88957e04d9cb23623d933aca32e290a89cb16267099c4acfafd92bb42f5dd"
+    },
+    "artifacts/C/adaptation/milestone-011445.pt": {
+      "bytes": 726383230,
+      "sha256": "64438de9de247834eb34888a31b19165829755978d99de2e42e7c7449b7255ff"
+    },
+    "artifacts/C/adaptation/milestone-038147.json": {
+      "bytes": 5065,
+      "sha256": "8a14f5d3321d2ff2b705cbc92c4f6b51201f5c5680ec0f3887202d3430592401"
+    },
+    "artifacts/C/adaptation/milestone-038147.pt": {
+      "bytes": 726383230,
+      "sha256": "ebe3b3b2602b8fa937f40e432109ee4688775c15e5d5b63abed16e223c8afa29"
+    },
+    "artifacts/C/adaptation/runtime.json": {
+      "bytes": 33525,
+      "sha256": "62b6f87861e25da698b0404f527d213d885964029a5ffe34dcc499e20c021c74"
+    },
+    "artifacts/C/adaptation/status.json": {
+      "bytes": 522,
+      "sha256": "e7e87d44fb490a1d78c508b0366e02e87c745fd2098179ebbe2aefc25e755b59"
+    },
+    "artifacts/C/adaptation/train.jsonl": {
+      "bytes": 1261131,
+      "sha256": "a1979d7026b70973e87a45d21a1b7effefeefcccaaa0458721370906ccaa7dc0"
+    },
+    "artifacts/C/completed.json": {
+      "bytes": 197,
+      "sha256": "c41faf84f1996c0c050360b084d4729604673d84f33a668a4cd407693241b146"
+    },
+    "artifacts/C/compute.jsonl": {
+      "bytes": 4170,
+      "sha256": "26b7a4c6327de8a58164f30d5826b8db18e47c780583d9822ed9cd1670fda4be"
+    },
+    "artifacts/C/elf.log": {
+      "bytes": 7544184,
+      "sha256": "aa3d85d1c0c05eae45e74b23284333b4cabc732a9aa6eaf210636063a6bfb443"
+    },
+    "artifacts/C/elf.yml": {
+      "bytes": 1220,
+      "sha256": "b77386984af1a0ffaf5627019c738be4c13d5a468c79885c8e7d4a7a0a1cc7c6"
+    },
+    "artifacts/C/elf/checkpoint_95090": {
+      "bytes": 889413424,
+      "sha256": "91fb472aff63d0759314e56bd5be51227d14ce6a50da18f30fb23ec278f0182b"
+    },
+    "artifacts/C/elf/completed.json": {
+      "bytes": 6553,
+      "sha256": "7a50d8629e548325edb4de1c53c861a3217632fdf1f773b9c0388a2e8dca4d52"
+    },
+    "artifacts/C/elf/config.yml": {
+      "bytes": 1549,
+      "sha256": "2e4549b46f67bae68bcf8ee82728c8d49afc0d4cc73794a37b930384b8052122"
+    },
+    "artifacts/C/elf/initial_smoke/sde-steps2-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_0_1.jsonl": {
+      "bytes": 98512,
+      "sha256": "d3565d24add2a26e9623a157283a4b7ba0f8167da2d4dbaa6eb77f76a0517083"
+    },
+    "artifacts/C/elf/initialization.json": {
+      "bytes": 6567,
+      "sha256": "572bf18049749fc3a54e260b466306dbbd795f3907eb200e4cea6d44b44dbd04"
+    },
+    "artifacts/C/elf/optimizer_95090_rank0_7df39286208c4cefbda1bb242227a6c5.pt": {
+      "bytes": 52484782,
+      "sha256": "ea19db2602a3927b6d3797ae7caeab61a846c952cca27a64d3653b59c3d43c15"
+    },
+    "artifacts/C/elf/optimizer_95090_rank1_3a62a1f3cecb4bdab0f7ddb726674dc1.pt": {
+      "bytes": 51174062,
+      "sha256": "971d547b5dc53116d4d482b7b43b699607543e8c2f4dbea2a576bffab7780cfa"
+    },
+    "artifacts/C/elf/optimizer_95090_rank2_ff16861d9da447bba167acc714e17bf7.pt": {
+      "bytes": 50125168,
+      "sha256": "65f4708749090641b8766fed132a0fc8d5b4efce379489e4fa886fd1d5a6ac28"
+    },
+    "artifacts/C/elf/optimizer_95090_rank3_eb4dd33a324644cf9e2afedf61995f79.pt": {
+      "bytes": 49338736,
+      "sha256": "e4a4429d8db400c339732acf2478e393eb3dabf317afac74573391b3f50fdb53"
+    },
+    "artifacts/C/elf/optimizer_95090_rank4_7d1dcf9e7c0b4803a47209c2976a4795.pt": {
+      "bytes": 39901552,
+      "sha256": "c65fb49a7759cc7b0dce41fa53118389218dbd2bd6c902661a5017024a929260"
+    },
+    "artifacts/C/elf/optimizer_95090_rank5_2ba75ca4eb634dfe8db3951609b6d1b4.pt": {
+      "bytes": 39508336,
+      "sha256": "2906552b17e0828b1c96d00a7a39afc1fed70f9afa6d91f8bd0be14b01c038bb"
+    },
+    "artifacts/C/elf/optimizer_95090_rank6_1745ded5d6bf4ca49337e677ead524ef.pt": {
+      "bytes": 104855920,
+      "sha256": "e0974679e4997a5286b65f9dd918f3e6740691b428c06dd9e041f007079bcb11"
+    },
+    "artifacts/C/elf/optimizer_95090_rank7_4fa2db35c8f743c99155c997cdfa72fa.pt": {
+      "bytes": 41212272,
+      "sha256": "26bafc080debab129caed3ba1503175ffaa2ced5ad483eaca75e718328a18f4a"
+    },
+    "artifacts/C/elf/status.json": {
+      "bytes": 320,
+      "sha256": "06686120a68fe28bae0f2b36016bffe42eb1af006f392d43438806f8b0d640e4"
+    },
+    "artifacts/C/elf/train.jsonl": {
+      "bytes": 282820,
+      "sha256": "38b3869fd4d18f1355d4efbb60291a51d668dc7823eab7c816cf64eb679ad2cd"
+    },
+    "artifacts/C/elf_identity.json": {
+      "bytes": 6000,
+      "sha256": "8488127f67409938f8aeebb3d52dac34527024d374bd5d89fdb46f116afab36c"
+    },
+    "artifacts/C/encoder/config.json": {
+      "bytes": 1519,
+      "sha256": "e9cbb19e40f8d69b95ec1e96345ff134dfe46b5d6b0d0d58cb2d43370703864c"
+    },
+    "artifacts/C/encoder/manifest.json": {
+      "bytes": 6365,
+      "sha256": "31e34efef2157d158da4885491a2c3294d5ca5389754342892c1fc5c54583a4d"
+    },
+    "artifacts/C/encoder/model.safetensors": {
+      "bytes": 141329200,
+      "sha256": "a15dc62e7a3e9ab896f8907578fe93fa18595459b53cfa064d1025affe2bd287"
+    },
+    "artifacts/C/encoder/special_tokens_map.json": {
+      "bytes": 2543,
+      "sha256": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2"
+    },
+    "artifacts/C/encoder/spiece.model": {
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    "artifacts/C/encoder/tokenizer.json": {
+      "bytes": 2422169,
+      "sha256": "71c33c3bf57bf2e19b4f8ac686ad8d182a79f7cd1a4921889437c453420223f1"
+    },
+    "artifacts/C/encoder/tokenizer_config.json": {
+      "bytes": 20746,
+      "sha256": "e0aff0b1de9071e30d9a60a199303b6abe916a64a19932bd1c46992279b41a1f"
+    },
+    "artifacts/C/evaluation.yml": {
+      "bytes": 1322,
+      "sha256": "167fe2138924ec10d8a83d19b0926f3decc59196a6b53f6211a054d06b7b2fe5"
+    },
+    "artifacts/C/export.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/C/generation.log": {
+      "bytes": 10877,
+      "sha256": "64cd6d4fc5f41c421a0a9158be8cef35bbaed188070e98127d6571f19be1a1f3"
+    },
+    "artifacts/C/metrics.log": {
+      "bytes": 9554,
+      "sha256": "bfe1d5a8620f4c520d548555e3807e4825891904c3335bc2a7edee5ed08d7143"
+    },
+    "artifacts/C/owt_normalization.json": {
+      "bytes": 48780,
+      "sha256": "68c7aa489b91ac80cfeaf6f54b869e68e1d4d74bf0e934e30190b0e7c1f17e74"
+    },
+    "artifacts/C/owt_normalization.log": {
+      "bytes": 357,
+      "sha256": "29a8ca6ab0643c4878c6414f9d629df10ad5146a865de923436a8e9a0b4daec1"
+    },
+    "artifacts/C/readout.json": {
+      "bytes": 1448,
+      "sha256": "41c073c5c2f4bd88670e4f83c57578c4ec3cc9ff17d5f15f6d5a613bd5f8d5a8"
+    },
+    "artifacts/C/readout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/C/results.json": {
+      "bytes": 489308,
+      "sha256": "e83a1f2242c8db40957414654742508a2bfa6595b363054068ff6f8536e73a20"
+    },
+    "artifacts/C/runtime.json": {
+      "bytes": 33526,
+      "sha256": "f0e7e90185db56f16e6d7b4245bdb36cb667f383677979116cb772fae183c402"
+    },
+    "artifacts/C/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4253302,
+      "sha256": "3506b88950c211e5ddc028d90eda169dc6e1d7f2f14d7a89ac3de030c730978d"
+    },
+    "artifacts/C/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 66644,
+      "sha256": "bdff781ae952e2f47bfde80d105dd8407aaec1fd851fda363bf8a9d7500f6b23"
+    },
+    "artifacts/C/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4032452,
+      "sha256": "da9499efabe2c709b100d6d413ac71099135a5f6eb28a89143fb84d174e96ce9"
+    },
+    "artifacts/C/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 63759,
+      "sha256": "d002d92f9f492063e3c2cc6c29c13964c371d2ade71604d1dd4800c5f5015a0a"
+    },
+    "artifacts/C/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4293859,
+      "sha256": "17c8cb1542a6404c2de43f600566cc71fff143b447fc52a835906b22945d789d"
+    },
+    "artifacts/C/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 65167,
+      "sha256": "ef570bfd0d89afd18a49bca533e47b8760427737e850202ca8aa68af3fcfde90"
+    },
+    "artifacts/C/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4025862,
+      "sha256": "5b079c4d52ddfeb1daf57cab9f577162320a11e8d300b5e10ef36f8ff9805a4d"
+    },
+    "artifacts/C/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 65508,
+      "sha256": "62eb68ee92149f8819dd4fab7642e5992eec9f14d32066ae5db88b604904056c"
+    },
+    "artifacts/C/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4325095,
+      "sha256": "c27417f627351f3a1c94e1b2eac46f8f888744d7533fee260b00ff1bac9f3237"
+    },
+    "artifacts/C/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 64248,
+      "sha256": "db001636991267c6efde2df471a72a1e42d66f59315fe77e6087eb8dfef20142"
+    },
+    "artifacts/C/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4053534,
+      "sha256": "ebe92704380c25b968748c34ef35f8a00e0e19b2106ebab147c61e07e2d0fcc4"
+    },
+    "artifacts/C/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 64525,
+      "sha256": "9ba81da5553ded1a50e4d6a6998168bd6090f938c5c4591ba658e0ea4be6e036"
+    },
+    "artifacts/C/stage-adaptation.json": {
+      "bytes": 777,
+      "sha256": "a1e14abae6f603da650de78d8bb7faf3633bc163951007ba71e1b03b1e2cebe9"
+    },
+    "artifacts/C/stage-elf.json": {
+      "bytes": 634,
+      "sha256": "70ece88b1d5eceecb2bf4e19c2e947ca4e34db0cfc8cc80c0d9be23a3ccae229"
+    },
+    "artifacts/C/stage-export.json": {
+      "bytes": 613,
+      "sha256": "b90c332191f32e3c1082e8508f04122087daffb286c103e75a775fea1bbf55b7"
+    },
+    "artifacts/C/stage-generation.json": {
+      "bytes": 761,
+      "sha256": "8c9a5ecbf51ac8fa98696d66c5171479ceb105707695742677c73ebbeddb04be"
+    },
+    "artifacts/C/stage-metrics.json": {
+      "bytes": 631,
+      "sha256": "7ca594c1ca26c8251987f76d7aa7b7cd9b5a99fc6c4f9245babd6ca7b5f10745"
+    },
+    "artifacts/C/stage-owt_normalization.json": {
+      "bytes": 651,
+      "sha256": "be7e841363c3b1df043fddaecb3a9344267fdf4da346bd44eeaa693ee5eaa7d9"
+    },
+    "artifacts/C/stage-readout.json": {
+      "bytes": 603,
+      "sha256": "4afe01cf671e0597465d6461b5e25c595b161d825f9bad48a835f529b42b4503"
+    },
+    "artifacts/C/stage_attempts/adaptation-edd48dd8d4b9477f975b76f010b8cf4d.json": {
+      "bytes": 777,
+      "sha256": "a1e14abae6f603da650de78d8bb7faf3633bc163951007ba71e1b03b1e2cebe9"
+    },
+    "artifacts/C/stage_attempts/elf-a3f62f489c2d4b20903a49661d4364a0.json": {
+      "bytes": 634,
+      "sha256": "70ece88b1d5eceecb2bf4e19c2e947ca4e34db0cfc8cc80c0d9be23a3ccae229"
+    },
+    "artifacts/C/stage_attempts/export-9b0eec5a52e4489b95dc9fc64199bb05.json": {
+      "bytes": 613,
+      "sha256": "b90c332191f32e3c1082e8508f04122087daffb286c103e75a775fea1bbf55b7"
+    },
+    "artifacts/C/stage_attempts/generation-457e29c0e2e04ba9b19d0a7f228afc35.json": {
+      "bytes": 761,
+      "sha256": "8c9a5ecbf51ac8fa98696d66c5171479ceb105707695742677c73ebbeddb04be"
+    },
+    "artifacts/C/stage_attempts/metrics-a6249c9cc30b4454be52ebb181351982.json": {
+      "bytes": 631,
+      "sha256": "7ca594c1ca26c8251987f76d7aa7b7cd9b5a99fc6c4f9245babd6ca7b5f10745"
+    },
+    "artifacts/C/stage_attempts/owt_normalization-ecf02b375665425eaead130a4a85a7ec.json": {
+      "bytes": 651,
+      "sha256": "be7e841363c3b1df043fddaecb3a9344267fdf4da346bd44eeaa693ee5eaa7d9"
+    },
+    "artifacts/C/stage_attempts/readout-465b0c721c444e479f4501f47ed11ea3.json": {
+      "bytes": 603,
+      "sha256": "4afe01cf671e0597465d6461b5e25c595b161d825f9bad48a835f529b42b4503"
+    },
+    "artifacts/D/adaptation.log": {
+      "bytes": 1253296,
+      "sha256": "3337f01c0813e4b5dcc16e0d748d09cd8dedc556d79225f1ecba4505b7239594"
+    },
+    "artifacts/D/adaptation/audit-3b.json": {
+      "bytes": 1782,
+      "sha256": "ef5db922dfe1929bd2430adc1f02717ed7121fe4960a03b2cf9ec68227b9b828"
+    },
+    "artifacts/D/adaptation/diagnostics-000000.json": {
+      "bytes": 27911,
+      "sha256": "ccaecdf95b1b825492f9fd5c8b4cb354f6c6aede6e5981506d6bec5313c0b680"
+    },
+    "artifacts/D/adaptation/diagnostics-003815.json": {
+      "bytes": 27859,
+      "sha256": "cbcff1a8276f245a13f563ded140ad2f6f135bc1fb67469e6270810e91c2cf09"
+    },
+    "artifacts/D/adaptation/diagnostics-011445.json": {
+      "bytes": 27859,
+      "sha256": "73ecdec41c97624aac695ba70bae307095500752f52ac1b1c080c3aac552726c"
+    },
+    "artifacts/D/adaptation/diagnostics-038147.json": {
+      "bytes": 27822,
+      "sha256": "614cd72853c6c9c6af05fdcc2fc5ccfb934cad6ba37911bfd0820cd29cc23bb8"
+    },
+    "artifacts/D/adaptation/identity.json": {
+      "bytes": 4211,
+      "sha256": "ac44864e6a142a299c8c6c5c4a7f6334ad5ace454790af13171ea8bef01c73fe"
+    },
+    "artifacts/D/adaptation/initial_encoder.json": {
+      "bytes": 197,
+      "sha256": "437299b5b85c8328ac69e1ce25ceb3dec960cb0db7eb40700b8e82dc99e5720e"
+    },
+    "artifacts/D/adaptation/latest.json": {
+      "bytes": 5074,
+      "sha256": "87f0583a4360ae88605bfc82ee1b230bb36b2aaf48b908dbbe0f7d7fe58fb3e4"
+    },
+    "artifacts/D/adaptation/milestone-003815.json": {
+      "bytes": 5064,
+      "sha256": "a4bc76354328a2178e00e37325a21ef5dcacdbfd61e1c06a69917f6ca9088df6"
+    },
+    "artifacts/D/adaptation/milestone-003815.pt": {
+      "bytes": 424167422,
+      "sha256": "7a36df4e3f58df7b1cc10e66bcb7597f041617bffc56ca41f1635040a81766f7"
+    },
+    "artifacts/D/adaptation/milestone-011445.json": {
+      "bytes": 5067,
+      "sha256": "7b55d4aa2e72688d66e4b5895308ce4ed15c4c3ffdb0a226200e540cf4478c87"
+    },
+    "artifacts/D/adaptation/milestone-011445.pt": {
+      "bytes": 424167422,
+      "sha256": "a8d68ed6a1c08aad13b3514ab955978d171b81e49fe7afda6cfccef70310a75a"
+    },
+    "artifacts/D/adaptation/milestone-038147.json": {
+      "bytes": 5074,
+      "sha256": "87f0583a4360ae88605bfc82ee1b230bb36b2aaf48b908dbbe0f7d7fe58fb3e4"
+    },
+    "artifacts/D/adaptation/milestone-038147.pt": {
+      "bytes": 424167422,
+      "sha256": "5d44c1263f4737ddfb4ef51d0dce3eeed4efdb1d39899e96723a4aa5e58ec4f3"
+    },
+    "artifacts/D/adaptation/runtime.json": {
+      "bytes": 33526,
+      "sha256": "715ccd169bfd77bd4856a2a1fd9caaef904934ee4a7b3a37f28eed809c78f7ba"
+    },
+    "artifacts/D/adaptation/status.json": {
+      "bytes": 515,
+      "sha256": "0e42cf20ac0612c8f22ae236c4e2619978198b80f837644c75342cb6a6e5142f"
+    },
+    "artifacts/D/adaptation/train.jsonl": {
+      "bytes": 1253296,
+      "sha256": "0870091180c684650269a8cb5f26cb38fd9a5da276bb8c07af83e2dfe074a25e"
+    },
+    "artifacts/D/completed.json": {
+      "bytes": 197,
+      "sha256": "0f22d06fdf23b32492ce649e2c7524ffb442736105e1b19091ca85232a280e3f"
+    },
+    "artifacts/D/compute.jsonl": {
+      "bytes": 4728,
+      "sha256": "32b2c0bc792aae5521e5c81d5f048abd105d9c82c87592a571833783163d677f"
+    },
+    "artifacts/D/elf-start-telemetry.json": {
+      "bytes": 1631,
+      "sha256": "9aabdb3a2c15ad75dff816ce179a80c8db5e2285a6049ae36eb1db678ed4f217"
+    },
+    "artifacts/D/elf.log": {
+      "bytes": 7542027,
+      "sha256": "df0c60a38292fac9b674144cbbdda1275e5daf8908dad69a27a92874cedbbaa7"
+    },
+    "artifacts/D/elf.yml": {
+      "bytes": 1220,
+      "sha256": "cf46c2096167a11cabb923df919be8dfb1789034ef9db611b72d6019c8f94747"
+    },
+    "artifacts/D/elf/checkpoint_95090": {
+      "bytes": 889413424,
+      "sha256": "6e5b5eb79ca5f58159786bdf2abeea3c34ddd9767f3fc8d12e1871d6783a7b80"
+    },
+    "artifacts/D/elf/completed.json": {
+      "bytes": 6562,
+      "sha256": "e1c0739f69b28f1160defe913199d2a406705e09cfda67a75ef258afc3149987"
+    },
+    "artifacts/D/elf/config.yml": {
+      "bytes": 1549,
+      "sha256": "a7cc4d4d17db22da357cb63d0fbe4da302cbc8be5113c6429ef466024ab9cb2b"
+    },
+    "artifacts/D/elf/initial_smoke/sde-steps2-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_0_1.jsonl": {
+      "bytes": 98512,
+      "sha256": "d3565d24add2a26e9623a157283a4b7ba0f8167da2d4dbaa6eb77f76a0517083"
+    },
+    "artifacts/D/elf/initialization.json": {
+      "bytes": 6576,
+      "sha256": "1b589baea859be4898933364ed73d85be1e74b692c28a1a89fa9962c56883b38"
+    },
+    "artifacts/D/elf/optimizer_95090_rank0_731848e0df994d40899cbe31d8c4b4ec.pt": {
+      "bytes": 52484782,
+      "sha256": "4b11a2466cffcd3ba6c07ea39f5329ed075776c2e077ddb3d28e2dbc7c3910d1"
+    },
+    "artifacts/D/elf/optimizer_95090_rank1_0cf9eee4f4e4439580b49c6a9002661d.pt": {
+      "bytes": 51174062,
+      "sha256": "66fdd024784f181c1bfb506f5de1b779edf596364aed720f8cd1e86466259990"
+    },
+    "artifacts/D/elf/optimizer_95090_rank2_afb972d2ad4f4621b13aa7fb099165f5.pt": {
+      "bytes": 50125168,
+      "sha256": "cbeb0f61d2b8921fd0a89d5d98f4a1dcea51f91cbffc8076a9217d2acea789f9"
+    },
+    "artifacts/D/elf/optimizer_95090_rank3_fb5241105c2d43699f7757e2f258658c.pt": {
+      "bytes": 49338736,
+      "sha256": "87f541e344e97d4e7be36595a0fbb456fc9747b0151432938018c4a066c2a74b"
+    },
+    "artifacts/D/elf/optimizer_95090_rank4_7d991e15d88f49be9848c8d7efced30a.pt": {
+      "bytes": 39901552,
+      "sha256": "65bac265fd0414fb82eab2a3c9e5dbfecd737b42fbce6886726504d8086bba72"
+    },
+    "artifacts/D/elf/optimizer_95090_rank5_a61e1970f0ee42ee884b7cd84a28e574.pt": {
+      "bytes": 39508336,
+      "sha256": "dae59e948e99b2e827990ece8fc1bef8e3b707cad92e7ee5c20dc387c95d3ea5"
+    },
+    "artifacts/D/elf/optimizer_95090_rank6_9ad66e86c9a94f6da652c5e257941a0c.pt": {
+      "bytes": 104855920,
+      "sha256": "ba10ea67d0f76928b1bf01100b8ba5e6fac723aff7df8f93d0f6827b1eae0f6c"
+    },
+    "artifacts/D/elf/optimizer_95090_rank7_42a6805979a14abf9fad65d2907ecbb6.pt": {
+      "bytes": 41212272,
+      "sha256": "28dd9a8842c51adb49c9997199768557839c92ae3b84381f15411e52d78ca284"
+    },
+    "artifacts/D/elf/status.json": {
+      "bytes": 317,
+      "sha256": "b63a263e1304858c0c8765dedc3b357a8bf831d6d950a4616f9b507f4f71c8ef"
+    },
+    "artifacts/D/elf/train.jsonl": {
+      "bytes": 283032,
+      "sha256": "4f947c96fb6eebc184dafa2b560a8dc43a9e7c219d1a7ae61e85d4dc987679c8"
+    },
+    "artifacts/D/elf_identity.json": {
+      "bytes": 6009,
+      "sha256": "964812b6e739a3a8f38c08e678032e176db282447be01e51d28469d01b83bb1b"
+    },
+    "artifacts/D/encoder/config.json": {
+      "bytes": 1519,
+      "sha256": "e9cbb19e40f8d69b95ec1e96345ff134dfe46b5d6b0d0d58cb2d43370703864c"
+    },
+    "artifacts/D/encoder/manifest.json": {
+      "bytes": 6374,
+      "sha256": "6b0f9f3d87bae9165b7924c7bc15718e533d603327a2b5d63188507b8b98990e"
+    },
+    "artifacts/D/encoder/model.safetensors": {
+      "bytes": 141329200,
+      "sha256": "892dc88573befd07f41861fadad0efaa06c9885238bc8a73e124f4e94938fac0"
+    },
+    "artifacts/D/encoder/special_tokens_map.json": {
+      "bytes": 2543,
+      "sha256": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2"
+    },
+    "artifacts/D/encoder/spiece.model": {
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    "artifacts/D/encoder/tokenizer.json": {
+      "bytes": 2422169,
+      "sha256": "71c33c3bf57bf2e19b4f8ac686ad8d182a79f7cd1a4921889437c453420223f1"
+    },
+    "artifacts/D/encoder/tokenizer_config.json": {
+      "bytes": 20746,
+      "sha256": "e0aff0b1de9071e30d9a60a199303b6abe916a64a19932bd1c46992279b41a1f"
+    },
+    "artifacts/D/evaluation.yml": {
+      "bytes": 1322,
+      "sha256": "f6405760021f952386df698ec420593a27413d4f2cfd06808abbc72e3bdc9eb2"
+    },
+    "artifacts/D/export.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/D/generation.log": {
+      "bytes": 10877,
+      "sha256": "ac541c87480e41f5e4f61caaaeb699c09ee05e09729e172843e2a02f51067fa8"
+    },
+    "artifacts/D/metrics.log": {
+      "bytes": 9554,
+      "sha256": "f6e38f2b60a2a3f0bfa8bc5947ad686d376e0a16c92e463d178cc4423186b693"
+    },
+    "artifacts/D/original_readout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/D/owt_normalization.json": {
+      "bytes": 48780,
+      "sha256": "682dc74f3411ee837d8172b39496209aeff58e9c9d506db6a8b5fdb29001d76d"
+    },
+    "artifacts/D/owt_normalization.log": {
+      "bytes": 357,
+      "sha256": "ca130ad77b6745353e48d19b7df00e1c5bd2230e6f807fcff57b0e5643ae538b"
+    },
+    "artifacts/D/readout.json": {
+      "bytes": 1455,
+      "sha256": "bcbcde4811f5f9a8da1cecd76ac5629855b186975bd9151d98b4fef2fb291f23"
+    },
+    "artifacts/D/readout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/D/results.json": {
+      "bytes": 493712,
+      "sha256": "500da68ecdbdc253227d03dbf0836ec031e15c4782aef9268716c499a7c70041"
+    },
+    "artifacts/D/runtime.json": {
+      "bytes": 33526,
+      "sha256": "e668e179119638477826870642791f70acd8009b2d31261de4bcedc2f12797ce"
+    },
+    "artifacts/D/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4209542,
+      "sha256": "07ff3cf9729ae7867c26f519a52cb2741e7b5f1a30488587ee24965083017592"
+    },
+    "artifacts/D/samples/seed_0/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 64704,
+      "sha256": "fab3e22a4fcb5a44f5ae8ba5151db73399c4d6e51f704dfa2d0f36a4680f1185"
+    },
+    "artifacts/D/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4289335,
+      "sha256": "0a7b2105f3e18b35da3eab24e30a4d7b8ef0fb98bdc657d952ecd7ece7e49764"
+    },
+    "artifacts/D/samples/seed_0/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 66164,
+      "sha256": "fcd2f2dd034e40b5867ff9495ae85f5be05604d7ef1d1ac88aed58d482b98acf"
+    },
+    "artifacts/D/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4246415,
+      "sha256": "0ab617a3e361bf3469a1caf2c6da62a1065b9c4011572649cf17aaf2c2cb0fa1"
+    },
+    "artifacts/D/samples/seed_1/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 65238,
+      "sha256": "93282336898d1356d0113cea5f4ae3d1b12440cb1a01c20e820656c19c977ca9"
+    },
+    "artifacts/D/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4257292,
+      "sha256": "842d8ec9a20da6ec0a25f785b39232d59a0f9bd26a939e57321fd2ff4deb2978"
+    },
+    "artifacts/D/samples/seed_1/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 64820,
+      "sha256": "4b6d800e39e2dd930f83e19622d9ddda887521499e50ddc5d552cc94a0c9d6ec"
+    },
+    "artifacts/D/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4215203,
+      "sha256": "272e725ad270d34d95a41e99ce0335cdeab47a65b0b2cf2f5f299509a2410c22"
+    },
+    "artifacts/D/samples/seed_2/sde-steps32-cfg1-sccfg3-ts_logit_normal-gamma1.5-uncond/project_metrics.json": {
+      "bytes": 65778,
+      "sha256": "c5dcaba7196511e7cc2ef59d84ffb1b4a984d1a2580e7b533cfb7566d8196c57"
+    },
+    "artifacts/D/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/all_generated_5_95090.jsonl": {
+      "bytes": 4287457,
+      "sha256": "b54e169f1d93e6f6deb5ee6fa67b186f446839fb01713e8566fb91d474ca8844"
+    },
+    "artifacts/D/samples/seed_2/sde-steps64-cfg1-sccfg3-ts_logit_normal-gamma1.0-uncond/project_metrics.json": {
+      "bytes": 67636,
+      "sha256": "7a1d5e21cb18d2eec4e336ae1374a8e56a582b662059a0aa76df714ea3797b41"
+    },
+    "artifacts/D/stage-adaptation.json": {
+      "bytes": 779,
+      "sha256": "52f578cc36d823d5ec80e2221b0a6c2c56ec2a98e505428c785fb455e0b0b912"
+    },
+    "artifacts/D/stage-elf.json": {
+      "bytes": 634,
+      "sha256": "2fa395aab61c281cc3ab58d0db9ba893d4be6912351603f7e7024ab1040b5776"
+    },
+    "artifacts/D/stage-export.json": {
+      "bytes": 613,
+      "sha256": "5e91e5672d49668adb8010046d94150a5e730ee05f573022acba03a0271e694c"
+    },
+    "artifacts/D/stage-generation.json": {
+      "bytes": 762,
+      "sha256": "5c2b67c1901162862ee4e2ff9bb95009c9cfdcc6db088d1969b8e801f4398f6f"
+    },
+    "artifacts/D/stage-metrics.json": {
+      "bytes": 630,
+      "sha256": "c3b0832e147239656201900aee59ff1e337607faefdd586e890b16c660cb63b6"
+    },
+    "artifacts/D/stage-original_readout.json": {
+      "bytes": 622,
+      "sha256": "641ff6b604781844d47002bcdb21ef5b0a583c51b5dc7781b0dba45ea86572ab"
+    },
+    "artifacts/D/stage-owt_normalization.json": {
+      "bytes": 650,
+      "sha256": "dcd9cd387b07e81667ee089c911e35b4acd3a6aa2ee5ce5b386ba9f6b8b6379c"
+    },
+    "artifacts/D/stage-readout.json": {
+      "bytes": 602,
+      "sha256": "2dc1adcc47cf01de28c234bb7371ffab0186f8bacc9b24e31619142f65ac599c"
+    },
+    "artifacts/D/stage_attempts/adaptation-ae4e15b94e8e42768b5e83146b424903.json": {
+      "bytes": 779,
+      "sha256": "52f578cc36d823d5ec80e2221b0a6c2c56ec2a98e505428c785fb455e0b0b912"
+    },
+    "artifacts/D/stage_attempts/elf-3e3733382a5c41949a41131e38b46a64.json": {
+      "bytes": 634,
+      "sha256": "2fa395aab61c281cc3ab58d0db9ba893d4be6912351603f7e7024ab1040b5776"
+    },
+    "artifacts/D/stage_attempts/export-4577814bb06c42bf91e94374f553b276.json": {
+      "bytes": 613,
+      "sha256": "5e91e5672d49668adb8010046d94150a5e730ee05f573022acba03a0271e694c"
+    },
+    "artifacts/D/stage_attempts/generation-3325ace68d854d89b07ef3a9f3ebbbae.json": {
+      "bytes": 762,
+      "sha256": "5c2b67c1901162862ee4e2ff9bb95009c9cfdcc6db088d1969b8e801f4398f6f"
+    },
+    "artifacts/D/stage_attempts/metrics-f50246be152242afa94be0110fb04985.json": {
+      "bytes": 630,
+      "sha256": "c3b0832e147239656201900aee59ff1e337607faefdd586e890b16c660cb63b6"
+    },
+    "artifacts/D/stage_attempts/original_readout-07d5b849e1e84fdbb00563b98c23b5ea.json": {
+      "bytes": 622,
+      "sha256": "641ff6b604781844d47002bcdb21ef5b0a583c51b5dc7781b0dba45ea86572ab"
+    },
+    "artifacts/D/stage_attempts/owt_normalization-637fdb635f9f499486427d648528d3a2.json": {
+      "bytes": 650,
+      "sha256": "dcd9cd387b07e81667ee089c911e35b4acd3a6aa2ee5ce5b386ba9f6b8b6379c"
+    },
+    "artifacts/D/stage_attempts/readout-ffa1a726284b49c9ba42429d6dae19db.json": {
+      "bytes": 602,
+      "sha256": "2dc1adcc47cf01de28c234bb7371ffab0186f8bacc9b24e31619142f65ac599c"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/configs/config.py": {
+      "bytes": 7819,
+      "sha256": "a7c94b89a0da04cee8980151a0b2a55c29e75090f81366f361b393be17b0cc2c"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/eval.py": {
+      "bytes": 8524,
+      "sha256": "59aa05187127927a519de703b4aa1745c7a33a3e555580f49e80d22ca45ef1c9"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/generation.py": {
+      "bytes": 19356,
+      "sha256": "e7da572e40c3d4e1bb1bb9d80d8a3936fc38fb5de1a3a5f14ba2e266a598c6f6"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/modules/layers.py": {
+      "bytes": 9693,
+      "sha256": "e19bf62ef5b0e0d6c3dd3f4cda8186471e5ed3ca61edc8a41c10e62b629bf8e9"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/modules/model.py": {
+      "bytes": 10214,
+      "sha256": "d82809ed0934a2d63e87919bdfb0dc3330fd43a0f2bccf1c986de60b3ff77f30"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/modules/t5_encoder.py": {
+      "bytes": 3134,
+      "sha256": "03bd8edc00d407da30504b1719e117a41cdb794cb2d0cd0808684bcec5778e02"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/__init__.py": {
+      "bytes": 84,
+      "sha256": "1bb0ddeb6c3cbe2d772980cc3fb69c3df7bb61f9645dc8357083a6938b7e93c6"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/await_preparation.py": {
+      "bytes": 2104,
+      "sha256": "0d5ded0973d3d8ac0ed7845d879a10510b06e630eb9b06b1ea5b92b13e849141"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/calibrate.py": {
+      "bytes": 6210,
+      "sha256": "acf8dc93d6a40e9e0e3b11f41d0a783d68a91e59c0d4de7b5a7706c3071a1ea2"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/checkpoint.py": {
+      "bytes": 1962,
+      "sha256": "997f6681cc2739ffa7b8d105f25a72d7245d5f6aca7751099c00ee46b4a22cf6"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/common.py": {
+      "bytes": 5828,
+      "sha256": "0a01af4e3690f28292896a476d8d533bd2ff6117dcf1dfefe77059e17440a147"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/compile_check.py": {
+      "bytes": 4437,
+      "sha256": "a8a66958e1283936a5f5d7fa056cec43e6b389587ff8c5ead67d8189a39eb2d1"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/corruption.py": {
+      "bytes": 7567,
+      "sha256": "50b20b781b480d253b5c888f4f21bef871ef79f235b792b40a42d6bcd716213b"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/data.py": {
+      "bytes": 1744,
+      "sha256": "4826373cffb3230d58725849c887dd0e00fe5b370127f9026344f077546a85eb"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/diagnostics.py": {
+      "bytes": 3683,
+      "sha256": "243ceb092daa4bf84c9a2e14f5b6eeef35762eecadcfa9691b040e4b6c8cc384"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/elf_integration.py": {
+      "bytes": 3462,
+      "sha256": "2fb4bde383c03ae777eee42c85b37b40d9afb39c1852786abd3b39a94fd2708f"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/evaluate.py": {
+      "bytes": 5606,
+      "sha256": "2b2791a698ebf546b436d8c98dfd3ef6b1bbacffda4f35f25179bf97c3f1a78a"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/export.py": {
+      "bytes": 4636,
+      "sha256": "801013950b9b4acb36eed95ff8c224a1f096a653bad6b2dcd273629c80c9fd7a"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/objectives.py": {
+      "bytes": 5071,
+      "sha256": "33d9db3e21763ad4b0227aad42143f285b52b86dfae4b547646d1705dad9eb92"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/pipeline.py": {
+      "bytes": 9608,
+      "sha256": "03040f9a625a5af6a4b74b99d61c060f4ddb8f74c7eff13ffbc0e2bb43b5321d"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/preflight.py": {
+      "bytes": 5375,
+      "sha256": "12ae0962f0d623f6a224c3baab0c8cceb439d08d3c9b5c6409b0f20c39736979"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/prepare.py": {
+      "bytes": 9793,
+      "sha256": "ec71d3319322ddd8b3eea9e9d7626d3f6ad71ec863cdd2b70b226fec6ab64075"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/probe.py": {
+      "bytes": 5218,
+      "sha256": "81ef7fa4f53ea9d00ea2d909ce2e4e146678740c23c75dd649539cfe5fa26026"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/report.py": {
+      "bytes": 22007,
+      "sha256": "5d67507329e77a2939527779b8a939daee7fff2d8ba84c106aee6de4c67b5c4e"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/submit.py": {
+      "bytes": 7886,
+      "sha256": "ebefb38b2011251bed39571476107def8b0a0578ca87a270a0a5e0605ea7b7e0"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/t5_adaptation/train.py": {
+      "bytes": 15421,
+      "sha256": "fc44dad23abd25121ef3e5a08693bade6a3552cd2fc6e1b598d51bada0902b12"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/train.py": {
+      "bytes": 24099,
+      "sha256": "2f13c9cbee81b0550028de5860f494a4bf5212e0619e878bebb026dbb5ffb6db"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/train_step.py": {
+      "bytes": 12846,
+      "sha256": "81dd28d30e95edfe8ae59e93ec427d7f13be6b463a26a33e695a0a7453e6fc9e"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/checkpoint_utils.py": {
+      "bytes": 11623,
+      "sha256": "1a0fde0c51b8766030ddf658afc48838368cd8cf9a374e8db61d0f05235d9788"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/data_utils.py": {
+      "bytes": 9185,
+      "sha256": "25dc73f035171890c1ed9162a48dccbd65fa5658927353bd71416cb70b9c4345"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/encoder_utils.py": {
+      "bytes": 989,
+      "sha256": "3f2d2ca7efe7e2269094187cb1e982468a3303c5c3e28b0fe6609d8919e327f2"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/generation_utils.py": {
+      "bytes": 5848,
+      "sha256": "1329ab5e8352cec3050c41933cdc755aaacb56005fd26205a403791e97efbfd2"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/logging_utils.py": {
+      "bytes": 658,
+      "sha256": "94427e79649907c86cb9d8c274b377ded97b30048e45805c4784f082d4ca16c4"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/metrics_utils.py": {
+      "bytes": 9311,
+      "sha256": "a933a15d1c0ec7ed4c141af76fe93fced1d2f2e68f8e9280c1710304380c2a31"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/muon_utils.py": {
+      "bytes": 7859,
+      "sha256": "c9fcd9d0e8499db701bde65f90310883516f0d30eaa9c41c975cee4ef4192f78"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/sampling_utils.py": {
+      "bytes": 10005,
+      "sha256": "bf54962af0b9bde8f8684bea38fd410881f75918179fbd5f0cef2f4b19d6d953"
+    },
+    "artifacts/releases/1591a0a1719e3e7422439cf366f8229b63fcafd4/src/utils/train_utils.py": {
+      "bytes": 5156,
+      "sha256": "bdadbb7c11b0b3bfb57078fb07076f4765049c5c7a234d4046789e6156014a3f"
+    },
+    "artifacts/shared/c4/train/manifest.json": {
+      "bytes": 19698,
+      "sha256": "57b51a1f21f84fe079660ffe6c4474f25907f9562fabeeab8917ff0bd3031940"
+    },
+    "artifacts/shared/c4/validation/manifest.json": {
+      "bytes": 2494,
+      "sha256": "c7c78766e257941e6f4ba0f207cdb49f872e25604cd22c3b7277458ef34c5df8"
+    },
+    "artifacts/shared/c4_normalization.json": {
+      "bytes": 49409,
+      "sha256": "230b966cbec44be9cd6a79a0c3d02a3b075f76eec0b75cdc4b271f7d87725c17"
+    },
+    "artifacts/shared/evaluator/config.json": {
+      "bytes": 666,
+      "sha256": "7fccdcfd6622055342a734c663ee0b61ff4fd697f42467595df0bf4448c8c170"
+    },
+    "artifacts/shared/evaluator/generation_config.json": {
+      "bytes": 124,
+      "sha256": "b90eadacf585a743a30ea51e8b5c88b8d282a2a34dc0c7e556d0987cdbd68805"
+    },
+    "artifacts/shared/evaluator/manifest.json": {
+      "bytes": 886,
+      "sha256": "5b193f7bc68094e4090ea9ac15797682a8492ad23292705fa6e2a4df1701b2cb"
+    },
+    "artifacts/shared/evaluator/merges.txt": {
+      "bytes": 456318,
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    },
+    "artifacts/shared/evaluator/model.safetensors": {
+      "bytes": 3247159078,
+      "sha256": "5f47f3e12f91cd33b662ce7e433b6150ad5512b5884a2cee961b50e9c3bbebce"
+    },
+    "artifacts/shared/evaluator/tokenizer.json": {
+      "bytes": 1355256,
+      "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+    },
+    "artifacts/shared/evaluator/tokenizer_config.json": {
+      "bytes": 26,
+      "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+    },
+    "artifacts/shared/evaluator/vocab.json": {
+      "bytes": 1042301,
+      "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+    },
+    "artifacts/shared/original_probe.json": {
+      "bytes": 1453,
+      "sha256": "4e1791e440c7e81a6d304aff9c83f72e3c33cf8e8c5464564721b5a086a0595d"
+    },
+    "artifacts/shared/owt_manifest.json": {
+      "bytes": 47936,
+      "sha256": "114d25c6ca5d2811e8406d3b427feca1cca7266d12af0d435aeb7de68e03a643"
+    },
+    "artifacts/shared/t5/config.json": {
+      "bytes": 1206,
+      "sha256": "530e25060e3a8d5f7b0fcf53bfea9f3601165161f3b1914676e98d97cf07bcf1"
+    },
+    "artifacts/shared/t5/generation_config.json": {
+      "bytes": 147,
+      "sha256": "f5a1c7e2be8092018d8835128987edf0111637dd98e90599cc80310fef75d95a"
+    },
+    "artifacts/shared/t5/manifest.json": {
+      "bytes": 793,
+      "sha256": "26229f61c0166fc05010e8787b40a51457a593065ab5c8aa0b1aa73dfa2dbd20"
+    },
+    "artifacts/shared/t5/model.safetensors": {
+      "bytes": 242043056,
+      "sha256": "bd944e5f1b3ad9b70dd9d00010a517059e19265671076b8b0a4a58d9491842bc"
+    },
+    "artifacts/shared/t5/spiece.model": {
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    "artifacts/shared/t5/tokenizer.json": {
+      "bytes": 1389353,
+      "sha256": "d2acde0d8d71dd30a711834b07781b9c89feaac33fd332f60507699282740066"
+    },
+    "artifacts/shared/t5/tokenizer_config.json": {
+      "bytes": 2324,
+      "sha256": "d1e7146101aa96282057f374aa9c3b260fba2109e5990edb1775d6efc70ffa3c"
+    },
+    "artifacts/submission.json": {
+      "bytes": 3494,
+      "sha256": "45b3b649f9fddf244e7aaed0b40d5ddf559826030385ca302b25f226dc809ae3"
+    },
+    "cluster/eai.yml": {
+      "bytes": 859,
+      "sha256": "d558c307f6f13e4bb0a633954125c3b0da62f13907b6329546ecf2fee5da8833"
+    },
+    "compiler-linux-64.lock": {
+      "bytes": 2404,
+      "sha256": "f424a5093347367de3802a4441dbe3bfe034bf3dbecc2554a48710062f03d700"
+    },
+    "compute.csv": {
+      "bytes": 1329,
+      "sha256": "8199cfcfcaf375267937a04ea55e5a698b7c059ef2f1a2cd9b953fb70dd6e40b"
+    },
+    "compute.json": {
+      "bytes": 10073,
+      "sha256": "6a1992e926cde920b267e8b11ea05a0f2f9dc690a8b3fe1ab5cecd0cdbda2caa"
+    },
+    "diagnostics.csv": {
+      "bytes": 5099,
+      "sha256": "212070c260a72bb914c53fb9765a323b96e9069150132ee556f60b0f0527c705"
+    },
+    "diagnostics.json": {
+      "bytes": 247247,
+      "sha256": "b3f120f152351269fabb4f660affe01fa81cf9b89355314947c7fab89939ec71"
+    },
+    "evaluation.csv": {
+      "bytes": 5021,
+      "sha256": "168f70dd7c1da166e5bf9ef7c0c365fdcd9751fbf66805b0bdaad5f0e697c9f3"
+    },
+    "evidence/acceptance-review.json": {
+      "bytes": 27044,
+      "sha256": "4be1dce33dbf9fd392edaafbef4918bc4e3283f2a27864d2a37705b4e2761b0d"
+    },
+    "evidence/c4-train-manifest.json": {
+      "bytes": 19698,
+      "sha256": "57b51a1f21f84fe079660ffe6c4474f25907f9562fabeeab8917ff0bd3031940"
+    },
+    "evidence/c4-validation-manifest.json": {
+      "bytes": 2494,
+      "sha256": "c7c78766e257941e6f4ba0f207cdb49f872e25604cd22c3b7277458ef34c5df8"
+    },
+    "evidence/calibration-padding-checks.txt": {
+      "bytes": 113,
+      "sha256": "e7bee3ef8a7e2f9e250794c0e6e733ea385c622c6f6609b82b0dabf9029e9bd1"
+    },
+    "evidence/compile-check.json": {
+      "bytes": 35120,
+      "sha256": "8770ace8c8db3836b9f5d048f013592ee111259bb2a48d18563f4ef4e6147e89"
+    },
+    "evidence/elf-C-checkpoint-500.json": {
+      "bytes": 4094,
+      "sha256": "ec6dce4ae9ff70e301ed79bf55d50320e2a4ce7870d5d03d0ee42925c390e9ab"
+    },
+    "evidence/elf-C-epoch-1.json": {
+      "bytes": 6208,
+      "sha256": "92f58d2b7e1e9d6835fb165c9feecb3188feef9bf3c5c247f130b39e80821e09"
+    },
+    "evidence/elf-C-epoch-2-progress.json": {
+      "bytes": 4169,
+      "sha256": "642cfd9c5d24b0c995591076e4c431912d83fa2efd26fc6f554f48014eb94a84"
+    },
+    "evidence/elf-C-epoch-3-progress.json": {
+      "bytes": 4134,
+      "sha256": "12c0e40bf6242e07325af362e4428df50cdb762d4843bc8d6f2b91ca5a86d1cb"
+    },
+    "evidence/elf-C-epoch-4-progress.json": {
+      "bytes": 4136,
+      "sha256": "27c5115d8edd8d522cf949a372daa57c567558041615fb550cf775a630481354"
+    },
+    "evidence/elf-C-epoch-5.json": {
+      "bytes": 5306,
+      "sha256": "2342817c7f09786e97cbc46bf0fd3d0be20505399eeff5a7c849a8706828b30b"
+    },
+    "evidence/elf-D-checkpoint-500.json": {
+      "bytes": 2481,
+      "sha256": "64eb186b17c8e753c63e77fb4dd6af603d41686ed3460fbb30e07a9814386246"
+    },
+    "evidence/elf-D-epoch-1.json": {
+      "bytes": 6207,
+      "sha256": "5cd332205be6d777379389741f6cb5be3ed61241b82a0308b9694cb716c533b6"
+    },
+    "evidence/elf-D-epoch-2-progress.json": {
+      "bytes": 3512,
+      "sha256": "3509e9d9d007678811896f73c6df50674f91d1f539733736fccac8101dae1eb7"
+    },
+    "evidence/elf-D-epoch-3-progress.json": {
+      "bytes": 3471,
+      "sha256": "4cff77d9c0439444707018ffb328eb36be615109de123bc54e1ddb4925766bd0"
+    },
+    "evidence/elf-D-epoch-4-progress.json": {
+      "bytes": 3471,
+      "sha256": "b07a55efc1d580348c74ca92f0299e9f1f382866871dbbc524ba28de91fc3b72"
+    },
+    "evidence/elf-D-epoch-5.json": {
+      "bytes": 5306,
+      "sha256": "47afac1a2feb244b6e5a7716351ffb4fcaf90aef6fb087f295d5cec2796a9bec"
+    },
+    "evidence/encoder-C-manifest.json": {
+      "bytes": 6365,
+      "sha256": "31e34efef2157d158da4885491a2c3294d5ca5389754342892c1fc5c54583a4d"
+    },
+    "evidence/encoder-D-manifest.json": {
+      "bytes": 6374,
+      "sha256": "6b0f9f3d87bae9165b7924c7bc15718e533d603327a2b5d63188507b8b98990e"
+    },
+    "evidence/encoder-handoff-C.json": {
+      "bytes": 3745,
+      "sha256": "6845e8f1f0c73252500f9bb5a6faca9fc311da50b614d39bc5b427481e086eb6"
+    },
+    "evidence/encoder-handoff-D.json": {
+      "bytes": 3749,
+      "sha256": "b47027e41875f5728c9a4caa7dcb7a5c6a4df852970e0018eb35ee5e0de89fc8"
+    },
+    "evidence/final-adaptation-C.json": {
+      "bytes": 2670,
+      "sha256": "d089b27c4dad2af839dd4a12b3b9a173272a9beae9dc04773dc0e610a56ae288"
+    },
+    "evidence/final-adaptation-D.json": {
+      "bytes": 2696,
+      "sha256": "8bbe1945117155789e7d9d60dfa5df910e55b35b97139e085460b8dfafd69961"
+    },
+    "evidence/final-adaptation-paired.json": {
+      "bytes": 1866,
+      "sha256": "5596dbf40a672ed64af99f55f745b01f21f201df976349167b3ba57308ba50d8"
+    },
+    "evidence/final-artifacts.json": {
+      "bytes": 66572,
+      "sha256": "5faffadf522ae9bfcd21c1f813df66b3a6c8af3e2be32f519de5248bbf604f1c"
+    },
+    "evidence/final-environments.json": {
+      "bytes": 6535,
+      "sha256": "8206da4297607acb527f201fd4a7a30a1e2a64865458350bd29ec40eb9e53af7"
+    },
+    "evidence/final-repository-checks.json": {
+      "bytes": 1960,
+      "sha256": "06376af6998fd9f7394c168f3c7a6b1b4248c24f1a8cb0202213f439450ca781"
+    },
+    "evidence/final-scheduler.json": {
+      "bytes": 2111,
+      "sha256": "1b8fe667bf4cf2e1071e03429d788b21c8a1579ecd488eaed0b95e9691cc8939"
+    },
+    "evidence/first-billion-positions.json": {
+      "bytes": 4242,
+      "sha256": "dfe1718f60243bab10f0e924d93a26cca0f8a153718c7c68c56021acc388cdf9"
+    },
+    "evidence/focused-checks-current.txt": {
+      "bytes": 100,
+      "sha256": "2a5c8ba906888c50ccf0f4b76470c8e6a07b8fe7f68bae416f8ceb087630dfb3"
+    },
+    "evidence/focused-checks.txt": {
+      "bytes": 100,
+      "sha256": "dcbd9894ab8fd204ff020d2f0589f7386c9994373b59d90b1913e8717ed5fd70"
+    },
+    "evidence/full-pipeline-launch.json": {
+      "bytes": 4217,
+      "sha256": "e1f1e7ce15c6a35fef97dc743a8d5c6ec0451622554344ec5eabaac802ebfaa6"
+    },
+    "evidence/generation-C.json": {
+      "bytes": 15722,
+      "sha256": "0d4c7bbb34dc096f45e459ca5d38f7f4a023d881801d57c3541dcf7b91368363"
+    },
+    "evidence/generation-D.json": {
+      "bytes": 15656,
+      "sha256": "681f9006d3691ce7e5fdc339e02bafb0c86ce32e9370c96eb990bd60c825f267"
+    },
+    "evidence/generation-auditor-checks.json": {
+      "bytes": 1864,
+      "sha256": "dd37c7ccf09f653e80585dba9172f6b3c3ebb8ef34f1ea9b8daa1ef6a9b3f388"
+    },
+    "evidence/normalization_c4.json": {
+      "bytes": 49409,
+      "sha256": "230b966cbec44be9cd6a79a0c3d02a3b075f76eec0b75cdc4b271f7d87725c17"
+    },
+    "evidence/normalization_owt_C.json": {
+      "bytes": 48780,
+      "sha256": "68c7aa489b91ac80cfeaf6f54b869e68e1d4d74bf0e934e30190b0e7c1f17e74"
+    },
+    "evidence/normalization_owt_D.json": {
+      "bytes": 48780,
+      "sha256": "682dc74f3411ee837d8172b39496209aeff58e9c9d506db6a8b5fdb29001d76d"
+    },
+    "evidence/owt-data-manifest.json": {
+      "bytes": 47936,
+      "sha256": "114d25c6ca5d2811e8406d3b427feca1cca7266d12af0d435aeb7de68e03a643"
+    },
+    "evidence/owt-loader-check.json": {
+      "bytes": 1134,
+      "sha256": "44f013144b8363b35129183e1da10fe5b18c951c893d944e3c053c6f14272cb6"
+    },
+    "evidence/preflight-eight-h100.json": {
+      "bytes": 35450,
+      "sha256": "a442b95d36a7d9b70cb6b6f4c400cc17cb4d89dafae92c24eb1e0e43769c7645"
+    },
+    "evidence/preflight-job.json": {
+      "bytes": 538,
+      "sha256": "0e9e559053c845b97af8eeee80decd3693d9899bdc42688a2742fbecf72dbd91"
+    },
+    "evidence/preparation-job.json": {
+      "bytes": 529,
+      "sha256": "aa7c2a082b36bc7cbdb5edbf48e03f4df211e327f2f6fc9c82e5a3c42f90498a"
+    },
+    "evidence/published-A.json": {
+      "bytes": 836,
+      "sha256": "e0b25050ce3640c522c4974c6f1b429044d36360e7234d3390abbefb82a92abb"
+    },
+    "evidence/readout-C.json": {
+      "bytes": 1448,
+      "sha256": "41c073c5c2f4bd88670e4f83c57578c4ec3cc9ff17d5f15f6d5a613bd5f8d5a8"
+    },
+    "evidence/readout-D.json": {
+      "bytes": 1455,
+      "sha256": "bcbcde4811f5f9a8da1cecd76ac5629855b186975bd9151d98b4fef2fb291f23"
+    },
+    "evidence/readout-original.json": {
+      "bytes": 1453,
+      "sha256": "4e1791e440c7e81a6d304aff9c83f72e3c33cf8e8c5464564721b5a086a0595d"
+    },
+    "evidence/recovery-checks.txt": {
+      "bytes": 666,
+      "sha256": "a58e49412c25d3f7bd6664920e85ffc4793ebc47784c55479f4594fa478cb6a7"
+    },
+    "evidence/stage-report-checks.txt": {
+      "bytes": 943,
+      "sha256": "4adc59837dc88af2d7a3058a2f4071c380dbf10b5327dafa60f678539584f594"
+    },
+    "evidence/three-billion-positions.json": {
+      "bytes": 4240,
+      "sha256": "b032a8e8e9bac967e9f83b594603df4a47b588b1fea3835f0c7dab58dac63c9c"
+    },
+    "lengths.json": {
+      "bytes": 2573,
+      "sha256": "dbe9e5ff4bb541e07e1de84b285cca985427ea5ae505b5b5dbd6ef49d7061a17"
+    },
+    "qualitative_samples.json": {
+      "bytes": 51045,
+      "sha256": "bd892b959d86562a5b184aa6924d8043168819160057035c236ce3857eab0fa7"
+    },
+    "requirements-adaptation-gpu.lock": {
+      "bytes": 1540,
+      "sha256": "59cbd620dc4b8a7279c23585da03934c3cfee270940a09502704add1d3294a62"
+    },
+    "requirements-adaptation.lock": {
+      "bytes": 1142,
+      "sha256": "97f2d91ade2f3b007f908d2cf550530bd8ffecab322e46000838648af633c746"
+    },
+    "results.csv": {
+      "bytes": 1658,
+      "sha256": "8e93030b7f29dd24f322cf222f903cd6e9a845328310cc19802190f1c7cae79a"
+    },
+    "results.json": {
+      "bytes": 4087,
+      "sha256": "6983cc1d00307020eb6ee7498fb1e876c3108810510686526a4d81582e63dcb6"
+    },
+    "scripts/audit_cd_acceptance.py": {
+      "bytes": 25562,
+      "sha256": "ed5f4406f3aa5a8efc249e2d185a4685311497a7036fdcdf6e4baf16244c4cff"
+    },
+    "scripts/audit_elf_epoch.py": {
+      "bytes": 7951,
+      "sha256": "ed1c58a40c4f80013ce2846687e51f1f85dfdd33d18d7d196eb86c3fe207d274"
+    },
+    "scripts/audit_final_generation.py": {
+      "bytes": 19772,
+      "sha256": "f8b7ce7374613409933acd57421cf22b4e6513705f8f4cda85f2b465f1f14461"
+    },
+    "scripts/finalize_cd_report.py": {
+      "bytes": 10537,
+      "sha256": "1391acf1fe6a0b95404220303f1a1d34af3a9742b8601cd6c0ae55cce1d12d59"
+    },
+    "scripts/setup_adaptation_env.sh": {
+      "bytes": 1584,
+      "sha256": "2eb28501374039abd183c745da3a98026466d6a5a58373e8b1455f7f74770135"
+    },
+    "src/configs/config.py": {
+      "bytes": 7819,
+      "sha256": "a7c94b89a0da04cee8980151a0b2a55c29e75090f81366f361b393be17b0cc2c"
+    },
+    "src/configs/sampling_configs/uncond_sampling_configs.yml": {
+      "bytes": 275,
+      "sha256": "7cc9ac0f8f368c11878107d0eb9c3e9cf2c4de775bdfdf4b1ad9f92353217831"
+    },
+    "src/configs/t5_adaptation/common.yml": {
+      "bytes": 745,
+      "sha256": "96b0891614ca5527d89322cc660314579d28c12f18cd15f2b9dbc4bf886c8b01"
+    },
+    "src/configs/t5_adaptation/sources.json": {
+      "bytes": 797,
+      "sha256": "f47625dd89f17062b5e4b7babd045b80bb493aa88d9f652f8f5761a56c3d7579"
+    },
+    "src/configs/training_configs/train_owt_ELF-B.yml": {
+      "bytes": 1159,
+      "sha256": "6bbe69ad55e5d890affe61d5b89ae03ff4087c8933cdc36832ffeaa5e16375b5"
+    },
+    "src/eval.py": {
+      "bytes": 8524,
+      "sha256": "59aa05187127927a519de703b4aa1745c7a33a3e555580f49e80d22ca45ef1c9"
+    },
+    "src/generation.py": {
+      "bytes": 19356,
+      "sha256": "e7da572e40c3d4e1bb1bb9d80d8a3936fc38fb5de1a3a5f14ba2e266a598c6f6"
+    },
+    "src/modules/layers.py": {
+      "bytes": 9693,
+      "sha256": "e19bf62ef5b0e0d6c3dd3f4cda8186471e5ed3ca61edc8a41c10e62b629bf8e9"
+    },
+    "src/modules/model.py": {
+      "bytes": 10214,
+      "sha256": "d82809ed0934a2d63e87919bdfb0dc3330fd43a0f2bccf1c986de60b3ff77f30"
+    },
+    "src/modules/t5_encoder.py": {
+      "bytes": 3134,
+      "sha256": "03bd8edc00d407da30504b1719e117a41cdb794cb2d0cd0808684bcec5778e02"
+    },
+    "src/t5_adaptation/__init__.py": {
+      "bytes": 84,
+      "sha256": "1bb0ddeb6c3cbe2d772980cc3fb69c3df7bb61f9645dc8357083a6938b7e93c6"
+    },
+    "src/t5_adaptation/await_preparation.py": {
+      "bytes": 2104,
+      "sha256": "0d5ded0973d3d8ac0ed7845d879a10510b06e630eb9b06b1ea5b92b13e849141"
+    },
+    "src/t5_adaptation/calibrate.py": {
+      "bytes": 6210,
+      "sha256": "acf8dc93d6a40e9e0e3b11f41d0a783d68a91e59c0d4de7b5a7706c3071a1ea2"
+    },
+    "src/t5_adaptation/checkpoint.py": {
+      "bytes": 1962,
+      "sha256": "997f6681cc2739ffa7b8d105f25a72d7245d5f6aca7751099c00ee46b4a22cf6"
+    },
+    "src/t5_adaptation/common.py": {
+      "bytes": 5828,
+      "sha256": "0a01af4e3690f28292896a476d8d533bd2ff6117dcf1dfefe77059e17440a147"
+    },
+    "src/t5_adaptation/compile_check.py": {
+      "bytes": 4437,
+      "sha256": "a8a66958e1283936a5f5d7fa056cec43e6b389587ff8c5ead67d8189a39eb2d1"
+    },
+    "src/t5_adaptation/corruption.py": {
+      "bytes": 7567,
+      "sha256": "50b20b781b480d253b5c888f4f21bef871ef79f235b792b40a42d6bcd716213b"
+    },
+    "src/t5_adaptation/data.py": {
+      "bytes": 1744,
+      "sha256": "4826373cffb3230d58725849c887dd0e00fe5b370127f9026344f077546a85eb"
+    },
+    "src/t5_adaptation/diagnostics.py": {
+      "bytes": 3683,
+      "sha256": "243ceb092daa4bf84c9a2e14f5b6eeef35762eecadcfa9691b040e4b6c8cc384"
+    },
+    "src/t5_adaptation/elf_integration.py": {
+      "bytes": 3462,
+      "sha256": "2fb4bde383c03ae777eee42c85b37b40d9afb39c1852786abd3b39a94fd2708f"
+    },
+    "src/t5_adaptation/evaluate.py": {
+      "bytes": 5606,
+      "sha256": "2b2791a698ebf546b436d8c98dfd3ef6b1bbacffda4f35f25179bf97c3f1a78a"
+    },
+    "src/t5_adaptation/export.py": {
+      "bytes": 4636,
+      "sha256": "801013950b9b4acb36eed95ff8c224a1f096a653bad6b2dcd273629c80c9fd7a"
+    },
+    "src/t5_adaptation/objectives.py": {
+      "bytes": 5071,
+      "sha256": "33d9db3e21763ad4b0227aad42143f285b52b86dfae4b547646d1705dad9eb92"
+    },
+    "src/t5_adaptation/pipeline.py": {
+      "bytes": 9608,
+      "sha256": "03040f9a625a5af6a4b74b99d61c060f4ddb8f74c7eff13ffbc0e2bb43b5321d"
+    },
+    "src/t5_adaptation/preflight.py": {
+      "bytes": 5375,
+      "sha256": "12ae0962f0d623f6a224c3baab0c8cceb439d08d3c9b5c6409b0f20c39736979"
+    },
+    "src/t5_adaptation/prepare.py": {
+      "bytes": 9793,
+      "sha256": "ec71d3319322ddd8b3eea9e9d7626d3f6ad71ec863cdd2b70b226fec6ab64075"
+    },
+    "src/t5_adaptation/probe.py": {
+      "bytes": 5218,
+      "sha256": "81ef7fa4f53ea9d00ea2d909ce2e4e146678740c23c75dd649539cfe5fa26026"
+    },
+    "src/t5_adaptation/report.py": {
+      "bytes": 22007,
+      "sha256": "5d67507329e77a2939527779b8a939daee7fff2d8ba84c106aee6de4c67b5c4e"
+    },
+    "src/t5_adaptation/submit.py": {
+      "bytes": 7886,
+      "sha256": "ebefb38b2011251bed39571476107def8b0a0578ca87a270a0a5e0605ea7b7e0"
+    },
+    "src/t5_adaptation/train.py": {
+      "bytes": 15421,
+      "sha256": "fc44dad23abd25121ef3e5a08693bade6a3552cd2fc6e1b598d51bada0902b12"
+    },
+    "src/train.py": {
+      "bytes": 24099,
+      "sha256": "2f13c9cbee81b0550028de5860f494a4bf5212e0619e878bebb026dbb5ffb6db"
+    },
+    "src/train_step.py": {
+      "bytes": 12846,
+      "sha256": "81dd28d30e95edfe8ae59e93ec427d7f13be6b463a26a33e695a0a7453e6fc9e"
+    },
+    "src/utils/checkpoint_utils.py": {
+      "bytes": 11623,
+      "sha256": "1a0fde0c51b8766030ddf658afc48838368cd8cf9a374e8db61d0f05235d9788"
+    },
+    "src/utils/data_utils.py": {
+      "bytes": 9185,
+      "sha256": "25dc73f035171890c1ed9162a48dccbd65fa5658927353bd71416cb70b9c4345"
+    },
+    "src/utils/encoder_utils.py": {
+      "bytes": 989,
+      "sha256": "3f2d2ca7efe7e2269094187cb1e982468a3303c5c3e28b0fe6609d8919e327f2"
+    },
+    "src/utils/generation_utils.py": {
+      "bytes": 5848,
+      "sha256": "1329ab5e8352cec3050c41933cdc755aaacb56005fd26205a403791e97efbfd2"
+    },
+    "src/utils/logging_utils.py": {
+      "bytes": 658,
+      "sha256": "94427e79649907c86cb9d8c274b377ded97b30048e45805c4784f082d4ca16c4"
+    },
+    "src/utils/metrics_utils.py": {
+      "bytes": 9311,
+      "sha256": "a933a15d1c0ec7ed4c141af76fe93fced1d2f2e68f8e9280c1710304380c2a31"
+    },
+    "src/utils/muon_utils.py": {
+      "bytes": 7859,
+      "sha256": "c9fcd9d0e8499db701bde65f90310883516f0d30eaa9c41c975cee4ef4192f78"
+    },
+    "src/utils/sampling_utils.py": {
+      "bytes": 10005,
+      "sha256": "bf54962af0b9bde8f8684bea38fd410881f75918179fbd5f0cef2f4b19d6d953"
+    },
+    "src/utils/train_utils.py": {
+      "bytes": 5156,
+      "sha256": "bdadbb7c11b0b3bfb57078fb07076f4765049c5c7a234d4046789e6156014a3f"
+    },
+    "stage_compute.csv": {
+      "bytes": 2559,
+      "sha256": "f31feccc63e0e95c0fc276392542b98dd880fe6dae39ee62a0f69133406c61c4"
+    },
+    "tests/test_adaptation.py": {
+      "bytes": 14462,
+      "sha256": "0da5b77f8f3428350007c2b282076dae02c323c8ec49cf31171e6d9a2c0fd918"
+    },
+    "tests/test_elf_reproducibility.py": {
+      "bytes": 5292,
+      "sha256": "d89acbe6e8b9d7c5e15de5fbbe73db0daaf6c2732a50db32e21a59826f111028"
+    },
+    "tests/test_generation_audit.py": {
+      "bytes": 7120,
+      "sha256": "04bb035732313412834a54022ccbee2eb4ca5a377b449c6124e1af90170b6e1a"
+    },
+    "third_party/lejepa/LICENSE": {
+      "bytes": 19332,
+      "sha256": "1d8ca66080a2701508a70be4ddad4be28c509bcc3397a682fb8edf767fdd7a00"
+    },
+    "third_party/transformers/LICENSE": {
+      "bytes": 11418,
+      "sha256": "77fd4710def9ec3c0f6225800e0235f15a425abd4a8b03559127fcd782612049"
+    },
+    "third_party/transformers/examples/flax/language-modeling/run_t5_mlm_flax.py": {
+      "bytes": 45080,
+      "sha256": "32d23d0406a929a64b6f082a4a618fb9400a7fc2bfbfa5be0579cfe9f7e4cffc"
+    },
+    "training.csv": {
+      "bytes": 2763,
+      "sha256": "52289c808bd0e9d4445a325a47abd59c4874980788dd24526c76840bc2c9d9b5"
+    },
+    "training.json": {
+      "bytes": 4775,
+      "sha256": "1e467f470dc16a9dfecc70e5b2ecad20a8e37ce74cfb732ab731e45418aa4ba2"
+    }
+  },
+  "execution_commit": "1591a0a1719e3e7422439cf366f8229b63fcafd4",
+  "goal_sha256": "14d9d86308bd83ba4c2318ef13c702c3f22afde339019119940bf8eb108b81d6",
+  "limits": [
+    "Historical numerical tests are reused after source-hash continuity checks; no new training jobs were launched.",
+    "Final deep checkpoint and generation audits are reused after rehashing their bound artifacts; GPT-2 model forward passes are not rerun.",
+    "ELF EMA use is supported by inspected source and the audited state, not an independent runtime tensor trace.",
+    "Full-epoch exposure is inferred from saved steps and the tested sampler, not a per-example runtime trace.",
+    "Large C4/OWT files retain preparation hashes; final auditing checks their presence and sizes plus the actual C4 calibration prefix, not a full data rescan.",
+    "Git commit/push verification is a subsequent delivery step and is not inferred from scheduler success."
+  ],
+  "max_simultaneous_eight_gpu_allocations": 2,
+  "protected_main": "398ac406be5e7a0c61fbfdc3d854faf86d46ad96",
+  "reviewed_head_before_closeout_commit": "49b4486e86b3556ec56c15ef1ebad197c9c82287",
+  "reviewed_requirements": [
+    {
+      "evidence": [
+        "evidence/final-adaptation-paired.json",
+        "artifacts/submission.json",
+        "results.json",
+        "src/t5_adaptation/pipeline.py"
+      ],
+      "finding": "C and D alone ran to the registered budget with seed 42. Both selected update 38147 for ELF. A is external and B omitted; diagnostic pilots/readouts are explicitly separate.",
+      "id": "01",
+      "requirement": "Exactly the authorized C/D recipes, one training seed, fixed final selection, no added arms or sweeps",
+      "section": "1, 3"
+    },
+    {
+      "evidence": [
+        "evidence/final-repository-checks.json",
+        "EXPERIMENT.md"
+      ],
+      "finding": "t5-sigreg-cd descends from b29d883. Main already contained 398ac40 before this goal began, with 5098bf2 as parent; it was left intact during the experiment. No new ELF port was made.",
+      "id": "02",
+      "requirement": "Experiment branch based on pinned official PyTorch ELF; preserve fork history and main",
+      "section": "2"
+    },
+    {
+      "evidence": [
+        ".gitmodules",
+        "src/configs/t5_adaptation/sources.json",
+        "evidence/final-environments.json",
+        "third_party/transformers/LICENSE",
+        "third_party/lejepa/LICENSE"
+      ],
+      "finding": "Transformers v4.44.2 resolves to 1748902; LeJEPA to c293d29. Both submodules are clean and editable, with licenses retained. Objectives wrap ordinary T5 outputs.",
+      "id": "03",
+      "requirement": "Modifiable pinned T5/SIGReg source, editable installs, upstream licenses, no rewritten T5 blocks",
+      "section": "2"
+    },
+    {
+      "evidence": [
+        "requirements-adaptation.lock",
+        "requirements-adaptation-gpu.lock",
+        "compiler-linux-64.lock",
+        "evidence/final-environments.json",
+        "artifacts/C/runtime.json",
+        "artifacts/D/runtime.json"
+      ],
+      "finding": "Python 3.11.15, torch 2.5.1+cpu/+cu124, CUDA 12.4, Transformers 4.44.2, Datasets 4.0.0, Arrow 17.0.0, NumPy 1.26.4; all 68/82 lock entries match and both dependency checks pass. Runtime records retain package versions and GCC 11.4.0.",
+      "id": "04",
+      "requirement": "Exact tested CPU/GPU dependency environment and compiler",
+      "section": "2, 8, 13"
+    },
+    {
+      "evidence": [
+        "evidence/c4-train-manifest.json",
+        "evidence/c4-validation-manifest.json",
+        "evidence/final-adaptation-paired.json",
+        "src/configs/t5_adaptation/sources.json"
+      ],
+      "finding": "Manifests pin dataset/tokenizer/model revisions, preprocessing, lexicographic shard/row order and split. Both original encoder state hashes agree; the model is pretrained google-t5/t5-small, width 512.",
+      "id": "05",
+      "requirement": "Pinned C4 English training prefix; official validation split; original pinned T5-small",
+      "section": "4.1"
+    },
+    {
+      "evidence": [
+        "evidence/preparation-job.json",
+        "evidence/c4-train-manifest.json",
+        "src/t5_adaptation/prepare.py",
+        "src/t5_adaptation/data.py"
+      ],
+      "finding": "One CPU preparation job and a preparation lock produced the shared prefix. Document index retains row/hash/offsets; EOS is appended per document and sources cut every 568 positions. Contiguous rank slices partition each global batch.",
+      "id": "06",
+      "requirement": "Shared immutable preparation, example identities, packing boundaries, no duplicate per-rank streams",
+      "section": "4.1, 10"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/corruption.py",
+        "tests/test_adaptation.py",
+        "evidence/focused-checks-current.txt",
+        "evidence/final-adaptation-paired.json"
+      ],
+      "finding": "Stable example IDs and seeds 1729/2718 separate corruption and sampling from dropout RNG. Same data hash, source/corruption counters and configs except arm/objective hold across both final checkpoints.",
+      "id": "07",
+      "requirement": "Independent data/corruption/token-sampling RNGs and matched C/D examples",
+      "section": "4.1\u20134.2"
+    },
+    {
+      "evidence": [
+        "tests/test_adaptation.py",
+        "evidence/focused-checks-current.txt",
+        "third_party/transformers/examples/flax/language-modeling/run_t5_mlm_flax.py"
+      ],
+      "finding": "The canonical test compares exact inputs, targets and masks against the pinned reference collator for 12 RNG seeds at noise density 0.15 and mean span 3.",
+      "id": "08",
+      "requirement": "Original random-span rounding/sentinel conventions; canonical 568\u2192512/114 and clean 569",
+      "section": "4.2, 11.1"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/corruption.py",
+        "tests/test_adaptation.py",
+        "evidence/focused-checks-current.txt",
+        "training.json"
+      ],
+      "finding": "Protected-region corruption and padding preserve every source/target token. Reconstruction and repeated-identity occurrence tests pass. Actual noise density 0.1499463382 and mean span length 2.9994331861 are recorded separately from nominal settings.",
+      "id": "09",
+      "requirement": "Protected special/EOS boundaries, variable lengths without truncation, occurrence alignment",
+      "section": "4.2, 11.1"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/objectives.py",
+        "tests/test_adaptation.py",
+        "evidence/focused-checks-current.txt"
+      ],
+      "finding": "CE uses a local valid-target sum multiplied by world size/global count, with separately reduced logging sum/count. Two-rank unequal-count gradients match single-process gradients.",
+      "id": "10",
+      "requirement": "Global valid-token CE, padding labels -100, correct DDP gradient scaling",
+      "section": "4.2, 6.1, 7"
+    },
+    {
+      "evidence": [
+        "evidence/final-adaptation-C.json",
+        "evidence/final-adaptation-D.json",
+        "training.json"
+      ],
+      "finding": "Each final checkpoint has 38147 updates, 10000007168 nominal positions, 19531264 examples and 11093757952 source positions. C has 2230695230 decoder target tokens; D zero. View passes and diagnostic passes are separate counters.",
+      "id": "11",
+      "requirement": "Exact 10B nominal-position budget and separate actual counters",
+      "section": "4.3, 3"
+    },
+    {
+      "evidence": [
+        "evidence/owt-data-manifest.json",
+        "evidence/owt-loader-check.json",
+        "src/utils/data_utils.py",
+        "src/train_step.py"
+      ],
+      "finding": "The released dataset has 9737184 rows; the complete preparation scan verified lengths/vocabulary and actual multiworker ELF loader masks. No retokenized training dataset or latent cache replaces it.",
+      "id": "12",
+      "requirement": "Pinned released OWT token IDs, 1024 preprocessing, online encoding",
+      "section": "4.4"
+    },
+    {
+      "evidence": [
+        "evidence/normalization_c4.json",
+        "src/t5_adaptation/calibrate.py",
+        "src/t5_adaptation/objectives.py",
+        "evidence/final-adaptation-paired.json"
+      ],
+      "finding": "Original frozen encoder calibration uses IDs 0\u20134095, dropout off, FP64 population moments over 2320301 ordinary tokens, excluding all specials. Mean -0.0008976823158602097 and std 0.17316756927500634 are shared and fixed.",
+      "id": "13",
+      "requirement": "Final width-512 post-RMS token states; fixed original C4 scalar calibration",
+      "section": "5"
+    },
+    {
+      "evidence": [
+        "evidence/encoder-handoff-C.json",
+        "evidence/encoder-handoff-D.json",
+        "src/t5_adaptation/export.py",
+        "src/utils/encoder_utils.py"
+      ],
+      "finding": "Export manifests explicitly retain raw outputs. ELF applies only its per-encoder OWT scalar normalization. Reload tests match source states exactly in FP32; architecture and tokenizer remain unchanged.",
+      "id": "14",
+      "requirement": "Raw exported states, unchanged RMS/architecture, adaptation normalization distinct from ELF",
+      "section": "5, 9"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/objectives.py",
+        "src/t5_adaptation/train.py",
+        "tests/test_adaptation.py",
+        "evidence/preflight-eight-h100.json",
+        "evidence/focused-checks-current.txt"
+      ],
+      "finding": "The task forward runs with ordinary T5 dropout; a gradient-enabled clean encoder pass temporarily disables dropout. SIGReg reaches the encoder, CE reaches encoder/decoder, and clean outputs are deterministic. Activation checkpointing is off.",
+      "id": "15",
+      "requirement": "C: additive CE + 0.05 clean SIGReg, all encoder/decoder parameters, correct dropout and gradients",
+      "section": "6.1, 11.2"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/objectives.py",
+        "src/t5_adaptation/corruption.py",
+        "tests/test_adaptation.py",
+        "evidence/focused-checks-current.txt"
+      ],
+      "finding": "Consistency uses every mapped surviving token, mean over 512 coordinates, then global matched-token count weighting. It is pairwise MSE, not center MSE; both views have gradients and dropout off.",
+      "id": "16",
+      "requirement": "D: all surviving ordinary occurrence pairs, global pairwise coordinate MSE",
+      "section": "6.2, 11.2"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/train.py",
+        "src/t5_adaptation/objectives.py",
+        "tests/test_adaptation.py",
+        "evidence/final-adaptation-D.json"
+      ],
+      "finding": "T5EncoderModel is loaded directly, including trainable shared embeddings and final RMS scale. Gradient checks cover all intended parameters. Final D checkpoint has 51 optimizer parameter states; decoder target count is zero.",
+      "id": "17",
+      "requirement": "D trains all encoder parameters with no decoder, teacher, stop-gradient, predictor or projection head",
+      "section": "6.2"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/objectives.py",
+        "tests/test_adaptation.py",
+        "src/configs/t5_adaptation/common.yml",
+        "evidence/focused-checks-current.txt"
+      ],
+      "finding": "D stacks a view axis and averages separate view statistics. Tests distinguish this from pooled samples. The literal task + 0.05 * regularizer is fixed; no ramp, convex mixture, balancing or sample-count division exists.",
+      "id": "18",
+      "requirement": "Separate per-view SIGReg averaged for D; fixed additive lambda from first update",
+      "section": "6.2\u20136.3, 7"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/train.py",
+        "artifacts/C/adaptation/train.jsonl",
+        "artifacts/D/adaptation/train.jsonl",
+        "evidence/preflight-eight-h100.json"
+      ],
+      "finding": "Both training logs include task, SIGReg, weighted SIGReg and total loss; periodic diagnostic task/SIGReg encoder gradient norms are recorded with RNG/counter restoration.",
+      "id": "19",
+      "requirement": "Log unweighted/weighted losses and occasional encoder gradient contributions",
+      "section": "6.3, 8"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/objectives.py",
+        "src/t5_adaptation/corruption.py",
+        "src/configs/t5_adaptation/common.yml",
+        "evidence/preflight-eight-h100.json",
+        "tests/test_adaptation.py"
+      ],
+      "finding": "256 ordinary samples/rank/view (four distinct positions per default example with deterministic spillover), 2048 globally, 256 unit projections, 17 trapezoid points through 3.0. Upstream EppsPulley sample scaling is retained; autocast is disabled for SIGReg.",
+      "id": "20",
+      "requirement": "Exact FP32 upstream SIGReg estimator, N scaling, sampling and quadrature",
+      "section": "7"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/objectives.py",
+        "src/t5_adaptation/train.py",
+        "tests/test_adaptation.py",
+        "evidence/focused-checks-current.txt",
+        "evidence/preflight-eight-h100.json"
+      ],
+      "finding": "Process group initializes before estimator construction. Autograd-aware SUM/world implements global averaging before the nonlinear statistic. Whole objectives run within DDP. Two-rank loss/parameter gradients match a concatenated reference; both eight-H100 pilots passed.",
+      "id": "21",
+      "requirement": "Global characteristic-function reduction, shared projections, process group ordering, DDP-correct gradients",
+      "section": "7, 11.3"
+    },
+    {
+      "evidence": [
+        "tests/test_adaptation.py",
+        "src/t5_adaptation/checkpoint.py",
+        "evidence/final-adaptation-C.json",
+        "evidence/final-adaptation-D.json"
+      ],
+      "finding": "Accumulation is 1 throughout. Tests restore projection state exactly; final projection counter is 69562 and eight per-rank RNG records exist in each final adaptation checkpoint.",
+      "id": "22",
+      "requirement": "Projection/RNG recovery and accumulation semantics fixed",
+      "section": "7\u20138"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/train.py",
+        "src/configs/t5_adaptation/common.yml",
+        "tests/test_adaptation.py",
+        "evidence/final-adaptation-C.json",
+        "evidence/final-adaptation-D.json"
+      ],
+      "finding": "AdamW peak 1e-4, betas .9/.999, eps 1e-8, warmup 500, cosine floor 1e-5; decay .01 excludes bias/norm, clipping 1. BF16 forward retains FP32 model/optimizer/SIGReg. No T5 EMA is constructed. Final counters/LR/dtypes and finite tensors passed deep audits.",
+      "id": "23",
+      "requirement": "AdamW schedule, decay exclusions, clipping, precision, no T5 EMA",
+      "section": "8"
+    },
+    {
+      "evidence": [
+        "evidence/first-billion-positions.json",
+        "evidence/three-billion-positions.json",
+        "diagnostics.json",
+        "src/t5_adaptation/pipeline.py"
+      ],
+      "finding": "Retained milestones are updates 3815/11445/38147, plus initialization diagnostics. Both 569 and 1024 summaries include finite statistics, raw/normalized moments and 512 eigenvalues. Final-only selection is fixed; no quality-based early stop occurred.",
+      "id": "24",
+      "requirement": "Fixed 1B/3B/final diagnostics and checkpoints at both lengths; no metric early stopping",
+      "section": "3, 8, 11"
+    },
+    {
+      "evidence": [
+        "src/t5_adaptation/train.py",
+        "src/t5_adaptation/checkpoint.py",
+        "tests/test_adaptation.py",
+        "evidence/preflight-eight-h100.json",
+        "evidence/stage-report-checks.txt"
+      ],
+      "finding": "Nonfinite loss/gradient failures stop stages. Model/optimizer/LR/data cursor/calibration/source/config/counters and all rank RNGs are retained. Arm/source mismatches reject resume, and SIGTERM/SIGUSR1 save at update boundaries. Exact next-update fixtures and eight-GPU recovery/export checks passed.",
+      "id": "25",
+      "requirement": "Numerical failure gates, distinct arm outputs, safe resumable state and identity rejection",
+      "section": "3, 8, 10"
+    },
+    {
+      "evidence": [
+        "training.json",
+        "compute.json",
+        "stage_compute.csv",
+        "artifacts/C/adaptation/train.jsonl",
+        "artifacts/D/elf/train.jsonl"
+      ],
+      "finding": "Training logs record complete-update timing, remaining ETA and rank-zero peak allocated memory. training.json retains measured medians and maxima. Scheduler time includes overhead, both pilots and compilation; stage times are nested rather than added again.",
+      "id": "26",
+      "requirement": "Measured throughput, peak memory, ETA and complete stage/allocation accounting",
+      "section": "8, 10"
+    },
+    {
+      "evidence": [
+        "evidence/encoder-handoff-C.json",
+        "evidence/encoder-handoff-D.json",
+        "evidence/encoder-C-manifest.json",
+        "evidence/encoder-D-manifest.json"
+      ],
+      "finding": "Both encoder directories hash to their manifests and exactly match their final adaptation checkpoint subsets. Actual ELF wrapper FP32 reload has max absolute error 0 and shape [2,569,512]. Adapted states differ from the shared original.",
+      "id": "27",
+      "requirement": "Final encoder exports with checkpoint/content hashes and actual ELF reload",
+      "section": "9, 11.4"
+    },
+    {
+      "evidence": [
+        "evidence/normalization_owt_C.json",
+        "evidence/normalization_owt_D.json",
+        "evidence/calibration-padding-checks.txt",
+        "evidence/owt-loader-check.json"
+      ],
+      "finding": "Both use original OWT IDs 0\u20134095, fixed width 1024, dropout off, BF16 forward and FP64 streaming moments, with 3915472 valid tokens including EOS. Padding is excluded. Separate normalization hashes bind the correct exports.",
+      "id": "28",
+      "requirement": "Per-encoder OWT scalar population normalization on the same 4096 rows",
+      "section": "9"
+    },
+    {
+      "evidence": [
+        "src/train.py",
+        "src/t5_adaptation/elf_integration.py",
+        "artifacts/C/elf.yml",
+        "artifacts/D/elf.yml",
+        "artifacts/C/elf/completed.json",
+        "artifacts/D/elf/completed.json"
+      ],
+      "finding": "encoder_model_name and tokenizer_name point to each local export; encoder_checkpoint is not relied on. All parameters are frozen/eval, per-update assertions check no gradients, and complete-state checks verify unchanged weights after smoke/final training.",
+      "id": "29",
+      "requirement": "Correct actual encoder/tokenizer loading fields and frozen encoder",
+      "section": "9"
+    },
+    {
+      "evidence": [
+        "evidence/encoder-handoff-C.json",
+        "evidence/encoder-handoff-D.json",
+        "evidence/compile-check.json",
+        "src/t5_adaptation/elf_integration.py"
+      ],
+      "finding": "Both initialize 104579940 parameters with seed 42 and hash 7ef18e4d\u2026 before training. Provenance guards reject a different identity. Eight-sample initial smoke batches pass; RNGs are restored afterward.",
+      "id": "30",
+      "requirement": "Fresh separate ELF-B models, shared seed/init, no trained checkpoint reuse",
+      "section": "9, 11.5"
+    },
+    {
+      "evidence": [
+        "src/configs/training_configs/train_owt_ELF-B.yml",
+        "artifacts/C/elf.yml",
+        "artifacts/D/elf.yml",
+        "evidence/elf-C-epoch-5.json",
+        "evidence/elf-D-epoch-5.json"
+      ],
+      "finding": "Base model, layers, training template, sampler and encoder normalization source match pinned upstream. Resolved configs retain Muon, effective batch 512, blr .001\u2192lr .002, warmup .5 epoch then constant, decay 0, EMA .9999, decoder .2, self-conditioning .5, noise 2/5 and t_eps .05.",
+      "id": "31",
+      "requirement": "Pinned ELF architecture and all optimizer/denoising/conditioning settings",
+      "section": "9"
+    },
+    {
+      "evidence": [
+        "tests/test_elf_reproducibility.py",
+        "evidence/recovery-checks.txt",
+        "evidence/elf-C-epoch-5.json",
+        "evidence/elf-D-epoch-5.json"
+      ],
+      "finding": "9737184 rows imply 19018 updates/epoch, 32 prefix repeats/epoch, 95090 final updates and 160 repeats total. Saved epoch is exactly 5. Exposure is inferred from saved steps plus the verified sampler, not a per-example runtime trace.",
+      "id": "32",
+      "requirement": "Five complete dataset-derived epochs, exact effective batch and padding accounting",
+      "section": "9"
+    },
+    {
+      "evidence": [
+        "evidence/elf-C-epoch-5.json",
+        "evidence/elf-D-epoch-5.json",
+        "evidence/recovery-checks.txt",
+        "src/utils/checkpoint_utils.py",
+        "src/utils/train_utils.py"
+      ],
+      "finding": "eval_freq=0 and hf_repo_id=null. Every final model/EMA and eight optimizer shard hashes/states pass deep finite/counter/assignment checks. Atomic unique shard names preserve a previous checkpoint on interrupted rewrite; recovery fixtures reproduce the next update.",
+      "id": "33",
+      "requirement": "Recovery checkpoints, final model/EMA and per-rank optimizers/RNGs, no automatic uploads/sweep",
+      "section": "9\u201310"
+    },
+    {
+      "evidence": [
+        "cluster/eai.yml",
+        "src/t5_adaptation/submit.py",
+        "compute.json",
+        "evidence/final-scheduler.json"
+      ],
+      "finding": "All six recorded allocations use snow.research.er. The submitter validates ER before dry/real submission; cluster config records discovered image, storage and H100 filter. No AFM jobs were requested or altered by this experiment.",
+      "id": "34",
+      "requirement": "Discovered scheduler configuration and explicit ER account on every resource request",
+      "section": "10; account instructions"
+    },
+    {
+      "evidence": [
+        "evidence/full-pipeline-launch.json",
+        "evidence/final-scheduler.json",
+        "compute.json",
+        "src/t5_adaptation/pipeline.py"
+      ],
+      "finding": "C/D each requested 8 H100, 64 CPU, 512 GB and physically observed eight H100 80GB GPUs. CPU preparation used 32/128; one-GPU compilation used 16/128. Distinct nodes and standalone rendezvous allow 16-GPU overlap without sharing devices.",
+      "id": "35",
+      "requirement": "Two independent eight-H100 jobs; proportional CPU/RAM; no four-GPU fallback",
+      "section": "10; sizing instructions"
+    },
+    {
+      "evidence": [
+        "evidence/preparation-job.json",
+        "artifacts/C/stage_attempts",
+        "artifacts/D/stage_attempts",
+        "src/t5_adaptation/pipeline.py",
+        "compute.json"
+      ],
+      "finding": "Preparation succeeded before either full job. Stage records order adaptation\u2192export\u2192OWT normalization\u2192readout\u2192ELF\u2192generation\u2192metrics within each arm. The shared original readout uses a lock; C/D otherwise proceed independently.",
+      "id": "36",
+      "requirement": "Shared preparation once; per-arm dependency order and independent progress",
+      "section": "10"
+    },
+    {
+      "evidence": [
+        "evidence/final-scheduler.json",
+        "evidence/final-repository-checks.json",
+        "artifacts/submission.json",
+        "compute.json",
+        "EXPERIMENT.md"
+      ],
+      "finding": "Each arm has one original scheduler attempt, SUCCEEDED/exit 0. Allocation intervals never exceed two eight-GPU jobs. The documented status command was run successfully. Stale 95000-step telemetry is explicitly distinguished from the final 95090 checkpoint.",
+      "id": "37",
+      "requirement": "No duplicate submissions, at most two training allocations, terminal monitoring and honest status",
+      "section": "10"
+    },
+    {
+      "evidence": [
+        "evidence/stage-report-checks.txt",
+        "src/t5_adaptation/pipeline.py",
+        "src/t5_adaptation/report.py",
+        "compute.json"
+      ],
+      "finding": "Durable stage-attempt starts survive interruption; successful stages are verified/reused. Signal and failed-child fixtures passed, including scheduler-end fallback accounting. The failed preflight and corrected successful attempt both remain in totals; full runs needed no retries.",
+      "id": "38",
+      "requirement": "Preemption-safe stages and accounting for failures/retries",
+      "section": "10"
+    },
+    {
+      "evidence": [
+        "evidence/final-repository-checks.json",
+        "evidence/focused-checks-current.txt",
+        "evidence/calibration-padding-checks.txt",
+        "evidence/recovery-checks.txt",
+        "evidence/generation-auditor-checks.json",
+        "evidence/preflight-eight-h100.json",
+        "evidence/compile-check.json"
+      ],
+      "finding": "19 distinct adaptation/ELF checks and 6 generation-auditor checks passed. Source continuity ties them to the immutable release. Actual eight-H100 pilot validated both objectives/export/resume; the one-H100 compile check validated local batch 64\u00d71024 and freezing.",
+      "id": "39",
+      "requirement": "Focused correctness suite and real eight-GPU/compiled launch checks",
+      "section": "11.1\u201311.5"
+    },
+    {
+      "evidence": [
+        "evidence/readout-original.json",
+        "evidence/readout-C.json",
+        "evidence/readout-D.json",
+        "diagnostics.json"
+      ],
+      "finding": "All three completed 500 updates with identical head initialization, data/optimizer/noise seeds, normalization and 16384 scored validation tokens per condition. Clean and std-.1-noisy accuracy/CE are reported as decodability only; none was skipped.",
+      "id": "40",
+      "requirement": "Matched original/C/D token-readout probe, at most 500 updates each",
+      "section": "11"
+    },
+    {
+      "evidence": [
+        "diagnostics.json",
+        "diagnostics.csv",
+        "src/t5_adaptation/diagnostics.py",
+        "RESULTS.md"
+      ],
+      "finding": "All fixed milestones retain raw and normalized mean/variance, clean SIGReg with 2048 samples, covariance spectra/effective rank and finite fractions at both lengths. C CE and D consistency remain separately named; no diagnostic is treated as proof of generation quality.",
+      "id": "41",
+      "requirement": "Raw/normalized statistics, rank/spectrum, finite summaries and separate task metrics",
+      "section": "11"
+    },
+    {
+      "evidence": [
+        "evidence/generation-C.json",
+        "evidence/generation-D.json",
+        "src/generation.py",
+        "src/eval.py"
+      ],
+      "finding": "Both generation commands point to final checkpoint_95090, use eight ranks and seeds 0,1,2. YAML/source/hash review verifies EMA path and 32/1.5 plus 64/1.0 SDE settings, SC-CFG 3, CFG 1, logit-normal, length 1024; all 12000 texts are retained.",
+      "id": "42",
+      "requirement": "Final EMA generation, exact two configurations, three shared seeds, 1000 samples each",
+      "section": "12"
+    },
+    {
+      "evidence": [
+        "evidence/generation-C.json",
+        "evidence/generation-D.json",
+        "src/utils/metrics_utils.py",
+        "src/t5_adaptation/evaluate.py"
+      ],
+      "finding": "Evaluator revision 32b71b1 and actual snapshot hashes match. Existing GPT-2 retokenization, 1024 cap, EOS/padding PPL weights and per-sample unigram entropy are retained. Audit independently reconstructs entropy and aggregate PPL from saved per-sample PPL; it does not rerun model forward passes.",
+      "id": "43",
+      "requirement": "Pinned frozen GPT-2 Large and existing metric semantics",
+      "section": "12"
+    },
+    {
+      "evidence": [
+        "evidence/generation-C.json",
+        "evidence/generation-D.json",
+        "evaluation.csv",
+        "RESULTS.md"
+      ],
+      "finding": "Each raw file has IDs 0\u2013999 exactly once. C primary excludes three empty strings (seed 1 IDs 589/820; seed 2 ID 895); all other outputs are nonempty and scored. Both audit records bind all raw/metric hashes.",
+      "id": "44",
+      "requirement": "Raw JSONL and per-seed metrics, requested/generated/scored counts and explicit empties",
+      "section": "12"
+    },
+    {
+      "evidence": [
+        "lengths.json",
+        "qualitative_samples.json",
+        "RESULTS.md",
+        "scripts/finalize_cd_report.py"
+      ],
+      "finding": "All texts, including empties, contribute to GPT-2 before/after-cap and T5 retokenized length summaries. Twelve examples are fixed at seed 0, IDs 0\u20132 for each arm/configuration, not chosen for quality. Repetition and incoherence are reported directly.",
+      "id": "45",
+      "requirement": "Lengths and a small qualitative set with selection disclosed",
+      "section": "12"
+    },
+    {
+      "evidence": [
+        "results.json",
+        "results.csv",
+        "evidence/generation-C.json",
+        "evidence/generation-D.json",
+        "RESULTS.md"
+      ],
+      "finding": "Mean, sample standard deviation and SEM are reconstructed for the three inference seeds. The report explicitly states one training seed per arm; no inference error bar is represented as training-replicate uncertainty.",
+      "id": "46",
+      "requirement": "Mean/variation across inference seeds and single-training-seed limitation",
+      "section": "12"
+    },
+    {
+      "evidence": [
+        "evidence/published-A.json",
+        "results.json",
+        "RESULTS.md"
+      ],
+      "finding": "Rechecked paper v2 dated 2026-06-26, Appendix E.4 Table 9: primary 32-step SDE, SC-CFG 3, gamma 1.5, GenPPL 24.08\u00b1.16 and entropy 5.15\u00b1.002, mean\u00b1SE over evaluation seeds 0\u20135. No additional A row is inferred.",
+      "id": "47",
+      "requirement": "Exact verified published A row with source/version/protocol/uncertainty",
+      "section": "12, 14"
+    },
+    {
+      "evidence": [
+        "RESULTS.md",
+        "results.json"
+      ],
+      "finding": "Published A and measured C/D are labeled separately. Primary C\u2212A, D\u2212A and C\u2212D are reported. Lower PPL with lower entropy is a trade-off; no SIGReg causal isolation, matched-entropy frontier dominance, or overall improvement is claimed.",
+      "id": "48",
+      "requirement": "External/measured separation, omitted B, three comparisons and negative-result interpretation",
+      "section": "1, 12\u201313"
+    },
+    {
+      "evidence": [
+        "EXPERIMENT.md",
+        "scripts/setup_adaptation_env.sh",
+        "src/t5_adaptation/pipeline.py",
+        "evidence/recovery-checks.txt",
+        "evidence/final-repository-checks.json"
+      ],
+      "finding": "EXPERIMENT.md documents tested setup, preparation, calibration, pipeline submission/status/recovery, explicit stage entry points, evaluation and report/audit commands. Actual stage command arrays and identities are retained. Resume correctness was tested without disturbing successful runs.",
+      "id": "49",
+      "requirement": "Reproduction, submission/status/resume, stage commands and changed-file documentation",
+      "section": "13"
+    },
+    {
+      "evidence": [
+        "evidence/final-artifacts.json",
+        "EXPERIMENT.md",
+        "training.json",
+        "results.json",
+        "compute.json",
+        "diagnostics.json"
+      ],
+      "finding": "Tracked summaries/audits plus the local artifact index identify all required retained products. Selected artifact hashes are rechecked; prior recovery checkpoints remain. Large shared-data hashes are retained from preparation with present sizes, explicitly not a fresh full-data scan.",
+      "id": "50",
+      "requirement": "Retain configs/revisions/manifests, adaptation logs/selected checkpoints/exports, OWT normalization, ELF final/EMA, samples, diagnostics and compute",
+      "section": "13"
+    },
+    {
+      "evidence": [
+        "evidence/final-adaptation-paired.json",
+        "evidence/encoder-handoff-C.json",
+        "evidence/encoder-handoff-D.json",
+        "evidence/elf-C-epoch-5.json",
+        "evidence/elf-D-epoch-5.json",
+        "evidence/generation-C.json",
+        "evidence/generation-D.json",
+        "RESULTS.md",
+        "EXPERIMENT.md"
+      ],
+      "finding": "All seven completion criteria have direct evidence above. Terminal scheduler success and the report's convenience complete flag are not used alone. The paired final checkpoints and generation audits passed; remaining limitations concern interpretation and audit scope rather than unfinished required work.",
+      "id": "51",
+      "requirement": "Acceptance rests on objectives, budgets, exports, full ELF training, final evaluation, reporting and executable reproduction",
+      "section": "13 completion criteria"
+    }
+  ],
+  "scope": "Requirement-by-requirement scientific and implementation review of GOAL.md. Findings combine inspected source, the focused checks, execution records, and final artifact audits. The companion audit script checks current identities and retention; it does not mechanically prove every source-review judgment.",
+  "status": "accepted",
+  "upstream_base": "b29d8833609e9ab7f67cd9da39435ac5cea04837"
+}

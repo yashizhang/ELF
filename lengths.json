@@ -1,0 +1,109 @@
+{
+  "rows": [
+    {
+      "arm": "C",
+      "configuration": "primary",
+      "generated_count": 3000,
+      "gpt2_lengths_after_truncation": {
+        "count": 3000,
+        "max": 1024,
+        "mean": 950.631,
+        "median": 990.0,
+        "min": 0
+      },
+      "gpt2_lengths_before_truncation": {
+        "count": 3000,
+        "max": 1327,
+        "mean": 953.939,
+        "median": 990.0,
+        "min": 0
+      },
+      "t5_retokenized_lengths": {
+        "count": 3000,
+        "max": 1029,
+        "mean": 981.2973333333333,
+        "median": 1019.0,
+        "min": 0
+      }
+    },
+    {
+      "arm": "C",
+      "configuration": "secondary",
+      "generated_count": 3000,
+      "gpt2_lengths_after_truncation": {
+        "count": 3000,
+        "max": 1024,
+        "mean": 962.1773333333333,
+        "median": 989.0,
+        "min": 4
+      },
+      "gpt2_lengths_before_truncation": {
+        "count": 3000,
+        "max": 1419,
+        "mean": 969.722,
+        "median": 989.0,
+        "min": 4
+      },
+      "t5_retokenized_lengths": {
+        "count": 3000,
+        "max": 1087,
+        "mean": 999.1806666666666,
+        "median": 1019.0,
+        "min": 6
+      }
+    },
+    {
+      "arm": "D",
+      "configuration": "primary",
+      "generated_count": 3000,
+      "gpt2_lengths_after_truncation": {
+        "count": 3000,
+        "max": 1024,
+        "mean": 922.974,
+        "median": 978.0,
+        "min": 9
+      },
+      "gpt2_lengths_before_truncation": {
+        "count": 3000,
+        "max": 1216,
+        "mean": 926.9956666666667,
+        "median": 978.0,
+        "min": 9
+      },
+      "t5_retokenized_lengths": {
+        "count": 3000,
+        "max": 1035,
+        "mean": 976.6283333333333,
+        "median": 1019.0,
+        "min": 34
+      }
+    },
+    {
+      "arm": "D",
+      "configuration": "secondary",
+      "generated_count": 3000,
+      "gpt2_lengths_after_truncation": {
+        "count": 3000,
+        "max": 1024,
+        "mean": 956.64,
+        "median": 977.0,
+        "min": 43
+      },
+      "gpt2_lengths_before_truncation": {
+        "count": 3000,
+        "max": 1239,
+        "mean": 963.524,
+        "median": 977.0,
+        "min": 43
+      },
+      "t5_retokenized_lengths": {
+        "count": 3000,
+        "max": 1047,
+        "mean": 1003.2246666666666,
+        "median": 1019.0,
+        "min": 59
+      }
+    }
+  ],
+  "scope": "All 3000 saved texts per arm/configuration, including empty strings. Retokenized text lengths are not the original 1024-position latent length. GPT-2 scoring caps context at 1024."
+}
