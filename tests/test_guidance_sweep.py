@@ -120,3 +120,22 @@ def test_bounded_refinement_frontier_and_frozen_selection_retains_reference():
     assert selected["frozen_before_confirmation"] and selected["confirmation_seeds"] == [20, 21, 22]
     assert {r["sc_cfg"] for r in selected["selected"]} == {3., .5, 1.}
     assert len(rows) == 5
+
+
+def test_report_uses_seed_means_and_paired_seed_differences():
+    from guidance_sweep.common import METRICS
+    from guidance_sweep.report import aggregate, paired_differences
+    rows = []
+    for arm, scale, values in [("C", 3, [10, 20, 30]), ("C", 1, [8, 19, 27]), ("A_measured_local", 3, [15, 21, 34])]:
+        for seed, value in zip((20, 21, 22), values):
+            rows.append({"arm": arm, "sc_cfg": scale, "sampler": "primary", "stage": "confirmation", "seed": seed,
+                         "requested_count": 1000, "generated_count": 1000, "nonempty_count": 999, "scoring_failures": [],
+                         **{key: value for key in METRICS + ["t5_retokenized_length"]}})
+    rows.reverse()
+    result = next(r for r in aggregate(rows) if r["arm"] == "C" and r["sc_cfg"] == 3)
+    assert result["gen_ppl"]["mean"] == 20 and result["gen_ppl"]["sample_sd"] == 10
+    assert result["generated_count"] == 3000 and result["nonempty_count"] == 2997
+    pair = next(r for r in paired_differences(rows) if r["comparison"] == "within_arm_vs_sc3")
+    assert pair["gen_ppl"]["values"] == [-2, -1, -3]
+    assert pair["gen_ppl"]["mean"] == -2 and pair["gen_ppl"]["sample_sd"] == 1
+    assert pair["gen_ppl"]["se"] == pytest.approx(1 / math.sqrt(3))

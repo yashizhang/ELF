@@ -1,6 +1,8 @@
 # C/D inference-only guidance study
 
-Status: implementation and CPU checks complete; GPU screening has not started.
+Status: both GPU screening jobs succeeded; all four selections are frozen before confirmation.
+Screening completed 48 settings / 12,000 samples, including eight permitted extrapolations.
+No measured screening point reached [5.10, 5.20], so no in-range refinement was added.
 The full requested scope is retained in [SPEC.md](guidance_sweep/SPEC.md).
 The original experiment at `1d96853` and its reports/artifacts remain unchanged.
 
@@ -15,14 +17,14 @@ The [fixed plan](guidance_sweep/plan.json) records the two samplers, ten screeni
 scales, separate RNG streams, bounded refinement, and selection rules. The A
 entropy neighborhood is defined before screening as **[5.10, 5.20]**.
 Screening uses seed 10 and 250 samples; confirmation uses seeds 20/21/22 and
-1,000 samples per selected configuration. All four selections will be frozen
+1,000 samples per selected configuration. [All four selections](guidance_sweep/selection.json) were frozen
 before either confirmation job starts. Each phase has two independent
 eight-H100 jobs under `snow.research.er`, with 64 CPUs / 512 GB each.
 C's confirmation allocation also evaluates the released A anchor.
 
-Source inspection finds ordinary CFG inactive for the zero unconditional
-prefix. The GPU jobs must verify this numerically at CFG 0/.5/1/2/3/5, including
-nonzero previous self-conditioning and full 32/64-step fixed-noise rollouts.
+Both actual checkpoints verified ordinary CFG inactive for the zero unconditional
+prefix: zero forward/latent differences and identical tokens at CFG 0/.5/1/2/3/5,
+including nonzero previous self-conditioning and full 32/64-step fixed-noise rollouts.
 SC-CFG is a trained scale-token input (range .5–5), including final decoding.
 Scale zero is not a no-self-conditioning ablation. No sampler, weights,
 normalization, temperature, or gamma changes are made.

@@ -1,0 +1,391 @@
+{
+  "arms": {
+    "C": {
+      "primary": {
+        "frozen_at_utc": "2026-10-15T22:30:41.203594+00:00",
+        "identity": {
+          "execution_commit": "9d3ee65578632d58849df194d5d3c274b9c31d42",
+          "global_batch_size": 512,
+          "inputs_sha256": "bc24516007fea85ccfe6e03e686e744d13b570e39f78e7bafe0fc1c35fd54ee7",
+          "phase": "screening",
+          "plan_sha256": "acb2d8c0bfb87a2b1a9e6e5abece08d6e9eb414472db8d6d0c7f514aad749a58",
+          "world_size": 8
+        },
+        "screening_metrics_sha256": [
+          "cfcb6b60de5db8590339b5a6e67abffff73719140c24c7856167efbf239b5b01",
+          "3b82b8ca3d34679e57a4eabd504cefa9d7562c84ce6a2088035dc0608738177d",
+          "7e2e7faa698b668aa57eb8761d7637515790a349ec4e171c82b02126135a76f1",
+          "d49c585f337af61a27a5f5843aef5203a57c1b23ef0c40ed3619f16f03fb0098",
+          "98dfe0edf153fd0950fd100c0ebf3b18975e18741e6861a5ada1b41ec02c4867",
+          "52bbb5b03f952826c6e9373f3322fee0d0434d7c6250fd07132719b7537500ca",
+          "3979724b50c3d2c32d9c237988600a127d2d399b263d0fd5186c0f8b8ca25155",
+          "5c73ec32f701e0ab77243b1e4f6bbb64f97703f545290043f74be10807d56e1e",
+          "56e3a0865a881d863fd96f1698bbfe9ecb7bc8b37e504d22b74312f6492785c9",
+          "f9a1b7b7ba4ca1d5de136404896448b377f748725dbdb3a10ed47abb83e659c8",
+          "266f1903af5eee9d153fb93573f59d3946c8c88ac8ab347faa369d3707520aef",
+          "23030fa677a4dc1e4c70b6cc8b68f7fdfad75426d01c0b5715b47128e4670f8f"
+        ],
+        "selection": {
+          "confirmation_seeds": [
+            20,
+            21,
+            22
+          ],
+          "entropy_neighborhood": [
+            5.1,
+            5.2
+          ],
+          "frontier_scales": [
+            1.5,
+            2.0,
+            2.5,
+            5.0
+          ],
+          "frozen_before_confirmation": true,
+          "selected": [
+            {
+              "outside_trained_range": false,
+              "reason": "Mandatory SC-CFG=3 reference, even if dominated.",
+              "sc_cfg": 3.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.005875693534455108,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 4.340553933620453,
+                "gen_ppl": 12.575971417081279,
+                "gpt2_length_after": 967.036,
+                "gpt2_length_before": 970.856,
+                "repeated_4gram_fraction": 0.24733819562904638
+              }
+            },
+            {
+              "outside_trained_range": false,
+              "reason": "Highest-entropy empirical nondominated point; repetition and lengths remain visible and are not evidence of coherence.",
+              "sc_cfg": 1.5,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.006358587321046296,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0040000000000000036,
+                "entropy": 4.377828139617261,
+                "gen_ppl": 15.059307848781303,
+                "gpt2_length_after": 924.256,
+                "gpt2_length_before": 926.028,
+                "repeated_4gram_fraction": 0.21401356269939956
+              }
+            },
+            {
+              "outside_trained_range": false,
+              "reason": "Deduplicated selection left a slot; retain a distinct frontier point with the largest entropy separation.",
+              "sc_cfg": 2.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.0034937602550256745,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 4.357757346153259,
+                "gen_ppl": 13.962290135699503,
+                "gpt2_length_after": 946.68,
+                "gpt2_length_before": 950.136,
+                "repeated_4gram_fraction": 0.23235379070354245
+              }
+            }
+          ],
+          "selection_limit": 3
+        }
+      },
+      "secondary": {
+        "frozen_at_utc": "2026-10-15T22:31:41.053098+00:00",
+        "identity": {
+          "execution_commit": "9d3ee65578632d58849df194d5d3c274b9c31d42",
+          "global_batch_size": 512,
+          "inputs_sha256": "bc24516007fea85ccfe6e03e686e744d13b570e39f78e7bafe0fc1c35fd54ee7",
+          "phase": "screening",
+          "plan_sha256": "acb2d8c0bfb87a2b1a9e6e5abece08d6e9eb414472db8d6d0c7f514aad749a58",
+          "world_size": 8
+        },
+        "screening_metrics_sha256": [
+          "8fe797be5df8b331e83a75ca99614567f3b90241e8f1d231aed43a4d37d97127",
+          "b5c6535bd3ba02922abd7100686af7202b60804cc1e2a7c04c8beddec50a2f35",
+          "4cb1be06b1e5801ec18ab1130e781556f46d45efc327fdbd2e16a299cf758381",
+          "08520002b9015d76ea7cfd8480cfc57d15b6ae70e54b93d987c929a5c4cf7d00",
+          "0ecb0dca9d9c8b2be3062fc9bbf8bbdae051a0dce1e03b0bb9e35e2b14ba81ea",
+          "f125ef79e7427501fa54d0dc9cf7328634fde59a2762a0ebb7ef98d4601c6d2a",
+          "5a9d216274c62b928edbfd873136883900e8489444549186405d2b5f32eadc92",
+          "23805fea65d1ba7a24647724ae94ffe194cbe7277f071a4eca18116a5775562d",
+          "6fb64344b8a267393e2314d29aafec12f8010789b949ac2f0e0c4565b0de57b0",
+          "f986e6bc3a79b5167707a1e87eb95ef660ae6ba50e5689d9edc21d4ab9967a2d",
+          "7ba648eb6c540d5e89fb54562c5d75d84b5d88559307ed0104400ffaf97c5490",
+          "5b073fcf1233b750f7db97def001c44c5be8f9937a83f02df0923c6d1c0abe54"
+        ],
+        "selection": {
+          "confirmation_seeds": [
+            20,
+            21,
+            22
+          ],
+          "entropy_neighborhood": [
+            5.1,
+            5.2
+          ],
+          "frontier_scales": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            2.0,
+            2.5,
+            3.0,
+            4.0,
+            5.0
+          ],
+          "frozen_before_confirmation": true,
+          "selected": [
+            {
+              "outside_trained_range": false,
+              "reason": "Mandatory SC-CFG=3 reference, even if dominated.",
+              "sc_cfg": 3.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.0026094408533109195,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 4.438986678123474,
+                "gen_ppl": 11.566617842694972,
+                "gpt2_length_after": 964.088,
+                "gpt2_length_before": 967.744,
+                "repeated_4gram_fraction": 0.27211109659648963
+              }
+            },
+            {
+              "outside_trained_range": true,
+              "reason": "Highest-entropy empirical nondominated point; repetition and lengths remain visible and are not evidence of coherence.",
+              "sc_cfg": 0.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.005193081146082549,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.008000000000000007,
+                "entropy": 4.789881214980157,
+                "gen_ppl": 30.540738315018142,
+                "gpt2_length_after": 879.764,
+                "gpt2_length_before": 883.148,
+                "repeated_4gram_fraction": 0.08472749893177052
+              }
+            },
+            {
+              "outside_trained_range": false,
+              "reason": "Deduplicated selection left a slot; retain a distinct frontier point with the largest entropy separation.",
+              "sc_cfg": 1.5,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.0023017120622229425,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 4.609940850734711,
+                "gen_ppl": 15.877696113919308,
+                "gpt2_length_after": 958.784,
+                "gpt2_length_before": 962.168,
+                "repeated_4gram_fraction": 0.19565922821343146
+              }
+            }
+          ],
+          "selection_limit": 3
+        }
+      }
+    },
+    "D": {
+      "primary": {
+        "frozen_at_utc": "2026-10-15T22:30:46.104759+00:00",
+        "identity": {
+          "execution_commit": "9d3ee65578632d58849df194d5d3c274b9c31d42",
+          "global_batch_size": 512,
+          "inputs_sha256": "bc24516007fea85ccfe6e03e686e744d13b570e39f78e7bafe0fc1c35fd54ee7",
+          "phase": "screening",
+          "plan_sha256": "acb2d8c0bfb87a2b1a9e6e5abece08d6e9eb414472db8d6d0c7f514aad749a58",
+          "world_size": 8
+        },
+        "screening_metrics_sha256": [
+          "ead00bdb008363e0fc1c1cf99788bce9a4b7e56154b2e593bf3608e07e7a82ff",
+          "b2e66ff7d706a60333af5c551231f5ed4299ddf73a2dbf1d70724febcac255ad",
+          "82ba0e4bde4da0fe40328a9b4d24ff1b715276d553114847cb84b23f527af828",
+          "440543f31aa157886fa941459607fc2f2dbf11898c0581fea1c111ebef241b09",
+          "d90cb36364d4d7bd3c9efff26718fb7f4b2860ed71cb6aad93a3cfe07911abd7",
+          "800dcdb8cd26573c82f24642eac53e73c0777cf36ee9795d7a88f4e517cdae27",
+          "4853746df18898d1ec42ebdebfbe250ff23d27fc92f72d16b5135823b1de570d",
+          "3419b7aacf5266d703983e7049a4ac062b0cef4ab3c726a56de15d8d6c8f825d",
+          "f5bb6d51c8644d9c5bc2916d82604cf8e49549aa9b482b8e1d070abd85b9dc95",
+          "8d5f6ad57cbe94325dadd6ff9b4d6a495fb274c6119838ae53621a56a3f1b878",
+          "e6fe74b1f0ec41e65951f33b769b1ead1a771643899bbc59ee802878c1900d1b",
+          "945f6ae34c08571f2c6d77bafe6f917e6a69da1490edfd4926d2e25b4960fc4a"
+        ],
+        "selection": {
+          "confirmation_seeds": [
+            20,
+            21,
+            22
+          ],
+          "entropy_neighborhood": [
+            5.1,
+            5.2
+          ],
+          "frontier_scales": [
+            4.0,
+            5.0
+          ],
+          "frozen_before_confirmation": true,
+          "selected": [
+            {
+              "outside_trained_range": false,
+              "reason": "Mandatory SC-CFG=3 reference, even if dominated.",
+              "sc_cfg": 3.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.020173480947159674,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 3.2301925939321516,
+                "gen_ppl": 6.9867484615302935,
+                "gpt2_length_after": 935.28,
+                "gpt2_length_before": 938.732,
+                "repeated_4gram_fraction": 0.4799487080287336
+              }
+            },
+            {
+              "outside_trained_range": false,
+              "reason": "Highest-entropy empirical nondominated point; repetition and lengths remain visible and are not evidence of coherence.",
+              "sc_cfg": 5.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.010077826277427865,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 3.413686352491379,
+                "gen_ppl": 6.739054907905686,
+                "gpt2_length_after": 933.54,
+                "gpt2_length_before": 937.708,
+                "repeated_4gram_fraction": 0.46880960126669435
+              }
+            },
+            {
+              "outside_trained_range": false,
+              "reason": "Deduplicated selection left a slot; retain a distinct frontier point with the largest entropy separation.",
+              "sc_cfg": 4.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.011708022190211765,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 3.3491153235435487,
+                "gen_ppl": 6.675697879967372,
+                "gpt2_length_after": 931.796,
+                "gpt2_length_before": 936.272,
+                "repeated_4gram_fraction": 0.47285111431040966
+              }
+            }
+          ],
+          "selection_limit": 3
+        }
+      },
+      "secondary": {
+        "frozen_at_utc": "2026-10-15T22:31:46.808548+00:00",
+        "identity": {
+          "execution_commit": "9d3ee65578632d58849df194d5d3c274b9c31d42",
+          "global_batch_size": 512,
+          "inputs_sha256": "bc24516007fea85ccfe6e03e686e744d13b570e39f78e7bafe0fc1c35fd54ee7",
+          "phase": "screening",
+          "plan_sha256": "acb2d8c0bfb87a2b1a9e6e5abece08d6e9eb414472db8d6d0c7f514aad749a58",
+          "world_size": 8
+        },
+        "screening_metrics_sha256": [
+          "da5951c2cee4ae0c920ccc83a898a03f601fe7dbe597345aff57fc99d61ddef3",
+          "d7f1ec626bdea86f50ca5f07aecbb260e6a051f2ff2af621337dd4ac0efccfbc",
+          "74efd31c24c9ae6f3417d2e3fa6214660ce30911fccd4f2ad073831dca4736b3",
+          "f523431eeffe3a6cb015bb315341a408afde266f97f589fdeffcf057d2d7a0dd",
+          "34d104cf8595a4cb0fc70f943b151078261c3add9a530c5d210f5984f09f5e01",
+          "b38aea3f025fb3f59d125e53ff6924cd59b5e179bbd4b0ff265a84d893172ddd",
+          "c25650bafe2b60cd3d10800d55b421e740a1984c96ae95b460631c154a6ffe7a",
+          "3cd63dc698cceea0d1c47de91df1e1a6753fd4e1d410e355005e34dd37642ee0",
+          "444fa1d8b0e1892d2cd5fd68ba2ec2fdd09113a5d8e4c48003526360c9a817b4",
+          "f082257fd757a9c163bbee091b998b1c23a3aac42a55f42a16f8d6c1a875afbf",
+          "7c56299ba9abe8036367d63eaa805c615fe73e277b0b15427f57165aba28ca3f",
+          "27e36453bbd122d4650e35ad0b37f9243f79bdac7e35a100609bdd3fdd30ca4c"
+        ],
+        "selection": {
+          "confirmation_seeds": [
+            20,
+            21,
+            22
+          ],
+          "entropy_neighborhood": [
+            5.1,
+            5.2
+          ],
+          "frontier_scales": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            2.0,
+            2.5,
+            3.0,
+            4.0,
+            5.0
+          ],
+          "frozen_before_confirmation": true,
+          "selected": [
+            {
+              "outside_trained_range": false,
+              "reason": "Mandatory SC-CFG=3 reference, even if dominated.",
+              "sc_cfg": 3.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.0034744756741421825,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 3.8363740406036375,
+                "gen_ppl": 7.713858401104667,
+                "gpt2_length_after": 956.984,
+                "gpt2_length_before": 965.8,
+                "repeated_4gram_fraction": 0.42148798915365443
+              }
+            },
+            {
+              "outside_trained_range": true,
+              "reason": "Highest-entropy empirical nondominated point; repetition and lengths remain visible and are not evidence of coherence.",
+              "sc_cfg": 0.0,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.010616438458651234,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 4.267662006378174,
+                "gen_ppl": 29.61705497829486,
+                "gpt2_length_after": 931.908,
+                "gpt2_length_before": 935.728,
+                "repeated_4gram_fraction": 0.11592180248389684
+              }
+            },
+            {
+              "outside_trained_range": false,
+              "reason": "Deduplicated selection left a slot; retain a distinct frontier point with the largest entropy separation.",
+              "sc_cfg": 0.75,
+              "screening_diagnostics": {
+                "adjacent_repetition_fraction": 0.006530079268368902,
+                "duplicate_text_rate": 0.0,
+                "empty_fraction": 0.0,
+                "entropy": 4.0598074817657475,
+                "gen_ppl": 19.710865113427786,
+                "gpt2_length_after": 950.016,
+                "gpt2_length_before": 952.5,
+                "repeated_4gram_fraction": 0.18346692057390865
+              }
+            }
+          ],
+          "selection_limit": 3
+        }
+      }
+    }
+  },
+  "confirmation_started": false,
+  "frozen_at_utc": "2026-10-15T22:32:22.387689+00:00",
+  "inputs_sha256": "bc24516007fea85ccfe6e03e686e744d13b570e39f78e7bafe0fc1c35fd54ee7",
+  "plan_sha256": "acb2d8c0bfb87a2b1a9e6e5abece08d6e9eb414472db8d6d0c7f514aad749a58",
+  "rule": "Frozen from screening only; no further search after confirmation."
+}
