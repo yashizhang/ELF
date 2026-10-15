@@ -1,0 +1,109 @@
+{
+  "all_ema_states_unchanged": true,
+  "all_required_settings_completed": true,
+  "all_samples_scores_counts_and_hashes_checked": true,
+  "allocated_gpu_hours": 3.1933333333333334,
+  "common_random_streams": [
+    {
+      "arms_equal": [
+        "C",
+        "D"
+      ],
+      "sampler": "primary",
+      "samples": 250,
+      "seed": 10
+    },
+    {
+      "arms_equal": [
+        "C",
+        "D",
+        "A_measured_local"
+      ],
+      "sampler": "primary",
+      "samples": 1000,
+      "seed": 20
+    },
+    {
+      "arms_equal": [
+        "C",
+        "D",
+        "A_measured_local"
+      ],
+      "sampler": "primary",
+      "samples": 1000,
+      "seed": 21
+    },
+    {
+      "arms_equal": [
+        "C",
+        "D",
+        "A_measured_local"
+      ],
+      "sampler": "primary",
+      "samples": 1000,
+      "seed": 22
+    },
+    {
+      "arms_equal": [
+        "C",
+        "D"
+      ],
+      "sampler": "secondary",
+      "samples": 250,
+      "seed": 10
+    },
+    {
+      "arms_equal": [
+        "C",
+        "D",
+        "A_measured_local"
+      ],
+      "sampler": "secondary",
+      "samples": 1000,
+      "seed": 20
+    },
+    {
+      "arms_equal": [
+        "C",
+        "D",
+        "A_measured_local"
+      ],
+      "sampler": "secondary",
+      "samples": 1000,
+      "seed": 21
+    },
+    {
+      "arms_equal": [
+        "C",
+        "D",
+        "A_measured_local"
+      ],
+      "sampler": "secondary",
+      "samples": 1000,
+      "seed": 22
+    }
+  ],
+  "completed_at_utc": "2026-10-15T22:43:16.466117+00:00",
+  "empty_count": 26,
+  "generated_count": 54000,
+  "inference_variation_only": true,
+  "original_artifacts_unchanged": 31,
+  "original_tracked_files_unchanged": 140,
+  "requested_count": 54000,
+  "scoring_failure_count": 0,
+  "settings": 90,
+  "stage_counts": {
+    "confirmation": {
+      "samples": 42000,
+      "settings": 42
+    },
+    "extrapolation": {
+      "samples": 2000,
+      "settings": 8
+    },
+    "screening": {
+      "samples": 10000,
+      "settings": 40
+    }
+  }
+}

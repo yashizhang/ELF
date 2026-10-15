@@ -1,0 +1,254 @@
+{
+  "C": {
+    "absolute_tolerance": 1e-06,
+    "audit_seeds_disjoint_from_study": [
+      900001,
+      900002,
+      900003,
+      900004
+    ],
+    "configuration_order_replay": {
+      "audit_seed": 900004,
+      "batch_size": 32,
+      "latent_exact": true,
+      "order": [
+        3,
+        0.5,
+        3
+      ],
+      "rng_exact": true,
+      "tokens_exact": true
+    },
+    "ema_state_hash": "d871cc4d8b867013fe65a7019490282a742a4a7ee7a423b44cdfa1a6c6f266f5",
+    "end_to_end": [
+      {
+        "ordinary_cfg": {
+          "0": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "0.5": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "1": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "2": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "3": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "5": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          }
+        },
+        "sampler": "primary"
+      },
+      {
+        "ordinary_cfg": {
+          "0": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "0.5": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "1": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "2": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "3": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "5": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          }
+        },
+        "sampler": "secondary"
+      }
+    ],
+    "final_decoder_received_scale": [
+      0.75
+    ],
+    "fixed_ordinary_cfg": 1,
+    "forward_max_differences": {
+      "0": 0.0,
+      "0.5": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "5": 0.0
+    },
+    "forward_nonzero_previous_self_conditioning": true,
+    "identity": {
+      "execution_commit": "9d3ee65578632d58849df194d5d3c274b9c31d42",
+      "global_batch_size": 512,
+      "inputs_sha256": "bc24516007fea85ccfe6e03e686e744d13b570e39f78e7bafe0fc1c35fd54ee7",
+      "phase": "screening",
+      "plan_sha256": "acb2d8c0bfb87a2b1a9e6e5abece08d6e9eb414472db8d6d0c7f514aad749a58",
+      "world_size": 8
+    },
+    "ordinary_cfg_inactive": true,
+    "ordinary_cfg_values": [
+      0,
+      0.5,
+      1,
+      2,
+      3,
+      5
+    ],
+    "recorded_at_utc": "2026-10-15T22:29:48.595779+00:00",
+    "sc_cfg_active_max_state_difference_0_5_vs_5": 3.660374641418457
+  },
+  "D": {
+    "absolute_tolerance": 1e-06,
+    "audit_seeds_disjoint_from_study": [
+      900001,
+      900002,
+      900003,
+      900004
+    ],
+    "configuration_order_replay": {
+      "audit_seed": 900004,
+      "batch_size": 32,
+      "latent_exact": true,
+      "order": [
+        3,
+        0.5,
+        3
+      ],
+      "rng_exact": true,
+      "tokens_exact": true
+    },
+    "ema_state_hash": "9ff670c779402f47a8e65aabcc3ac27277b7eab741aebc1fb8cd995704e7fc90",
+    "end_to_end": [
+      {
+        "ordinary_cfg": {
+          "0": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "0.5": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "1": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "2": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "3": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "5": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          }
+        },
+        "sampler": "primary"
+      },
+      {
+        "ordinary_cfg": {
+          "0": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "0.5": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "1": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "2": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "3": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          },
+          "5": {
+            "generated_tokens_equal": true,
+            "max_latent_difference": 0.0,
+            "rng_and_noise_equal": true
+          }
+        },
+        "sampler": "secondary"
+      }
+    ],
+    "final_decoder_received_scale": [
+      0.75
+    ],
+    "fixed_ordinary_cfg": 1,
+    "forward_max_differences": {
+      "0": 0.0,
+      "0.5": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "5": 0.0
+    },
+    "forward_nonzero_previous_self_conditioning": true,
+    "identity": {
+      "execution_commit": "9d3ee65578632d58849df194d5d3c274b9c31d42",
+      "global_batch_size": 512,
+      "inputs_sha256": "bc24516007fea85ccfe6e03e686e744d13b570e39f78e7bafe0fc1c35fd54ee7",
+      "phase": "screening",
+      "plan_sha256": "acb2d8c0bfb87a2b1a9e6e5abece08d6e9eb414472db8d6d0c7f514aad749a58",
+      "world_size": 8
+    },
+    "ordinary_cfg_inactive": true,
+    "ordinary_cfg_values": [
+      0,
+      0.5,
+      1,
+      2,
+      3,
+      5
+    ],
+    "recorded_at_utc": "2026-10-15T22:29:55.299534+00:00",
+    "sc_cfg_active_max_state_difference_0_5_vs_5": 9.337347984313965
+  }
+}

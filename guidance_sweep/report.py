@@ -1,7 +1,9 @@
 """Audit completed study artifacts and export seed-level evidence without rescoring."""
+import argparse
 import csv
 from datetime import datetime, timezone
 import hashlib
+import html
 import json
 import math
 from pathlib import Path
@@ -14,7 +16,7 @@ from .submit import statuses
 def csv_rows(path, rows):
     fields = list(dict.fromkeys(key for row in rows for key in row))
     with path.open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({k: json.dumps(v, sort_keys=True) if isinstance(v, (dict, list)) else v for k, v in row.items()})
@@ -128,13 +130,21 @@ def audit_setting(path, inputs, selection):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", default=None)
+    parser.add_argument("--output", default="guidance_sweep/results")
+    args = parser.parse_args()
     inputs = read_json("guidance_sweep/inputs.json")
     selection = read_json("guidance_sweep/selection.json")
-    root = Path(inputs["artifact_root"])
-    destination = Path("guidance_sweep/results")
-    destination.mkdir(exist_ok=True)
+    root = Path(args.root or inputs["artifact_root"]).resolve()
+    destination = Path(args.output)
+    destination.mkdir(parents=True, exist_ok=True)
     scheduler = statuses(root, read_json(root / "submission.json"))
     assert all(j["state"] not in {"RUNNING", "QUEUING", "QUEUED", "CANCELLING"} for j in scheduler["jobs"])
+    assert all(not run["provisional"] for job in scheduler["jobs"] for run in job["runs"])
+    compute = [{"arm": job["arm"], "phase": job["phase"], "job_id": job["id"], "account": job["account"],
+                "job_state": job["state"], "gpus": job["resources"]["gpu"], "cpus": job["resources"]["cpu"],
+                "ram_gb": job["resources"]["mem"], **run} for job in scheduler["jobs"] for run in job["runs"]]
     for arm in ("C", "D"):
         for phase in ("screening", "confirmation"):
             assert any(j["arm"] == arm and j["phase"] == phase and j["state"] == "SUCCEEDED" for j in scheduler["jobs"])
@@ -195,17 +205,33 @@ def main():
     # These fixed complete texts are kept with large artifacts, not in Git.
     atomic_json(root / "qualitative_samples.json", qualitative)
     artifacts[str(root / "qualitative_samples.json")] = file_hash(root / "qualitative_samples.json")
+    cards = []
+    for sample in qualitative:
+        title = f"{sample['arm']} · {sample['sampler']} · SC-CFG {sample['sc_cfg']:g} · seed 20 · ID {sample['id']}"
+        score = sample["scores"]
+        details = {k: score[k] for k in ("ppl", "entropy", "repeated_4gram_fraction", "gpt2_length_before", "gpt2_length_after", "nonempty")}
+        cards.append(f"<article><h2>{html.escape(title)}</h2><p>{html.escape(json.dumps(details))}</p>"
+                     f"<pre>{html.escape(sample['generated']) or '[empty output]'}</pre></article>")
+    (root / "qualitative_samples.html").write_text("<!doctype html><meta charset='utf-8'><title>Fixed guidance study samples</title>"
+        "<style>body{max-width:1000px;margin:40px auto;padding:0 24px;font:16px/1.5 system-ui}h2{font-size:19px}"
+        "article{border-top:1px solid #ccc;padding:20px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.5 Georgia}p{overflow-wrap:anywhere}</style>"
+        "<h1>Fixed qualitative samples</h1><p>Complete texts, without quality selection: seed 20, IDs 0, 1, 2 for every confirmed configuration. "
+        "Auxiliary metrics do not establish coherence. SC-CFG 0 is an out-of-range scale token, not disabled self-conditioning.</p>" + "".join(cards))
+    artifacts[str(root / "qualitative_samples.html")] = file_hash(root / "qualitative_samples.html")
     for arm in ("C", "D", "A_measured_local"):
         for path in sorted((root / arm).glob("*.json")):
             artifacts[str(path)] = file_hash(path)
         for path in sorted((root / arm).glob("*.log")):
             artifacts[str(path)] = file_hash(path)
-    for name in ("submission.json", "scheduler.json"):
+    for name in ("submission.json",):
         artifacts[str(root / name)] = file_hash(root / name)
     for path in sorted(root.glob("*-job.yml")):
         artifacts[str(path)] = file_hash(path)
     atomic_json(destination / "guidance_audits.json", {arm: read_json(root / arm / "guidance_audit.json") for arm in ("C", "D")})
     atomic_json(destination / "scheduler.json", scheduler)
+    # Pin the terminal snapshot; the live scheduler cache changes on status queries.
+    artifacts[str((destination / "scheduler.json").resolve())] = file_hash(destination / "scheduler.json")
+    csv_rows(destination / "compute.csv", compute)
     atomic_json(destination / "artifacts.json", {"root": str(root), "files_sha256": artifacts,
                 "inputs_sha256": file_hash("guidance_sweep/inputs.json"), "selection_sha256": file_hash("guidance_sweep/selection.json")})
     audit = {"completed_at_utc": datetime.now(timezone.utc).isoformat(), "all_required_settings_completed": True,

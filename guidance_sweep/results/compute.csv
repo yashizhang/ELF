@@ -1,0 +1,5 @@
+arm,phase,job_id,account,job_state,gpus,cpus,ram_gb,id,state,nodeName,startedOn,endedOn,exitCode,stateInfo,allocated_gpu_hours,provisional
+C,screening,7cdf5bab-c51c-4893-a80c-c0d69ccb9a58,snow.research.er,SUCCEEDED,8,64,512,d376e67c-4e7d-4055-858a-ab06021378de,SUCCEEDED,dgx-10,2026-10-15T22:27:48Z,2026-10-15T22:31:49Z,0,,0.5355555555555556,False
+D,screening,6f783014-f4c8-4841-9517-de70b635eb5a,snow.research.er,SUCCEEDED,8,64,512,eb66eb84-4892-4e78-87aa-b775fb33d48e,SUCCEEDED,dgx-15,2026-10-15T22:27:56Z,2026-10-15T22:31:55Z,0,,0.5311111111111111,False
+C,confirmation,b5bf0c65-0278-451f-93ed-0c9850d33bbb,snow.research.er,SUCCEEDED,8,64,512,e0a82385-a9de-412e-92d4-5ee0660e857d,SUCCEEDED,dgx-15,2026-10-15T22:33:40Z,2026-10-15T22:42:35Z,0,,1.1888888888888889,False
+D,confirmation,aa0f57cd-f2b9-4df9-9551-e533c5fe5cf9,snow.research.er,SUCCEEDED,8,64,512,64906352-4eda-4596-b8a5-6f12166565cc,SUCCEEDED,dgx-10,2026-10-15T22:33:37Z,2026-10-15T22:40:39Z,0,,0.9377777777777778,False

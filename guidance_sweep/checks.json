@@ -1,4 +1,8 @@
 {
+  "every_generation_matches_recorded_common_random_stream": {
+    "passed": true,
+    "settings": 90
+  },
   "focused_tests": {
     "command": "PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=src:. .venv/bin/python -m pytest tests/test_guidance_sweep.py -q",
     "exit_code": 0,
@@ -94,5 +98,16 @@
     "yarl": "1.25.1"
   },
   "gpu_pip_check": "Using Python 3.11.15 environment at: .venv-gpu\nChecked 84 packages in 5ms\nAll installed packages are compatible\n",
-  "test_sha256": "debc724f86a855627147c9552cd4db2eb049e8bac4c2647744fbb461c7fc3cf6"
+  "qualitative_selection": {
+    "configurations": 14,
+    "quality_filter": false,
+    "sample_ids": [
+      0,
+      1,
+      2
+    ],
+    "seed": 20,
+    "texts": 42
+  },
+  "test_sha256": "53aa8edc748e83293a695ff11dc935dd955feb70633fea3d620c6df23fd9699e"
 }

@@ -20,9 +20,9 @@ def query(arguments):
     return [json.loads(line) for line in raw.splitlines() if line.strip().startswith("{")]
 
 
-def snapshot(repo, root):
+def snapshot(repo, root, commit=None):
     assert not subprocess.check_output(["git", "status", "--porcelain"], cwd=repo, text=True).strip(), "Commit study changes before submission"
-    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo, text=True).strip()
+    commit = subprocess.check_output(["git", "rev-parse", commit or "HEAD"], cwd=repo, text=True).strip()
     release = root / "releases" / commit
     if not (release / "release.json").exists():
         release.mkdir(parents=True, exist_ok=True)
@@ -67,6 +67,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--phase", choices=["screening", "confirmation"], default="screening")
     parser.add_argument("--root", default="artifacts/guidance_sweep_20261015")
+    parser.add_argument("--name-suffix", default="20261015")
     parser.add_argument("--status", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--resume", action="store_true")
@@ -90,9 +91,8 @@ def main():
             selection = read_json(repo / "guidance_sweep/selection.json")
             assert selection["inputs_sha256"] == file_hash(repo / "guidance_sweep/inputs.json")
             assert set(selection["arms"]) == {"C", "D"}
-        commit, release = snapshot(repo, root)
         for arm in ("C", "D"):
-            name = f"elf_guidance_{arm.lower()}_{args.phase}_20261015"
+            name = f"elf_guidance_{arm.lower()}_{args.phase}_{args.name_suffix}"
             existing = [j for j in query(["ls", "--account", ACCOUNT, "--name", name, "--state", "all"]) if j["name"] == name]
             live = [j for j in existing if j["state"] in LIVE]
             assert len(live) <= 1, "Duplicate live jobs"
@@ -105,6 +105,10 @@ def main():
                 continue
             if existing and not args.resume:
                 raise ValueError("Terminal unsuccessful attempt exists; inspect it and use --resume")
+            # A resumed job must retain the original worker identity, even after report commits.
+            previous = [r for r in manifest["jobs"] if r["arm"] == arm and r["phase"] == args.phase and "commit" in r]
+            assert not existing or previous, "Cannot resolve the original release for this recovered job"
+            commit, release = snapshot(repo, root, previous[-1]["commit"] if existing else None)
             command = ["eai", "job", "new", "--account", ACCOUNT, "--restartable", "--name", name,
                 "--image", cluster["image"], "--cpu", "64", "--mem", "512", "--gpu", "8", "--gpu-model-filter", "H100",
                 "--max-run-time", "0", "--data", cluster["data"], "--workdir", str(release)]

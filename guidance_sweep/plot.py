@@ -1,4 +1,5 @@
 """Standalone matplotlib figures from audited tables; no model imports."""
+import argparse
 import json
 from pathlib import Path
 
@@ -6,6 +7,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+from matplotlib.text import Text
 
 
 def nondominated(rows):
@@ -14,31 +16,39 @@ def nondominated(rows):
 
 
 def separate_labels(fig, labels):
-    # Move only colliding labels; connector lines keep their sampled coordinates clear.
-    for _ in range(12):
-        fig.canvas.draw()
-        renderer = fig.canvas.get_renderer()
-        changed = False
-        boxes = []
-        for label in labels:
-            box = label.get_window_extent(renderer).expanded(1.08, 1.1)
-            if any(box.overlaps(other) for other in boxes):
-                x, y = label.get_position()
-                label.set_position((x + 3, y + 7))
-                changed = True
-            boxes.append(box)
-        if not changed:
-            break
+    fig.canvas.draw()
+    renderer, boxes = fig.canvas.get_renderer(), []
+    for label in sorted(labels, key=lambda item: item.get_fontweight() != "bold"):
+        width = len(label.get_text()) * label.get_fontsize() * .55
+        candidates = [label.get_position()] + [(x, y) for y in (6, -12, 20, -26, 34, -40, 48, -54)
+            for x in (6, -width - 6, 22, -width - 22, 38, -width - 38)]
+        boundary = label.axes.get_window_extent(renderer)
+        best = None
+        for position in candidates:
+            label.set_position(position)
+            label.update_positions(renderer)
+            box = Text.get_window_extent(label, renderer).expanded(1.12, 1.2)
+            penalty = sum(box.overlaps(other) for other in boxes) + 100 * int(
+                box.x0 < boundary.x0 or box.x1 > boundary.x1 or box.y0 < boundary.y0 or box.y1 > boundary.y1)
+            if best is None or penalty < best[0]:
+                best = (penalty, position, box)
+            if penalty == 0:
+                break
+        label.set_position(best[1])
+        label.update_positions(renderer)
+        boxes.append(best[2])
 
 
 def main():
-    directory = Path("guidance_sweep/results")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--directory", default="guidance_sweep/results")
+    directory = Path(parser.parse_args().directory)
     rows = json.loads((directory / "per_seed.json").read_text())
     aggregates = json.loads((directory / "aggregate.json").read_text())
     colors = {"C": "#2265a8", "D": "#bd4437", "A_measured_local": "#27805c"}
     plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False, "svg.fonttype": "none"})
     for sampler, title in [("primary", "32 SDE steps · gamma 1.5"), ("secondary", "64 SDE steps · gamma 1.0")]:
-        fig, axes = plt.subplots(2, 2, figsize=(14, 10), sharex=True, sharey="row", gridspec_kw={"height_ratios": [3, 1.15]})
+        fig, axes = plt.subplots(2, 2, figsize=(14, 10), sharex="col", sharey="row", gridspec_kw={"height_ratios": [3, 1.15]})
         labels = []
         for column, arm in enumerate(("C", "D")):
             ax, diag = axes[0, column], axes[1, column]
@@ -51,7 +61,7 @@ def main():
                 marker = "^" if row["outside_trained_range"] else "o"
                 ax.scatter(row["entropy"], row["gen_ppl"], marker=marker, facecolors="none", edgecolors=colors[arm], s=42, zorder=3)
                 labels.append(ax.annotate(f"{row['sc_cfg']:g}", (row["entropy"], row["gen_ppl"]),
-                    xytext=(5, 5 if index % 2 else -11), textcoords="offset points", fontsize=8, color=colors[arm],
+                    xytext=(7, 4), textcoords="offset points", fontsize=8, color=colors[arm],
                     arrowprops={"arrowstyle": "-", "color": colors[arm], "alpha": .4, "lw": .5}))
                 if row["repeated_4gram_fraction"] is not None:
                     diag.scatter(row["entropy"], row["repeated_4gram_fraction"], marker=marker, facecolors="none", edgecolors=colors[arm], s=35)
@@ -86,7 +96,6 @@ def main():
                 ax.text(.02, .98, "Published A (24.08, 5.15) uses 32 steps;\nno external 64-step point is available.", transform=ax.transAxes, va="top", fontsize=9,
                         bbox={"boxstyle": "round,pad=.4", "fc": "white", "ec": "#dddddd", "alpha": .9})
             ax.set_title(f"Arm {arm}", color=colors[arm], weight="bold")
-            ax.set_yscale("log")
             for panel in (ax, diag):
                 panel.axvspan(5.10, 5.20, color="#d3c18d", alpha=.15, zorder=0)
                 panel.grid(alpha=.18)
@@ -96,7 +105,9 @@ def main():
                 ax.text(.02, .03, f"{missing} nonfinite screening points retained in tables", transform=ax.transAxes, fontsize=8)
             diag.set_ylim(-.03, 1.03)
             diag.set_xlabel("Mean sample unigram entropy (post-cap GPT-2 tokens)")
-        axes[0, 0].set_ylabel("GenPPL (log scale; lower is better)")
+        values = [r["gen_ppl"] for r in rows if r["sampler"] == sampler and r["gen_ppl"] is not None] + ([24.08] if sampler == "primary" else [])
+        axes[0, 0].set_ylim(min(values) * .78, max(values) * 1.20)
+        axes[0, 0].set_ylabel("GenPPL (lower is better)")
         axes[1, 0].set_ylabel("Repeated 4-gram fraction")
         legend = [Line2D([], [], marker="o", color="gray", markerfacecolor="none", linestyle="none", label="Screening, seed 10 / n=250"),
                   Line2D([], [], marker="D", color="gray", linestyle="none", label="Confirmation mean ± sample SD (3 seeds)"),
@@ -110,7 +121,10 @@ def main():
         fig.tight_layout(rect=(0, .12, 1, .95))
         separate_labels(fig, labels)
         for extension in ("png", "svg", "pdf"):
-            fig.savefig(directory / f"{sampler}.{extension}", dpi=180)
+            target = directory / f"{sampler}.{extension}"
+            fig.savefig(target, dpi=180)
+            if extension == "svg":
+                target.write_text("\n".join(line.rstrip() for line in target.read_text().splitlines()) + "\n")
         plt.close(fig)
 
 

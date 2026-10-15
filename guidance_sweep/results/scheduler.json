@@ -1,0 +1,139 @@
+{
+  "accounting": "Includes all run attempts; stage timing is nested within these allocations and is not added again. Queued time excluded.",
+  "allocated_gpu_hours": 3.1933333333333334,
+  "jobs": [
+    {
+      "account": "snow.research.er",
+      "arm": "C",
+      "id": "7cdf5bab-c51c-4893-a80c-c0d69ccb9a58",
+      "name": "elf_guidance_c_screening_20261015",
+      "phase": "screening",
+      "resources": {
+        "cpu": 64,
+        "cpuModel": "",
+        "gpu": 8,
+        "gpuCudaVersion": 0,
+        "gpuMem": 0,
+        "gpuModel": "H100",
+        "gpuTensorCores": false,
+        "inference": false,
+        "mem": 512,
+        "replicas": 0
+      },
+      "runs": [
+        {
+          "allocated_gpu_hours": 0.5355555555555556,
+          "endedOn": "2026-10-15T22:31:49Z",
+          "exitCode": 0,
+          "id": "d376e67c-4e7d-4055-858a-ab06021378de",
+          "nodeName": "dgx-10",
+          "provisional": false,
+          "startedOn": "2026-10-15T22:27:48Z",
+          "state": "SUCCEEDED",
+          "stateInfo": ""
+        }
+      ],
+      "state": "SUCCEEDED"
+    },
+    {
+      "account": "snow.research.er",
+      "arm": "D",
+      "id": "6f783014-f4c8-4841-9517-de70b635eb5a",
+      "name": "elf_guidance_d_screening_20261015",
+      "phase": "screening",
+      "resources": {
+        "cpu": 64,
+        "cpuModel": "",
+        "gpu": 8,
+        "gpuCudaVersion": 0,
+        "gpuMem": 0,
+        "gpuModel": "H100",
+        "gpuTensorCores": false,
+        "inference": false,
+        "mem": 512,
+        "replicas": 0
+      },
+      "runs": [
+        {
+          "allocated_gpu_hours": 0.5311111111111111,
+          "endedOn": "2026-10-15T22:31:55Z",
+          "exitCode": 0,
+          "id": "eb66eb84-4892-4e78-87aa-b775fb33d48e",
+          "nodeName": "dgx-15",
+          "provisional": false,
+          "startedOn": "2026-10-15T22:27:56Z",
+          "state": "SUCCEEDED",
+          "stateInfo": ""
+        }
+      ],
+      "state": "SUCCEEDED"
+    },
+    {
+      "account": "snow.research.er",
+      "arm": "C",
+      "id": "b5bf0c65-0278-451f-93ed-0c9850d33bbb",
+      "name": "elf_guidance_c_confirmation_20261015",
+      "phase": "confirmation",
+      "resources": {
+        "cpu": 64,
+        "cpuModel": "",
+        "gpu": 8,
+        "gpuCudaVersion": 0,
+        "gpuMem": 0,
+        "gpuModel": "H100",
+        "gpuTensorCores": false,
+        "inference": false,
+        "mem": 512,
+        "replicas": 0
+      },
+      "runs": [
+        {
+          "allocated_gpu_hours": 1.1888888888888889,
+          "endedOn": "2026-10-15T22:42:35Z",
+          "exitCode": 0,
+          "id": "e0a82385-a9de-412e-92d4-5ee0660e857d",
+          "nodeName": "dgx-15",
+          "provisional": false,
+          "startedOn": "2026-10-15T22:33:40Z",
+          "state": "SUCCEEDED",
+          "stateInfo": ""
+        }
+      ],
+      "state": "SUCCEEDED"
+    },
+    {
+      "account": "snow.research.er",
+      "arm": "D",
+      "id": "aa0f57cd-f2b9-4df9-9551-e533c5fe5cf9",
+      "name": "elf_guidance_d_confirmation_20261015",
+      "phase": "confirmation",
+      "resources": {
+        "cpu": 64,
+        "cpuModel": "",
+        "gpu": 8,
+        "gpuCudaVersion": 0,
+        "gpuMem": 0,
+        "gpuModel": "H100",
+        "gpuTensorCores": false,
+        "inference": false,
+        "mem": 512,
+        "replicas": 0
+      },
+      "runs": [
+        {
+          "allocated_gpu_hours": 0.9377777777777778,
+          "endedOn": "2026-10-15T22:40:39Z",
+          "exitCode": 0,
+          "id": "64906352-4eda-4596-b8a5-6f12166565cc",
+          "nodeName": "dgx-10",
+          "provisional": false,
+          "startedOn": "2026-10-15T22:33:37Z",
+          "state": "SUCCEEDED",
+          "stateInfo": ""
+        }
+      ],
+      "state": "SUCCEEDED"
+    }
+  ],
+  "observed_at_utc": "2026-10-15T22:43:07.323949+00:00"
+}
